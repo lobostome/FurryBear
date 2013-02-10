@@ -1,0 +1,6 @@
+<ruleset name="PEAR standard">
+    <description>PEAR coding standard</description>
+    <exclude-pattern>**/tests/**</exclude-pattern>
+    <exclude-pattern>**/examples/**</exclude-pattern>
+    <rule ref="PEAR"/>
+</ruleset>
