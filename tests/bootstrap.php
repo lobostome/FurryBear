@@ -1,7 +1,6 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
+require __DIR__ . '/../SplClassLoader.php';
+
+$classLoader = new SplClassLoader(__DIR__ . '/../src');
+$classLoader->register();
