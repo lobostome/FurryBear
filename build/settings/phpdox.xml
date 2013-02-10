@@ -1,8 +1,8 @@
 <phpdox xmlns="http://phpdox.de/config">
-    <project name="FurryBear" source="src" workdir="build/phpdox">
+    <project name="FurryBear" source="." workdir="build/phpdox">
         <collector publiconly="false">
             <include mask="*.php" />
-            <exclude mask="*Autoload.php" />
+            <exclude mask="tests/" />
         </collector>
 
         <generator output="build">
