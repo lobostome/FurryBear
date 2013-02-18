@@ -17,7 +17,7 @@
  * 
  * @author lobostome <lobostome@local.dev>
  * @package FurryBear
- * @see https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+ * @link https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
  */
 class SplClassLoader {
     
@@ -60,7 +60,7 @@ class SplClassLoader {
      * Installs this class loader on the SPL autoload stack.
      */
     public function register() {
-        spl_autoload_register(array($this, 'loadClass'));
+        spl_autoload_register(array($this, 'furrybear_autoload'));
     }
 
     /**
@@ -68,7 +68,7 @@ class SplClassLoader {
      *
      * @param string $className The name of the class to load.
      */
-    public function loadClass($className) {
+    public function furrybear_autoload($className) {
         $className = ltrim($className, $this->_namespaceSeparator);
         $fileName = '';
         $namespace = '';

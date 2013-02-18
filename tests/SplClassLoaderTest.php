@@ -24,8 +24,7 @@ class SplClassLoaderTest extends PHPUnit_Framework_TestCase {
     /**
      * Create fixtures.
      */
-    public function setUp() {
-        spl_autoload_unregister(array('SplClassLoader', 'loadClass'));
+    protected function setUp() {
         require_once __DIR__ . '/../SplClassLoader.php';
         $this->autoload = new SplClassLoader(__DIR__ . '/../src');
     }
@@ -48,8 +47,15 @@ class SplClassLoaderTest extends PHPUnit_Framework_TestCase {
         
         foreach($spl_autoload_functions as $f) {
             if(is_array($f) && $f[0] instanceof SplClassLoader) {
-                $this->assertEquals($f[1], 'loadClass');
+                $this->assertEquals($f[1], 'furrybear_autoload');
             }
         }
+    }
+    
+    /**
+     * Clean up fixtures.
+     */
+    protected function tearDown() {
+        spl_autoload_unregister(array('SplClassLoader', 'furrybear_autoload'));
     }
 }
