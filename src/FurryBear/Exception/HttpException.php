@@ -5,18 +5,16 @@
  * license information, please view the LICENSE file that was distributed with 
  * this source code.
  */
-namespace FurryBear;
+namespace FurryBear\Exception;
 
 /**
- * The main class that glues it all together.
+ * A custom exception thrown when a HTTP error code occurs.
  * 
  * @author lobostome <lobostome@local.dev>
  * @package FurryBear
  */
-class FurryBear {
 
-    /**
-     * The library version.
-     */
-    const VERSION = '0.1.0';
+class HttpException extends \RuntimeException 
+                    implements ExceptionInterface {
+    
 }

@@ -1,21 +1,46 @@
 <?php
 
 /**
+ * This file is part of the FurryBear package. For the full copyright and 
+ * license information, please view the LICENSE file that was distributed with 
+ * this source code.
+ */
+
+/**
  * SplClassLoader implements the autoloader interoperability standard PSR-0.
  * 
  * Example:
+ * <code>
  * $classLoader = new SplClassLoader(__DIR__ . '/../src');
  * $classLoader->register();
+ * </code>
  * 
  * @author lobostome <lobostome@local.dev>
  * @package FurryBear
- * @see https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+ * @link https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
  */
 class SplClassLoader {
-
-    private $_path = null;
-    private $_namespaceSeparator = null;
-    private $_fileExtension = null;
+    
+    /**
+     * The path to the library.
+     * 
+     * @var string 
+     */
+    protected $_path = null;
+    
+    /**
+     * The namespace separator string.
+     * 
+     * @var string
+     */
+    protected $_namespaceSeparator = null;
+    
+    /**
+     * The extension of the php file.
+     * 
+     * @var string
+     */
+    protected $_fileExtension = null;
 
     /**
      * Creates a new SplClassLoader that loads classes of the specified 
@@ -35,7 +60,7 @@ class SplClassLoader {
      * Installs this class loader on the SPL autoload stack.
      */
     public function register() {
-        spl_autoload_register(array($this, 'loadClass'));
+        spl_autoload_register(array($this, 'furrybear_autoload'));
     }
 
     /**
@@ -43,7 +68,7 @@ class SplClassLoader {
      *
      * @param string $className The name of the class to load.
      */
-    public function loadClass($className) {
+    public function furrybear_autoload($className) {
         $className = ltrim($className, $this->_namespaceSeparator);
         $fileName = '';
         $namespace = '';
