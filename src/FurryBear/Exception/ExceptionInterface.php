@@ -1,19 +1,29 @@
 <?php
 
 /**
- * This file is part of the FurryBear package. For the full copyright and 
- * license information, please view the LICENSE file that was distributed with 
- * this source code.
+ * FurryBear
+ * 
+ * PHP Version 5
+ * 
+ * @package     FurryBear
+ * @author      lobostome <lobostome@local.dev>
+ * @license     http://opensource.org/licenses/MIT
+ * @link        https://github.com/lobostome/FurryBear
+ * @category    Congress API
  */
 namespace FurryBear\Exception;
 
 /**
  * The interface for custom exceptions.
  * 
- * @author lobostome <lobostome@local.dev>
- * @package FurryBear
+ * @package     FurryBear
+ * @author      lobostome <lobostome@local.dev>
+ * @license     http://opensource.org/licenses/MIT
+ * @link        https://github.com/lobostome/FurryBear
+ * @category    Congress API
  */
 
-interface ExceptionInterface {
+interface ExceptionInterface 
+{
     
 }
