@@ -3,23 +3,23 @@
 /**
  * FurryBear
  * 
- * PHP Version 5
+ * PHP Version 5.3
  * 
- * @package     FurryBear
- * @author      lobostome <lobostome@local.dev>
- * @license     http://opensource.org/licenses/MIT
- * @link        https://github.com/lobostome/FurryBear
- * @category    Congress API
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
  */
 namespace FurryBear\Proxy;
 /**
  * An interface for a general http request.
  * 
- * @package     FurryBear
- * @author      lobostome <lobostome@local.dev>
- * @license     http://opensource.org/licenses/MIT
- * @link        https://github.com/lobostome/FurryBear
- * @category    Congress API
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
  */
 interface HttpRequest
 {
@@ -49,8 +49,8 @@ interface HttpRequest
     /**
      * Set an option for a connection transfer.
      * 
-     * @param int   $name   The CURLOPT_XXX option to set.
-     * @param mixed $value  The value to be set on option.
+     * @param int   $name  The CURLOPT_XXX option to set.
+     * @param mixed $value The value to be set on option.
      * 
      * @return void
      */
