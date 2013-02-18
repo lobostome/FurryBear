@@ -1,9 +1,15 @@
 <?php
 
 /**
- * This file is part of the FurryBear package. For the full copyright and 
- * license information, please view the LICENSE file that was distributed with 
- * this source code.
+ * FurryBear
+ * 
+ * PHP Version 5
+ * 
+ * @package     FurryBear
+ * @author      lobostome <lobostome@local.dev>
+ * @license     http://opensource.org/licenses/MIT
+ * @link        https://github.com/lobostome/FurryBear
+ * @category    Congress API
  */
 namespace FurryBear\HttpAdapter;
 
@@ -12,13 +18,16 @@ use FurryBear\Exception\HttpException,
 
 /**
  * A HTTP adapter based on curl.
- * 
- * @author lobostome <lobostome@local.dev>
- * @package FurryBear
- * @link http://curl.haxx.se/
+ *  
+ * @package     FurryBear
+ * @author      lobostome <lobostome@local.dev>
+ * @license     http://opensource.org/licenses/MIT
+ * @link        http://curl.haxx.se/
+ * @category    Congress API
  */
 
-class CurlHttpAdapter implements HttpAdapterInterface {
+class CurlHttpAdapter implements HttpAdapterInterface 
+{
     
     /**
      * The contents of the <code>"User-Agent: "</code> header to be used in a 
@@ -48,40 +57,47 @@ class CurlHttpAdapter implements HttpAdapterInterface {
     /**
      * Construct with an optional cURL object.
      * 
-     * @param \FurryBear\Proxy\CurlProxy $proxy
+     * @param \FurryBear\Proxy\CurlProxy $proxy A CurlProxy object.
      */
-    public function __construct($proxy = null) {
-        if(!is_null($proxy))
+    public function __construct($proxy = null)
+    {
+        if(!is_null($proxy)) {
             $this->proxy = $proxy;
+        }
     }
     
     /**
      * {@inheritdoc}
      * 
-     * @param string $url
+     * @param string $url A URL of the resource.
+     * 
      * @return string
      */
-    public function getContent($url) {
-        
-        if(is_null($this->proxy))
+    public function getContent($url) 
+    {
+        if(is_null($this->proxy)) {
             $this->proxy = new CurlProxy($url);
+        }
         
-        $this->proxy->setOption(CURLOPT_RETURNTRANSFER, TRUE);
+        $this->proxy->setOption(CURLOPT_RETURNTRANSFER, true);
         $this->proxy->setOption(CURLOPT_VERBOSE, 1);
         $this->proxy->setOption(CURLOPT_FOLLOWLOCATION, 1);
         $this->proxy->setOption(CURLOPT_USERAGENT, $this->userAgent);
-        if (!empty($this->headers))
+        if (!empty($this->headers)) {
             $this->proxy->setOption(CURLOPT_HTTPHEADER, $this->headers);
+        }
 
         $content = $this->proxy->execute();
         $info = $this->proxy->getInfo(CURLINFO_HTTP_CODE);
         $this->proxy->close();
         
-        if($info === FALSE && $info != 200)
-            throw new HttpException('HTTP code: ' . $info); 
+        if($info === false && $info != 200) {
+            throw new HttpException('HTTP code: ' . $info);
+        }
         
-        if($content === FALSE)
+        if($content === false) {
             $content = null;
+        }
         
         return $content;
     }
@@ -89,18 +105,24 @@ class CurlHttpAdapter implements HttpAdapterInterface {
     /**
      * {@inheritdoc}
      * 
-     * @param array $headers
+     * @param array $headers An array of HTTP headers.
+     * 
+     * @return void
      */
-    public function setHeaders($headers) {
+    public function setHeaders($headers)
+    {
         $this->headers = $headers;
     }
 
     /**
      * {@inheritdoc}
      * 
-     * @param string $userAgent
+     * @param string $userAgent A custom user agent.
+     * 
+     * @return void
      */
-    public function setUserAgent($userAgent) {
+    public function setUserAgent($userAgent) 
+    {
         $this->userAgent = $userAgent;
     }
 }

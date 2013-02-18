@@ -1,20 +1,32 @@
 <?php
 
 /**
- * This file is part of the FurryBear package. For the full copyright and 
- * license information, please view the LICENSE file that was distributed with 
- * this source code.
+ * FurryBear
+ * 
+ * PHP Version 5
+ * 
+ * @package     FurryBear
+ * @author      lobostome <lobostome@local.dev>
+ * @license     http://opensource.org/licenses/MIT
+ * @link        https://github.com/lobostome/FurryBear
+ * @category    Congress API
  */
 namespace FurryBear\Proxy;
 /**
  * An interface for a general http request.
  * 
- * @author lobostome <lobostome@local.dev>
- * @package FurryBear
+ * @package     FurryBear
+ * @author      lobostome <lobostome@local.dev>
+ * @license     http://opensource.org/licenses/MIT
+ * @link        https://github.com/lobostome/FurryBear
+ * @category    Congress API
  */
-interface HttpRequest {
+interface HttpRequest
+{
     /**
      * Close a connection session.
+     * 
+     * @return void
      */
     public function close();
     
@@ -28,7 +40,8 @@ interface HttpRequest {
     /**
      * Get information regarding a specific transfer.
      * 
-     * @param int $name
+     * @param int $name The return key constant.
+     * 
      * @return mixed
      */
     public function getInfo($name);
@@ -36,8 +49,10 @@ interface HttpRequest {
     /**
      * Set an option for a connection transfer.
      * 
-     * @param int $name
-     * @param mixed $value
+     * @param int   $name   The CURLOPT_XXX option to set.
+     * @param mixed $value  The value to be set on option.
+     * 
+     * @return void
      */
     public function setOption($name, $value);
 }

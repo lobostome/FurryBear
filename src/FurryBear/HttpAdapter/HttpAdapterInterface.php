@@ -1,24 +1,34 @@
 <?php
 
 /**
- * This file is part of the FurryBear package. For the full copyright and 
- * license information, please view the LICENSE file that was distributed with 
- * this source code.
+ * FurryBear
+ * 
+ * PHP Version 5
+ * 
+ * @package     FurryBear
+ * @author      lobostome <lobostome@local.dev>
+ * @license     http://opensource.org/licenses/MIT
+ * @link        https://github.com/lobostome/FurryBear
+ * @category    Congress API
  */
 namespace FurryBear\HttpAdapter;
 
 /**
  * The http connection interface for the adapter pattern.
  * 
- * @author lobostome <lobostome@local.dev>
- * @package FurryBear
+ * @package     FurryBear
+ * @author      lobostome <lobostome@local.dev>
+ * @license     http://opensource.org/licenses/MIT
+ * @link        https://github.com/lobostome/FurryBear
+ * @category    Congress API
  */
-interface HttpAdapterInterface {
-    
+interface HttpAdapterInterface
+{
     /**
      * Fetches the content from a URL.
      * 
-     * @param string $url
+     * @param string $url The target URI location.
+     * 
      * @return string
      */
     public function getContent($url);
@@ -26,14 +36,18 @@ interface HttpAdapterInterface {
     /**
      * Sets the contents of the "User-Agent: " header.
      * 
-     * @param string $userAgent
+     * @param string $userAgent A custom user agent.
+     * 
+     * @return void
      */
     public function setUserAgent($userAgent);
     
     /**
      * Sets an array of HTTP header fields.
      * 
-     * @param array $headers
+     * @param array $headers An array of custom HTTP headers.
+     * 
+     * @return void
      */
     public function setHeaders($headers);
 }
