@@ -27,7 +27,7 @@ use FurryBear\Exception\HttpException,
  */
 
 class CurlHttpAdapter implements HttpAdapterInterface
-{   
+{
     /**
      * The contents of the <code>"User-Agent: "</code> header to be used in a 
      * HTTP request.

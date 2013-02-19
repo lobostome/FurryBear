@@ -1,20 +1,36 @@
 <?php
 
 /**
- * This file is part of the FurryBear package. For the full copyright and 
- * license information, please view the LICENSE file that was distributed with 
- * this source code.
- */
-namespace FurryBear\Tests\Proxy;
-/**
- * Test the curl proxy.
+ * FurryBear
  * 
- * @author lobostome <lobostome@local.dev>
- * @package FurryBear
+ * PHP Version 5.3
+ * 
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
  */
-class CurlProxyTest extends \PHPUnit_Framework_TestCase {
-    
-    public function testCurlWrapperMethods() {
+
+namespace FurryBear\Tests\Proxy;
+
+/**
+ * A test for CurlProxy.
+ * 
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
+ */
+
+class CurlProxyTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * Test all curl method with a stub.
+     */
+    public function testCurlWrapperMethods()
+    {
         $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
