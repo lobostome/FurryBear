@@ -3,13 +3,13 @@
 /**
  * FurryBear
  * 
- * PHP Version 5
+ * PHP Version 5.3
  * 
- * @package     FurryBear
- * @author      lobostome <lobostome@local.dev>
- * @license     http://opensource.org/licenses/MIT
- * @link        https://github.com/lobostome/FurryBear
- * @category    Congress API
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
  */
 namespace FurryBear\HttpAdapter;
 
@@ -18,17 +18,16 @@ use FurryBear\Exception\HttpException,
 
 /**
  * A HTTP adapter based on curl.
- *  
- * @package     FurryBear
- * @author      lobostome <lobostome@local.dev>
- * @license     http://opensource.org/licenses/MIT
- * @link        http://curl.haxx.se/
- * @category    Congress API
+ * 
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     http://curl.haxx.se/
  */
 
-class CurlHttpAdapter implements HttpAdapterInterface 
+class CurlHttpAdapter implements HttpAdapterInterface
 {
-    
     /**
      * The contents of the <code>"User-Agent: "</code> header to be used in a 
      * HTTP request.
@@ -61,7 +60,7 @@ class CurlHttpAdapter implements HttpAdapterInterface
      */
     public function __construct($proxy = null)
     {
-        if(!is_null($proxy)) {
+        if (!is_null($proxy)) {
             $this->proxy = $proxy;
         }
     }
@@ -75,7 +74,7 @@ class CurlHttpAdapter implements HttpAdapterInterface
      */
     public function getContent($url) 
     {
-        if(is_null($this->proxy)) {
+        if (is_null($this->proxy)) {
             $this->proxy = new CurlProxy($url);
         }
         
@@ -91,11 +90,11 @@ class CurlHttpAdapter implements HttpAdapterInterface
         $info = $this->proxy->getInfo(CURLINFO_HTTP_CODE);
         $this->proxy->close();
         
-        if($info === false && $info != 200) {
+        if ($info === false && $info != 200) {
             throw new HttpException('HTTP code: ' . $info);
         }
         
-        if($content === false) {
+        if ($content === false) {
             $content = null;
         }
         

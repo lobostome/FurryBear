@@ -3,28 +3,28 @@
 /**
  * FurryBear
  * 
- * PHP Version 5
+ * PHP Version 5.3
  * 
- * @package     FurryBear
- * @author      lobostome <lobostome@local.dev>
- * @license     http://opensource.org/licenses/MIT
- * @link        https://github.com/lobostome/FurryBear
- * @category    Congress API
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
  */
 namespace FurryBear\Exception;
 
 /**
  * A custom exception thrown when a HTTP error code occurs.
  * 
- * @package     FurryBear
- * @author      lobostome <lobostome@local.dev>
- * @license     http://opensource.org/licenses/MIT
- * @link        https://github.com/lobostome/FurryBear
- * @category    Congress API
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
  */
 
 class HttpException extends \RuntimeException 
-                    implements ExceptionInterface 
+                    implements ExceptionInterface
 {
     
 }

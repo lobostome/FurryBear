@@ -3,26 +3,26 @@
 /**
  * FurryBear
  * 
- * PHP Version 5
+ * PHP Version 5.3
  * 
- * @package     FurryBear
- * @author      lobostome <lobostome@local.dev>
- * @license     http://opensource.org/licenses/MIT
- * @link        https://github.com/lobostome/FurryBear
- * @category    Congress API
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
  */
 namespace FurryBear\Proxy;
 /**
  * A proxy that provides a surrogate for curl.
  * 
- * @package     FurryBear
- * @author      lobostome <lobostome@local.dev>
- * @license     http://opensource.org/licenses/MIT
- * @link        http://curl.haxx.se/
- * @category    Congress API
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     http://curl.haxx.se/
  */
-class CurlProxy implements HttpRequest 
-{    
+class CurlProxy implements HttpRequest
+{
     /**
      * A connection handle.
      * 
@@ -75,8 +75,8 @@ class CurlProxy implements HttpRequest
     /**
      * {@inheritdoc}
      * 
-     * @param int   $name   The CURLOPT_XXX option to set.
-     * @param mixed $value  The value to be set on option.
+     * @param int   $name  The CURLOPT_XXX option to set.
+     * @param mixed $value The value to be set on option.
      * 
      * @return void
      */
