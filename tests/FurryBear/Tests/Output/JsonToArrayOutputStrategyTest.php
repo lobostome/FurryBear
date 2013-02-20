@@ -33,9 +33,11 @@ class JsonToArrayOutputStrategyTest extends \PHPUnit_Framework_TestCase
         $data = '{"in_office": true}';
         
         $output = new \FurryBear\Output\JsonToArrayOutputStrategy();
+        $array = $output->convert($data);
         
-        $this->assertInternalType('array', $output->convert($data));
-        $this->assertArrayHasKey('in_office', $output->convert($data));
+        $this->assertInternalType('array', $array);
+        $this->assertArrayHasKey('in_office', $array);
+        $this->assertTrue($array['in_office']);
     }
     
     /**

@@ -40,16 +40,22 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
      * Test curl return with a stub.
      */
     public function testGetContent()
-    {     
+    {
+        $headers = array("Cache-Control: no-cache, must-revalidate",
+                         "Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+        
         $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
-        $curlProxy->expects($this->any())
-                    ->method('setOption')
-                    ->will($this->returnValue(''));
         
         $curlAdapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
-        $curlAdapter->getContent('http://example.com');
+        $curlAdapter->setHeaders($headers);
+        try {
+            $curlAdapter->getContent('http://example.com');
+        } catch (\FurryBear\Exception\HttpException $e) {
+            $this->setExpectedException('\FurryBear\Exception\HttpException');
+            throw new \FurryBear\Exception\HttpException();
+        }
     }
     
     /**
@@ -63,6 +69,9 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         $curlAdapter = new \FurryBear\HttpAdapter\CurlHttpAdapter();
         $curlAdapter->setHeaders($headers);
         
+        $this->assertObjectHasAttribute('headers', $curlAdapter);
+        $this->assertAttributeInternalType('array', 'headers', $curlAdapter);
+        $this->assertAttributeNotEmpty('headers', $curlAdapter);
         $this->assertAttributeEquals($headers, 
                                      'headers', 
                                      $curlAdapter);
@@ -76,6 +85,9 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         $curlAdapter = new \FurryBear\HttpAdapter\CurlHttpAdapter();
         $curlAdapter->setUserAgent('FurryBear via cURL');
         
+        $this->assertObjectHasAttribute('userAgent', $curlAdapter);
+        $this->assertAttributeInternalType('string', 'userAgent', $curlAdapter);
+        $this->assertAttributeNotEmpty('userAgent', $curlAdapter);
         $this->assertAttributeEquals('FurryBear via cURL', 
                                      'userAgent',
                                      $curlAdapter);

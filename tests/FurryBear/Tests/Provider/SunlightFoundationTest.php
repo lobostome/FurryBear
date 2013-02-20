@@ -73,8 +73,8 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        $this->adapter = null;
-        $this->stub = null;
+        unset($this->adapter);
+        unset($this->stub);
     }
     
     /**
@@ -85,7 +85,9 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
         $this->stub->expects($this->any())
                    ->method('getServiceUrl')
                    ->will($this->returnValue($this->serviceUrl));
-                
+        
+        $this->assertNotEmpty($this->serviceUrl);
+        $this->assertNotEmpty($this->stub->getServiceUrl());
         $this->assertEquals($this->serviceUrl, $this->stub->getServiceUrl());
     }
     
@@ -100,6 +102,9 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
                    ->method('setApiKey')
                    ->will($this->returnArgument(0));
         
+        $this->assertNotEmpty($this->stub->setApiKey($apiKey));
+        $this->assertInternalType('string', $this->stub->setApiKey($apiKey));
+        $this->assertObjectHasAttribute('apiKey', $this->stub);
         $this->assertEquals($apiKey, $this->stub->setApiKey($apiKey));
     }
     
@@ -112,6 +117,9 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
                    ->method('getApiKey')
                    ->will($this->returnValue($this->apiKey));
         
+        $this->assertNotEmpty($this->stub->getApiKey());
+        $this->assertInternalType('string', $this->stub->getApiKey());
+        $this->assertObjectHasAttribute('apiKey', $this->stub);
         $this->assertEquals($this->apiKey, $this->stub->getApiKey());
     }
 }

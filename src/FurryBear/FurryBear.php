@@ -11,7 +11,11 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
+
 namespace FurryBear;
+
+use FurryBear\Provider\AbstractProvider,
+    FurryBear\Output\OutputStrategy;
 
 /**
  * The main class that glues it all together.
@@ -28,4 +32,54 @@ class FurryBear
      * The library version.
      */
     const VERSION = '0.1.2';
+    
+    /**
+     * The concrete API provider.
+     * 
+     * @var \FurryBear\Provider\AbstractProvider
+     */
+    protected $provider = null;
+    
+    /**
+     * Defines the format of the output.
+     * 
+     * @var \FurryBear\Output\OutputStrategy
+     */
+    protected $output = null;
+
+    /**
+     * Register a concrete API provider.
+     * 
+     * @param \FurryBear\Provider\AbstractProvider $provider An API provider.
+     * 
+     * @return \FurryBear\FurryBear
+     */
+    public function registerProvider(AbstractProvider $provider)
+    {
+        $this->provider = $provider;
+        return $this;
+    }
+    
+    /**
+     * Register an output format.
+     * 
+     * @param \FurryBear\Output\OutputStrategy $output The desired output conversion.
+     * 
+     * @return \FurryBear\FurryBear
+     */
+    public function registerOutput(OutputStrategy $output)
+    {
+        $this->output = $output;
+        return $this;
+    }
+
+    /**
+     * Get library version.
+     * 
+     * @return string
+     */
+    public static function getVersion()
+    {
+        return self::VERSION;
+    }
 }

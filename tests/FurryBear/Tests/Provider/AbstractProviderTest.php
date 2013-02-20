@@ -51,7 +51,7 @@ class AbstractProviderTest extends \PHPUnit_Framework_TestCase
         $this->adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
         
         $this->stub = $this->getMockBuilder('\FurryBear\Provider\AbstractProvider')
-                           ->disableOriginalConstructor()
+                           ->setConstructorArgs(array($this->adapter))
                            ->getMock();
     }
     
@@ -60,8 +60,8 @@ class AbstractProviderTest extends \PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        $this->adapter = null;
-        $this->stub = null;
+        unset($this->adapter);
+        unset($this->stub);
     }
     
     /**
@@ -72,7 +72,10 @@ class AbstractProviderTest extends \PHPUnit_Framework_TestCase
         $this->stub->expects($this->any())
                    ->method('setAdapter')
                    ->will($this->returnArgument(0));
-                
+        
+        $this->assertNotNull($this->adapter);
+        $this->assertInstanceOf('\FurryBear\HttpAdapter\HttpAdapterInterface', $this->adapter);
+        $this->assertObjectHasAttribute('adapter', $this->stub);
         $this->assertSame($this->adapter, $this->stub->setAdapter($this->adapter));
     }
     
@@ -85,6 +88,9 @@ class AbstractProviderTest extends \PHPUnit_Framework_TestCase
                    ->method('getAdapter')
                    ->will($this->returnValue($this->adapter));
         
+        $this->assertNotNull($this->adapter);
+        $this->assertInstanceOf('\FurryBear\HttpAdapter\HttpAdapterInterface', $this->adapter);
+        $this->assertObjectHasAttribute('adapter', $this->stub);
         $this->assertSame($this->adapter, $this->stub->getAdapter($this->adapter));
     }
 }

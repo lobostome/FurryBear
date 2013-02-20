@@ -36,6 +36,7 @@ class JsonToObjectOutputStrategyTest extends \PHPUnit_Framework_TestCase
         $obj = $output->convert($data);
         
         $this->assertInternalType('object', $obj);
+        $this->assertObjectHasAttribute('in_office', $obj);
         $this->assertTrue($obj->in_office);
     }
     
