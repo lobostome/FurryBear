@@ -77,7 +77,7 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         $curlAdapter->setUserAgent('FurryBear via cURL');
         
         $this->assertAttributeEquals('FurryBear via cURL', 
-                                     'userAgent', 
+                                     'userAgent',
                                      $curlAdapter);
     }
 }

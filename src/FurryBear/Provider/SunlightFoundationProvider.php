@@ -60,4 +60,26 @@ class SunlightFoundationProvider extends AbstractProvider
     {
         return self::SERVICE_URL;
     }
+    
+    /**
+     * Set the API key.
+     * 
+     * @param string $apiKey The service API key.
+     * 
+     * @return void
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->apiKey = $apiKey;
+    }
+    
+    /**
+     * Get the API key.
+     * 
+     * @return string
+     */
+    public function getApiKey()
+    {
+        return $this->apiKey;
+    }
 }
