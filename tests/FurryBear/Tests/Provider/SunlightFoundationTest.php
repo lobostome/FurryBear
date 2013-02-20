@@ -45,6 +45,13 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
      * @var string
      */
     protected $apiKey = 'sample-api-key';
+    
+    /**
+     * The service domain URI.
+     * 
+     * @var string
+     */
+    protected $serviceUrl = 'http://congress.api.sunlightfoundation.com';
 
     /**
      * Set up the fixtures.
@@ -77,8 +84,34 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
     {
         $this->stub->expects($this->any())
                    ->method('getServiceUrl')
-                   ->will($this->returnValue($this->apiKey));
+                   ->will($this->returnValue($this->serviceUrl));
                 
-        $this->assertEquals($this->apiKey, $this->stub->getServiceUrl());
+        $this->assertEquals($this->serviceUrl, $this->stub->getServiceUrl());
+    }
+    
+    /**
+     * Test setting an API key.
+     */
+    public function testSetApiKey()
+    {
+        $apiKey = 'another-api-key';
+        
+        $this->stub->expects($this->any())
+                   ->method('setApiKey')
+                   ->will($this->returnArgument(0));
+        
+        $this->assertEquals($apiKey, $this->stub->setApiKey($apiKey));
+    }
+    
+    /**
+     * Test getting an API key.
+     */
+    public function testGetApiKey()
+    {
+        $this->stub->expects($this->any())
+                   ->method('getApiKey')
+                   ->will($this->returnValue($this->apiKey));
+        
+        $this->assertEquals($this->apiKey, $this->stub->getApiKey());
     }
 }
