@@ -90,7 +90,7 @@ class CurlHttpAdapter implements HttpAdapterInterface
         $info = $this->proxy->getInfo(CURLINFO_HTTP_CODE);
         $this->proxy->close();
         
-        if ($info === false && $info != 200) {
+        if ($info != 200) {
             throw new HttpException('HTTP code: ' . $info);
         }
         
