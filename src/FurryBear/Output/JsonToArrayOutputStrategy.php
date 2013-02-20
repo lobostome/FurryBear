@@ -12,7 +12,9 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\View;
+namespace FurryBear\Output;
+
+use FurryBear\Exception\InvalidJsonException;
 
 /**
  * Converts the json string returned from the service to an array.
@@ -23,7 +25,7 @@ namespace FurryBear\View;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     http://sunlightlabs.github.com/congress/
  */
-class JsonToArrayViewStrategy implements ViewStrategy
+class JsonToArrayOutputStrategy implements OutputStrategy
 {
     /**
      * Convert the json data to an associative array.
@@ -31,9 +33,16 @@ class JsonToArrayViewStrategy implements ViewStrategy
      * @param string $data The json string returned from the service.
      * 
      * @return array
+     * @throws InvalidJsonException
      */
-    public function output($data)
+    public function convert($data)
     {
-        return json_decode($data, true);
+        $array = json_decode($data, true);
+        
+        if (json_last_error() == JSON_ERROR_NONE) {
+            return $array;
+        } else {
+            throw new InvalidJsonException('Invalid json');
+        }
     }
 }

@@ -12,10 +12,10 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\View;
+namespace FurryBear\Output;
 
 /**
- * An interface for the view strategy pattern.
+ * An interface for the output strategy pattern.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,7 +23,7 @@ namespace FurryBear\View;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     http://sunlightlabs.github.com/congress/
  */
-interface ViewStrategy
+interface OutputStrategy
 {
     /**
      * Convert the data to a specified format.
@@ -32,5 +32,5 @@ interface ViewStrategy
      * 
      * @return mixed
      */
-    public function output($data);
+    public function convert($data);
 }
