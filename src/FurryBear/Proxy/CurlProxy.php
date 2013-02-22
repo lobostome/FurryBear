@@ -63,13 +63,11 @@ class CurlProxy implements HttpRequest
     /**
      * {@inheritdoc}
      * 
-     * @param int $name The return key constant.
-     * 
-     * @return mixed
+     * @return array
      */
-    public function getInfo($name)
+    public function getInfo()
     {
-        return curl_getinfo($this->_handle, $name);
+        return curl_getinfo($this->_handle);
     }
 
     /**
@@ -83,5 +81,15 @@ class CurlProxy implements HttpRequest
     public function setOption($name, $value)
     {
         curl_setopt($this->_handle, $name, $value);
+    }
+    
+    /**
+     * {@inheritdoc}
+     * 
+     * @return string
+     */
+    public function getError()
+    {
+        return curl_errno($this->_handle) . ': ' . curl_error($this->_handle);
     }
 }

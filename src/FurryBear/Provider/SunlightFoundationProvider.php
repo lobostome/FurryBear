@@ -43,7 +43,7 @@ class SunlightFoundationProvider extends AbstractProvider
      * Construct the provider and bind to a HTTP adapter.
      * 
      * @param \FurryBear\HttpAdapter\HttpAdapterInterface $adapter The HTTP adapter
-     * @param string $apiKey  The service API key.
+     * @param string                                      $apiKey  The service API key.
      */
     public function __construct(HttpAdapterInterface $adapter, $apiKey)
     {

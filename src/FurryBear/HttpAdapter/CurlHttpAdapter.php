@@ -13,7 +13,7 @@
  */
 namespace FurryBear\HttpAdapter;
 
-use FurryBear\Exception\HttpException,
+use FurryBear\Exception\NoResultException,
     FurryBear\Proxy\CurlProxy;
 
 /**
@@ -87,15 +87,11 @@ class CurlHttpAdapter implements HttpAdapterInterface
         }
 
         $content = $this->proxy->execute();
-        $info = $this->proxy->getInfo(CURLINFO_HTTP_CODE);
+        $this->proxy->getInfo();
         $this->proxy->close();
         
-        if ($info != 200) {
-            throw new HttpException('HTTP code: ' . $info);
-        }
-        
         if ($content === false) {
-            $content = null;
+            throw new NoResultException('Failure! ' . $this->proxy->getError() . '; Curl Info: ' . json_encode($this->proxy->getInfo()));
         }
         
         return $content;

@@ -24,20 +24,9 @@ namespace FurryBear\Tests\HttpAdapter;
  * @link     https://github.com/lobostome/FurryBear
  */
 class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
-{
+{   
     /**
-     * Test for invalid http exception.
-     * 
-     * @expectedException        \FurryBear\Exception\HttpException
-     * @expectedExceptionMessage HTTP code: 404
-     */
-    public function testHttpException()
-    {
-        throw new \FurryBear\Exception\HttpException('HTTP code: 404');
-    }
-
-    /**
-     * Test curl return with a stub.
+     * Test curl return content.
      */
     public function testGetContent()
     {
@@ -50,11 +39,33 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         
         $curlAdapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
         $curlAdapter->setHeaders($headers);
+
+        $this->assertNull($curlAdapter->getContent('http://example.com'));
+    }
+    
+    /**
+     * Test curl return an exception.
+     */
+    public function testGetContentException()
+    {
+        // Things to do
+        // 1. Set $this->proxy == null
+        // 2. make $this->proxy->execute() == false
+        // 3. Handle exception
+        
+        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+                          ->disableOriginalConstructor()
+                          ->getMock();
+        $curlProxy->expects($this->any())
+                  ->method('execute')
+                  ->will($this->returnValue(false));
+        $curlAdapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
+        
         try {
             $curlAdapter->getContent('http://example.com');
-        } catch (\FurryBear\Exception\HttpException $e) {
-            $this->setExpectedException('\FurryBear\Exception\HttpException');
-            throw new \FurryBear\Exception\HttpException();
+        } catch (\FurryBear\Exception\NoResultException $e) {
+            $this->setExpectedException('\FurryBear\Exception\NoResultException');
+            throw new \FurryBear\Exception\NoResultException();
         }
     }
     
