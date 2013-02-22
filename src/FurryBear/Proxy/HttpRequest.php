@@ -40,11 +40,9 @@ interface HttpRequest
     /**
      * Get information regarding a specific transfer.
      * 
-     * @param int $name The return key constant.
-     * 
-     * @return mixed
+     * @return array
      */
-    public function getInfo($name);
+    public function getInfo();
     
     /**
      * Set an option for a connection transfer.
@@ -55,4 +53,11 @@ interface HttpRequest
      * @return void
      */
     public function setOption($name, $value);
+    
+    /**
+     * Return a string containing the last error for the current session
+     * 
+     * @return string
+     */
+    public function getError();
 }

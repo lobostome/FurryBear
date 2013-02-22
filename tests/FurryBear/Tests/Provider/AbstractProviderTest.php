@@ -91,6 +91,6 @@ class AbstractProviderTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($this->adapter);
         $this->assertInstanceOf('\FurryBear\HttpAdapter\HttpAdapterInterface', $this->adapter);
         $this->assertObjectHasAttribute('adapter', $this->stub);
-        $this->assertSame($this->adapter, $this->stub->getAdapter($this->adapter));
+        $this->assertSame($this->adapter, $this->stub->getAdapter());
     }
 }

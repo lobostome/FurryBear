@@ -33,11 +33,11 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
     protected $adapter;
     
     /**
-     * An AbstractProvider stub.
+     * A SunlightFoundationProvider reference.
      * 
      * @var \FurryBear\Provider\SunlightFoundationProvider 
      */
-    protected $stub;
+    protected $provider;
     
     /**
      * A service API key.
@@ -63,9 +63,7 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
                           ->getMock();
         $this->adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
         
-        $this->stub = $this->getMockBuilder('\FurryBear\Provider\SunlightFoundationProvider')
-                           ->setConstructorArgs(array($this->adapter, $this->apiKey))
-                           ->getMock();
+        $this->provider = new \FurryBear\Provider\SunlightFoundationProvider($this->adapter, $this->apiKey);
     }
     
     /**
@@ -74,21 +72,17 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         unset($this->adapter);
-        unset($this->stub);
+        unset($this->provider);
     }
     
     /**
      * Test getting the domain URL.
      */
     public function testGetServiceUrl()
-    {
-        $this->stub->expects($this->any())
-                   ->method('getServiceUrl')
-                   ->will($this->returnValue($this->serviceUrl));
-        
+    {   
         $this->assertNotEmpty($this->serviceUrl);
-        $this->assertNotEmpty($this->stub->getServiceUrl());
-        $this->assertEquals($this->serviceUrl, $this->stub->getServiceUrl());
+        $this->assertNotEmpty($this->provider->getServiceUrl());
+        $this->assertEquals($this->serviceUrl, $this->provider->getServiceUrl());
     }
     
     /**
@@ -97,29 +91,46 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
     public function testSetApiKey()
     {
         $apiKey = 'another-api-key';
+        $this->provider->setApiKey($apiKey);
         
-        $this->stub->expects($this->any())
-                   ->method('setApiKey')
-                   ->will($this->returnArgument(0));
-        
-        $this->assertNotEmpty($this->stub->setApiKey($apiKey));
-        $this->assertInternalType('string', $this->stub->setApiKey($apiKey));
-        $this->assertObjectHasAttribute('apiKey', $this->stub);
-        $this->assertEquals($apiKey, $this->stub->setApiKey($apiKey));
+        $this->assertNotEmpty($this->provider->getApiKey());
+        $this->assertInternalType('string', $this->provider->getApiKey());
+        $this->assertObjectHasAttribute('apiKey', $this->provider);
+        $this->assertEquals($apiKey, $this->provider->getApiKey());
     }
     
     /**
      * Test getting an API key.
      */
     public function testGetApiKey()
+    {   
+        $this->assertNotEmpty($this->provider->getApiKey());
+        $this->assertInternalType('string', $this->provider->getApiKey());
+        $this->assertObjectHasAttribute('apiKey', $this->provider);
+        $this->assertEquals($this->apiKey, $this->provider->getApiKey());
+    }
+    
+    /**
+     * Test setting an adapter from the concrete provider.
+     */
+    public function testSetAdapter()
     {
-        $this->stub->expects($this->any())
-                   ->method('getApiKey')
-                   ->will($this->returnValue($this->apiKey));
+        $this->provider->setAdapter($this->adapter);
         
-        $this->assertNotEmpty($this->stub->getApiKey());
-        $this->assertInternalType('string', $this->stub->getApiKey());
-        $this->assertObjectHasAttribute('apiKey', $this->stub);
-        $this->assertEquals($this->apiKey, $this->stub->getApiKey());
+        $this->assertNotNull($this->adapter);
+        $this->assertInstanceOf('\FurryBear\HttpAdapter\HttpAdapterInterface', $this->adapter);
+        $this->assertObjectHasAttribute('adapter', $this->provider);
+        $this->assertSame($this->adapter, $this->provider->getAdapter());
+    }
+    
+    /**
+     * Test getting an adapter instance from a concrete provider.
+     */
+    public function testGetAdapter()
+    {
+        $this->assertNotNull($this->adapter);
+        $this->assertInstanceOf('\FurryBear\HttpAdapter\HttpAdapterInterface', $this->adapter);
+        $this->assertObjectHasAttribute('adapter', $this->provider);
+        $this->assertSame($this->adapter, $this->provider->getAdapter($this->adapter));
     }
 }

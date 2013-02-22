@@ -66,6 +66,29 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         $this->assertObjectHasAttribute('provider', $this->furryBear);
         $this->assertAttributeSame($provider, 'provider', $this->furryBear);
     }
+    
+    /**
+     * Test getting a concrete provider.
+     */
+    public function testGetProvider()
+    {
+        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+                          ->disableOriginalConstructor()
+                          ->getMock();
+        $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
+        
+        $provider = $this->getMockBuilder('\FurryBear\Provider\AbstractProvider')
+                         ->setConstructorArgs(array($adapter))
+                         ->getMock();
+        
+        $this->furryBear->registerProvider($provider);
+        
+        $this->assertNotNull($provider);
+        $this->assertInstanceOf('\FurryBear\Provider\AbstractProvider', $provider);
+        $this->assertObjectHasAttribute('provider', $this->furryBear);
+        $this->assertAttributeSame($this->furryBear->getProvider(), 'provider', $this->furryBear);
+    }
+    
     /**
      * Test setting an output format.
      */
@@ -78,6 +101,20 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\FurryBear\Output\JsonToObjectOutputStrategy', $output);
         $this->assertObjectHasAttribute('output', $this->furryBear);
         $this->assertAttributeSame($output, 'output', $this->furryBear);
+    }
+    
+    /**
+     * Test getting the output format.
+     */
+    public function testGetOutput()
+    {
+        $output = new \FurryBear\Output\JsonToObjectOutputStrategy();
+        $this->furryBear->registerOutput($output);
+        
+        $this->assertNotNull($output);
+        $this->assertInstanceOf('\FurryBear\Output\JsonToObjectOutputStrategy', $output);
+        $this->assertObjectHasAttribute('output', $this->furryBear);
+        $this->assertAttributeSame($this->furryBear->getOutput(), 'output', $this->furryBear);
     }
     
     /**

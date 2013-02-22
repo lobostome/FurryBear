@@ -61,6 +61,16 @@ class FurryBear
     }
     
     /**
+     * Get the concrete API provider.
+     * 
+     * @return \FurryBear\Provider\AbstractProvider
+     */
+    public function getProvider()
+    {
+        return $this->provider;
+    }
+    
+    /**
      * Register an output format.
      * 
      * @param \FurryBear\Output\OutputStrategy $output The desired output conversion.
@@ -71,6 +81,16 @@ class FurryBear
     {
         $this->output = $output;
         return $this;
+    }
+    
+    /**
+     * Get the output format.
+     * 
+     * @return \FurryBear\Output\OutputStrategy
+     */
+    public function getOutput()
+    {
+        return $this->output;
     }
 
     /**

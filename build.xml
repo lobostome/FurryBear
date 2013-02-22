@@ -120,6 +120,8 @@
             <arg path="${basedir}/build/api" />
             <arg value="--ignore" />
             <arg path="${basedir}/tests/*" />
+            <arg value="--ignore" />
+            <arg path="${basedir}/examples/*" />
         </exec>
     </target>
 

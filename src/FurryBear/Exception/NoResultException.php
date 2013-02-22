@@ -14,7 +14,7 @@
 namespace FurryBear\Exception;
 
 /**
- * A custom exception thrown when a HTTP error code occurs.
+ * A custom exception thrown when result is a failure.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,7 +23,7 @@ namespace FurryBear\Exception;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-class HttpException extends \RuntimeException 
+class NoResultException extends \RuntimeException 
                     implements ExceptionInterface
 {
     
