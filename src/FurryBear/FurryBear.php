@@ -34,7 +34,7 @@ class FurryBear
     /**
      * The library version.
      */
-    const VERSION = '0.1.5';
+    const VERSION = '0.1.6';
     
     /**
      * The concrete API provider.
