@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<pmd version="1.4.0" timestamp="2013-02-24T03:03:33-06:00">
-  <file name="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Resource/ResourceFactory.php">
-    <violation beginline="42" endline="42" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
-      Avoid unused local variables such as '$key'.
-    </violation>
-  </file>
-</pmd>
