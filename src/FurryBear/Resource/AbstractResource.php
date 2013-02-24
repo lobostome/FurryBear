@@ -65,7 +65,12 @@ abstract class AbstractResource
      */
     public function get($params)
     {
-        return $this->furryBear->getProvider()->getAdapter()->getContent($this->buildQuery($params));
+        return $this->furryBear
+                    ->getOutput()
+                    ->convert($this->furryBear
+                                   ->getProvider()
+                                   ->getAdapter()
+                                   ->getContent($this->buildQuery($params)));
     }
     
     /**
