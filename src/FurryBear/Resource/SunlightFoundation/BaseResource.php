@@ -57,16 +57,4 @@ class BaseResource extends AbstractResource
                . '?' .
                http_build_query(array_merge($apiKey, $params));
     }
-    
-    /**
-     * {@inheritdoc}
-     * 
-     * @param array $params Search criteria.
-     * 
-     * @return mixed
-     */
-    public function get($params)
-    {
-        return $this->furryBear->getProvider()->getAdapter()->getContent($this->buildQuery($params));
-    }
 }

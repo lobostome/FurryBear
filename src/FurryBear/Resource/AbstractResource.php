@@ -63,7 +63,10 @@ abstract class AbstractResource
      * 
      * @return mixed
      */
-    abstract public function get($params);
+    public function get($params)
+    {
+        return $this->furryBear->getProvider()->getAdapter()->getContent($this->buildQuery($params));
+    }
     
     /**
      * Gets the resource method URL.
