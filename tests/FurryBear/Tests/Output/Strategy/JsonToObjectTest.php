@@ -12,10 +12,10 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Tests\Output;
+namespace FurryBear\Tests\Output\Strategy;
 
 /**
- * Test for JsonToArrayOutputStrategy.
+ * Test for JsonToObject output strategy.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,30 +23,30 @@ namespace FurryBear\Tests\Output;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-class JsonToArrayOutputStrategyTest extends \PHPUnit_Framework_TestCase
+class JsonToObjectTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Test the json gets converted to an array.
+     * Test the json gets converted to an object.
      */
     public function testConvert()
     {
         $data = '{"in_office": true}';
         
-        $output = new \FurryBear\Output\JsonToArrayOutputStrategy();
-        $array = $output->convert($data);
+        $output = new \FurryBear\Output\Strategy\JsonToObject();
+        $obj = $output->convert($data);
         
-        $this->assertInternalType('array', $array);
-        $this->assertArrayHasKey('in_office', $array);
-        $this->assertTrue($array['in_office']);
+        $this->assertInternalType('object', $obj);
+        $this->assertObjectHasAttribute('in_office', $obj);
+        $this->assertTrue($obj->in_office);
     }
     
     /**
      * Test the invalid json exception.
      */
-    public function testInvalidJsonConvert()
+    public function testInvalidJsonOutput()
     {
         $data = '"in_office": true}';
-        $output = new \FurryBear\Output\JsonToArrayOutputStrategy();
+        $output = new \FurryBear\Output\Strategy\JsonToObject();
         
         try {
             $output->convert($data);
