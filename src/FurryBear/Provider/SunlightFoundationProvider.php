@@ -42,7 +42,7 @@ class SunlightFoundationProvider extends AbstractProvider
      * 
      * @var string
      */
-    protected $apiKey;
+    protected $apiKey = '';
     
     /**
      * Construct the provider and bind to a HTTP adapter.
