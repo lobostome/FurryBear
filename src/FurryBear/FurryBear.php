@@ -17,7 +17,8 @@ namespace FurryBear;
 use FurryBear\Provider\AbstractProvider,
     FurryBear\Output\OutputStrategy,
     FurryBear\Resource\ResourceFactory,
-    FurryBear\Exception\NoProviderException;
+    FurryBear\Exception\NoProviderException,
+    FurryBear\Exception\NoOutputException;
 
 /**
  * The main class that glues it all together.
@@ -123,7 +124,7 @@ class FurryBear
             throw new NoOutputException('The output is not specified.');
         }
         if (!array_key_exists($name, $this->data)) {
-            $this->data[$name] = ResourceFactory::create($this->provider, $name);
+            $this->data[$name] = ResourceFactory::create($this, $name);
         }
         
         return $this->data[$name];

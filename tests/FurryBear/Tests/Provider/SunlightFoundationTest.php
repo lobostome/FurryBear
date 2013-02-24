@@ -52,13 +52,20 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
      * @var string
      */
     protected $serviceUrl = 'http://congress.api.sunlightfoundation.com';
+    
+    /**
+     * The resource directory.
+     * 
+     * @var type 
+     */
+    protected $resourceDir = 'SunlightFoundation';
 
     /**
      * Set up the fixtures.
      */
     protected function setUp()
     {
-        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
         $this->adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
@@ -118,7 +125,7 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
         $this->provider->setAdapter($this->adapter);
         
         $this->assertNotNull($this->adapter);
-        $this->assertInstanceOf('\FurryBear\HttpAdapter\HttpAdapterInterface', $this->adapter);
+        $this->assertInstanceOf('\\FurryBear\\HttpAdapter\\HttpAdapterInterface', $this->adapter);
         $this->assertObjectHasAttribute('adapter', $this->provider);
         $this->assertSame($this->adapter, $this->provider->getAdapter());
     }
@@ -129,8 +136,18 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
     public function testGetAdapter()
     {
         $this->assertNotNull($this->adapter);
-        $this->assertInstanceOf('\FurryBear\HttpAdapter\HttpAdapterInterface', $this->adapter);
+        $this->assertInstanceOf('\\FurryBear\\HttpAdapter\\HttpAdapterInterface', $this->adapter);
         $this->assertObjectHasAttribute('adapter', $this->provider);
         $this->assertSame($this->adapter, $this->provider->getAdapter($this->adapter));
+    }
+    
+    /**
+     * Test getting the provider resource directory.
+     */
+    public function testGetResourceDir()
+    {   
+        $this->assertNotEmpty($this->resourceDir);
+        $this->assertNotEmpty($this->provider->getDirectory());
+        $this->assertEquals($this->resourceDir, $this->provider->getDirectory());
     }
 }

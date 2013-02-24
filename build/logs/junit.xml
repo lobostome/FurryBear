@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="FurryBear" tests="34" assertions="118" failures="0" errors="0" time="0.228041">
+    <testsuite name="FurryBear\Tests\FurryBearTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/FurryBearTest.php" namespace="FurryBear\Tests" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="8" assertions="39" failures="0" errors="0" time="0.079450">
+      <testcase name="testRegisterProvider" class="FurryBear\Tests\FurryBearTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/FurryBearTest.php" line="83" assertions="10" time="0.041864"/>
+      <testcase name="testGetProvider" class="FurryBear\Tests\FurryBearTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/FurryBearTest.php" line="119" assertions="4" time="0.004662"/>
+      <testcase name="testRegisterOutput" class="FurryBear\Tests\FurryBearTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/FurryBearTest.php" line="134" assertions="4" time="0.002141"/>
+      <testcase name="testGetOutput" class="FurryBear\Tests\FurryBearTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/FurryBearTest.php" line="148" assertions="4" time="0.002288"/>
+      <testcase name="testGetVersion" class="FurryBear\Tests\FurryBearTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/FurryBearTest.php" line="162" assertions="1" time="0.010372"/>
+      <testcase name="testGetNoProviderException" class="FurryBear\Tests\FurryBearTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/FurryBearTest.php" line="170" assertions="1" time="0.004038"/>
+      <testcase name="testGetNoOutputException" class="FurryBear\Tests\FurryBearTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/FurryBearTest.php" line="179" assertions="1" time="0.004150"/>
+      <testcase name="testGet" class="FurryBear\Tests\FurryBearTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/FurryBearTest.php" line="192" assertions="14" time="0.009935"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\HttpAdapter\CurlHttpAdapterTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/HttpAdapter/CurlHttpAdapterTest.php" namespace="FurryBear\Tests\HttpAdapter" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="4" assertions="11" failures="0" errors="0" time="0.035393">
+      <testcase name="testGetContent" class="FurryBear\Tests\HttpAdapter\CurlHttpAdapterTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/HttpAdapter/CurlHttpAdapterTest.php" line="31" assertions="1" time="0.003795"/>
+      <testcase name="testGetContentException" class="FurryBear\Tests\HttpAdapter\CurlHttpAdapterTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/HttpAdapter/CurlHttpAdapterTest.php" line="49" assertions="2" time="0.023217"/>
+      <testcase name="testSetHeaders" class="FurryBear\Tests\HttpAdapter\CurlHttpAdapterTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/HttpAdapter/CurlHttpAdapterTest.php" line="75" assertions="4" time="0.005198"/>
+      <testcase name="testSetUserAgent" class="FurryBear\Tests\HttpAdapter\CurlHttpAdapterTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/HttpAdapter/CurlHttpAdapterTest.php" line="94" assertions="4" time="0.003183"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Output\JsonToArrayOutputStrategyTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Output/JsonToArrayOutputStrategyTest.php" namespace="FurryBear\Tests\Output" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="2" assertions="5" failures="0" errors="0" time="0.006157">
+      <testcase name="testConvert" class="FurryBear\Tests\Output\JsonToArrayOutputStrategyTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Output/JsonToArrayOutputStrategyTest.php" line="31" assertions="3" time="0.003024"/>
+      <testcase name="testInvalidJsonConvert" class="FurryBear\Tests\Output\JsonToArrayOutputStrategyTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Output/JsonToArrayOutputStrategyTest.php" line="46" assertions="2" time="0.003133"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Output\JsonToObjectOutputStrategyTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Output/JsonToObjectViewStrategyTest.php" namespace="FurryBear\Tests\Output" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="2" assertions="5" failures="0" errors="0" time="0.004194">
+      <testcase name="testConvert" class="FurryBear\Tests\Output\JsonToObjectOutputStrategyTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Output/JsonToObjectViewStrategyTest.php" line="31" assertions="3" time="0.002199"/>
+      <testcase name="testInvalidJsonOutput" class="FurryBear\Tests\Output\JsonToObjectOutputStrategyTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Output/JsonToObjectViewStrategyTest.php" line="46" assertions="2" time="0.001995"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Provider\AbstractProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/AbstractProviderTest.php" namespace="FurryBear\Tests\Provider" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="2" assertions="10" failures="0" errors="0" time="0.012465">
+      <testcase name="testSetAdapter" class="FurryBear\Tests\Provider\AbstractProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/AbstractProviderTest.php" line="70" assertions="5" time="0.006511"/>
+      <testcase name="testGetAdapter" class="FurryBear\Tests\Provider\AbstractProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/AbstractProviderTest.php" line="85" assertions="5" time="0.005954"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Provider\SunlightFoundationProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/SunlightFoundationTest.php" namespace="FurryBear\Tests\Provider" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="6" assertions="22" failures="0" errors="0" time="0.021487">
+      <testcase name="testGetServiceUrl" class="FurryBear\Tests\Provider\SunlightFoundationProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/SunlightFoundationTest.php" line="88" assertions="3" time="0.003781"/>
+      <testcase name="testSetApiKey" class="FurryBear\Tests\Provider\SunlightFoundationProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/SunlightFoundationTest.php" line="98" assertions="4" time="0.003857"/>
+      <testcase name="testGetApiKey" class="FurryBear\Tests\Provider\SunlightFoundationProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/SunlightFoundationTest.php" line="112" assertions="4" time="0.003800"/>
+      <testcase name="testSetAdapter" class="FurryBear\Tests\Provider\SunlightFoundationProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/SunlightFoundationTest.php" line="123" assertions="4" time="0.003201"/>
+      <testcase name="testGetAdapter" class="FurryBear\Tests\Provider\SunlightFoundationProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/SunlightFoundationTest.php" line="136" assertions="4" time="0.003143"/>
+      <testcase name="testGetResourceDir" class="FurryBear\Tests\Provider\SunlightFoundationProviderTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Provider/SunlightFoundationTest.php" line="147" assertions="3" time="0.003705"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Proxy\CurlProxyTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Proxy/CurlProxyTest.php" namespace="FurryBear\Tests\Proxy" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="1" assertions="5" failures="0" errors="0" time="0.023732">
+      <testcase name="testCurlWrapperMethods" class="FurryBear\Tests\Proxy\CurlProxyTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Proxy/CurlProxyTest.php" line="32" assertions="5" time="0.023732"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Resource\AbstractResourceTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/AbstractResourceTest.php" namespace="FurryBear\Tests\Resource" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="3" assertions="8" failures="0" errors="0" time="0.019284">
+      <testcase name="testGetResourceMethod" class="FurryBear\Tests\Resource\AbstractResourceTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/AbstractResourceTest.php" line="82" assertions="5" time="0.008507"/>
+      <testcase name="testSetResourceMethod" class="FurryBear\Tests\Resource\AbstractResourceTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/AbstractResourceTest.php" line="110" assertions="2" time="0.004970"/>
+      <testcase name="testGet" class="FurryBear\Tests\Resource\AbstractResourceTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/AbstractResourceTest.php" line="127" assertions="1" time="0.005807"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Resource\ResourceFactoryTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/ResourceFactoryTest.php" namespace="FurryBear\Tests\Resource" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="1" assertions="2" failures="0" errors="0" time="0.003388">
+      <testcase name="testCreate" class="FurryBear\Tests\Resource\ResourceFactoryTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/ResourceFactoryTest.php" line="69" assertions="2" time="0.003388"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Resource\SunlightFoundation\BaseResourceTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/SunlightFoundation/BaseResourceTest.php" namespace="FurryBear\Tests\Resource\SunlightFoundation" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="1" assertions="2" failures="0" errors="0" time="0.008169">
+      <testcase name="testBuildQuery" class="FurryBear\Tests\Resource\SunlightFoundation\BaseResourceTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/SunlightFoundation/BaseResourceTest.php" line="80" assertions="2" time="0.008169"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Resource\SunlightFoundation\BillsTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/SunlightFoundation/BillsTest.php" namespace="FurryBear\Tests\Resource\SunlightFoundation" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="1" assertions="3" failures="0" errors="0" time="0.004492">
+      <testcase name="testConstruct" class="FurryBear\Tests\Resource\SunlightFoundation\BillsTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/SunlightFoundation/BillsTest.php" line="78" assertions="3" time="0.004492"/>
+    </testsuite>
+    <testsuite name="FurryBear\Tests\Resource\SunlightFoundation\LegislatorsLocateTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/SunlightFoundation/LegislatorsLocateTest.php" namespace="FurryBear\Tests\Resource\SunlightFoundation" fullPackage="FurryBear" category="Congress_API" package="FurryBear" tests="1" assertions="3" failures="0" errors="0" time="0.005659">
+      <testcase name="testConstruct" class="FurryBear\Tests\Resource\SunlightFoundation\LegislatorsLocateTest" file="/Volumes/Projects/PHP/FurryBear/tests/FurryBear/Tests/Resource/SunlightFoundation/LegislatorsLocateTest.php" line="78" assertions="3" time="0.005659"/>
+    </testsuite>
+    <testsuite name="SplClassLoaderTest" file="/Volumes/Projects/PHP/FurryBear/tests/SplClassLoaderTest.php" fullPackage="FurryBear" package="FurryBear" tests="2" assertions="3" failures="0" errors="0" time="0.004171">
+      <testcase name="testClassLoad" class="SplClassLoaderTest" file="/Volumes/Projects/PHP/FurryBear/tests/SplClassLoaderTest.php" line="35" assertions="1" time="0.001348"/>
+      <testcase name="testRegister" class="SplClassLoaderTest" file="/Volumes/Projects/PHP/FurryBear/tests/SplClassLoaderTest.php" line="43" assertions="2" time="0.002823"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

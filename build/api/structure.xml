@@ -1,0 +1,1571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="">
+  <file path="SplClassLoader.php" hash="4d518c8de72813078bf04f01df59d908" package="Default">
+    <docblock line="3">
+      <description>This file is part of the FurryBear package.</description>
+      <long-description>&lt;p&gt;For the full copyright and
+license information, please view the LICENSE file that was distributed with
+this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <include line="82" type="Require" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="22" package="FurryBear">
+      <extends/>
+      <name>SplClassLoader</name>
+      <full_name>\SplClassLoader</full_name>
+      <docblock line="9">
+        <description>SplClassLoader implements the autoloader interoperability standard PSR-0.</description>
+        <long-description>&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$classLoader = new SplClassLoader(__DIR__ . '/../src');
+$classLoader-&gt;register();
+&lt;/code&gt;&lt;/pre&gt;</long-description>
+        <tag line="9" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="9" name="package" description="FurryBear"/>
+        <tag line="9" name="link" description="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md" link="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="29" namespace="global" package="Default">
+        <name>$_path</name>
+        <default>null</default>
+        <docblock line="24">
+          <description>The path to the library.</description>
+          <long-description></long-description>
+          <tag line="24" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="36" namespace="global" package="Default">
+        <name>$_namespaceSeparator</name>
+        <default>null</default>
+        <docblock line="31">
+          <description>The namespace separator string.</description>
+          <long-description></long-description>
+          <tag line="31" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="43" namespace="global" package="Default">
+        <name>$_fileExtension</name>
+        <default>null</default>
+        <docblock line="38">
+          <description>The extension of the php file.</description>
+          <long-description></long-description>
+          <tag line="38" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="53" package="FurryBear">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="45">
+          <description>Creates a new SplClassLoader that loads classes of the specified
+path, extension, and namespace.</description>
+          <long-description></long-description>
+          <tag line="45" name="param" description="The path to the library." type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="45" name="param" description="The namespace separator string." type="string" variable="$nsSeparator">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="45" name="param" description="The extension of the php file." type="string" variable="$ext">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="53">
+          <name>$path</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="53">
+          <name>$nsSeparator</name>
+          <default>'\\'</default>
+          <type/>
+        </argument>
+        <argument line="53">
+          <name>$ext</name>
+          <default>'.php'</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="62" package="FurryBear">
+        <name>register</name>
+        <full_name>register</full_name>
+        <docblock line="59">
+          <description>Installs this class loader on the SPL autoload stack.</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="FurryBear">
+        <name>furrybear_autoload</name>
+        <full_name>furrybear_autoload</full_name>
+        <docblock line="66">
+          <description>Loads the given class or interface.</description>
+          <long-description></long-description>
+          <tag line="66" name="param" description="The name of the class to load." type="string" variable="$className">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="71">
+          <name>$className</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Exception/ExceptionInterface.php" hash="e1116be52e2e0fe43040011bf572edc6" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <interface namespace="FurryBear\Exception" line="26" package="FurryBear">
+      <name>ExceptionInterface</name>
+      <full_name>\FurryBear\Exception\ExceptionInterface</full_name>
+      <docblock line="16">
+        <description>The interface for custom exceptions.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Congress_API"/>
+        <tag line="16" name="package" description="FurryBear"/>
+        <tag line="16" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="16" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="16" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+    </interface>
+  </file>
+  <file path="src/FurryBear/Exception/InvalidJsonException.php" hash="2acf81485d6203c0710263a0f3642cec" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Exception" line="26" package="FurryBear">
+      <extends>\RuntimeException</extends>
+      <implements>\FurryBear\Exception\ExceptionInterface</implements>
+      <name>InvalidJsonException</name>
+      <full_name>\FurryBear\Exception\InvalidJsonException</full_name>
+      <docblock line="16">
+        <description>A custom exception thrown when an invalid json string is encountered.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Congress_API"/>
+        <tag line="16" name="package" description="FurryBear"/>
+        <tag line="16" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="16" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="16" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/FurryBear/Exception/NoOutputException.php" hash="23444aa5d4240c5fa36854c7fcebf375" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Exception" line="26" package="FurryBear">
+      <extends>\RuntimeException</extends>
+      <implements>\FurryBear\Exception\ExceptionInterface</implements>
+      <name>NoOutputException</name>
+      <full_name>\FurryBear\Exception\NoOutputException</full_name>
+      <docblock line="16">
+        <description>A custom exception thrown when output is not specified.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Congress_API"/>
+        <tag line="16" name="package" description="FurryBear"/>
+        <tag line="16" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="16" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="16" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/FurryBear/Exception/NoProviderException.php" hash="101fe60c9822f4bef3857ddffb1f9929" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Exception" line="26" package="FurryBear">
+      <extends>\RuntimeException</extends>
+      <implements>\FurryBear\Exception\ExceptionInterface</implements>
+      <name>NoProviderException</name>
+      <full_name>\FurryBear\Exception\NoProviderException</full_name>
+      <docblock line="16">
+        <description>A custom exception thrown when provider is not specified.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Congress_API"/>
+        <tag line="16" name="package" description="FurryBear"/>
+        <tag line="16" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="16" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="16" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/FurryBear/Exception/NoResultException.php" hash="a4510aef0aee220047497b32f1b9f98b" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Exception" line="26" package="FurryBear">
+      <extends>\RuntimeException</extends>
+      <implements>\FurryBear\Exception\ExceptionInterface</implements>
+      <name>NoResultException</name>
+      <full_name>\FurryBear\Exception\NoResultException</full_name>
+      <docblock line="16">
+        <description>A custom exception thrown when result is a failure.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Congress_API"/>
+        <tag line="16" name="package" description="FurryBear"/>
+        <tag line="16" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="16" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="16" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/FurryBear/FurryBear.php" hash="624fdd3c930108a33b73bde000763bb8" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear" line="32" package="FurryBear">
+      <extends/>
+      <name>FurryBear</name>
+      <full_name>\FurryBear\FurryBear</full_name>
+      <docblock line="23">
+        <description>The main class that glues it all together.</description>
+        <long-description></long-description>
+        <tag line="23" name="category" description="Congress_API"/>
+        <tag line="23" name="package" description="FurryBear"/>
+        <tag line="23" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="23" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="23" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+      <constant namespace="FurryBear" line="37" package="FurryBear">
+        <name>VERSION</name>
+        <full_name>VERSION</full_name>
+        <value>'0.1.5'</value>
+        <docblock line="34">
+          <description>The library version.</description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="44" namespace="FurryBear" package="Default">
+        <name>$provider</name>
+        <default>null</default>
+        <docblock line="39">
+          <description>The concrete API provider.</description>
+          <long-description></long-description>
+          <tag line="39" name="var" description="" type="\FurryBear\Provider\AbstractProvider">
+            <type by_reference="false">\FurryBear\Provider\AbstractProvider</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="51" namespace="FurryBear" package="Default">
+        <name>$output</name>
+        <default>null</default>
+        <docblock line="46">
+          <description>Defines the format of the output.</description>
+          <long-description></long-description>
+          <tag line="46" name="var" description="" type="\FurryBear\Output\OutputStrategy">
+            <type by_reference="false">\FurryBear\Output\OutputStrategy</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="58" namespace="FurryBear" package="Default">
+        <name>$data</name>
+        <default>array()</default>
+        <docblock line="53">
+          <description>Overloaded resource name.</description>
+          <long-description></long-description>
+          <tag line="53" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear" line="67" package="FurryBear">
+        <name>registerProvider</name>
+        <full_name>registerProvider</full_name>
+        <docblock line="60">
+          <description>Register a concrete API provider.</description>
+          <long-description>&lt;p&gt;Clear all registered resources.&lt;/p&gt;</long-description>
+          <tag line="60" name="param" description="An API provider." type="\FurryBear\Provider\AbstractProvider" variable="$provider">
+            <type by_reference="false">\FurryBear\Provider\AbstractProvider</type>
+          </tag>
+          <tag line="60" name="return" description="" type="\FurryBear\FurryBear">
+            <type by_reference="false">\FurryBear\FurryBear</type>
+          </tag>
+        </docblock>
+        <argument line="67">
+          <name>$provider</name>
+          <default></default>
+          <type>\FurryBear\Provider\AbstractProvider</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear" line="83" package="FurryBear">
+        <name>getProvider</name>
+        <full_name>getProvider</full_name>
+        <docblock line="78">
+          <description>Get the concrete API provider.</description>
+          <long-description></long-description>
+          <tag line="78" name="return" description="" type="\FurryBear\Provider\AbstractProvider">
+            <type by_reference="false">\FurryBear\Provider\AbstractProvider</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear" line="95" package="FurryBear">
+        <name>registerOutput</name>
+        <full_name>registerOutput</full_name>
+        <docblock line="88">
+          <description>Register an output format.</description>
+          <long-description></long-description>
+          <tag line="88" name="param" description="The desired output conversion." type="\FurryBear\Output\OutputStrategy" variable="$output">
+            <type by_reference="false">\FurryBear\Output\OutputStrategy</type>
+          </tag>
+          <tag line="88" name="return" description="" type="\FurryBear\FurryBear">
+            <type by_reference="false">\FurryBear\FurryBear</type>
+          </tag>
+        </docblock>
+        <argument line="95">
+          <name>$output</name>
+          <default></default>
+          <type>\FurryBear\Output\OutputStrategy</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear" line="106" package="FurryBear">
+        <name>getOutput</name>
+        <full_name>getOutput</full_name>
+        <docblock line="101">
+          <description>Get the output format.</description>
+          <long-description></long-description>
+          <tag line="101" name="return" description="" type="\FurryBear\Output\OutputStrategy">
+            <type by_reference="false">\FurryBear\Output\OutputStrategy</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear" line="119" package="FurryBear">
+        <name>__get</name>
+        <full_name>__get</full_name>
+        <docblock line="111">
+          <description>Gets a reference to a resource.</description>
+          <long-description>&lt;p&gt;If the resource is not already
+instantiated, then it creates it.&lt;/p&gt;</long-description>
+          <tag line="111" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="111" name="return" description="" type="\FurryBear\Resource\AbstractResource">
+            <type by_reference="false">\FurryBear\Resource\AbstractResource</type>
+          </tag>
+        </docblock>
+        <argument line="119">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="FurryBear" line="138" package="FurryBear">
+        <name>getVersion</name>
+        <full_name>getVersion</full_name>
+        <docblock line="133">
+          <description>Get library version.</description>
+          <long-description></long-description>
+          <tag line="133" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/HttpAdapter/CurlHttpAdapter.php" hash="3e810c241e5cc5a628595e193f07e818" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\HttpAdapter" line="29" package="FurryBear">
+      <extends/>
+      <implements>\FurryBear\HttpAdapter\HttpAdapterInterface</implements>
+      <name>CurlHttpAdapter</name>
+      <full_name>\FurryBear\HttpAdapter\CurlHttpAdapter</full_name>
+      <docblock line="19">
+        <description>A HTTP adapter based on curl.</description>
+        <long-description></long-description>
+        <tag line="19" name="category" description="Congress_API"/>
+        <tag line="19" name="package" description="FurryBear"/>
+        <tag line="19" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="19" name="link" description="http://curl.haxx.se/" link="http://curl.haxx.se/"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="37" namespace="FurryBear\HttpAdapter" package="Default">
+        <name>$userAgent</name>
+        <default>'FurryBear via cURL'</default>
+        <docblock line="31">
+          <description>The contents of the &lt;code&gt;"User-Agent: "&lt;/code&gt; header to be used in a
+HTTP request.</description>
+          <long-description></long-description>
+          <tag line="31" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="47" namespace="FurryBear\HttpAdapter" package="Default">
+        <name>$headers</name>
+        <default>array()</default>
+        <docblock line="39">
+          <description>An array of HTTP header fields to set, in the format:
+&lt;code&gt;
+array('Content-type: text/plain', 'Content-length: 100')
+&lt;/code&gt;</description>
+          <long-description></long-description>
+          <tag line="39" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="54" namespace="FurryBear\HttpAdapter" package="Default">
+        <name>$proxy</name>
+        <default>null</default>
+        <docblock line="49">
+          <description>A reference to a cURL proxy object.</description>
+          <long-description></long-description>
+          <tag line="49" name="var" description="" type="\FurryBear\Proxy\CurlProxy">
+            <type by_reference="false">\FurryBear\Proxy\CurlProxy</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\HttpAdapter" line="61" package="FurryBear">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="56">
+          <description>Construct with an optional cURL object.</description>
+          <long-description></long-description>
+          <tag line="56" name="param" description="A CurlProxy object." type="\FurryBear\Proxy\CurlProxy" variable="$proxy">
+            <type by_reference="false">\FurryBear\Proxy\CurlProxy</type>
+          </tag>
+        </docblock>
+        <argument line="61">
+          <name>$proxy</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\HttpAdapter" line="75" package="FurryBear">
+        <name>getContent</name>
+        <full_name>getContent</full_name>
+        <docblock line="68">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="68" name="param" description="A URL of the resource." type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="68" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="75">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\HttpAdapter" line="107" package="FurryBear">
+        <name>setHeaders</name>
+        <full_name>setHeaders</full_name>
+        <docblock line="100">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="100" name="param" description="An array of HTTP headers." type="array" variable="$headers">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="100" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="107">
+          <name>$headers</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\HttpAdapter" line="119" package="FurryBear">
+        <name>setUserAgent</name>
+        <full_name>setUserAgent</full_name>
+        <docblock line="112">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="112" name="param" description="A custom user agent." type="string" variable="$userAgent">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="112" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="119">
+          <name>$userAgent</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/HttpAdapter/HttpAdapterInterface.php" hash="1e6e4471516237af6faaf343fa6f8f28" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <interface namespace="FurryBear\HttpAdapter" line="25" package="FurryBear">
+      <name>HttpAdapterInterface</name>
+      <full_name>\FurryBear\HttpAdapter\HttpAdapterInterface</full_name>
+      <docblock line="16">
+        <description>The http connection interface for the adapter pattern.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Congress_API"/>
+        <tag line="16" name="package" description="FurryBear"/>
+        <tag line="16" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="16" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="16" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\HttpAdapter" line="34" package="FurryBear">
+        <name>getContent</name>
+        <full_name>getContent</full_name>
+        <docblock line="27">
+          <description>Fetches the content from a URL.</description>
+          <long-description></long-description>
+          <tag line="27" name="param" description="The target URI location." type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="27" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\HttpAdapter" line="43" package="FurryBear">
+        <name>setUserAgent</name>
+        <full_name>setUserAgent</full_name>
+        <docblock line="36">
+          <description>Sets the contents of the "User-Agent: " header.</description>
+          <long-description></long-description>
+          <tag line="36" name="param" description="A custom user agent." type="string" variable="$userAgent">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="36" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$userAgent</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\HttpAdapter" line="52" package="FurryBear">
+        <name>setHeaders</name>
+        <full_name>setHeaders</full_name>
+        <docblock line="45">
+          <description>Sets an array of HTTP header fields.</description>
+          <long-description></long-description>
+          <tag line="45" name="param" description="An array of custom HTTP headers." type="array" variable="$headers">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="45" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="52">
+          <name>$headers</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="src/FurryBear/Output/JsonToArrayOutputStrategy.php" hash="67856d98134d4aeaaf91348324c572b4" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Output" line="28" package="FurryBear">
+      <extends/>
+      <implements>\FurryBear\Output\OutputStrategy</implements>
+      <name>JsonToArrayOutputStrategy</name>
+      <full_name>\FurryBear\Output\JsonToArrayOutputStrategy</full_name>
+      <docblock line="19">
+        <description>Converts the json string returned from the service to an array.</description>
+        <long-description></long-description>
+        <tag line="19" name="category" description="Congress_API"/>
+        <tag line="19" name="package" description="FurryBear"/>
+        <tag line="19" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="19" name="link" description="http://sunlightlabs.github.com/congress/" link="http://sunlightlabs.github.com/congress/"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Output" line="38" package="FurryBear">
+        <name>convert</name>
+        <full_name>convert</full_name>
+        <docblock line="30">
+          <description>Convert the json data to an associative array.</description>
+          <long-description></long-description>
+          <tag line="30" name="param" description="The json string returned from the service." type="string" variable="$data">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="30" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="30" name="throws" description="" type="\FurryBear\Exception\InvalidJsonException">
+            <type by_reference="false">\FurryBear\Exception\InvalidJsonException</type>
+          </tag>
+        </docblock>
+        <argument line="38">
+          <name>$data</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Output/JsonToObjectOutputStrategy.php" hash="271654d444bf11b6fca79326df2bca56" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Output" line="28" package="FurryBear">
+      <extends/>
+      <implements>\FurryBear\Output\OutputStrategy</implements>
+      <name>JsonToObjectOutputStrategy</name>
+      <full_name>\FurryBear\Output\JsonToObjectOutputStrategy</full_name>
+      <docblock line="19">
+        <description>Converts the json string returned from the service to an object.</description>
+        <long-description></long-description>
+        <tag line="19" name="category" description="Congress_API"/>
+        <tag line="19" name="package" description="FurryBear"/>
+        <tag line="19" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="19" name="link" description="http://sunlightlabs.github.com/congress/" link="http://sunlightlabs.github.com/congress/"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Output" line="38" package="FurryBear">
+        <name>convert</name>
+        <full_name>convert</full_name>
+        <docblock line="30">
+          <description>Convert the json data to an object.</description>
+          <long-description></long-description>
+          <tag line="30" name="param" description="The json string returned from the service." type="string" variable="$data">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="30" name="return" description="" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag line="30" name="throws" description="" type="\FurryBear\Exception\InvalidJsonException">
+            <type by_reference="false">\FurryBear\Exception\InvalidJsonException</type>
+          </tag>
+        </docblock>
+        <argument line="38">
+          <name>$data</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Output/OutputStrategy.php" hash="13bf7a9317a078427b0f387a7f51bfc8" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <interface namespace="FurryBear\Output" line="26" package="FurryBear">
+      <name>OutputStrategy</name>
+      <full_name>\FurryBear\Output\OutputStrategy</full_name>
+      <docblock line="17">
+        <description>An interface for the output strategy pattern.</description>
+        <long-description></long-description>
+        <tag line="17" name="category" description="Congress_API"/>
+        <tag line="17" name="package" description="FurryBear"/>
+        <tag line="17" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="17" name="link" description="http://sunlightlabs.github.com/congress/" link="http://sunlightlabs.github.com/congress/"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Output" line="35" package="FurryBear">
+        <name>convert</name>
+        <full_name>convert</full_name>
+        <docblock line="28">
+          <description>Convert the data to a specified format.</description>
+          <long-description></long-description>
+          <tag line="28" name="param" description="The data returned from the service." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="28" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="35">
+          <name>$data</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="src/FurryBear/Provider/AbstractProvider.php" hash="31b2a8a919bf4861439e2202e32c754d" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="true" namespace="FurryBear\Provider" line="27" package="FurryBear">
+      <extends/>
+      <name>AbstractProvider</name>
+      <full_name>\FurryBear\Provider\AbstractProvider</full_name>
+      <docblock line="18">
+        <description>An abstract provider class that sets up a basic provider.</description>
+        <long-description></long-description>
+        <tag line="18" name="category" description="Congress_API"/>
+        <tag line="18" name="package" description="FurryBear"/>
+        <tag line="18" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="18" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="18" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="34" namespace="FurryBear\Provider" package="Default">
+        <name>$adapter</name>
+        <default>null</default>
+        <docblock line="29">
+          <description>A reference to a concrete http adapter.</description>
+          <long-description></long-description>
+          <tag line="29" name="var" description="" type="\FurryBear\HttpAdapter\HttpAdapterInterface">
+            <type by_reference="false">\FurryBear\HttpAdapter\HttpAdapterInterface</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Provider" line="41" package="FurryBear">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="36">
+          <description>Set the default HTTP adapter for a provider.</description>
+          <long-description></long-description>
+          <tag line="36" name="param" description="An HTTP adapter." type="\FurryBear\HttpAdapter\HttpAdapterInterface" variable="$adapter">
+            <type by_reference="false">\FurryBear\HttpAdapter\HttpAdapterInterface</type>
+          </tag>
+        </docblock>
+        <argument line="41">
+          <name>$adapter</name>
+          <default></default>
+          <type>\FurryBear\HttpAdapter\HttpAdapterInterface</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Provider" line="53" package="FurryBear">
+        <name>setAdapter</name>
+        <full_name>setAdapter</full_name>
+        <docblock line="46">
+          <description>Set the default HTTP adapter for a provider.</description>
+          <long-description></long-description>
+          <tag line="46" name="param" description="An HTTP adapter." type="\FurryBear\HttpAdapter\HttpAdapterInterface" variable="$adapter">
+            <type by_reference="false">\FurryBear\HttpAdapter\HttpAdapterInterface</type>
+          </tag>
+          <tag line="46" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="53">
+          <name>$adapter</name>
+          <default></default>
+          <type>\FurryBear\HttpAdapter\HttpAdapterInterface</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Provider" line="63" package="FurryBear">
+        <name>getAdapter</name>
+        <full_name>getAdapter</full_name>
+        <docblock line="58">
+          <description>Retrieve the HTTP adapter.</description>
+          <long-description></long-description>
+          <tag line="58" name="return" description="" type="\FurryBear\HttpAdapter\HttpAdapterInterface">
+            <type by_reference="false">\FurryBear\HttpAdapter\HttpAdapterInterface</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="FurryBear\Provider" line="74" package="FurryBear">
+        <name>getDirectory</name>
+        <full_name>getDirectory</full_name>
+        <docblock line="68">
+          <description>Get the directory that stores the resources for a provider.</description>
+          <long-description>&lt;p&gt;Usually, this
+is based on the name of the provider.&lt;/p&gt;</long-description>
+          <tag line="68" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Provider/SunlightFoundationProvider.php" hash="cc67f4f8c3955a16b84abf1a5a3ceb01" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Provider" line="28" package="FurryBear">
+      <extends>\FurryBear\Provider\AbstractProvider</extends>
+      <name>SunlightFoundationProvider</name>
+      <full_name>\FurryBear\Provider\SunlightFoundationProvider</full_name>
+      <docblock line="19">
+        <description>A concrete provider based on Sunlight Foundation Congress API v3.</description>
+        <long-description></long-description>
+        <tag line="19" name="category" description="Congress_API"/>
+        <tag line="19" name="package" description="FurryBear"/>
+        <tag line="19" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="19" name="link" description="http://sunlightlabs.github.com/congress/" link="http://sunlightlabs.github.com/congress/"/>
+      </docblock>
+      <constant namespace="FurryBear\Provider" line="33" package="FurryBear">
+        <name>SERVICE_URL</name>
+        <full_name>SERVICE_URL</full_name>
+        <value>'http://congress.api.sunlightfoundation.com'</value>
+        <docblock line="30">
+          <description>The domain of the API.</description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="FurryBear\Provider" line="38" package="FurryBear">
+        <name>RESOURCE_DIR</name>
+        <full_name>RESOURCE_DIR</full_name>
+        <value>'SunlightFoundation'</value>
+        <docblock line="35">
+          <description>The resource directory.</description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="45" namespace="FurryBear\Provider" package="Default">
+        <name>$apiKey</name>
+        <default></default>
+        <docblock line="40">
+          <description>The Sunlight API key.</description>
+          <long-description></long-description>
+          <tag line="40" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Provider" line="53" package="FurryBear">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="47">
+          <description>Construct the provider and bind to a HTTP adapter.</description>
+          <long-description></long-description>
+          <tag line="47" name="param" description="The HTTP adapter" type="\FurryBear\HttpAdapter\HttpAdapterInterface" variable="$adapter">
+            <type by_reference="false">\FurryBear\HttpAdapter\HttpAdapterInterface</type>
+          </tag>
+          <tag line="47" name="param" description="The service API key." type="string" variable="$apiKey">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="53">
+          <name>$adapter</name>
+          <default></default>
+          <type>\FurryBear\HttpAdapter\HttpAdapterInterface</type>
+        </argument>
+        <argument line="53">
+          <name>$apiKey</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Provider" line="64" package="FurryBear">
+        <name>getServiceUrl</name>
+        <full_name>getServiceUrl</full_name>
+        <docblock line="59">
+          <description>Get the domain of the API.</description>
+          <long-description></long-description>
+          <tag line="59" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Provider" line="76" package="FurryBear">
+        <name>setApiKey</name>
+        <full_name>setApiKey</full_name>
+        <docblock line="69">
+          <description>Set the API key.</description>
+          <long-description></long-description>
+          <tag line="69" name="param" description="The service API key." type="string" variable="$apiKey">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="69" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="76">
+          <name>$apiKey</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Provider" line="86" package="FurryBear">
+        <name>getApiKey</name>
+        <full_name>getApiKey</full_name>
+        <docblock line="81">
+          <description>Get the API key.</description>
+          <long-description></long-description>
+          <tag line="81" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Provider" line="96" package="FurryBear">
+        <name>getDirectory</name>
+        <full_name>getDirectory</full_name>
+        <docblock line="91">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="91" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Proxy/CurlProxy.php" hash="c5c04d1a8b5916ab380992e93c744319" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Proxy" line="24" package="FurryBear">
+      <extends/>
+      <implements>\FurryBear\Proxy\HttpRequest</implements>
+      <name>CurlProxy</name>
+      <full_name>\FurryBear\Proxy\CurlProxy</full_name>
+      <docblock line="15">
+        <description>A proxy that provides a surrogate for curl.</description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Congress_API"/>
+        <tag line="15" name="package" description="FurryBear"/>
+        <tag line="15" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="15" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="15" name="link" description="http://curl.haxx.se/" link="http://curl.haxx.se/"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="31" namespace="FurryBear\Proxy" package="Default">
+        <name>$_handle</name>
+        <default>null</default>
+        <docblock line="26">
+          <description>A connection handle.</description>
+          <long-description></long-description>
+          <tag line="26" name="var" description="" type="resource">
+            <type by_reference="false">resource</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="38" package="FurryBear">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="33">
+          <description>Initialize a connection session.</description>
+          <long-description></long-description>
+          <tag line="33" name="param" description="The target URI location." type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="38">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="48" package="FurryBear">
+        <name>close</name>
+        <full_name>close</full_name>
+        <docblock line="43">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="43" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="58" package="FurryBear">
+        <name>execute</name>
+        <full_name>execute</full_name>
+        <docblock line="53">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="53" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="68" package="FurryBear">
+        <name>getInfo</name>
+        <full_name>getInfo</full_name>
+        <docblock line="63">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="63" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="81" package="FurryBear">
+        <name>setOption</name>
+        <full_name>setOption</full_name>
+        <docblock line="73">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="73" name="param" description="The CURLOPT_XXX option to set." type="int" variable="$name">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="73" name="param" description="The value to be set on option." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="73" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="81">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="81">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="91" package="FurryBear">
+        <name>getError</name>
+        <full_name>getError</full_name>
+        <docblock line="86">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="86" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Proxy/HttpRequest.php" hash="48164d39422bb06a887407857a6d8f8e" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <interface namespace="FurryBear\Proxy" line="24" package="FurryBear">
+      <name>HttpRequest</name>
+      <full_name>\FurryBear\Proxy\HttpRequest</full_name>
+      <docblock line="15">
+        <description>An interface for a general http request.</description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Congress_API"/>
+        <tag line="15" name="package" description="FurryBear"/>
+        <tag line="15" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="15" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="15" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="31" package="FurryBear">
+        <name>close</name>
+        <full_name>close</full_name>
+        <docblock line="26">
+          <description>Close a connection session.</description>
+          <long-description></long-description>
+          <tag line="26" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="38" package="FurryBear">
+        <name>execute</name>
+        <full_name>execute</full_name>
+        <docblock line="33">
+          <description>Perform a connection session.</description>
+          <long-description></long-description>
+          <tag line="33" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="45" package="FurryBear">
+        <name>getInfo</name>
+        <full_name>getInfo</full_name>
+        <docblock line="40">
+          <description>Get information regarding a specific transfer.</description>
+          <long-description></long-description>
+          <tag line="40" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="55" package="FurryBear">
+        <name>setOption</name>
+        <full_name>setOption</full_name>
+        <docblock line="47">
+          <description>Set an option for a connection transfer.</description>
+          <long-description></long-description>
+          <tag line="47" name="param" description="The CURLOPT_XXX option to set." type="int" variable="$name">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="47" name="param" description="The value to be set on option." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="47" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="55">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="55">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Proxy" line="62" package="FurryBear">
+        <name>getError</name>
+        <full_name>getError</full_name>
+        <docblock line="57">
+          <description>Return a string containing the last error for the current session</description>
+          <long-description></long-description>
+          <tag line="57" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </interface>
+  </file>
+  <file path="src/FurryBear/Resource/AbstractResource.php" hash="8643e9fb465de8e2bfc9aa79449c83c6" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="true" namespace="FurryBear\Resource" line="24" package="FurryBear">
+      <extends/>
+      <name>AbstractResource</name>
+      <full_name>\FurryBear\Resource\AbstractResource</full_name>
+      <docblock line="15">
+        <description>An abstract presentation of a resource.</description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Congress_API"/>
+        <tag line="15" name="package" description="FurryBear"/>
+        <tag line="15" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="15" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="15" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="31" namespace="FurryBear\Resource" package="Default">
+        <name>$furryBear</name>
+        <default></default>
+        <docblock line="26">
+          <description>A reference to the FurryBear object.</description>
+          <long-description></long-description>
+          <tag line="26" name="var" description="" type="\FurryBear\FurryBear">
+            <type by_reference="false">\FurryBear\FurryBear</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="38" namespace="FurryBear\Resource" package="Default">
+        <name>$resourceMethod</name>
+        <default></default>
+        <docblock line="33">
+          <description>The resource method URL.</description>
+          <long-description></long-description>
+          <tag line="33" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource" line="45" package="FurryBear">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="40">
+          <description>Construct a resource with a FurryBear instance.</description>
+          <long-description></long-description>
+          <tag line="40" name="param" description="A FurryBear instance." type="\FurryBear\FurryBear" variable="$furryBear">
+            <type by_reference="false">\FurryBear\FurryBear</type>
+          </tag>
+        </docblock>
+        <argument line="45">
+          <name>$furryBear</name>
+          <default></default>
+          <type>\FurryBear\FurryBear</type>
+        </argument>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="FurryBear\Resource" line="57" package="FurryBear">
+        <name>buildQuery</name>
+        <full_name>buildQuery</full_name>
+        <docblock line="50">
+          <description>Builds the entire query URL, including the request criteria.</description>
+          <long-description></long-description>
+          <tag line="50" name="param" description="The search criteria." type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="50" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="57">
+          <name>$params</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource" line="66" package="FurryBear">
+        <name>get</name>
+        <full_name>get</full_name>
+        <docblock line="59">
+          <description>Retrieves a result based on some criteria.</description>
+          <long-description></long-description>
+          <tag line="59" name="param" description="Search criteria." type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="59" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="66">
+          <name>$params</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="FurryBear\Resource" line="76" package="FurryBear">
+        <name>getResourceMethod</name>
+        <full_name>getResourceMethod</full_name>
+        <docblock line="71">
+          <description>Gets the resource method URL.</description>
+          <long-description></long-description>
+          <tag line="71" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="FurryBear\Resource" line="88" package="FurryBear">
+        <name>setResourceMethod</name>
+        <full_name>setResourceMethod</full_name>
+        <docblock line="81">
+          <description>Sets the resource method URL.</description>
+          <long-description></long-description>
+          <tag line="81" name="param" description="The resource method URL." type="string" variable="$resourceMethod">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="81" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="88">
+          <name>$resourceMethod</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Resource/ResourceFactory.php" hash="ee8e8e7538141057b36366b3e983840b" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Resource" line="24" package="FurryBear">
+      <extends/>
+      <name>ResourceFactory</name>
+      <full_name>\FurryBear\Resource\ResourceFactory</full_name>
+      <docblock line="15">
+        <description>A factory that aids creating resource objects.</description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Congress_API"/>
+        <tag line="15" name="package" description="FurryBear"/>
+        <tag line="15" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="15" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="15" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="FurryBear\Resource" line="39" package="FurryBear">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="26">
+          <description>Create a resource based on a provider and resource name.</description>
+          <long-description>&lt;p&gt;The rules to create a resource class name are:
+1. Explode by underscore.
+2. Capitalize each resulting array element.
+3. Join back together the array elements into a string.&lt;/p&gt;</long-description>
+          <tag line="26" name="param" description="A FurryBear reference." type="\FurryBear\FurryBear" variable="$furryBear">
+            <type by_reference="false">\FurryBear\FurryBear</type>
+          </tag>
+          <tag line="26" name="param" description="Resource name." type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="26" name="return" description="" type="\FurryBear\Resource\AbstractResource">
+            <type by_reference="false">\FurryBear\Resource\AbstractResource</type>
+          </tag>
+        </docblock>
+        <argument line="39">
+          <name>$furryBear</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="39">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Resource/SunlightFoundation/BaseResource.php" hash="60154520f717ff13f315f7a558989351" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="28" package="FurryBear">
+      <extends>\FurryBear\Resource\AbstractResource</extends>
+      <name>BaseResource</name>
+      <full_name>\FurryBear\Resource\SunlightFoundation\BaseResource</full_name>
+      <docblock line="19">
+        <description>A base presentation of SunlightFoundation resource.</description>
+        <long-description></long-description>
+        <tag line="19" name="category" description="Congress_API"/>
+        <tag line="19" name="package" description="FurryBear"/>
+        <tag line="19" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="19" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="35" package="FurryBear">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="30">
+          <description>Construct a resource with a FurryBear instance.</description>
+          <long-description></long-description>
+          <tag line="30" name="param" description="A FurryBear instance." type="\FurryBear\FurryBear" variable="$furryBear">
+            <type by_reference="false">\FurryBear\FurryBear</type>
+          </tag>
+        </docblock>
+        <argument line="35">
+          <name>$furryBear</name>
+          <default></default>
+          <type>\FurryBear\FurryBear</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="FurryBear\Resource\SunlightFoundation" line="47" package="FurryBear">
+        <name>buildQuery</name>
+        <full_name>buildQuery</full_name>
+        <docblock line="40">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+          <tag line="40" name="param" description="The search criteria." type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="40" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="47">
+          <name>$params</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Resource/SunlightFoundation/Bills.php" hash="d26d044462cdcedd37f686fe653f5470" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+      <name>Bills</name>
+      <full_name>\FurryBear\Resource\SunlightFoundation\Bills</full_name>
+      <docblock line="17">
+        <description>This class gives access to Sunlight Congress bills resource.</description>
+        <long-description></long-description>
+        <tag line="17" name="category" description="Congress_API"/>
+        <tag line="17" name="package" description="FurryBear"/>
+        <tag line="17" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+        <name>BILLS_METHOD</name>
+        <full_name>BILLS_METHOD</full_name>
+        <value>'bills'</value>
+        <docblock line="28">
+          <description>The resource method URL.</description>
+          <long-description>&lt;p&gt;No slashes at the beginning and end of the
+string.&lt;/p&gt;</long-description>
+        </docblock>
+      </constant>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="34">
+          <description>Constructs the resource, sets a reference to the FurryBear object, and
+sets the resource method URL.</description>
+          <long-description></long-description>
+          <tag line="34" name="param" description="A reference to the FurryBear onject." type="\FurryBear\FurryBear" variable="$furryBear">
+            <type by_reference="false">\FurryBear\FurryBear</type>
+          </tag>
+        </docblock>
+        <argument line="40">
+          <name>$furryBear</name>
+          <default></default>
+          <type>\FurryBear\FurryBear</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/FurryBear/Resource/SunlightFoundation/LegislatorsLocate.php" hash="6484541ce81610f37c03f6a9999b91cf" package="FurryBear">
+    <docblock line="3">
+      <description>FurryBear</description>
+      <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
+      <tag line="3" name="category" description="Congress_API"/>
+      <tag line="3" name="package" description="FurryBear"/>
+      <tag line="3" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+      <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+      <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+      <name>LegislatorsLocate</name>
+      <full_name>\FurryBear\Resource\SunlightFoundation\LegislatorsLocate</full_name>
+      <docblock line="17">
+        <description>This class gives access to Sunlight Congress legislators/locate resource.</description>
+        <long-description></long-description>
+        <tag line="17" name="category" description="Congress_API"/>
+        <tag line="17" name="package" description="FurryBear"/>
+        <tag line="17" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
+        <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
+        <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
+      </docblock>
+      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+        <name>LEGISLATORS_LOCATE_METHOD</name>
+        <full_name>LEGISLATORS_LOCATE_METHOD</full_name>
+        <value>'legislators/locate'</value>
+        <docblock line="28">
+          <description>The resource method URL.</description>
+          <long-description>&lt;p&gt;No slashes at the beginning and end of the
+string.&lt;/p&gt;</long-description>
+        </docblock>
+      </constant>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="34">
+          <description>Constructs the resource, sets a reference to the FurryBear object, and
+sets the resource method URL.</description>
+          <long-description></long-description>
+          <tag line="34" name="param" description="A reference to the FurryBear onject." type="\FurryBear\FurryBear" variable="$furryBear">
+            <type by_reference="false">\FurryBear\FurryBear</type>
+          </tag>
+        </docblock>
+        <argument line="40">
+          <name>$furryBear</name>
+          <default></default>
+          <type>\FurryBear\FurryBear</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="FurryBear" full_name="FurryBear"/>
+  <namespace name="FurryBear" full_name="FurryBear">
+    <namespace name="Exception" full_name="FurryBear\Exception"/>
+    <namespace name="HttpAdapter" full_name="FurryBear\HttpAdapter"/>
+    <namespace name="Output" full_name="FurryBear\Output"/>
+    <namespace name="Provider" full_name="FurryBear\Provider"/>
+    <namespace name="Proxy" full_name="FurryBear\Proxy"/>
+    <namespace name="Resource" full_name="FurryBear\Resource">
+      <namespace name="SunlightFoundation" full_name="FurryBear\Resource\SunlightFoundation"/>
+    </namespace>
+  </namespace>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

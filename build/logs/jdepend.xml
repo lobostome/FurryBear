@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PDepend>
+  <Packages>
+    <Package name="FurryBear\Exception">
+      <Stats>
+        <TotalClasses>5</TotalClasses>
+        <ConcreteClasses>4</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>3</Ca>
+        <Ce>1</Ce>
+        <A>0.2</A>
+        <I>0.25</I>
+        <D>0.55</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Exception/InvalidJsonException.php">InvalidJsonException</Class>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Exception/NoOutputException.php">NoOutputException</Class>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Exception/NoProviderException.php">NoProviderException</Class>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Exception/NoResultException.php">NoResultException</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Exception/ExceptionInterface.php">ExceptionInterface</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package></Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>FurryBear</Package>
+        <Package>FurryBear\HttpAdapter</Package>
+        <Package>FurryBear\Output</Package>
+      </UsedBy>
+    </Package>
+    <Package name="FurryBear">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>4</Ce>
+        <A>0</A>
+        <I>0.66666666666667</I>
+        <D>0.33333333333333</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/FurryBear.php">FurryBear</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>FurryBear\Exception</Package>
+        <Package>FurryBear\Output</Package>
+        <Package>FurryBear\Provider</Package>
+        <Package>FurryBear\Resource</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>FurryBear\Resource</Package>
+        <Package>FurryBear\Resource\SunlightFoundation</Package>
+      </UsedBy>
+    </Package>
+    <Package name="FurryBear\HttpAdapter">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>2</Ce>
+        <A>0.5</A>
+        <I>0.66666666666667</I>
+        <D>0.16666666666667</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/HttpAdapter/CurlHttpAdapter.php">CurlHttpAdapter</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/HttpAdapter/HttpAdapterInterface.php">HttpAdapterInterface</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package>FurryBear\Exception</Package>
+        <Package>FurryBear\Proxy</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>FurryBear\Provider</Package>
+      </UsedBy>
+    </Package>
+    <Package name="FurryBear\Output">
+      <Stats>
+        <TotalClasses>3</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>1</Ce>
+        <A>0.33333333333333</A>
+        <I>0.5</I>
+        <D>0.16666666666667</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Output/JsonToArrayOutputStrategy.php">JsonToArrayOutputStrategy</Class>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Output/JsonToObjectOutputStrategy.php">JsonToObjectOutputStrategy</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Output/OutputStrategy.php">OutputStrategy</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package>FurryBear\Exception</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>FurryBear</Package>
+      </UsedBy>
+    </Package>
+    <Package name="FurryBear\Provider">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>1</Ce>
+        <A>0.5</A>
+        <I>0.5</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Provider/SunlightFoundationProvider.php">SunlightFoundationProvider</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Provider/AbstractProvider.php">AbstractProvider</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package>FurryBear\HttpAdapter</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>FurryBear</Package>
+      </UsedBy>
+    </Package>
+    <Package name="FurryBear\Proxy">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>0</Ce>
+        <A>0.5</A>
+        <I>0</I>
+        <D>0.5</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Proxy/CurlProxy.php">CurlProxy</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Proxy/HttpRequest.php">HttpRequest</Class>
+      </AbstractClasses>
+      <DependsUpon/>
+      <UsedBy>
+        <Package>FurryBear\HttpAdapter</Package>
+      </UsedBy>
+    </Package>
+    <Package name="FurryBear\Resource">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>1</Ce>
+        <A>0.5</A>
+        <I>0.33333333333333</I>
+        <D>0.16666666666667</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Resource/ResourceFactory.php">ResourceFactory</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Resource/AbstractResource.php">AbstractResource</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package>FurryBear</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>FurryBear</Package>
+        <Package>FurryBear\Resource\SunlightFoundation</Package>
+      </UsedBy>
+    </Package>
+    <Package name="FurryBear\Resource\SunlightFoundation">
+      <Stats>
+        <TotalClasses>3</TotalClasses>
+        <ConcreteClasses>3</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>2</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Resource/SunlightFoundation/BaseResource.php">BaseResource</Class>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Resource/SunlightFoundation/Bills.php">Bills</Class>
+        <Class sourceFile="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Resource/SunlightFoundation/LegislatorsLocate.php">LegislatorsLocate</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>FurryBear</Package>
+        <Package>FurryBear\Resource</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+  </Packages>
+  <Cycles>
+    <Package Name="FurryBear">
+      <Package>FurryBear</Package>
+      <Package>FurryBear\Resource</Package>
+      <Package>FurryBear</Package>
+    </Package>
+    <Package Name="FurryBear\Resource">
+      <Package>FurryBear\Resource</Package>
+      <Package>FurryBear</Package>
+      <Package>FurryBear\Resource</Package>
+    </Package>
+    <Package Name="FurryBear\Resource\SunlightFoundation">
+      <Package>FurryBear\Resource\SunlightFoundation</Package>
+      <Package>FurryBear</Package>
+      <Package>FurryBear\Resource</Package>
+      <Package>FurryBear</Package>
+    </Package>
+  </Cycles>
+</PDepend>

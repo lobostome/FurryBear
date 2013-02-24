@@ -33,7 +33,7 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         $headers = array("Cache-Control: no-cache, must-revalidate",
                          "Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         
-        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
         
@@ -53,7 +53,7 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         // 2. make $this->proxy->execute() == false
         // 3. Handle exception
         
-        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
         $curlProxy->expects($this->any())
@@ -64,7 +64,7 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         try {
             $curlAdapter->getContent('http://example.com');
         } catch (\FurryBear\Exception\NoResultException $e) {
-            $this->setExpectedException('\FurryBear\Exception\NoResultException');
+            $this->setExpectedException('\\FurryBear\\Exception\\NoResultException');
             throw new \FurryBear\Exception\NoResultException();
         }
     }

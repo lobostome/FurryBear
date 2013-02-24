@@ -46,25 +46,71 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * Test setting a concrete provider.
+     * Utility function that creates an abstract provider.
      */
-    public function testRegisterProvider()
+    private function getAbstractProvider()
     {
-        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
         $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
         
-        $provider = $this->getMockBuilder('\FurryBear\Provider\AbstractProvider')
+        $provider = $this->getMockBuilder('\\FurryBear\\Provider\\AbstractProvider')
                          ->setConstructorArgs(array($adapter))
                          ->getMock();
         
+        return $provider;
+    }
+    
+    /**
+     * Utility function that creates a SunlightFoundation provider.
+     */
+    private function getSunlightFoundationProvider()
+    {
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
+                          ->disableOriginalConstructor()
+                          ->getMock();
+        $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
+        
+        $provider = new \FurryBear\Provider\SunlightFoundationProvider($adapter, 'xxxxx');
+        
+        return $provider;
+    }
+    
+    /**
+     * Test setting a concrete provider.
+     */
+    public function testRegisterProvider()
+    {
+        // Let's register a new provider
+        $provider = $this->getSunlightFoundationProvider();
         $this->furryBear->registerProvider($provider);
         
         $this->assertNotNull($provider);
-        $this->assertInstanceOf('\FurryBear\Provider\AbstractProvider', $provider);
+        $this->assertInstanceOf('\\FurryBear\\Provider\\SunlightFoundationProvider', $provider);
         $this->assertObjectHasAttribute('provider', $this->furryBear);
         $this->assertAttributeSame($provider, 'provider', $this->furryBear);
+        
+        // Let's call a resource and have it cached.
+        $resourceName = 'bills';
+        $expectedClass = '\\FurryBear\\Resource\\SunlightFoundation\\Bills';
+        
+        $output = new \FurryBear\Output\JsonToObjectOutputStrategy();
+        $this->furryBear->registerOutput($output);
+        $this->furryBear->{$resourceName};
+        
+        $this->assertAttributeNotEmpty('data', $this->furryBear);
+        $this->assertArrayHasKey($resourceName, \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data'));
+        $this->assertAttributeContainsOnly($expectedClass, 'data', $this->furryBear);
+        $this->assertCount(1, \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data'));
+        
+        // Let's register a different provider
+        // What do we have in the cached resources?
+        $provider2 = $this->getAbstractProvider();
+        $this->furryBear->registerProvider($provider2);
+        
+        $this->assertAttributeEmpty('data', $this->furryBear);
+        $this->assertCount(0, \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data'));
     }
     
     /**
@@ -72,19 +118,12 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetProvider()
     {
-        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
-                          ->disableOriginalConstructor()
-                          ->getMock();
-        $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
-        
-        $provider = $this->getMockBuilder('\FurryBear\Provider\AbstractProvider')
-                         ->setConstructorArgs(array($adapter))
-                         ->getMock();
+        $provider = $this->getAbstractProvider();
         
         $this->furryBear->registerProvider($provider);
         
         $this->assertNotNull($provider);
-        $this->assertInstanceOf('\FurryBear\Provider\AbstractProvider', $provider);
+        $this->assertInstanceOf('\\FurryBear\\Provider\\AbstractProvider', $provider);
         $this->assertObjectHasAttribute('provider', $this->furryBear);
         $this->assertAttributeSame($this->furryBear->getProvider(), 'provider', $this->furryBear);
     }
@@ -98,7 +137,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerOutput($output);
         
         $this->assertNotNull($output);
-        $this->assertInstanceOf('\FurryBear\Output\JsonToObjectOutputStrategy', $output);
+        $this->assertInstanceOf('\\FurryBear\\Output\\JsonToObjectOutputStrategy', $output);
         $this->assertObjectHasAttribute('output', $this->furryBear);
         $this->assertAttributeSame($output, 'output', $this->furryBear);
     }
@@ -112,7 +151,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerOutput($output);
         
         $this->assertNotNull($output);
-        $this->assertInstanceOf('\FurryBear\Output\JsonToObjectOutputStrategy', $output);
+        $this->assertInstanceOf('\\FurryBear\\Output\\JsonToObjectOutputStrategy', $output);
         $this->assertObjectHasAttribute('output', $this->furryBear);
         $this->assertAttributeSame($this->furryBear->getOutput(), 'output', $this->furryBear);
     }
@@ -123,5 +162,76 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
     public function testGetVersion()
     {
         $this->assertEquals(\FurryBear\FurryBear::VERSION, $this->furryBear->getVersion());
+    }
+    
+    /**
+     * Test whether a provider has been set.
+     */
+    public function testGetNoProviderException()
+    {
+        $this->setExpectedException('\\FurryBear\\Exception\\NoProviderException');
+        $this->furryBear->bills;
+    }
+    
+    /**
+     * Test whether an output strategy has been set.
+     */
+    public function testGetNoOutputException()
+    {
+        $provider = $this->getAbstractProvider();
+        
+        $this->furryBear->registerProvider($provider);
+        
+        $this->setExpectedException('\\FurryBear\\Exception\\NoOutputException');
+        $this->furryBear->bills;
+    }
+    
+    /**
+     * Test creating a new resource for that provider.
+     */
+    public function testGet()
+    {
+        $provider = $this->getSunlightFoundationProvider();
+        
+        $this->furryBear->registerProvider($provider);
+        
+        $output = new \FurryBear\Output\JsonToObjectOutputStrategy();
+        $this->furryBear->registerOutput($output);
+        
+        // Let's get a new resource
+        $resourceName = 'bills';
+        $expectedClass = '\\FurryBear\\Resource\\SunlightFoundation\\Bills';
+        
+        $this->assertAttributeInternalType('array', 'data', $this->furryBear);
+        $this->assertAttributeEmpty('data', $this->furryBear);
+        
+        $this->furryBear->{$resourceName};
+        
+        $this->assertAttributeNotEmpty('data', $this->furryBear);
+        $this->assertArrayHasKey($resourceName, \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data'));
+        $this->assertAttributeContainsOnly($expectedClass, 'data', $this->furryBear);
+        $this->assertCount(1, \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data'));
+        
+        // Does the resource get reused?
+        $this->furryBear->{$resourceName};
+        
+        $this->assertAttributeNotEmpty('data', $this->furryBear);
+        $this->assertArrayHasKey($resourceName, \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data'));
+        $this->assertAttributeContainsOnly($expectedClass, 'data', $this->furryBear);
+        $this->assertCount(1, \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data'));
+        
+        // Does a resource name with underscore get translated to a resource correctly?
+        // Do we have 2 cached resources now?
+        $resourceName2 = 'legislators_locate';
+        $expectedClass2 = '\\FurryBear\\Resource\\SunlightFoundation\\LegislatorsLocate';
+        
+        $this->furryBear->{$resourceName2};
+        
+        $data = \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data');
+        
+        $this->assertAttributeNotEmpty('data', $this->furryBear);
+        $this->assertArrayHasKey($resourceName2, \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data'));
+        $this->assertCount(2, \PHPUnit_Framework_Assert::readAttribute($this->furryBear, 'data'));
+        $this->assertInstanceOf($expectedClass2, $data[$resourceName2]);
     }
 }

@@ -46,7 +46,7 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
         $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
@@ -59,7 +59,7 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->stub = $this->getMockBuilder('\FurryBear\Resource\AbstractResource')
+        $this->stub = $this->getMockBuilder('\\FurryBear\\Resource\\AbstractResource')
                            ->setConstructorArgs(array($this->furryBear))
                            ->getMockForAbstractClass();
     }
@@ -87,7 +87,7 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
         );
         $methodGet->setAccessible(TRUE);
         
-        $this->assertClassHasAttribute('resourceMethod', '\FurryBear\Resource\AbstractResource');
+        $this->assertClassHasAttribute('resourceMethod', '\\FurryBear\\Resource\\AbstractResource');
         $this->assertAttributeEmpty('resourceMethod', $this->stub);
         $this->assertAttributeEquals($methodGet->invoke($this->stub), 'resourceMethod', $this->stub);
         
@@ -95,7 +95,7 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
         $resourceMethod = 'bills';
         
         $methodSet = new \ReflectionMethod(
-            '\FurryBear\Resource\AbstractResource', 'setResourceMethod'
+            '\\FurryBear\\Resource\\AbstractResource', 'setResourceMethod'
         );
         $methodSet->setAccessible(TRUE);
         $methodSet->invoke($this->stub, $resourceMethod);
@@ -112,12 +112,20 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
         $resourceMethod = 'bills';
         
         $methodSet = new \ReflectionMethod(
-            '\FurryBear\Resource\AbstractResource', 'setResourceMethod'
+            '\\FurryBear\\Resource\\AbstractResource', 'setResourceMethod'
         );
         $methodSet->setAccessible(TRUE);
         $methodSet->invoke($this->stub, $resourceMethod);
         
         $this->assertAttributeNotEmpty('resourceMethod', $this->stub);
         $this->assertAttributeEquals($resourceMethod, 'resourceMethod', $this->stub);
+    }
+    
+    /**
+     * Test getting a result from the resource.
+     */
+    public function testGet()
+    {
+        $this->assertNull($this->stub->get(array()));
     }
 }

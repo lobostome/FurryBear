@@ -31,7 +31,7 @@ class CurlProxyTest extends \PHPUnit_Framework_TestCase
      */
     public function testCurlWrapperMethods()
     {
-        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
         

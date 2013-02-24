@@ -46,7 +46,7 @@ class BaseResourceTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
         $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
@@ -59,7 +59,7 @@ class BaseResourceTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->stub = $this->getMockBuilder('\FurryBear\Resource\SunlightFoundation\BaseResource')
+        $this->stub = $this->getMockBuilder('\\FurryBear\\Resource\\SunlightFoundation\\BaseResource')
                            ->setConstructorArgs(array($this->furryBear))
                            ->getMockForAbstractClass();
     }
@@ -87,7 +87,7 @@ class BaseResourceTest extends \PHPUnit_Framework_TestCase
         $expected_with_2 = 'http://congress.api.sunlightfoundation.com/?apikey=some-api-key&congress=113&history.enacted=1';
         
         $method = new \ReflectionMethod(
-            '\FurryBear\Resource\SunlightFoundation\BaseResource', 'buildQuery'
+            '\\FurryBear\\Resource\\SunlightFoundation\\BaseResource', 'buildQuery'
         );
         $method->setAccessible(TRUE);
         
@@ -95,13 +95,5 @@ class BaseResourceTest extends \PHPUnit_Framework_TestCase
                             $method->invoke($this->stub, $params_0));
         $this->assertEquals($expected_with_2, 
                             $method->invoke($this->stub, $params_2));
-    }
-    
-    /**
-     * Test getting a result from the resource.
-     */
-    public function testGet()
-    {
-        $this->assertNull($this->stub->get(array()));
     }
 }

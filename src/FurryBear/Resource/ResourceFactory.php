@@ -31,19 +31,19 @@ class ResourceFactory
      * 2. Capitalize each resulting array element.
      * 3. Join back together the array elements into a string.
      * 
-     * @param \FurryBear\Provider\AbstractProvider $provider A provider reference.
-     * @param string                               $name     Resource name.
+     * @param \FurryBear\FurryBear $furryBear A FurryBear reference.
+     * @param string               $name      Resource name.
      * 
      * @return \FurryBear\Resource\AbstractResource
      */
-    public static function create($provider, $name)
+    public static function create($furryBear, $name)
     {
         $classParts = explode("_", $name);
         array_walk($classParts, function(&$item, $key) { $item = ucfirst($item); });
         $className = join("", $classParts);
         
-        $fqn = '\\FurryBear\\Resource\\' . $provider->getDirectory() . '\\' . $className;
-        
-        return new $fqn();
+        $fqn = '\\FurryBear\\Resource\\' . $furryBear->getProvider()->getDirectory() . '\\' . $className;
+
+        return new $fqn($furryBear);
     }
 }

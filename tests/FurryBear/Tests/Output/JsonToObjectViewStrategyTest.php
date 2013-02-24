@@ -51,7 +51,7 @@ class JsonToObjectOutputStrategyTest extends \PHPUnit_Framework_TestCase
         try {
             $output->convert($data);
         } catch (\FurryBear\Exception\InvalidJsonException $e) {
-            $this->setExpectedException('\FurryBear\Exception\InvalidJsonException', 'Invalid json');
+            $this->setExpectedException('\\FurryBear\\Exception\\InvalidJsonException', 'Invalid json');
             throw new \FurryBear\Exception\InvalidJsonException('Invalid json');
         }
     }

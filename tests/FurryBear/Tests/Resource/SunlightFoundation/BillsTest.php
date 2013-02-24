@@ -46,7 +46,7 @@ class BillsTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $curlProxy = $this->getMockBuilder('\FurryBear\Proxy\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
                           ->disableOriginalConstructor()
                           ->getMock();
         $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
