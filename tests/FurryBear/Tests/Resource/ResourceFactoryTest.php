@@ -48,7 +48,7 @@ class ResourceFactoryTest extends \PHPUnit_Framework_TestCase
         
         $provider = new \FurryBear\Provider\SunlightFoundationProvider($adapter, $this->apiKey);
         
-        $output = new \FurryBear\Output\JsonToObjectOutputStrategy();
+        $output = new \FurryBear\Output\Strategy\JsonToObject();
         
         $this->furryBear = new \FurryBear\FurryBear();
         $this->furryBear->registerProvider($provider)

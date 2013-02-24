@@ -95,7 +95,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         $resourceName = 'bills';
         $expectedClass = '\\FurryBear\\Resource\\SunlightFoundation\\Bills';
         
-        $output = new \FurryBear\Output\JsonToObjectOutputStrategy();
+        $output = new \FurryBear\Output\Strategy\JsonToObject();
         $this->furryBear->registerOutput($output);
         $this->furryBear->{$resourceName};
         
@@ -133,11 +133,11 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
      */
     public function testRegisterOutput()
     { 
-        $output = new \FurryBear\Output\JsonToObjectOutputStrategy();
+        $output = new \FurryBear\Output\Strategy\JsonToObject();
         $this->furryBear->registerOutput($output);
         
         $this->assertNotNull($output);
-        $this->assertInstanceOf('\\FurryBear\\Output\\JsonToObjectOutputStrategy', $output);
+        $this->assertInstanceOf('\\FurryBear\\Output\\Strategy\\JsonToObject', $output);
         $this->assertObjectHasAttribute('output', $this->furryBear);
         $this->assertAttributeSame($output, 'output', $this->furryBear);
     }
@@ -147,11 +147,11 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetOutput()
     {
-        $output = new \FurryBear\Output\JsonToObjectOutputStrategy();
+        $output = new \FurryBear\Output\Strategy\JsonToObject();
         $this->furryBear->registerOutput($output);
         
         $this->assertNotNull($output);
-        $this->assertInstanceOf('\\FurryBear\\Output\\JsonToObjectOutputStrategy', $output);
+        $this->assertInstanceOf('\\FurryBear\\Output\\Strategy\\JsonToObject', $output);
         $this->assertObjectHasAttribute('output', $this->furryBear);
         $this->assertAttributeSame($this->furryBear->getOutput(), 'output', $this->furryBear);
     }
@@ -195,7 +195,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         
         $this->furryBear->registerProvider($provider);
         
-        $output = new \FurryBear\Output\JsonToObjectOutputStrategy();
+        $output = new \FurryBear\Output\Strategy\JsonToObject();
         $this->furryBear->registerOutput($output);
         
         // Let's get a new resource
