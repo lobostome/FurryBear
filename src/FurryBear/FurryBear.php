@@ -15,7 +15,7 @@
 namespace FurryBear;
 
 use FurryBear\Provider\AbstractProvider,
-    FurryBear\Output\OutputStrategy,
+    FurryBear\Output\Strategy,
     FurryBear\Resource\ResourceFactory,
     FurryBear\Exception\NoProviderException,
     FurryBear\Exception\NoOutputException;
@@ -46,7 +46,7 @@ class FurryBear
     /**
      * Defines the format of the output.
      * 
-     * @var \FurryBear\Output\OutputStrategy
+     * @var \FurryBear\Output\Strategy
      */
     protected $output = null;
     
@@ -88,11 +88,11 @@ class FurryBear
     /**
      * Register an output format.
      * 
-     * @param \FurryBear\Output\OutputStrategy $output The desired output conversion.
+     * @param \FurryBear\Output\Strategy $output The desired output conversion.
      * 
      * @return \FurryBear\FurryBear
      */
-    public function registerOutput(OutputStrategy $output)
+    public function registerOutput(Strategy $output)
     {
         $this->output = $output;
         return $this;
