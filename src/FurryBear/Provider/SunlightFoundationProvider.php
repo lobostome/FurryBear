@@ -33,6 +33,11 @@ class SunlightFoundationProvider extends AbstractProvider
     const SERVICE_URL = 'http://congress.api.sunlightfoundation.com';
     
     /**
+     * The resource directory.
+     */
+    const RESOURCE_DIR = 'SunlightFoundation';
+    
+    /**
      * The Sunlight API key.
      * 
      * @var string
@@ -82,4 +87,13 @@ class SunlightFoundationProvider extends AbstractProvider
     {
         return $this->apiKey;
     }
+
+    /**
+     * {@inheritdoc}
+     * 
+     * @return string
+     */
+    public function getDirectory() {
+        return self::RESOURCE_DIR;
+    } 
 }

@@ -64,4 +64,12 @@ abstract class AbstractProvider
     {
         return $this->adapter;
     }
+    
+    /**
+     * Get the directory that stores the resources for a provider. Usually, this 
+     * is based on the name of the provider.
+     * 
+     * @return string
+     */
+    public abstract function getDirectory();
 }

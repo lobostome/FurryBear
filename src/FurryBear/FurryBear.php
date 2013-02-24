@@ -15,7 +15,9 @@
 namespace FurryBear;
 
 use FurryBear\Provider\AbstractProvider,
-    FurryBear\Output\OutputStrategy;
+    FurryBear\Output\OutputStrategy,
+    FurryBear\Resource\ResourceFactory,
+    FurryBear\Exception\NoProviderException;
 
 /**
  * The main class that glues it all together.
@@ -46,9 +48,16 @@ class FurryBear
      * @var \FurryBear\Output\OutputStrategy
      */
     protected $output = null;
+    
+    /**
+     * Overloaded resource name.
+     * 
+     * @var array
+     */
+    protected $data = array();
 
     /**
-     * Register a concrete API provider.
+     * Register a concrete API provider. Clear all registered resources.
      * 
      * @param \FurryBear\Provider\AbstractProvider $provider An API provider.
      * 
@@ -57,6 +66,11 @@ class FurryBear
     public function registerProvider(AbstractProvider $provider)
     {
         $this->provider = $provider;
+        
+        if (count($this->data) > 0) {
+            $this->data = array();
+        }
+        
         return $this;
     }
     
@@ -92,7 +106,29 @@ class FurryBear
     {
         return $this->output;
     }
-
+    
+    /**
+     * Gets a reference to a resource. If the resource is not already 
+     * instantiated, then it creates it.
+     * 
+     * @param string $name 
+     * 
+     * @return \FurryBear\Resource\AbstractResource
+     */
+    public function __get($name) {
+        if (is_null($this->provider)) {
+            throw new NoProviderException('The provider is not specified.');
+        }
+        if (is_null($this->output)) {
+            throw new NoOutputException('The output is not specified.');
+        }
+        if (!array_key_exists($name, $this->data)) {
+            $this->data[$name] = ResourceFactory::create($this->provider, $name);
+        }
+        
+        return $this->data[$name];
+    }
+    
     /**
      * Get library version.
      * 
