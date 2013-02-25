@@ -12,9 +12,10 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Provider;
+namespace FurryBear\Provider\Source;
 
-use FurryBear\HttpAdapter\HttpAdapterInterface;
+use FurryBear\HttpAdapter\HttpAdapterInterface,
+    FurryBear\Provider\AbstractProvider;
 
 /**
  * A concrete provider based on Sunlight Foundation Congress API v3.
@@ -25,7 +26,7 @@ use FurryBear\HttpAdapter\HttpAdapterInterface;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     http://sunlightlabs.github.com/congress/
  */
-class SunlightFoundationProvider extends AbstractProvider
+class SunlightFoundation extends AbstractProvider
 {
     /**
      * The domain of the API.

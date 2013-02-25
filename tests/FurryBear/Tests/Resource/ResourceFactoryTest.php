@@ -46,7 +46,7 @@ class ResourceFactoryTest extends \PHPUnit_Framework_TestCase
                           ->getMock();
         $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
         
-        $provider = new \FurryBear\Provider\SunlightFoundationProvider($adapter, $this->apiKey);
+        $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $this->apiKey);
         
         $output = new \FurryBear\Output\Strategy\JsonToObject();
         
