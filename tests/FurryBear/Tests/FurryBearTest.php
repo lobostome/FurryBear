@@ -72,7 +72,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
                           ->getMock();
         $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
         
-        $provider = new \FurryBear\Provider\SunlightFoundationProvider($adapter, 'xxxxx');
+        $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, 'xxxxx');
         
         return $provider;
     }
@@ -87,7 +87,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider);
         
         $this->assertNotNull($provider);
-        $this->assertInstanceOf('\\FurryBear\\Provider\\SunlightFoundationProvider', $provider);
+        $this->assertInstanceOf('\\FurryBear\\Provider\\Source\\SunlightFoundation', $provider);
         $this->assertObjectHasAttribute('provider', $this->furryBear);
         $this->assertAttributeSame($provider, 'provider', $this->furryBear);
         

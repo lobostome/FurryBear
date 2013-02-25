@@ -12,10 +12,10 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Tests\Provider;
+namespace FurryBear\Tests\Provider\Source;
 
 /**
- * A test for SunlightFoundationProvider.
+ * A test for SunlightFoundation provider.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,7 +23,7 @@ namespace FurryBear\Tests\Provider;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
+class SunlightFoundationTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * A Http Adapter instance.
@@ -33,9 +33,9 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
     protected $adapter;
     
     /**
-     * A SunlightFoundationProvider reference.
+     * A SunlightFoundation provider reference.
      * 
-     * @var \FurryBear\Provider\SunlightFoundationProvider 
+     * @var \FurryBear\Provider\Source\SunlightFoundation 
      */
     protected $provider;
     
@@ -70,7 +70,7 @@ class SunlightFoundationProviderTest extends \PHPUnit_Framework_TestCase
                           ->getMock();
         $this->adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
         
-        $this->provider = new \FurryBear\Provider\SunlightFoundationProvider($this->adapter, $this->apiKey);
+        $this->provider = new \FurryBear\Provider\Source\SunlightFoundation($this->adapter, $this->apiKey);
     }
     
     /**
