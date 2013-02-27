@@ -122,6 +122,38 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
+     * Test getting parameters.
+     */
+    public function testGetParams()
+    {
+        $params = array("key1" => "value1", "key2" => "value 2");
+        $this->stub->setParams($params);
+        
+        $this->assertAttributeInternalType('array', 'params', $this->stub);
+        $this->assertCount(2, $this->stub->getParams());
+        $this->assertSame($params, $this->stub->getParams());
+    }
+    
+    /**
+     * Test settings parameters.
+     */
+    public function testSetParams()
+    {
+        $params = array("key1" => "value1", "key2" => "value 2");
+        
+        $this->assertClassHasAttribute('params', '\\FurryBear\\Resource\\AbstractResource');
+        $this->assertAttributeInternalType('array', 'params', $this->stub);
+        $this->assertInternalType('array', $params);
+        
+        $this->stub->setParams($params);
+        $params_keys = array_keys($params);
+        
+        $this->assertAttributeInternalType('array', 'params', $this->stub);
+        $this->assertArrayHasKey($params_keys[1], \PHPUnit_Framework_Assert::readAttribute($this->stub, 'params'));
+        $this->assertCount(2, \PHPUnit_Framework_Assert::readAttribute($this->stub, 'params'));
+    }
+    
+    /**
      * Test getting a result from the resource.
      */
     public function testGet()

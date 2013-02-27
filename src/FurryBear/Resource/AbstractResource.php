@@ -42,7 +42,7 @@ abstract class AbstractResource implements \IteratorAggregate
      * 
      * @var array
      */
-    protected $params;
+    protected $params = array();
     
     /**
      * Construct a resource with a FurryBear instance.
