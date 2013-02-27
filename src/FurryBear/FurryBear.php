@@ -101,7 +101,7 @@ class FurryBear
     /**
      * Get the output format.
      * 
-     * @return \FurryBear\Output\OutputStrategy
+     * @return \FurryBear\Output\Strategy
      */
     public function getOutput()
     {

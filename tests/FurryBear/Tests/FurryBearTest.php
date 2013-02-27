@@ -50,10 +50,10 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
      */
     private function getAbstractProvider()
     {
-        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\Curl')
                           ->disableOriginalConstructor()
                           ->getMock();
-        $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
+        $adapter = new \FurryBear\Http\Adapter\Curl($curlProxy);
         
         $provider = $this->getMockBuilder('\\FurryBear\\Provider\\AbstractProvider')
                          ->setConstructorArgs(array($adapter))
@@ -67,10 +67,10 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
      */
     private function getSunlightFoundationProvider()
     {
-        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\Curl')
                           ->disableOriginalConstructor()
                           ->getMock();
-        $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
+        $adapter = new \FurryBear\Http\Adapter\Curl($curlProxy);
         
         $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, 'xxxxx');
         
