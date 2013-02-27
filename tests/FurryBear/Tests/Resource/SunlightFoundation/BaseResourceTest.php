@@ -96,4 +96,9 @@ class BaseResourceTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected_with_2, 
                             $method->invoke($this->stub, $params_2));
     }
+    
+    public function testGetIterator()
+    {
+        $this->assertInstanceOf('\\FurryBear\\Iterator\\SunlightFoundation\\PageIterator', $this->stub->getIterator());
+    }
 }

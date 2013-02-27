@@ -62,7 +62,7 @@ class BaseResource extends AbstractResource
     /**
      * Gets an iterator that can iterate over multiple result pages.
      * 
-     * @return \FurryBear\Resource\SunlightFoundation\PageIterator
+     * @return \FurryBear\Iterator\SunlightFoundation\PageIterator
      */
     public function getIterator()
     {
