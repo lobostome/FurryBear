@@ -22,3 +22,12 @@ $params = array("history.house_passage_result__exists" => true,
                 "explain" => "true");
 
 var_dump($fb->bills->get($params));
+
+// OR use an iterator
+
+$fb->bills->setParams($params);
+$it = $fb->bills->getIterator();
+while($it->valid()) {
+    var_dump($it->curent());
+    $it->next();
+}

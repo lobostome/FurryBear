@@ -21,7 +21,7 @@ namespace FurryBear\Resource;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-abstract class AbstractResource
+abstract class AbstractResource implements \IteratorAggregate
 {
     /**
      * A reference to the FurryBear object.
@@ -36,6 +36,13 @@ abstract class AbstractResource
      * @var string
      */
     protected $resourceMethod;
+    
+    /**
+     * The parameters sent with the request.
+     * 
+     * @var array
+     */
+    protected $params;
     
     /**
      * Construct a resource with a FurryBear instance.
@@ -54,24 +61,7 @@ abstract class AbstractResource
      * 
      * @return string
      */
-    abstract protected function buildQuery($params);
-    
-    /**
-     * Retrieves a result based on some criteria.
-     * 
-     * @param array $params Search criteria.
-     * 
-     * @return mixed
-     */
-    public function get($params)
-    {
-        return $this->furryBear
-                    ->getOutput()
-                    ->convert($this->furryBear
-                                   ->getProvider()
-                                   ->getAdapter()
-                                   ->getContent($this->buildQuery($params)));
-    }
+    abstract protected function buildQuery(array $params);
     
     /**
      * Gets the resource method URL.
@@ -93,5 +83,44 @@ abstract class AbstractResource
     protected function setResourceMethod($resourceMethod)
     {
         $this->resourceMethod = $resourceMethod;
+    }
+    
+    /**
+     * Set the request parameters.
+     * 
+     * @param array $params The request parameters.
+     * 
+     * @return void
+     */
+    public function setParams(array $params)
+    {
+        $this->params = $params;
+    }
+    
+    /**
+     * Gets the request parameters.
+     * 
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->params;
+    }
+    
+    /**
+     * Retrieves a result based on some criteria.
+     * 
+     * @param array $params Search criteria.
+     * 
+     * @return mixed
+     */
+    public function get(array $params)
+    {
+        return $this->furryBear
+                    ->getOutput()
+                    ->convert($this->furryBear
+                                   ->getProvider()
+                                   ->getAdapter()
+                                   ->getContent($this->buildQuery($params)));
     }
 }

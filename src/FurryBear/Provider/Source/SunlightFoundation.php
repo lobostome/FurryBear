@@ -94,7 +94,8 @@ class SunlightFoundation extends AbstractProvider
      * 
      * @return string
      */
-    public function getDirectory() {
+    public function getDirectory()
+    {
         return self::RESOURCE_DIR;
-    } 
+    }
 }
