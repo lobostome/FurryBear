@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="1.4.2">
+ <file name="/Volumes/Projects/PHP/FurryBear/src/FurryBear/FurryBear.php">
+  <error line="115" column="1" severity="error" message="Missing comment for param &quot;$name&quot; at position 1" source="PEAR.Commenting.FunctionComment.MissingParamComment"/>
+  <error line="119" column="34" severity="error" message="Opening brace should be on a new line" source="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+ </file>
+ <file name="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Http/Adapter/Curl.php">
+  <error line="95" column="138" severity="warning" message="Line exceeds 85 characters; contains 137 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Iterator/SunlightFoundation/PageIterator.php">
+  <error line="40" column="1" severity="warning" message="Line exceeds 85 characters; contains 87 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="47" column="12" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="52" column="12" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="57" column="12" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="62" column="12" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="67" column="12" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="67" column="29" severity="error" message="Opening brace should be on a new line" source="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+ </file>
+ <file name="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Resource/AbstractResource.php">
+  <error line="120" column="21" severity="error" message="Object operator not indented correctly; expected 12 spaces but found 20" source="PEAR.WhiteSpace.ObjectOperatorIndent.Incorrect"/>
+  <error line="121" column="21" severity="error" message="Object operator not indented correctly; expected 12 spaces but found 20" source="PEAR.WhiteSpace.ObjectOperatorIndent.Incorrect"/>
+  <error line="121" column="23" severity="error" message="Opening parenthesis of a multi-line function call must be the last content on the line" source="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
+  <error line="122" column="36" severity="error" message="Object operator not indented correctly; expected 24 spaces but found 35" source="PEAR.WhiteSpace.ObjectOperatorIndent.Incorrect"/>
+  <error line="123" column="36" severity="error" message="Object operator not indented correctly; expected 24 spaces but found 35" source="PEAR.WhiteSpace.ObjectOperatorIndent.Incorrect"/>
+  <error line="124" column="36" severity="error" message="Object operator not indented correctly; expected 24 spaces but found 35" source="PEAR.WhiteSpace.ObjectOperatorIndent.Incorrect"/>
+  <error line="124" column="76" severity="error" message="Closing parenthesis of a multi-line function call must be on a line by itself" source="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
+ </file>
+ <file name="/Volumes/Projects/PHP/FurryBear/src/FurryBear/Resource/ResourceFactory.php">
+  <error line="42" column="33" severity="error" message="Expected 1 space after FUNCTION keyword; 0 found" source="PEAR.Functions.FunctionDeclaration.SpaceAfterFunction"/>
+  <error line="42" column="82" severity="error" message="Closing brace must be on a line by itself" source="PEAR.WhiteSpace.ScopeClosingBrace.Line"/>
+  <error line="45" column="106" severity="warning" message="Line exceeds 85 characters; contains 105 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+</checkstyle>

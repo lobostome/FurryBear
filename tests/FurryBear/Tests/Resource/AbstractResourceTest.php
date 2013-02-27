@@ -46,10 +46,10 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\Curl')
                           ->disableOriginalConstructor()
                           ->getMock();
-        $adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
+        $adapter = new \FurryBear\Http\Adapter\Curl($curlProxy);
         
         $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $this->apiKey);
         

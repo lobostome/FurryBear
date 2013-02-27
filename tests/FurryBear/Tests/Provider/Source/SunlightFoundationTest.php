@@ -28,7 +28,7 @@ class SunlightFoundationTest extends \PHPUnit_Framework_TestCase
     /**
      * A Http Adapter instance.
      * 
-     * @var \FurryBear\HttpAdapter\HttpAdapterInterface 
+     * @var \FurryBear\Http\HttpAdapterInterface 
      */
     protected $adapter;
     
@@ -65,10 +65,10 @@ class SunlightFoundationTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\Curl')
                           ->disableOriginalConstructor()
                           ->getMock();
-        $this->adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
+        $this->adapter = new \FurryBear\Http\Adapter\Curl($curlProxy);
         
         $this->provider = new \FurryBear\Provider\Source\SunlightFoundation($this->adapter, $this->apiKey);
     }
@@ -125,7 +125,7 @@ class SunlightFoundationTest extends \PHPUnit_Framework_TestCase
         $this->provider->setAdapter($this->adapter);
         
         $this->assertNotNull($this->adapter);
-        $this->assertInstanceOf('\\FurryBear\\HttpAdapter\\HttpAdapterInterface', $this->adapter);
+        $this->assertInstanceOf('\\FurryBear\\Http\\HttpAdapterInterface', $this->adapter);
         $this->assertObjectHasAttribute('adapter', $this->provider);
         $this->assertSame($this->adapter, $this->provider->getAdapter());
     }
@@ -136,7 +136,7 @@ class SunlightFoundationTest extends \PHPUnit_Framework_TestCase
     public function testGetAdapter()
     {
         $this->assertNotNull($this->adapter);
-        $this->assertInstanceOf('\\FurryBear\\HttpAdapter\\HttpAdapterInterface', $this->adapter);
+        $this->assertInstanceOf('\\FurryBear\\Http\\HttpAdapterInterface', $this->adapter);
         $this->assertObjectHasAttribute('adapter', $this->provider);
         $this->assertSame($this->adapter, $this->provider->getAdapter($this->adapter));
     }

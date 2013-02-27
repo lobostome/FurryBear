@@ -8,7 +8,7 @@ $classLoader->register();
 // Substitute with your API key.
 $apiKey = 'xxxxx';
 
-$adapter = new \FurryBear\HttpAdapter\CurlHttpAdapter();
+$adapter = new \FurryBear\Http\Adapter\Curl();
 $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
 $output = new \FurryBear\Output\Strategy\JsonToArray();
 
@@ -18,8 +18,7 @@ $fb->registerProvider($provider)
 
 $params = array("history.house_passage_result__exists" => true, 
                 "chamber" => "house",
-                "per_page" => 50,
-                "explain" => "true");
+                "per_page" => 50);
 
 var_dump($fb->bills->get($params));
 
