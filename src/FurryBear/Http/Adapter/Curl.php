@@ -80,19 +80,15 @@ class Curl implements HttpAdapterInterface
         }
         
         $this->proxy->setOption(CURLOPT_RETURNTRANSFER, true);
-        $this->proxy->setOption(CURLOPT_VERBOSE, 1);
-        $this->proxy->setOption(CURLOPT_FOLLOWLOCATION, 1);
         $this->proxy->setOption(CURLOPT_USERAGENT, $this->userAgent);
         if (!empty($this->headers)) {
             $this->proxy->setOption(CURLOPT_HTTPHEADER, $this->headers);
         }
 
         $content = $this->proxy->execute();
-        $this->proxy->getInfo();
-        $this->proxy->close();
         
         if ($content === false) {
-            throw new NoResultException('Failure! ' . $this->proxy->getError() . '; Curl Info: ' . json_encode($this->proxy->getInfo()));
+            throw new NoResultException($this->proxy->getError());
         }
         
         return $content;
@@ -120,5 +116,16 @@ class Curl implements HttpAdapterInterface
     public function setUserAgent($userAgent) 
     {
         $this->userAgent = $userAgent;
+    }
+    
+    /**
+     * 
+     */
+    public function __destruct()
+    {
+        if (is_resource($this->proxy)) {
+            $this->proxy->close();
+        }
+        $this->proxy = null;
     }
 }

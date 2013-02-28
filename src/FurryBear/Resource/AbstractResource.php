@@ -116,11 +116,14 @@ abstract class AbstractResource implements \IteratorAggregate
      */
     public function get(array $params)
     {
+        if (!empty($params)) {
+            $this->params = $params;
+        }
         return $this->furryBear
                     ->getOutput()
                     ->convert($this->furryBear
                                    ->getProvider()
                                    ->getAdapter()
-                                   ->getContent($this->buildQuery($params)));
+                                   ->getContent($this->buildQuery($this->params)));
     }
 }

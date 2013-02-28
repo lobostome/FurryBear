@@ -52,6 +52,13 @@ class BaseResource extends AbstractResource
             $apiKey['apikey'] = $this->furryBear->getProvider()->getApiKey();
         }
         
+        // convert booleans to string representation
+        array_walk($params, function(&$item, $key) { 
+            if (is_bool($item)) {
+                $item = ($item) ? 'true' : 'false';
+            }
+        });
+        
         return $this->furryBear->getProvider()->getServiceUrl() 
                . '/' .
                $this->getResourceMethod() 

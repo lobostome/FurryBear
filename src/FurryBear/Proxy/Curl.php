@@ -90,6 +90,6 @@ class Curl implements HttpRequest
      */
     public function getError()
     {
-        return curl_errno($this->_handle) . ': ' . curl_error($this->_handle);
+        return 'cURL error code: ' . curl_errno($this->_handle) . '; error: ' . curl_error($this->_handle);
     }
 }
