@@ -84,7 +84,7 @@ class BaseResourceTest extends \PHPUnit_Framework_TestCase
         
         $params_2 = array("congress" => 113, 
                         "history.enacted" => true);
-        $expected_with_2 = 'http://congress.api.sunlightfoundation.com/?apikey=some-api-key&congress=113&history.enacted=1';
+        $expected_with_2 = 'http://congress.api.sunlightfoundation.com/?apikey=some-api-key&congress=113&history.enacted=true';
         
         $method = new \ReflectionMethod(
             '\\FurryBear\\Resource\\SunlightFoundation\\BaseResource', 'buildQuery'
