@@ -15,7 +15,7 @@
 namespace FurryBear\Tests\Resource\SunlightFoundation;
 
 /**
- * A test for SunlightFoundation\BaseResource.
+ * A test for SunlightFoundation\FloorUpdates.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -24,7 +24,7 @@ namespace FurryBear\Tests\Resource\SunlightFoundation;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-class BaseResourceTest extends \PHPUnit_Framework_TestCase
+class FloorUpdatesTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \FurryBear\FurryBear
@@ -32,9 +32,9 @@ class BaseResourceTest extends \PHPUnit_Framework_TestCase
     protected $furryBear;
     
     /**
-     * @var \FurryBear\Resource\AbstractResource
+     * @var \FurryBear\Resource\SunlightFoundation\FloorUpdates
      */
-    protected $stub;
+    protected $floorUpdates;
     
     /**
      * @var string
@@ -59,9 +59,7 @@ class BaseResourceTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->stub = $this->getMockBuilder('\\FurryBear\\Resource\\SunlightFoundation\\BaseResource')
-                           ->setConstructorArgs(array($this->furryBear))
-                           ->getMockForAbstractClass();
+        $this->floorUpdates = new \FurryBear\Resource\SunlightFoundation\FloorUpdates($this->furryBear);
     }
     
     /**
@@ -70,35 +68,17 @@ class BaseResourceTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         unset($this->furryBear);
-        unset($this->stub);
+        unset($this->floorUpdates);
         unset($this->apiKey);
     }
     
     /**
-     * Test building a resource location.
+     * Test setting the resource method.
      */
-    public function testBuildQuery()
+    public function testConstruct()
     {
-        $params_0 = array();
-        $expected_with_0 = 'http://congress.api.sunlightfoundation.com/?apikey=some-api-key';
-        
-        $params_2 = array("congress" => 113, 
-                        "history.enacted" => true);
-        $expected_with_2 = 'http://congress.api.sunlightfoundation.com/?apikey=some-api-key&congress=113&history.enacted=true';
-        
-        $method = new \ReflectionMethod(
-            '\\FurryBear\\Resource\\SunlightFoundation\\BaseResource', 'buildQuery'
-        );
-        $method->setAccessible(TRUE);
-        
-        $this->assertEquals($expected_with_0, 
-                            $method->invoke($this->stub, $params_0));
-        $this->assertEquals($expected_with_2, 
-                            $method->invoke($this->stub, $params_2));
-    }
-    
-    public function testGetIterator()
-    {
-        $this->assertInstanceOf('\\FurryBear\\Iterator\\SunlightFoundation\\PageIterator', $this->stub->getIterator());
+        $this->assertAttributeNotEmpty('resourceMethod', $this->floorUpdates);
+        $this->assertAttributeInternalType('string', 'resourceMethod', $this->floorUpdates);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightFoundation\FloorUpdates::FLOOR_UPDATES_METHOD, 'resourceMethod', $this->floorUpdates);
     }
 }
