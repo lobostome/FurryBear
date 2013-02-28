@@ -15,7 +15,7 @@
 namespace FurryBear\Tests\Resource\SunlightFoundation;
 
 /**
- * A test for SunlightFoundation\Bills.
+ * A test for SunlightFoundation\Votes.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -24,7 +24,7 @@ namespace FurryBear\Tests\Resource\SunlightFoundation;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-class BillsTest extends \PHPUnit_Framework_TestCase
+class VotesTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \FurryBear\FurryBear
@@ -32,9 +32,9 @@ class BillsTest extends \PHPUnit_Framework_TestCase
     protected $furryBear;
     
     /**
-     * @var \FurryBear\Resource\SunlightFoundation\Bills
+     * @var \FurryBear\Resource\SunlightFoundation\Votes
      */
-    protected $bills;
+    protected $votes;
     
     /**
      * @var string
@@ -59,7 +59,7 @@ class BillsTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->bills = new \FurryBear\Resource\SunlightFoundation\Bills($this->furryBear);
+        $this->votes = new \FurryBear\Resource\SunlightFoundation\Votes($this->furryBear);
     }
     
     /**
@@ -68,7 +68,7 @@ class BillsTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         unset($this->furryBear);
-        unset($this->bills);
+        unset($this->votes);
         unset($this->apiKey);
     }
     
@@ -77,8 +77,8 @@ class BillsTest extends \PHPUnit_Framework_TestCase
      */
     public function testConstruct()
     {
-        $this->assertAttributeNotEmpty('resourceMethod', $this->bills);
-        $this->assertAttributeInternalType('string', 'resourceMethod', $this->bills);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightFoundation\Bills::BILLS_METHOD, 'resourceMethod', $this->bills);
+        $this->assertAttributeNotEmpty('resourceMethod', $this->votes);
+        $this->assertAttributeInternalType('string', 'resourceMethod', $this->votes);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightFoundation\Votes::VOTES_METHOD, 'resourceMethod', $this->votes);
     }
 }

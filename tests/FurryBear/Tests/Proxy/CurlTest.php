@@ -24,14 +24,14 @@ namespace FurryBear\Tests\Proxy;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-class CurlProxyTest extends \PHPUnit_Framework_TestCase
+class CurlTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Test all curl method with a stub.
      */
     public function testCurlWrapperMethods()
     {
-        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\Curl')
                           ->disableOriginalConstructor()
                           ->getMock();
         

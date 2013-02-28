@@ -11,7 +11,7 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-namespace FurryBear\HttpAdapter;
+namespace FurryBear\Http;
 
 /**
  * The http connection interface for the adapter pattern.

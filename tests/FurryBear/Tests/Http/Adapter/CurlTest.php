@@ -12,7 +12,7 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Tests\HttpAdapter;
+namespace FurryBear\Tests\Http\Adapter;
 
 /**
  * Test for CurlHttpAdapter.
@@ -23,7 +23,7 @@ namespace FurryBear\Tests\HttpAdapter;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
+class CurlTest extends \PHPUnit_Framework_TestCase
 {   
     /**
      * Test curl return content.
@@ -33,11 +33,11 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         $headers = array("Cache-Control: no-cache, must-revalidate",
                          "Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         
-        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\Curl')
                           ->disableOriginalConstructor()
                           ->getMock();
         
-        $curlAdapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
+        $curlAdapter = new \FurryBear\Http\Adapter\Curl($curlProxy);
         $curlAdapter->setHeaders($headers);
 
         $this->assertNull($curlAdapter->getContent('http://example.com'));
@@ -53,13 +53,13 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         // 2. make $this->proxy->execute() == false
         // 3. Handle exception
         
-        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\CurlProxy')
+        $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\Curl')
                           ->disableOriginalConstructor()
                           ->getMock();
         $curlProxy->expects($this->any())
                   ->method('execute')
                   ->will($this->returnValue(false));
-        $curlAdapter = new \FurryBear\HttpAdapter\CurlHttpAdapter($curlProxy);
+        $curlAdapter = new \FurryBear\Http\Adapter\Curl($curlProxy);
         
         try {
             $curlAdapter->getContent('http://example.com');
@@ -77,7 +77,7 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
         $headers = array("Cache-Control: no-cache, must-revalidate",
                          "Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         
-        $curlAdapter = new \FurryBear\HttpAdapter\CurlHttpAdapter();
+        $curlAdapter = new \FurryBear\Http\Adapter\Curl();
         $curlAdapter->setHeaders($headers);
         
         $this->assertObjectHasAttribute('headers', $curlAdapter);
@@ -93,7 +93,7 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetUserAgent()
     {
-        $curlAdapter = new \FurryBear\HttpAdapter\CurlHttpAdapter();
+        $curlAdapter = new \FurryBear\Http\Adapter\Curl();
         $curlAdapter->setUserAgent('FurryBear via cURL');
         
         $this->assertObjectHasAttribute('userAgent', $curlAdapter);

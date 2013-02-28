@@ -21,7 +21,7 @@ namespace FurryBear\Proxy;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     http://curl.haxx.se/
  */
-class CurlProxy implements HttpRequest
+class Curl implements HttpRequest
 {
     /**
      * A connection handle.
@@ -90,6 +90,6 @@ class CurlProxy implements HttpRequest
      */
     public function getError()
     {
-        return curl_errno($this->_handle) . ': ' . curl_error($this->_handle);
+        return 'cURL error code: ' . curl_errno($this->_handle) . '; error: ' . curl_error($this->_handle);
     }
 }

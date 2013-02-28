@@ -11,10 +11,11 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-namespace FurryBear\HttpAdapter;
+namespace FurryBear\Http\Adapter;
 
 use FurryBear\Exception\NoResultException,
-    FurryBear\Proxy\CurlProxy;
+    FurryBear\Proxy\Curl as CurlProxy,
+    FurryBear\Http\HttpAdapterInterface;
 
 /**
  * A HTTP adapter based on curl.
@@ -26,7 +27,7 @@ use FurryBear\Exception\NoResultException,
  * @link     http://curl.haxx.se/
  */
 
-class CurlHttpAdapter implements HttpAdapterInterface
+class Curl implements HttpAdapterInterface
 {
     /**
      * The contents of the <code>"User-Agent: "</code> header to be used in a 
@@ -49,14 +50,14 @@ class CurlHttpAdapter implements HttpAdapterInterface
     /**
      * A reference to a cURL proxy object.
      * 
-     * @var \FurryBear\Proxy\CurlProxy 
+     * @var \FurryBear\Proxy\Curl 
      */
     protected $proxy = null;
     
     /**
-     * Construct with an optional cURL object.
+     * Construct with an optional cURL proxy object.
      * 
-     * @param \FurryBear\Proxy\CurlProxy $proxy A CurlProxy object.
+     * @param \FurryBear\Proxy\Curl $proxy A Curl proxy object.
      */
     public function __construct($proxy = null)
     {
@@ -79,19 +80,15 @@ class CurlHttpAdapter implements HttpAdapterInterface
         }
         
         $this->proxy->setOption(CURLOPT_RETURNTRANSFER, true);
-        $this->proxy->setOption(CURLOPT_VERBOSE, 1);
-        $this->proxy->setOption(CURLOPT_FOLLOWLOCATION, 1);
         $this->proxy->setOption(CURLOPT_USERAGENT, $this->userAgent);
         if (!empty($this->headers)) {
             $this->proxy->setOption(CURLOPT_HTTPHEADER, $this->headers);
         }
 
         $content = $this->proxy->execute();
-        $this->proxy->getInfo();
-        $this->proxy->close();
         
         if ($content === false) {
-            throw new NoResultException('Failure! ' . $this->proxy->getError() . '; Curl Info: ' . json_encode($this->proxy->getInfo()));
+            throw new NoResultException($this->proxy->getError());
         }
         
         return $content;
@@ -119,5 +116,16 @@ class CurlHttpAdapter implements HttpAdapterInterface
     public function setUserAgent($userAgent) 
     {
         $this->userAgent = $userAgent;
+    }
+    
+    /**
+     * 
+     */
+    public function __destruct()
+    {
+        if (is_resource($this->proxy)) {
+            $this->proxy->close();
+        }
+        $this->proxy = null;
     }
 }

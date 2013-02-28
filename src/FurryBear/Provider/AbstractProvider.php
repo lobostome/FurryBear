@@ -13,7 +13,7 @@
  */
 namespace FurryBear\Provider;
 
-use FurryBear\HttpAdapter\HttpAdapterInterface;
+use FurryBear\Http\HttpAdapterInterface;
 
 /**
  * An abstract provider class that sets up a basic provider.
@@ -29,14 +29,14 @@ abstract class AbstractProvider
     /**
      * A reference to a concrete http adapter.
      * 
-     * @var \FurryBear\HttpAdapter\HttpAdapterInterface
+     * @var \FurryBear\Http\HttpAdapterInterface
      */
     protected $adapter = null;
     
     /**
      * Set the default HTTP adapter for a provider.
      * 
-     * @param \FurryBear\HttpAdapter\HttpAdapterInterface $adapter An HTTP adapter.
+     * @param \FurryBear\Http\HttpAdapterInterface $adapter An HTTP adapter.
      */
     public function __construct(HttpAdapterInterface $adapter)
     {
@@ -46,7 +46,7 @@ abstract class AbstractProvider
     /**
      * Set the default HTTP adapter for a provider.
      * 
-     * @param \FurryBear\HttpAdapter\HttpAdapterInterface $adapter An HTTP adapter.
+     * @param \FurryBear\Http\HttpAdapterInterface $adapter An HTTP adapter.
      * 
      * @return void
      */
@@ -58,7 +58,7 @@ abstract class AbstractProvider
     /**
      * Retrieve the HTTP adapter.
      * 
-     * @return \FurryBear\HttpAdapter\HttpAdapterInterface
+     * @return \FurryBear\Http\HttpAdapterInterface
      */
     public function getAdapter()
     {

@@ -14,7 +14,8 @@
 
 namespace FurryBear\Resource\SunlightFoundation;
 
-use FurryBear\Resource\AbstractResource;
+use FurryBear\Resource\AbstractResource,
+    FurryBear\Iterator\SunlightFoundation\PageIterator;
 
 /**
  * A base presentation of SunlightFoundation resource.
@@ -44,17 +45,34 @@ class BaseResource extends AbstractResource
      * 
      * @return string
      */
-    protected function buildQuery($params)
+    protected function buildQuery(array $params)
     {
         $apiKey = array();
         if (method_exists($this->furryBear->getProvider(), 'getApiKey')) {
             $apiKey['apikey'] = $this->furryBear->getProvider()->getApiKey();
         }
         
+        // convert booleans to string representation
+        array_walk($params, function(&$item, $key) { 
+            if (is_bool($item)) {
+                $item = ($item) ? 'true' : 'false';
+            }
+        });
+        
         return $this->furryBear->getProvider()->getServiceUrl() 
                . '/' .
                $this->getResourceMethod() 
                . '?' .
                http_build_query(array_merge($apiKey, $params));
+    }
+
+    /**
+     * Gets an iterator that can iterate over multiple result pages.
+     * 
+     * @return \FurryBear\Iterator\SunlightFoundation\PageIterator
+     */
+    public function getIterator()
+    {
+        return new PageIterator($this);
     }
 }

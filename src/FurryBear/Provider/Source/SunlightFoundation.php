@@ -14,7 +14,7 @@
 
 namespace FurryBear\Provider\Source;
 
-use FurryBear\HttpAdapter\HttpAdapterInterface,
+use FurryBear\Http\HttpAdapterInterface,
     FurryBear\Provider\AbstractProvider;
 
 /**
@@ -48,8 +48,8 @@ class SunlightFoundation extends AbstractProvider
     /**
      * Construct the provider and bind to a HTTP adapter.
      * 
-     * @param \FurryBear\HttpAdapter\HttpAdapterInterface $adapter The HTTP adapter
-     * @param string                                      $apiKey  The service API key.
+     * @param \FurryBear\Http\HttpAdapterInterface $adapter The HTTP adapter
+     * @param string                               $apiKey  The service API key.
      */
     public function __construct(HttpAdapterInterface $adapter, $apiKey)
     {
@@ -94,7 +94,8 @@ class SunlightFoundation extends AbstractProvider
      * 
      * @return string
      */
-    public function getDirectory() {
+    public function getDirectory()
+    {
         return self::RESOURCE_DIR;
-    } 
+    }
 }
