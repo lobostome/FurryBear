@@ -2,14 +2,6 @@
 
 require_once 'config.php';
 
-$adapter    = new \FurryBear\Http\Adapter\Curl();
-$provider   = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
-$output     = new \FurryBear\Output\Strategy\JsonToObject();
-
-$fb = new \FurryBear\FurryBear();
-$fb->registerProvider($provider)
-   ->registerOutput($output);
-
 $params = array('query'     => 'committee of the whole',
                 'chamber'   => 'house');
 

@@ -2,24 +2,25 @@
 
 require_once 'config.php';
 
-$adapter    = new \FurryBear\Http\Adapter\Curl();
-$provider   = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
-$output     = new \FurryBear\Output\Strategy\JsonToArray();
-
-$fb = new \FurryBear\FurryBear();
-$fb->registerProvider($provider)
-   ->registerOutput($output);
-
+/**
+ * 1. Full text search (query)
+ * 2. Partial response (fields)
+ * 3. Pagination (per_page, page)
+ * 4. Highlighting (highlight)
+ */
 $params1 = array('query'           => '"health care" medicine',
                  'history.enacted' => true,
+                 'fields'          => 'official_title,chamber,introduced_on,search',
                  'highlight'       => true,
                  'per_page'        => 25,
                  'page'            => 2);
 
-$params2 = array('last_name' => 'Smith');
-
-$params3 = array('breakdown.total.Yea__gte' => 70,
-                 'chamber'                  => 'senate');
+/**
+ * Filtering
+ */
+$params2 = array('last_name'    => 'Smith',
+                 'fields'       => 'first_name,last_name,state,title',
+                 'order'        => 'state__asc,first_name__asc');
 
 // A sample use
 try {
@@ -29,8 +30,6 @@ try {
     
     // Or directly pass params to get() method
     var_dump($fb->legislators->get($params2));
-    
-    var_dump($fb->votes->get($params3));
 } catch (\Exception $e) {
     echo $e->getMessage();
 }
