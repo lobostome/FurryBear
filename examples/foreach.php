@@ -1,12 +1,6 @@
 <?php
 
-require_once '../SplClassLoader.php';
-
-$classLoader = new SplClassLoader(__DIR__ . '/../src');
-$classLoader->register();
-
-// Substitute with your API key.
-$apiKey = 'xxxxx';
+require_once 'config.php';
 
 $adapter = new \FurryBear\Http\Adapter\Curl();
 $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);

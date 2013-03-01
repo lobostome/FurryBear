@@ -1,12 +1,6 @@
 <?php
 
-require_once '../SplClassLoader.php';
-
-$classLoader = new SplClassLoader(__DIR__ . '/../src');
-$classLoader->register();
-
-// Substitute with your API key.
-$apiKey = 'xxxxx';
+require_once 'config.php';
 
 $adapter = new \FurryBear\Http\Adapter\Curl();
 $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
@@ -32,34 +26,3 @@ try {
 } catch (\FurryBear\Exception\NoResultException $e) {
     echo $e->getMessage();
 }
-
-/*
-// 2. Use a Java-like iteration
-
-try {
-
-    $fb->bills->setParams($params);
-    $it = $fb->bills->getIterator();
-    $i = 0;
-    while($it->valid()) {
-        $i++;
-        var_dump($it->current());
-        $it->next();
-
-        if($i == 2) break;
-    }
-} catch (\FurryBear\Exception\NoResultException $e) {
-    echo $e->getMessage();
-}
-
-// 3. The simpler foreach way.
-
-$i = 0;
-$fb->bills->setParams($params);
-foreach($fb->bills as $page) {
-    ++$i;
-    var_dump($page);
-    if($i == 2) break;
-}
- * 
- */
