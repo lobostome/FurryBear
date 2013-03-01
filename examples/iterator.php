@@ -21,20 +21,7 @@ $params = array("history.house_passage_result__exists" => true,
                 "per_page" => 2,
                 "page"  => 1);
 
-// A sample use
-try {
-    $fb->bills->setParams($params);
-    var_dump($fb->bills->get($params));
-} catch (\FurryBear\Exception\NoProviderException $e) {
-    echo $e->getMessage();
-} catch (\FurryBear\Exception\NoOutputException $e) {
-    echo $e->getMessage();
-} catch (\FurryBear\Exception\NoResultException $e) {
-    echo $e->getMessage();
-}
-
-/*
-// 2. Use a Java-like iteration
+// Use a Java-like iteration
 
 try {
 
@@ -48,18 +35,10 @@ try {
 
         if($i == 2) break;
     }
+} catch (\FurryBear\Exception\NoProviderException $e) {
+    echo $e->getMessage();
+} catch (\FurryBear\Exception\NoOutputException $e) {
+    echo $e->getMessage();
 } catch (\FurryBear\Exception\NoResultException $e) {
     echo $e->getMessage();
 }
-
-// 3. The simpler foreach way.
-
-$i = 0;
-$fb->bills->setParams($params);
-foreach($fb->bills as $page) {
-    ++$i;
-    var_dump($page);
-    if($i == 2) break;
-}
- * 
- */
