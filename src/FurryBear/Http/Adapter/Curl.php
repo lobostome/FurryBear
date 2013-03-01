@@ -91,6 +91,9 @@ class Curl implements HttpAdapterInterface
             throw new NoResultException($this->proxy->getError());
         }
         
+        $this->proxy->close();
+        $this->proxy = null;
+        
         return $content;
     }
 
@@ -119,7 +122,7 @@ class Curl implements HttpAdapterInterface
     }
     
     /**
-     * 
+     * Clean up the cURL proxy object
      */
     public function __destruct()
     {

@@ -154,11 +154,19 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * Test getting a result from the resource.
+     * Test getting a result from the resource with parameters.
      */
-    public function testGet()
+    public function testGetWithParams()
     {
         $params = array("key1" => "value1", "key2" => "value 2");
         $this->assertNull($this->stub->get($params));
+    }
+    
+    /**
+     * Test getting a result from the resource without parameters.
+     */
+    public function testGetWithoutParams()
+    {
+        $this->assertNull($this->stub->get());
     }
 }

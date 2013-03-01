@@ -116,7 +116,8 @@ class FurryBear
      * 
      * @return \FurryBear\Resource\AbstractResource
      */
-    public function __get($name) {
+    public function __get($name)
+    {
         if (is_null($this->provider)) {
             throw new NoProviderException('The provider is not specified.');
         }

@@ -2,32 +2,24 @@
 
 require_once 'config.php';
 
-$adapter = new \FurryBear\Http\Adapter\Curl();
-$provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
-$output = new \FurryBear\Output\Strategy\JsonToObject();
+$adapter    = new \FurryBear\Http\Adapter\Curl();
+$provider   = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
+$output     = new \FurryBear\Output\Strategy\JsonToObject();
 
 $fb = new \FurryBear\FurryBear();
 $fb->registerProvider($provider)
    ->registerOutput($output);
 
-$params = array("history.house_passage_result__exists" => true, 
-                "chamber" => "house",
-                "per_page" => 2,
-                "page"  => 1);
-
-// Use a Java-like iteration
+$params = array('query'     => 'committee of the whole',
+                'chamber'   => 'house');
 
 try {
 
-    $fb->bills->setParams($params);
-    $it = $fb->bills->getIterator();
-    $i = 0;
+    $fb->floor_updates->setParams($params);
+    $it = $fb->floor_updates->getIterator();
     while($it->valid()) {
-        $i++;
         var_dump($it->current());
-        $it->next();
-
-        if($i == 2) break;
+        $it->next(); // How ugly that is...
     }
 } catch (\FurryBear\Exception\NoProviderException $e) {
     echo $e->getMessage();
