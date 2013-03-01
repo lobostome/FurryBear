@@ -123,7 +123,7 @@ class Curl implements HttpAdapterInterface
      */
     public function __destruct()
     {
-        if (is_resource($this->proxy)) {
+        if (!is_null($this->proxy)) {
             $this->proxy->close();
         }
         $this->proxy = null;

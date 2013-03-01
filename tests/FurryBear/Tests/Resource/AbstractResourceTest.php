@@ -158,6 +158,7 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
      */
     public function testGet()
     {
-        $this->assertNull($this->stub->get(array()));
+        $params = array("key1" => "value1", "key2" => "value 2");
+        $this->assertNull($this->stub->get($params));
     }
 }
