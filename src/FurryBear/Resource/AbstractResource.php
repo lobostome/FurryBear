@@ -114,7 +114,7 @@ abstract class AbstractResource implements \IteratorAggregate
      * 
      * @return mixed
      */
-    public function get(array $params)
+    public function get(array $params = array())
     {
         if (!empty($params)) {
             $this->params = $params;

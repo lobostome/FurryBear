@@ -2,27 +2,34 @@
 
 require_once 'config.php';
 
-$adapter = new \FurryBear\Http\Adapter\Curl();
-$provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
-$output = new \FurryBear\Output\Strategy\JsonToObject();
+/**
+ * 1. Full text search (query)
+ * 2. Partial response (fields)
+ * 3. Pagination (per_page, page)
+ * 4. Highlighting (highlight)
+ */
+$params1 = array('query'           => '"health care" medicine',
+                 'history.enacted' => true,
+                 'fields'          => 'official_title,chamber,introduced_on,search',
+                 'highlight'       => true,
+                 'per_page'        => 25,
+                 'page'            => 2);
 
-$fb = new \FurryBear\FurryBear();
-$fb->registerProvider($provider)
-   ->registerOutput($output);
-
-$params = array("history.house_passage_result__exists" => true, 
-                "chamber" => "house",
-                "per_page" => 2,
-                "page"  => 1);
+/**
+ * Filtering
+ */
+$params2 = array('last_name'    => 'Smith',
+                 'fields'       => 'first_name,last_name,state,title',
+                 'order'        => 'state__asc,first_name__asc');
 
 // A sample use
 try {
-    $fb->bills->setParams($params);
-    var_dump($fb->bills->get($params));
-} catch (\FurryBear\Exception\NoProviderException $e) {
-    echo $e->getMessage();
-} catch (\FurryBear\Exception\NoOutputException $e) {
-    echo $e->getMessage();
-} catch (\FurryBear\Exception\NoResultException $e) {
+    // Use setParams() method
+    $fb->bills_search->setParams($params1);
+    var_dump($fb->bills_search->get());
+    
+    // Or directly pass params to get() method
+    var_dump($fb->legislators->get($params2));
+} catch (\Exception $e) {
     echo $e->getMessage();
 }
