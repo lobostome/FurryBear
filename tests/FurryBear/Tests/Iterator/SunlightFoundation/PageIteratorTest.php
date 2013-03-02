@@ -134,22 +134,4 @@ class PageIteratorTest extends \PHPUnit_Framework_TestCase
         
         $this->assertFalse($this->iterator->valid());
     }
-    
-    /*
-    public function testSetParams()
-    {
-        $params = array("key1" => "value1", "key2" => "value 2");
-        
-        $this->assertClassHasAttribute('params', '\\FurryBear\\Resource\\AbstractResource');
-        $this->assertAttributeInternalType('array', 'params', $this->stub);
-        $this->assertInternalType('array', $params);
-        
-        $this->stub->setParams($params);
-        $params_keys = array_keys($params);
-        
-        $this->assertAttributeInternalType('array', 'params', $this->stub);
-        $this->assertArrayHasKey($params_keys[1], \PHPUnit_Framework_Assert::readAttribute($this->stub, 'params'));
-        $this->assertCount(2, \PHPUnit_Framework_Assert::readAttribute($this->stub, 'params'));
-    }
-    */
 }
