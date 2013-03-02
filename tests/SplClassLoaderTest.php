@@ -24,7 +24,8 @@ class SplClassLoaderTest extends PHPUnit_Framework_TestCase {
     /**
      * Create fixtures.
      */
-    protected function setUp() {
+    protected function setUp()
+    {
         require_once __DIR__ . '/../SplClassLoader.php';
         $this->autoload = new SplClassLoader(__DIR__ . '/../src');
     }
@@ -32,7 +33,8 @@ class SplClassLoaderTest extends PHPUnit_Framework_TestCase {
     /**
      * Test to ensure the loader autoloads the needed classes.
      */
-    public function testClassLoad() {
+    public function testClassLoad()
+    {
         $this->assertInstanceOf('Furrybear\FurryBear', 
                                 new \FurryBear\FurryBear());
     }
@@ -40,7 +42,8 @@ class SplClassLoaderTest extends PHPUnit_Framework_TestCase {
     /**
      * Test to ensure the autoload function is registered.
      */
-    public function testRegister() {
+    public function testRegister()
+    {
         $this->autoload->register();
         
         $spl_autoload_functions = spl_autoload_functions();
@@ -53,9 +56,19 @@ class SplClassLoaderTest extends PHPUnit_Framework_TestCase {
     }
     
     /**
+     * Test file not found.
+     */
+    public function testFileDoesNotExistException()
+    {
+        $this->setExpectedException('\\FurryBear\\Exception\\FileDoesNotExistException');
+        new \FurryBear\Something();
+    }
+    
+    /**
      * Clean up fixtures.
      */
-    protected function tearDown() {
+    protected function tearDown()
+    {
         spl_autoload_unregister(array('SplClassLoader', 'furrybear_autoload'));
     }
 }
