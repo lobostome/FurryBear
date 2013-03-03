@@ -50,7 +50,8 @@ class SplClassLoader {
      * @param string $nsSeparator The namespace separator string.
      * @param string $ext The extension of the php file.
      */
-    public function __construct($path = null, $nsSeparator = '\\', $ext = '.php') {
+    public function __construct($path = null, $nsSeparator = '\\', $ext = '.php')
+    {
         $this->_path = $path;
         $this->_namespaceSeparator = $nsSeparator;
         $this->_fileExtension = $ext;
@@ -59,7 +60,8 @@ class SplClassLoader {
     /**
      * Installs this class loader on the SPL autoload stack.
      */
-    public function register() {
+    public function register()
+    {
         spl_autoload_register(array($this, 'furrybear_autoload'));
     }
 
@@ -68,7 +70,8 @@ class SplClassLoader {
      *
      * @param string $className The name of the class to load.
      */
-    public function furrybear_autoload($className) {
+    public function furrybear_autoload($className)
+    {
         $className = ltrim($className, $this->_namespaceSeparator);
         $fileName = '';
         $namespace = '';

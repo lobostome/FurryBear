@@ -53,11 +53,12 @@ class BaseResource extends AbstractResource
         }
         
         // convert booleans to string representation
-        array_walk($params, function(&$item, $key) { 
-            if (is_bool($item)) {
-                $item = ($item) ? 'true' : 'false';
+        array_walk ($params, function(&$item, $key) {
+                if (is_bool($item)) {
+                    $item = ($item) ? 'true' : 'false';
+                }
             }
-        });
+        );
         
         return $this->furryBear->getProvider()->getServiceUrl() 
                . '/' .
