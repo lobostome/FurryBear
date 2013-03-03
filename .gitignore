@@ -1,0 +1,8 @@
+.DS_Store
+cache.properties
+examples/apikey.local
+# build/api
+build/code-browser
+# build/coverage
+build/logs
+build/pdepend
