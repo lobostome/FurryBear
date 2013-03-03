@@ -144,6 +144,23 @@ try {
 }
 ```
 
+Documentation
+-------------
+
+The documentation is located in the build/api directory. For a graphical view of 
+the class diagram see build/api/classes.png.
+
+Unit tests coverage
+-------------------
+
+The coverage report is located in the build/coverage directory.
+
+To run the phpunit tests, switch to tests directory and execute:
+
+```bash
+$ phpunit .
+```
+
 Issues
 ------
 

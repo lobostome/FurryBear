@@ -1,16 +1,25 @@
 <?php
 
 /**
- * This file is part of the FurryBear package. For the full copyright and 
- * license information, please view the LICENSE file that was distributed with 
- * this source code.
+ * FurryBear
+ * 
+ * PHP Version 5.3
+ * 
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
  */
 
 /**
- * Test for SplClassLoader
+ * Test for autoloader.
  * 
- * @author lobostome <lobostome@local.dev>
- * @package FurryBear
+ * @category Congress_API
+ * @package  FurryBear
+ * @author   lobostome <lobostome@local.dev>
+ * @license  http://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/lobostome/FurryBear
  */
 class SplClassLoaderTest extends PHPUnit_Framework_TestCase {
     

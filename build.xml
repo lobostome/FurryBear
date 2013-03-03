@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="furry-bear" default="build">
+<project name="FurryBear" default="build">
     <target name="build"
          depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdoc,phpunit,phpcb"/>
 
@@ -114,14 +114,14 @@
 
     <target name="phpdoc" description="Generate API documentation using phpDocumentor 2">
         <exec executable="phpdoc">
+            <arg value="--title" />
+            <arg value="${ant.project.name}" />
             <arg value="--directory" />
             <arg path="${basedir}" />
             <arg value="--target" />
             <arg path="${basedir}/build/api" />
             <arg value="--ignore" />
-            <arg path="${basedir}/tests/*" />
-            <arg value="--ignore" />
-            <arg path="${basedir}/examples/*" />
+            <arg path="${basedir}/tests/*,${basedir}/examples/*" />
         </exec>
     </target>
 
