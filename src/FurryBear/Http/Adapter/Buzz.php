@@ -99,7 +99,7 @@ class Buzz implements HttpAdapterInterface
      * 
      * @return void
      */
-    public function setHeaders(array $headers = array())
+    public function setHeaders(array $headers)
     {
         $this->headers = $headers;
     }

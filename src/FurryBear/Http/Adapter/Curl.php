@@ -104,7 +104,7 @@ class Curl implements HttpAdapterInterface
      * 
      * @return void
      */
-    public function setHeaders($headers)
+    public function setHeaders(array $headers)
     {
         $this->headers = $headers;
     }
