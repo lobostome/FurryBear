@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>FurryBear » \FurryBear\Http\HttpAdapterInterface</title>
+<title>FurryBear » \FurryBear\Http\Adapter\Buzz</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -55,17 +55,36 @@
 <span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
 <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
 </div>
-<ul class="side-nav nav nav-list"><li class="nav-header">
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Construct with an optional cURL proxy object."><span class="description">Construct with an optional cURL proxy object.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Clean up the Buzz proxy object"><span class="description">Clean up the Buzz proxy object</span><pre>__destruct()</pre></a></li>
 <li class="method public "><a href="#method_getContent" title="getContent :: Fetches the content from a URL."><span class="description">Fetches the content from a URL.</span><pre>getContent()</pre></a></li>
 <li class="method public "><a href="#method_setHeaders" title="setHeaders :: Sets an array of HTTP header fields."><span class="description">Sets an array of HTTP header fields.</span><pre>setHeaders()</pre></a></li>
 <li class="method public "><a href="#method_setUserAgent" title='setUserAgent :: Sets the contents of the "User-Agent: " header.'><span class="description">Sets the contents of the "User-Agent: " header.</span><pre>setUserAgent()</pre></a></li>
 </ul>
-</li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_headers" title="$headers :: An array of HTTP header fields to set, in the format:
+&lt;code&gt;
+array('Content-type: text/plain', 'Content-length: 100')
+&lt;/code&gt;"><span class="description"></span><pre>$headers</pre></a></li>
+<li class="property protected "><a href="#property_proxy" title="$proxy :: A reference to a Buzz proxy object."><span class="description"></span><pre>$proxy</pre></a></li>
+<li class="property protected "><a href="#property_userAgent" title='$userAgent :: The contents of the &lt;code&gt;"User-Agent: "&lt;/code&gt; header to be used in a
+HTTP request.'><span class="description"></span><pre>$userAgent</pre></a></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="span8">
-<a id="\FurryBear\Http\HttpAdapterInterface"></a><ul class="breadcrumb">
+<a id="\FurryBear\Http\Adapter\Buzz"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -73,12 +92,15 @@
 <li>
 <span class="divider">\</span><a href="../namespaces/FurryBear.Http.html">Http</a>
 </li>
+<li>
+<span class="divider">\</span><a href="../namespaces/FurryBear.Http.Adapter.html">Adapter</a>
+</li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/FurryBear.Http.HttpAdapterInterface.html">HttpAdapterInterface</a>
+<span class="divider">\</span><a href="../classes/FurryBear.Http.Adapter.Buzz.html">Buzz</a>
 </li>
 </ul>
-<div class="element interface">
-<p class="short_description">The http connection interface for the adapter pattern.</p>
+<div class="element class">
+<p class="short_description">A HTTP adapter based on Buzz http client.</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -100,11 +122,29 @@
 </tr>
 <tr>
 <th>link</th>
-<td><a href="https://github.com/lobostome/FurryBear">https://github.com/lobostome/FurryBear</a></td>
+<td><a href="https://github.com/kriswallsmith/Buzz">https://github.com/kriswallsmith/Buzz</a></td>
 </tr>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Construct with an optional cURL proxy object.</h2>
+<pre>__construct(<a href="../classes/FurryBear.Proxy.Buzz.html">\FurryBear\Proxy\Buzz</a> $proxy) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$proxy</h4>
+<code><a href="../classes/FurryBear.Proxy.Buzz.html">\FurryBear\Proxy\Buzz</a></code><p>A Buzz proxy object.</p></div>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Clean up the Buzz proxy object</h2>
+<pre>__destruct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="method_getContent"></a><div class="element clickable method public method_getContent" data-toggle="collapse" data-target=".method_getContent .collapse">
 <h2>Fetches the content from a URL.</h2>
 <pre>getContent(string $url) : string</pre>
@@ -114,7 +154,7 @@
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$url</h4>
-<code>string</code><p>The target URI location.</p></div>
+<code>string</code><p>A URL of the resource.</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>string</code></div>
 </div></div>
@@ -128,7 +168,7 @@
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$headers</h4>
-<code>array</code><p>An array of custom HTTP headers.</p></div>
+<code>array</code><p>An array of HTTP headers.</p></div>
 </div></div>
 </div>
 <a id="method_setUserAgent"></a><div class="element clickable method public method_setUserAgent" data-toggle="collapse" data-target=".method_setUserAgent .collapse">
@@ -142,6 +182,26 @@
 <h4>$userAgent</h4>
 <code>string</code><p>A custom user agent.</p></div>
 </div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_headers"> </a><div class="element clickable property protected property_headers" data-toggle="collapse" data-target=".property_headers .collapse">
+<h2></h2>
+<pre>$headers : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_proxy"> </a><div class="element clickable property protected property_proxy" data-toggle="collapse" data-target=".property_proxy .collapse">
+<h2></h2>
+<pre>$proxy : <a href="../classes/FurryBear.Proxy.Buzz.html">\FurryBear\Proxy\Buzz</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_userAgent"> </a><div class="element clickable property protected property_userAgent" data-toggle="collapse" data-target=".property_userAgent .collapse">
+<h2></h2>
+<pre>$userAgent : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 </div>
 </div>
