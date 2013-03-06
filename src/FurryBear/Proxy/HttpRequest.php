@@ -47,7 +47,7 @@ interface HttpRequest
     /**
      * Set an option for a connection transfer.
      * 
-     * @param int   $name  The CURLOPT_XXX option to set.
+     * @param int   $name  The option to set.
      * @param mixed $value The value to be set on option.
      * 
      * @return void
