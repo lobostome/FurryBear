@@ -13,20 +13,20 @@
  */
 namespace FurryBear\Http\Adapter;
 
-use FurryBear\Proxy\Buzz as BuzzProxy,
+use FurryBear\Proxy\Guzzle as GuzzleProxy,
     FurryBear\Http\HttpAdapterInterface;
 
 /**
- * A HTTP adapter based on Buzz http client.
+ * A HTTP adapter based on Guzzle http client.
  * 
  * @category Congress_API
  * @package  FurryBear
  * @author   lobostome <lobostome@local.dev>
  * @license  http://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/kriswallsmith/Buzz
+ * @link     https://github.com/guzzle/guzzle
  */
 
-class Buzz implements HttpAdapterInterface
+class Guzzle implements HttpAdapterInterface
 {
     /**
      * The contents of the <code>"User-Agent: "</code> header to be used in a 
@@ -34,7 +34,7 @@ class Buzz implements HttpAdapterInterface
      * 
      * @var string
      */
-    protected $userAgent = 'FurryBear via Buzz';
+    protected $userAgent = 'FurryBear via Guzzle';
     
     /**
      * An array of HTTP header fields to set, in the format:
@@ -47,16 +47,16 @@ class Buzz implements HttpAdapterInterface
     protected $headers = array();
     
     /**
-     * A reference to a Buzz proxy object.
+     * A reference to a Guzzle proxy object.
      * 
-     * @var \FurryBear\Proxy\Buzz 
+     * @var \FurryBear\Proxy\Guzzle
      */
     protected $proxy = null;
     
     /**
-     * Construct with an optional Buzz proxy object.
+     * Construct with an optional Guzzle proxy object.
      * 
-     * @param \FurryBear\Proxy\Buzz $proxy A Buzz proxy object.
+     * @param \FurryBear\Proxy\Guzzle $proxy A Guzzle proxy object.
      */
     public function __construct($proxy = null)
     {
@@ -75,16 +75,18 @@ class Buzz implements HttpAdapterInterface
     public function getContent($url) 
     {
         if (is_null($this->proxy)) {
-            $this->proxy = new BuzzProxy();
+            $this->proxy = new GuzzleProxy();
         }
         
-        $this->headers[] = 'User-Agent: ' . $this->userAgent;
-        $this->proxy->setHeaders($this->headers);
+        $this->proxy->setUserAgent($this->userAgent);
+        if (!empty($this->headers)) {
+            $this->proxy->setHeaders($this->headers);
+        }
 
         try {
             $this->proxy->setUrl($url);
             $response = $this->proxy->execute();
-            $content  = $response->getContent();
+            $content  = $response->getBody();
         } catch (\Exception $e) {
             $this->proxy->getError();
         }
