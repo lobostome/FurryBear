@@ -1,6 +1,6 @@
 <?php
 
-require_once 'config_buzz.php';
+require_once 'config/config_buzz.php';
 
 /**
  * 1. Full text search (query)
