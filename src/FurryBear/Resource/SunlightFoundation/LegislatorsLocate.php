@@ -42,4 +42,17 @@ class LegislatorsLocate extends BaseResource
         parent::__construct($furryBear);
         $this->setResourceMethod(self::LEGISLATORS_LOCATE_METHOD);
     }
+    
+    /**
+     * Retrieves legislators based on a zip
+     * 
+     * @param string $zip
+     * 
+     * @return mixed
+     */
+    public function getByZip($zip)
+    {
+        $params = array('zip' => (string)$zip);
+        return $this->get($params);
+    }
 }
