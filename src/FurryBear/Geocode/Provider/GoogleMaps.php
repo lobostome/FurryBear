@@ -53,6 +53,7 @@ class GoogleMaps extends AbstractProvider
     public function __construct($useSsl = false)
     {
         $this->useSsl = $useSsl;
+        $this->setOutput(new \FurryBear\Output\Strategy\JsonToObject());
     }
     
     /**

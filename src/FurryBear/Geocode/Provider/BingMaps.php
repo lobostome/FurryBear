@@ -66,8 +66,11 @@ class BingMaps extends AbstractProvider
         if (empty($apiKey)) {
             throw new InvalidCredentialsException('Bing Maps requires an API key');
         }
+        
         $this->apiKey = $apiKey;
         $this->useSsl = $useSsl;
+        
+        $this->setOutput(new \FurryBear\Output\Strategy\JsonToObject());
     }
     
     /**
