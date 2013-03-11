@@ -1,6 +1,6 @@
 <?php
 
-require_once 'config_guzzle.php';
+require_once 'config/config_guzzle.php';
 
 /**
  * 1. Full text search (query)
