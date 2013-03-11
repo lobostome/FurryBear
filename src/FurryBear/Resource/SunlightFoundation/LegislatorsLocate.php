@@ -87,7 +87,6 @@ class LegislatorsLocate extends BaseResource
     {
         $this->geocodeProvider = $provider;
         $this->geocodeProvider->setAdapter($this->furryBear->getProvider()->getAdapter());
-        $this->geocodeProvider->setOutput(new \FurryBear\Output\Strategy\JsonToObject);
         
         return $this;
     }
