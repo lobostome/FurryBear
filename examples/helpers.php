@@ -21,6 +21,11 @@ try {
     
     var_dump($fb->legislators_locate->via($bingMaps)
                                     ->getByAddress($address));
+    
+    $openStreetMap = new \FurryBear\Geocode\Provider\OpenStreetMap('FurryBear');
+    
+    var_dump($fb->legislators_locate->via($openStreetMap)
+                                    ->getByAddress($address));
 } catch (\Exception $e) {
     echo $e->getMessage();
 }

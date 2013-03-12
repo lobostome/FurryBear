@@ -88,7 +88,7 @@ class BingMaps extends AbstractProvider
         if (isset($jsonObj->resourceSets[0]) && isset($jsonObj->resourceSets[0]->resources[0])) {
             $result = $jsonObj->resourceSets[0]->resources[0];
         } else {
-            throw new NoResultException('Could not get results from Bing Maps');
+            throw new NoResultException('Could not geocode the address: ' . $address);
         }
                 
         return array('latitude'  => $result->geocodePoints[0]->coordinates[0], 
