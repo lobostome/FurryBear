@@ -14,7 +14,8 @@
 
 namespace FurryBear\Geocode\Provider;
 
-use FurryBear\Geocode\AbstractProvider;
+use FurryBear\Geocode\AbstractProvider,
+    FurryBear\Exception\NoResultException;
 
 /**
  * Google Maps geocode provider
@@ -67,6 +68,24 @@ class GoogleMaps extends AbstractProvider
     {
         $url = sprintf($this->useSsl ? self::ENDPOINT_URL_SSL : self::ENDPOINT_URL, urlencode($address));
         $jsonObj = $this->get($url);
+        
+        switch ($jsonObj->status) {
+            case 'ZERO_RESULTS':
+                throw new NoResultException('The geocode was passed a non-existent address: ' . $address);
+                break;
+            case 'OVER_QUERY_LIMIT':
+                throw new NoResultException('You are over your geocode quota');
+                break;
+            case 'REQUEST_DENIED':
+                throw new NoResultException('Your request was denied, generally because of lack of a sensor parameter');
+                break;
+            case 'INVALID_REQUEST':
+                throw new NoResultException('The address is missing');
+                break;
+            case 'UNKNOWN_ERROR':
+                throw new NoResultException('The request could not be processed due to a server error. The request may succeed if you try again.');
+                break;
+        }
         
         $result = $jsonObj->results[0];
         
