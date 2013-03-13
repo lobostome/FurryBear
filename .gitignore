@@ -3,6 +3,7 @@ cache.properties
 examples/config/keys
 examples/composer.*
 examples/vendor
+examples/download
 # build/api
 build/code-browser
 # build/coverage
