@@ -28,6 +28,31 @@ use FurryBear\Exception\NotImplementedException;
 class BulkData extends BaseResource
 {
     /**
+     * A URL for a CSV of basic legislator information
+     */
+    const LEGISLATORS_SPREADSHEET = 'https://raw.github.com/sunlightlabs/apidata/master/legislators/legislators.csv';
+    
+    /**
+     * A URL for a CSV connecting Zip Code Tabulation Areas (ZCTAs) to congressional districts 
+     */
+    const ZIP_TO_DISTRICT = 'http://assets.sunlightfoundation.com/data/districts.csv';
+    
+    /**
+     * A URL for a zip file of official photos of members of Congress, size 40x50
+     */
+    const LEGISLATORS_PHOTOS_SMALL = 'http://assets.sunlightfoundation.com/moc/40x50.zip';
+    
+    /**
+     * A URL for a zip file of official photos of members of Congress, size 100x125
+     */
+    const LEGISLATORS_PHOTOS_MEDIUM = 'http://assets.sunlightfoundation.com/moc/100x125.zip';
+    
+    /**
+     * A URL for a zip file of official photos of members of Congress, size 200x250
+     */
+    const LEGISLATORS_PHOTOS_LARGE = 'http://assets.sunlightfoundation.com/moc/200x250.zip';
+    
+    /**
      * The download directory location
      * 
      * @var string
@@ -104,5 +129,55 @@ class BulkData extends BaseResource
         
         $content = $this->furryBear->getProvider()->getAdapter()->getContent($url);
         file_put_contents($targetFile, $content);
+    }
+    
+    /**
+     * Download a CSV of basic legislator information
+     * 
+     * @return void
+     */
+    public function downloadLegislatorSpreadsheet()
+    {
+        $this->download(self::LEGISLATORS_SPREADSHEET);
+    }
+    
+    /**
+     * Download a CSV connecting Zip Code Tabulation Areas (ZCTAs) to congressional districts
+     * 
+     * @return void
+     */
+    public function downloadZipToDistrict()
+    {
+        $this->download(self::ZIP_TO_DISTRICT);
+    }
+    
+    /**
+     * Download a zip file of official photos of members of Congress, size 40x50
+     * 
+     * @return void
+     */
+    public function downloadLegislatorsPhotosSmall()
+    {
+        $this->download(self::LEGISLATORS_PHOTOS_SMALL);
+    }
+    
+    /**
+     * Download a zip file of official photos of members of Congress, size 100x125
+     * 
+     * @return void
+     */
+    public function downloadLegislatorsPhotosMedium()
+    {
+        $this->download(self::LEGISLATORS_PHOTOS_MEDIUM);
+    }
+    
+    /**
+     * Download a zip file of official photos of members of Congress, size 200x250
+     * 
+     * @return void
+     */
+    public function downloadLegislatorsPhotosLarge()
+    {
+        $this->download(self::LEGISLATORS_PHOTOS_LARGE);
     }
 }
