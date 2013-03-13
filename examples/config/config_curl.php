@@ -11,6 +11,11 @@ $apiKey = (file_exists($apikeyFile))
                     ? file_get_contents($apikeyFile) 
                     : 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
+/**
+ * FurryBear\Http\Adapter\Curl
+ * FurryBear\Http\Adapter\Buzz
+ * FurryBear\Http\Adapter\Guzzle
+ */
 $adapter    = new FurryBear\Http\Adapter\Curl();
 $provider   = new FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
 $output     = new FurryBear\Output\Strategy\JsonToArray();
