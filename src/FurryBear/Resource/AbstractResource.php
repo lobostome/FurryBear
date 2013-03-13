@@ -88,13 +88,14 @@ abstract class AbstractResource implements \IteratorAggregate
     /**
      * Set the request parameters.
      * 
-     * @param array $params The request parameters.
+     * @param array $params The request parameters
      * 
-     * @return void
+     * @return \FurryBear\Resource\AbstractResource
      */
     public function setParams(array $params)
     {
-        $this->params = $params;
+        $this->params = array_merge($this->params, $params);
+        return $this;
     }
     
     /**
@@ -108,6 +109,17 @@ abstract class AbstractResource implements \IteratorAggregate
     }
     
     /**
+     * Clear previously set parameters
+     * 
+     * @return \FurryBear\Resource\AbstractResource
+     */
+    public function clearParams()
+    {
+        $this->params = array();
+        return $this;
+    }
+    
+    /**
      * Retrieves a result based on some criteria.
      * 
      * @param array $params Search criteria.
@@ -117,13 +129,18 @@ abstract class AbstractResource implements \IteratorAggregate
     public function get(array $params = array())
     {
         if (!empty($params)) {
-            $this->params = $params;
+            $this->setParams($params);
         }
-        return $this->furryBear
-                    ->getOutput()
-                    ->convert($this->furryBear
-                                   ->getProvider()
-                                   ->getAdapter()
-                                   ->getContent($this->buildQuery($this->params)));
+        
+        $result = $this->furryBear
+                       ->getOutput()
+                       ->convert($this->furryBear
+                                      ->getProvider()
+                                      ->getAdapter()
+                                      ->getContent($this->buildQuery($this->params)));
+        
+        $this->clearParams();
+        
+        return $result;
     }
 }
