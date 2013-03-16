@@ -43,7 +43,7 @@ class JsonToObject implements Strategy
         if (json_last_error() == JSON_ERROR_NONE) {
             return $obj;
         } else {
-            throw new InvalidJsonException('Invalid json');
+            throw new InvalidJsonException('JsonToObject Output Strategy Report: Invalid json');
         }
     }
 }

@@ -15,7 +15,10 @@
 namespace FurryBear\Output\Strategy;
 
 use FurryBear\Exception\InvalidXmlException,
-    FurryBear\Output\Strategy;
+    FurryBear\Output\Strategy,
+    FurryBear\Output\Strategy\Error\Xml as XmlError;
+
+libxml_use_internal_errors(true);
 
 /**
  * Converts the xml string returned from the service to an object.
@@ -33,20 +36,16 @@ class XmlToObject implements Strategy
      * 
      * @param string $data The xml string returned from the service.
      * 
-     * @return object
+     * @return \SimpleXMLElement
      * @throws \FurryBear\Exception\InvalidJsonException
      */
     public function convert($data)
     {
-        libxml_use_internal_errors(true);
         $obj = simplexml_load_string($data);
         
-        if ($obj === false) {
-            $errors = '';
-            foreach (libxml_get_errors() as $error) {
-                $errors .= ';';
-            }
-            throw new InvalidXmlException('Invalid xml');
+        if (!$obj) {
+            $errors = new XmlError(libxml_get_errors());
+            throw new InvalidXmlException('XmlToObject Output Strategy: ' . $errors->__toString());
         } else {
             return $obj;
         }

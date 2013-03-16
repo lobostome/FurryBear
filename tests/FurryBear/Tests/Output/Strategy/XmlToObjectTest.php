@@ -41,11 +41,11 @@ class XmlToObjectTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * Test the invalid json exception.
+     * Test the invalid xml exception.
      */
     public function testInvalidXmlOutput()
     {
-        $data = '<?xml version="1.0"?><root<bill id="abc-113"></bill></root>';
+        $data = '<?xml version="1.0"?><root><bill id="abc-113"></root>';
         $output = new \FurryBear\Output\Strategy\XmlToObject();
         
         try {
