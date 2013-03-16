@@ -37,7 +37,7 @@ class XmlToObjectTest extends \PHPUnit_Framework_TestCase
         
         $this->assertInternalType('object', $obj);
         $this->assertObjectHasAttribute('bill', $obj);
-        $this->assertInstanceOf('\SimpleXMLElement', $obj->bill);
+        $this->assertInstanceOf('\\SimpleXMLElement', $obj->bill);
     }
     
     /**

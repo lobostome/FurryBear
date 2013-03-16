@@ -47,7 +47,7 @@ class Xml
      */
     public function __toString()
     {
-        $return = "\n\n";
+        $return = PHP_EOL . PHP_EOL;
         foreach ($this->errors as $error) {
             switch ($error->level) {
                 case LIBXML_ERR_WARNING:
@@ -61,10 +61,9 @@ class Xml
                     break;
             }
             
-            $return .= trim($error->message) .
-                            "\n  Line: $error->line" .
-                            "\n  Column: $error->column" .
-                            "\n\n";
+            $return .= trim($error->message) . PHP_EOL .
+                            "  Line: $error->line" . PHP_EOL .
+                            "  Column: $error->column" . PHP_EOL . PHP_EOL;
         }
         
         return $return;
