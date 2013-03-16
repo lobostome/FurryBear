@@ -72,6 +72,9 @@ class LegislatorsLocate extends BaseResource
      */
     public function getByAddress($address)
     {
+        if (is_null($this->geocodeProvider)) {
+            throw new \Exception('No geocode provider specified. To set up one, use the via() method');
+        }
         $params = $this->geocodeProvider->geocode($address);
         return $this->get($params);
     }
