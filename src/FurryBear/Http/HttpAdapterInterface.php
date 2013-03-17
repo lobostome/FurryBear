@@ -49,5 +49,5 @@ interface HttpAdapterInterface
      * 
      * @return void
      */
-    public function setHeaders($headers);
+    public function setHeaders(array $headers);
 }

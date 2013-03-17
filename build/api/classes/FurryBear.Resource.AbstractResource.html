@@ -60,6 +60,7 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Construct a resource with a FurryBear instance."><span class="description">Construct a resource with a FurryBear instance.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_clearParams" title="clearParams :: Clear previously set parameters"><span class="description">Clear previously set parameters</span><pre>clearParams()</pre></a></li>
 <li class="method public "><a href="#method_get" title="get :: Retrieves a result based on some criteria."><span class="description">Retrieves a result based on some criteria.</span><pre>get()</pre></a></li>
 <li class="method public "><a href="#method_getParams" title="getParams :: Gets the request parameters."><span class="description">Gets the request parameters.</span><pre>getParams()</pre></a></li>
 <li class="method public "><a href="#method_setParams" title="setParams :: Set the request parameters."><span class="description">Set the request parameters.</span><pre>setParams()</pre></a></li>
@@ -138,6 +139,16 @@
 <code><a href="../classes/FurryBear.FurryBear.html">\FurryBear\FurryBear</a></code><p>A FurryBear instance.</p></div>
 </div></div>
 </div>
+<a id="method_clearParams"></a><div class="element clickable method public method_clearParams" data-toggle="collapse" data-target=".method_clearParams .collapse">
+<h2>Clear previously set parameters</h2>
+<pre>clearParams() : <a href="../classes/FurryBear.Resource.AbstractResource.html">\FurryBear\Resource\AbstractResource</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.AbstractResource.html">\FurryBear\Resource\AbstractResource</a></code></div>
+</div></div>
+</div>
 <a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
 <h2>Retrieves a result based on some criteria.</h2>
 <pre>get(array $params) : mixed</pre>
@@ -164,14 +175,16 @@
 </div>
 <a id="method_setParams"></a><div class="element clickable method public method_setParams" data-toggle="collapse" data-target=".method_setParams .collapse">
 <h2>Set the request parameters.</h2>
-<pre>setParams(array $params) : void</pre>
+<pre>setParams(array $params) : <a href="../classes/FurryBear.Resource.AbstractResource.html">\FurryBear\Resource\AbstractResource</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$params</h4>
-<code>array</code><p>The request parameters.</p></div>
+<code>array</code><p>The request parameters</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.AbstractResource.html">\FurryBear\Resource\AbstractResource</a></code></div>
 </div></div>
 </div>
 <a id="method_buildQuery"></a><div class="element clickable method protected method_buildQuery" data-toggle="collapse" data-target=".method_buildQuery .collapse">
@@ -237,7 +250,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-02T17:49:42-06:00.<br></footer></div>
+            generated on 2013-03-17T00:31:42-05:00.<br></footer></div>
 </div>
 </body>
 </html>

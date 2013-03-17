@@ -1,6 +1,6 @@
 <?php
 
-require_once 'config.php';
+require_once 'config/config_curl.php';
 
 /**
  * 1. Full text search (query)

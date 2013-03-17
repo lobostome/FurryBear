@@ -1,6 +1,9 @@
 .DS_Store
 cache.properties
-examples/apikey.local
+examples/config/keys
+examples/composer.*
+examples/vendor
+examples/download
 # build/api
 build/code-browser
 # build/coverage

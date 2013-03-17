@@ -56,11 +56,11 @@ $fb->registerProvider($provider)
 Foundation Congress API methods can be accessed via properties of the 
 FurryBear\FurryBear object. The methods are mapped to the properties with the 
 following rules:
-1. No beginning slash. Example: **/legislators** becomes **legislators**.
-2. If there are two words separated by slash, replace the slash with an underscore.
-Example: **/legislators/locate** becomes **legislators_locate**
-3. If there are two words separated by underscore, there is no change. Example: 
-**/floor_updates** becomes **floor_updates**.
+  1. No beginning slash. Example: **/legislators** becomes **legislators**.
+  2. If there are two words separated by slash, replace the slash with an underscore. 
+     Example: **/legislators/locate** becomes **legislators_locate**
+  3. If there are two words separated by underscore, there is no change. Example: 
+     **/floor_updates** becomes **floor_updates**.
 
 The following example demonstrates a request with full text search (query), 
 partial response (fields), pagination (per_page, page), and highlighting (highlight). 
