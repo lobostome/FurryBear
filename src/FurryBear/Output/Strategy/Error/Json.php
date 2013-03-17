@@ -49,9 +49,6 @@ class Json
         $return = PHP_EOL;
         
         switch ($this->error) {
-            case JSON_ERROR_NONE:
-                $return .= 'No errors';
-            break;
             case JSON_ERROR_DEPTH:
                 $return .= 'Maximum stack depth exceeded';
             break;
