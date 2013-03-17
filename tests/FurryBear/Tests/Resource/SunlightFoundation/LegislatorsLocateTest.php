@@ -81,4 +81,9 @@ class LegislatorsLocateTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->legislatorsLocate);
         $this->assertAttributeEquals(\FurryBear\Resource\SunlightFoundation\LegislatorsLocate::LEGISLATORS_LOCATE_METHOD, 'resourceMethod', $this->legislatorsLocate);
     }
+    
+    public function testGetByZip()
+    {
+        $this->assertNull($this->legislatorsLocate->getByZip('12345'));
+    }
 }
