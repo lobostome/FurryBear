@@ -33,6 +33,8 @@ class Json
     
     /**
      * Construct an object with the last json error
+     * 
+     * @param int $error Last json error
      */
     public function __construct($error)
     {
