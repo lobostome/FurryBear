@@ -33,6 +33,8 @@ class Xml
     
     /**
      * Construct an object with an array of LibXMLError objects
+     * 
+     * @param array $errors An array of LibXMLError objects
      */
     public function __construct($errors)
     {

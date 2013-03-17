@@ -71,26 +71,39 @@
 <i class="icon-custom icon-class"></i> Classes</li>
 <li><a href="#SplClassLoader" title="SplClassLoader implements the autoloader interoperability standard PSR-0.">SplClassLoader</a></li>
 <li><a href="#FileDoesNotExistException" title="A custom exception thrown when a file does not exist.">FileDoesNotExistException</a></li>
+<li><a href="#InvalidArgumentException" title="A custom exception thrown when an invalid argument is provided.">InvalidArgumentException</a></li>
+<li><a href="#InvalidCredentialsException" title="A custom exception thrown when no valid credential is provided.">InvalidCredentialsException</a></li>
 <li><a href="#InvalidJsonException" title="A custom exception thrown when an invalid json string is encountered.">InvalidJsonException</a></li>
+<li><a href="#InvalidXmlException" title="A custom exception thrown when an invalid xml string is encountered.">InvalidXmlException</a></li>
 <li><a href="#NoOutputException" title="A custom exception thrown when output is not specified.">NoOutputException</a></li>
 <li><a href="#NoProviderException" title="A custom exception thrown when provider is not specified.">NoProviderException</a></li>
 <li><a href="#NoResultException" title="A custom exception thrown when result is a failure.">NoResultException</a></li>
 <li><a href="#NotImplementedException" title="A custom exception thrown when functionality not implemented.">NotImplementedException</a></li>
 <li><a href="#FurryBear" title="The main class that glues it all together.">FurryBear</a></li>
+<li><a href="#AbstractProvider" title="An abstract presentation of a geocode provider.">AbstractProvider</a></li>
+<li><a href="#BingMaps" title="Bing Maps geocode provider">BingMaps</a></li>
+<li><a href="#GoogleMaps" title="Google Maps geocode provider">GoogleMaps</a></li>
+<li><a href="#OpenStreetMap" title="OpenStreetMap geocode provider">OpenStreetMap</a></li>
 <li><a href="#Buzz" title="A HTTP adapter based on Buzz http client.">Buzz</a></li>
 <li><a href="#Curl" title="A HTTP adapter based on curl.">Curl</a></li>
+<li><a href="#Guzzle" title="A HTTP adapter based on Guzzle http client.">Guzzle</a></li>
 <li><a href="#PageIterator" title="An iterator over the pages of the result.">PageIterator</a></li>
+<li><a href="#Json" title="Converts an xml error to a more readable format">Json</a></li>
+<li><a href="#Xml" title="Converts an xml error to a more readable format">Xml</a></li>
 <li><a href="#JsonToArray" title="Converts the json string returned from the service to an array.">JsonToArray</a></li>
 <li><a href="#JsonToObject" title="Converts the json string returned from the service to an object.">JsonToObject</a></li>
+<li><a href="#XmlToObject" title="Converts the xml string returned from the service to an object.">XmlToObject</a></li>
 <li><a href="#AbstractProvider" title="An abstract provider class that sets up a basic provider.">AbstractProvider</a></li>
 <li><a href="#SunlightFoundation" title="A concrete provider based on Sunlight Foundation Congress API v3.">SunlightFoundation</a></li>
 <li><a href="#Buzz" title="A proxy that provides a surrogate for Buzz http client.">Buzz</a></li>
 <li><a href="#Curl" title="A proxy that provides a surrogate for curl.">Curl</a></li>
+<li><a href="#Guzzle" title="A proxy that provides a surrogate for Guzzle http client.">Guzzle</a></li>
 <li><a href="#AbstractResource" title="An abstract presentation of a resource.">AbstractResource</a></li>
 <li><a href="#ResourceFactory" title="A factory that aids creating resource objects.">ResourceFactory</a></li>
 <li><a href="#BaseResource" title="A base presentation of SunlightFoundation resource.">BaseResource</a></li>
 <li><a href="#Bills" title="This class gives access to Sunlight Congress bills resource.">Bills</a></li>
 <li><a href="#BillsSearch" title="This class gives access to Sunlight Congress bills/search resource.">BillsSearch</a></li>
+<li><a href="#BulkData" title="This class gives access to Sunlight Congress bulk data.">BulkData</a></li>
 <li><a href="#Committees" title="This class gives access to Sunlight Congress committees resource.">Committees</a></li>
 <li><a href="#DistrictsLocate" title="This class gives access to Sunlight Congress districts/locate resource.">DistrictsLocate</a></li>
 <li><a href="#FloorUpdates" title="This class gives access to Sunlight Congress floor_updates resource.">FloorUpdates</a></li>
@@ -143,12 +156,33 @@
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Exception.FileDoesNotExistException.html" class="more">« More »</a>
 </div>
+<div id="InvalidArgumentException" class="element ajax clickable class">
+<h1>InvalidArgumentException<a href="../classes/FurryBear.Exception.InvalidArgumentException.html">¶</a>
+</h1>
+<p class="short_description">A custom exception thrown when an invalid argument is provided.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Exception.InvalidArgumentException.html" class="more">« More »</a>
+</div>
+<div id="InvalidCredentialsException" class="element ajax clickable class">
+<h1>InvalidCredentialsException<a href="../classes/FurryBear.Exception.InvalidCredentialsException.html">¶</a>
+</h1>
+<p class="short_description">A custom exception thrown when no valid credential is provided.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Exception.InvalidCredentialsException.html" class="more">« More »</a>
+</div>
 <div id="InvalidJsonException" class="element ajax clickable class">
 <h1>InvalidJsonException<a href="../classes/FurryBear.Exception.InvalidJsonException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when an invalid json string is encountered.</p>
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Exception.InvalidJsonException.html" class="more">« More »</a>
+</div>
+<div id="InvalidXmlException" class="element ajax clickable class">
+<h1>InvalidXmlException<a href="../classes/FurryBear.Exception.InvalidXmlException.html">¶</a>
+</h1>
+<p class="short_description">A custom exception thrown when an invalid xml string is encountered.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Exception.InvalidXmlException.html" class="more">« More »</a>
 </div>
 <div id="NoOutputException" class="element ajax clickable class">
 <h1>NoOutputException<a href="../classes/FurryBear.Exception.NoOutputException.html">¶</a>
@@ -185,6 +219,34 @@
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.FurryBear.html" class="more">« More »</a>
 </div>
+<div id="AbstractProvider" class="element ajax clickable class">
+<h1>AbstractProvider<a href="../classes/FurryBear.Geocode.AbstractProvider.html">¶</a>
+</h1>
+<p class="short_description">An abstract presentation of a geocode provider.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Geocode.AbstractProvider.html" class="more">« More »</a>
+</div>
+<div id="BingMaps" class="element ajax clickable class">
+<h1>BingMaps<a href="../classes/FurryBear.Geocode.Provider.BingMaps.html">¶</a>
+</h1>
+<p class="short_description">Bing Maps geocode provider</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Geocode.Provider.BingMaps.html" class="more">« More »</a>
+</div>
+<div id="GoogleMaps" class="element ajax clickable class">
+<h1>GoogleMaps<a href="../classes/FurryBear.Geocode.Provider.GoogleMaps.html">¶</a>
+</h1>
+<p class="short_description">Google Maps geocode provider</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Geocode.Provider.GoogleMaps.html" class="more">« More »</a>
+</div>
+<div id="OpenStreetMap" class="element ajax clickable class">
+<h1>OpenStreetMap<a href="../classes/FurryBear.Geocode.Provider.OpenStreetMap.html">¶</a>
+</h1>
+<p class="short_description">OpenStreetMap geocode provider</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Geocode.Provider.OpenStreetMap.html" class="more">« More »</a>
+</div>
 <div id="Buzz" class="element ajax clickable class">
 <h1>Buzz<a href="../classes/FurryBear.Http.Adapter.Buzz.html">¶</a>
 </h1>
@@ -199,12 +261,33 @@
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Http.Adapter.Curl.html" class="more">« More »</a>
 </div>
+<div id="Guzzle" class="element ajax clickable class">
+<h1>Guzzle<a href="../classes/FurryBear.Http.Adapter.Guzzle.html">¶</a>
+</h1>
+<p class="short_description">A HTTP adapter based on Guzzle http client.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Http.Adapter.Guzzle.html" class="more">« More »</a>
+</div>
 <div id="PageIterator" class="element ajax clickable class">
 <h1>PageIterator<a href="../classes/FurryBear.Iterator.SunlightFoundation.PageIterator.html">¶</a>
 </h1>
 <p class="short_description">An iterator over the pages of the result.</p>
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Iterator.SunlightFoundation.PageIterator.html" class="more">« More »</a>
+</div>
+<div id="Json" class="element ajax clickable class">
+<h1>Json<a href="../classes/FurryBear.Output.Strategy.Error.Json.html">¶</a>
+</h1>
+<p class="short_description">Converts an xml error to a more readable format</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Output.Strategy.Error.Json.html" class="more">« More »</a>
+</div>
+<div id="Xml" class="element ajax clickable class">
+<h1>Xml<a href="../classes/FurryBear.Output.Strategy.Error.Xml.html">¶</a>
+</h1>
+<p class="short_description">Converts an xml error to a more readable format</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Output.Strategy.Error.Xml.html" class="more">« More »</a>
 </div>
 <div id="JsonToArray" class="element ajax clickable class">
 <h1>JsonToArray<a href="../classes/FurryBear.Output.Strategy.JsonToArray.html">¶</a>
@@ -219,6 +302,13 @@
 <p class="short_description">Converts the json string returned from the service to an object.</p>
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Output.Strategy.JsonToObject.html" class="more">« More »</a>
+</div>
+<div id="XmlToObject" class="element ajax clickable class">
+<h1>XmlToObject<a href="../classes/FurryBear.Output.Strategy.XmlToObject.html">¶</a>
+</h1>
+<p class="short_description">Converts the xml string returned from the service to an object.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Output.Strategy.XmlToObject.html" class="more">« More »</a>
 </div>
 <div id="AbstractProvider" class="element ajax clickable class">
 <h1>AbstractProvider<a href="../classes/FurryBear.Provider.AbstractProvider.html">¶</a>
@@ -247,6 +337,13 @@
 <p class="short_description">A proxy that provides a surrogate for curl.</p>
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Proxy.Curl.html" class="more">« More »</a>
+</div>
+<div id="Guzzle" class="element ajax clickable class">
+<h1>Guzzle<a href="../classes/FurryBear.Proxy.Guzzle.html">¶</a>
+</h1>
+<p class="short_description">A proxy that provides a surrogate for Guzzle http client.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Proxy.Guzzle.html" class="more">« More »</a>
 </div>
 <div id="AbstractResource" class="element ajax clickable class">
 <h1>AbstractResource<a href="../classes/FurryBear.Resource.AbstractResource.html">¶</a>
@@ -282,6 +379,13 @@
 <p class="short_description">This class gives access to Sunlight Congress bills/search resource.</p>
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Resource.SunlightFoundation.BillsSearch.html" class="more">« More »</a>
+</div>
+<div id="BulkData" class="element ajax clickable class">
+<h1>BulkData<a href="../classes/FurryBear.Resource.SunlightFoundation.BulkData.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Congress bulk data.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightFoundation.BulkData.html" class="more">« More »</a>
 </div>
 <div id="Committees" class="element ajax clickable class">
 <h1>Committees<a href="../classes/FurryBear.Resource.SunlightFoundation.Committees.html">¶</a>
@@ -352,7 +456,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-06T14:02:23-06:00.<br></footer></div>
+            generated on 2013-03-17T00:31:42-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>FurryBear » \FurryBear\Geocode\Provider\BingMaps</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">FurryBear</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FurryBear.html"><i class="icon-th"></i> FurryBear</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/FurryBear.html"><i class="icon-folder-open"></i> FurryBear</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Construct the geocoder with a API key and instruct whether the request is
+made over HTTPS"><span class="description">Construct the geocoder with a API key and instruct whether the request is
+made over HTTPS</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_geocode" title="geocode :: Converts an address into geographic coordinates"><span class="description">Converts an address into geographic coordinates</span><pre>geocode()</pre></a></li>
+<li class="method public inherited"><a href="#method_get" title="get :: Make a connection with the service and retrieve the information"><span class="description">Make a connection with the service and retrieve the information</span><pre>get()</pre></a></li>
+<li class="method public inherited"><a href="#method_getAdapter" title="getAdapter :: Get an instance of the HTTP adapter"><span class="description">Get an instance of the HTTP adapter</span><pre>getAdapter()</pre></a></li>
+<li class="method public inherited"><a href="#method_getOutput" title="getOutput :: Get an instance of the output strategy"><span class="description">Get an instance of the output strategy</span><pre>getOutput()</pre></a></li>
+<li class="method public inherited"><a href="#method_setAdapter" title="setAdapter :: Set the HTTP adapter"><span class="description">Set the HTTP adapter</span><pre>setAdapter()</pre></a></li>
+<li class="method public inherited"><a href="#method_setOutput" title="setOutput :: Set the output strategy"><span class="description">Set the output strategy</span><pre>setOutput()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property_adapter" title="$adapter :: The HTTP client"><span class="description"></span><pre>$adapter</pre></a></li>
+<li class="property protected "><a href="#property_apiKey" title="$apiKey :: The service API key"><span class="description"></span><pre>$apiKey</pre></a></li>
+<li class="property protected inherited"><a href="#property_output" title="$output :: The output strategy"><span class="description"></span><pre>$output</pre></a></li>
+<li class="property protected "><a href="#property_useSsl" title="$useSsl :: Enable use of HTTPS request"><span class="description"></span><pre>$useSsl</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_ENDPOINT_URL" title="ENDPOINT_URL :: The Geocoding API request URL"><span class="description">The Geocoding API request URL</span><pre>ENDPOINT_URL</pre></a></li>
+<li class="constant  "><a href="#constant_ENDPOINT_URL_SSL" title="ENDPOINT_URL_SSL :: The Geocoding API request URL over HTTPS"><span class="description">The Geocoding API request URL over HTTPS</span><pre>ENDPOINT_URL_SSL</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\FurryBear\Geocode\Provider\BingMaps"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FurryBear.html">FurryBear</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/FurryBear.Geocode.html">Geocode</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/FurryBear.Geocode.Provider.html">Provider</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FurryBear.Geocode.Provider.BingMaps.html">BingMaps</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Bing Maps geocode provider</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Congress_API</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/FurryBear.html">FurryBear</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:lobostome@local.dev">lobostome</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://opensource.org/licenses/MIT">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://msdn.microsoft.com/en-us/library/ff701714.aspx">http://msdn.microsoft.com/en-us/library/ff701714.aspx</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Construct the geocoder with a API key and instruct whether the request is
+made over HTTPS</h2>
+<pre>__construct(string $apiKey, boolean $useSsl) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$apiKey</h4>
+<code>string</code><p>The service API key</p></div>
+<div class="subelement argument">
+<h4>$useSsl</h4>
+<code>boolean</code><p>Use HTTPS or not</p></div>
+</div></div>
+</div>
+<a id="method_geocode"></a><div class="element clickable method public method_geocode" data-toggle="collapse" data-target=".method_geocode .collapse">
+<h2>Converts an address into geographic coordinates</h2>
+<pre>geocode(string $address) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$address</h4>
+<code>string</code><p>The target address</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>Make a connection with the service and retrieve the information</h2>
+<pre>get(string $url) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FurryBear\Geocode\AbstractProvider::get()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The service endpoint url</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_getAdapter"></a><div class="element clickable method public method_getAdapter" data-toggle="collapse" data-target=".method_getAdapter .collapse">
+<h2>Get an instance of the HTTP adapter</h2>
+<pre>getAdapter() : <a href="../classes/FurryBear.Http.HttpAdapterInterface.html">\FurryBear\Http\HttpAdapterInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FurryBear\Geocode\AbstractProvider::getAdapter()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Http.HttpAdapterInterface.html">\FurryBear\Http\HttpAdapterInterface</a></code></div>
+</div></div>
+</div>
+<a id="method_getOutput"></a><div class="element clickable method public method_getOutput" data-toggle="collapse" data-target=".method_getOutput .collapse">
+<h2>Get an instance of the output strategy</h2>
+<pre>getOutput() : <a href="../classes/FurryBear.Output.Strategy.html">\FurryBear\Output\Strategy</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FurryBear\Geocode\AbstractProvider::getOutput()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Output.Strategy.html">\FurryBear\Output\Strategy</a></code></div>
+</div></div>
+</div>
+<a id="method_setAdapter"></a><div class="element clickable method public method_setAdapter" data-toggle="collapse" data-target=".method_setAdapter .collapse">
+<h2>Set the HTTP adapter</h2>
+<pre>setAdapter(\FurryBear\Http\HttpAdapterInterface $adapter) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FurryBear\Geocode\AbstractProvider::setAdapter()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$adapter</h4>
+<code><a href="../classes/FurryBear.Http.HttpAdapterInterface.html">\FurryBear\Http\HttpAdapterInterface</a></code><p>The HTTP adapter</p></div>
+</div></div>
+</div>
+<a id="method_setOutput"></a><div class="element clickable method public method_setOutput" data-toggle="collapse" data-target=".method_setOutput .collapse">
+<h2>Set the output strategy</h2>
+<pre>setOutput(\FurryBear\Output\Strategy $output) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FurryBear\Geocode\AbstractProvider::setOutput()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$output</h4>
+<code><a href="../classes/FurryBear.Output.Strategy.html">\FurryBear\Output\Strategy</a></code><p>The output strategy</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_adapter"> </a><div class="element clickable property protected property_adapter" data-toggle="collapse" data-target=".property_adapter .collapse">
+<h2></h2>
+<pre>$adapter : <a href="../classes/FurryBear.Http.HttpAdapterInterface.html">\FurryBear\Http\HttpAdapterInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FurryBear\Geocode\AbstractProvider::$$adapter</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_apiKey"> </a><div class="element clickable property protected property_apiKey" data-toggle="collapse" data-target=".property_apiKey .collapse">
+<h2></h2>
+<pre>$apiKey : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_output"> </a><div class="element clickable property protected property_output" data-toggle="collapse" data-target=".property_output .collapse">
+<h2></h2>
+<pre>$output : <a href="../classes/FurryBear.Output.Strategy.html">\FurryBear\Output\Strategy</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FurryBear\Geocode\AbstractProvider::$$output</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_useSsl"> </a><div class="element clickable property protected property_useSsl" data-toggle="collapse" data-target=".property_useSsl .collapse">
+<h2></h2>
+<pre>$useSsl : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_ENDPOINT_URL"> </a><div class="element clickable constant  constant_ENDPOINT_URL" data-toggle="collapse" data-target=".constant_ENDPOINT_URL .collapse">
+<h2>The Geocoding API request URL</h2>
+<pre>ENDPOINT_URL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ENDPOINT_URL_SSL"> </a><div class="element clickable constant  constant_ENDPOINT_URL_SSL" data-toggle="collapse" data-target=".constant_ENDPOINT_URL_SSL .collapse">
+<h2>The Geocoding API request URL over HTTPS</h2>
+<pre>ENDPOINT_URL_SSL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-17T00:31:42-05:00.<br></footer></div>
+</div>
+</body>
+</html>

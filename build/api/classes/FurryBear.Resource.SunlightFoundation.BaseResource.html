@@ -60,9 +60,19 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Construct a resource with a FurryBear instance."><span class="description">Construct a resource with a FurryBear instance.</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method_clearParams" title="clearParams :: Clear previously set parameters"><span class="description">Clear previously set parameters</span><pre>clearParams()</pre></a></li>
+<li class="method public "><a href="#method_explain" title="explain :: Turn on how the API interpreted the query, and database-specific explain
+information"><span class="description">Turn on how the API interpreted the query, and database-specific explain
+information</span><pre>explain()</pre></a></li>
+<li class="method public "><a href="#method_fields" title="fields :: Specifies the fields to return"><span class="description">Specifies the fields to return</span><pre>fields()</pre></a></li>
+<li class="method public "><a href="#method_filter" title="filter :: Filter on fields with a key/value pair"><span class="description">Filter on fields with a key/value pair</span><pre>filter()</pre></a></li>
 <li class="method public inherited"><a href="#method_get" title="get :: Retrieves a result based on some criteria."><span class="description">Retrieves a result based on some criteria.</span><pre>get()</pre></a></li>
 <li class="method public "><a href="#method_getIterator" title="getIterator :: Gets an iterator that can iterate over multiple result pages."><span class="description">Gets an iterator that can iterate over multiple result pages.</span><pre>getIterator()</pre></a></li>
 <li class="method public inherited"><a href="#method_getParams" title="getParams :: Gets the request parameters."><span class="description">Gets the request parameters.</span><pre>getParams()</pre></a></li>
+<li class="method public "><a href="#method_highlight" title="highlight :: Turn on highlighted excerpts for search"><span class="description">Turn on highlighted excerpts for search</span><pre>highlight()</pre></a></li>
+<li class="method public "><a href="#method_order" title="order :: Specify the order of the result"><span class="description">Specify the order of the result</span><pre>order()</pre></a></li>
+<li class="method public "><a href="#method_page" title="page :: Control result pagination"><span class="description">Control result pagination</span><pre>page()</pre></a></li>
+<li class="method public "><a href="#method_search" title="search :: Set search query parameter"><span class="description">Set search query parameter</span><pre>search()</pre></a></li>
 <li class="method public inherited"><a href="#method_setParams" title="setParams :: Set the request parameters."><span class="description">Set the request parameters.</span><pre>setParams()</pre></a></li>
 </ul>
 </li>
@@ -142,6 +152,66 @@
 <code><a href="../classes/FurryBear.FurryBear.html">\FurryBear\FurryBear</a></code><p>A FurryBear instance.</p></div>
 </div></div>
 </div>
+<a id="method_clearParams"></a><div class="element clickable method public method_clearParams" data-toggle="collapse" data-target=".method_clearParams .collapse">
+<h2>Clear previously set parameters</h2>
+<pre>clearParams() : <a href="../classes/FurryBear.Resource.AbstractResource.html">\FurryBear\Resource\AbstractResource</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FurryBear\Resource\AbstractResource::clearParams()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.AbstractResource.html">\FurryBear\Resource\AbstractResource</a></code></div>
+</div></div>
+</div>
+<a id="method_explain"></a><div class="element clickable method public method_explain" data-toggle="collapse" data-target=".method_explain .collapse">
+<h2>Turn on how the API interpreted the query, and database-specific explain
+information</h2>
+<pre>explain() : <a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></code></div>
+</div></div>
+</div>
+<a id="method_fields"></a><div class="element clickable method public method_fields" data-toggle="collapse" data-target=".method_fields .collapse">
+<h2>Specifies the fields to return</h2>
+<pre>fields() : <a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></code></div>
+</div></div>
+</div>
+<a id="method_filter"></a><div class="element clickable method public method_filter" data-toggle="collapse" data-target=".method_filter .collapse">
+<h2>Filter on fields with a key/value pair</h2>
+<pre>filter(string $field, string $value, string $operator) : <a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The key to filter by</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value of the key</p></div>
+<div class="subelement argument">
+<h4>$operator</h4>
+<code>string</code><p>An optional operator</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/FurryBear.Exception.InvalidArgumentException.html">\FurryBear\Exception\InvalidArgumentException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></code></div>
+</div></div>
+</div>
 <a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
 <h2>Retrieves a result based on some criteria.</h2>
 <pre>get(array $params) : mixed</pre>
@@ -184,9 +254,85 @@
 <div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
+<a id="method_highlight"></a><div class="element clickable method public method_highlight" data-toggle="collapse" data-target=".method_highlight .collapse">
+<h2>Turn on highlighted excerpts for search</h2>
+<pre>highlight(string $startTag, string $endTag, integer $size) : <a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$startTag</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$endTag</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$size</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></code></div>
+</div></div>
+</div>
+<a id="method_order"></a><div class="element clickable method public method_order" data-toggle="collapse" data-target=".method_order .collapse">
+<h2>Specify the order of the result</h2>
+<pre>order(string $field, string $direction) : <a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to order by</p></div>
+<div class="subelement argument">
+<h4>$direction</h4>
+<code>string</code><p>The order direction: asc or desc</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/FurryBear.Exception.InvalidArgumentException.html">\FurryBear\Exception\InvalidArgumentException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></code></div>
+</div></div>
+</div>
+<a id="method_page"></a><div class="element clickable method public method_page" data-toggle="collapse" data-target=".method_page .collapse">
+<h2>Control result pagination</h2>
+<pre>page(int $number, int $size) : <a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$number</h4>
+<code>int</code><p>Page number</p></div>
+<div class="subelement argument">
+<h4>$size</h4>
+<code>int</code><p>Results per page</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></code></div>
+</div></div>
+</div>
+<a id="method_search"></a><div class="element clickable method public method_search" data-toggle="collapse" data-target=".method_search .collapse">
+<h2>Set search query parameter</h2>
+<pre>search(string $query) : <a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>string</code><p>The search query</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.SunlightFoundation.BaseResource.html">\FurryBear\Resource\SunlightFoundation\BaseResource</a></code></div>
+</div></div>
+</div>
 <a id="method_setParams"></a><div class="element clickable method public method_setParams" data-toggle="collapse" data-target=".method_setParams .collapse">
 <h2>Set the request parameters.</h2>
-<pre>setParams(array $params) : void</pre>
+<pre>setParams(array $params) : <a href="../classes/FurryBear.Resource.AbstractResource.html">\FurryBear\Resource\AbstractResource</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -197,7 +343,9 @@
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$params</h4>
-<code>array</code><p>The request parameters.</p></div>
+<code>array</code><p>The request parameters</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/FurryBear.Resource.AbstractResource.html">\FurryBear\Resource\AbstractResource</a></code></div>
 </div></div>
 </div>
 <a id="method_buildQuery"></a><div class="element clickable method protected method_buildQuery" data-toggle="collapse" data-target=".method_buildQuery .collapse">
@@ -289,7 +437,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-06T14:02:23-06:00.<br></footer></div>
+            generated on 2013-03-17T00:31:42-05:00.<br></footer></div>
 </div>
 </body>
 </html>
