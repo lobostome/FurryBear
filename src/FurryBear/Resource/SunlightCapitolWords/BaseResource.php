@@ -14,7 +14,8 @@
 
 namespace FurryBear\Resource\SunlightCapitolWords;
 
-use FurryBear\Resource\AbstractResource;
+use FurryBear\Resource\AbstractResource,
+    FurryBear\Exception\NotImplementedException;
 
 /**
  * A base presentation of SunlightCapitolWords resource.
@@ -66,7 +67,13 @@ class BaseResource extends AbstractResource
                http_build_query(array_merge($apiKey, $params));
     }
 
-    public function getIterator() {
-        
+    /**
+     * Gets an iterator that can iterate over multiple result pages.
+     * 
+     * @throws \FurryBear\Exception\NotImplementedException
+     */
+    public function getIterator()
+    {
+        throw new NotImplementedException("This resource does not support iteration");
     }
 }
