@@ -375,7 +375,7 @@ path, extension, and namespace.</description>
       </docblock>
     </class>
   </file>
-  <file path="src/FurryBear/FurryBear.php" hash="d2a4cb69f8b486744632fe6daa81fb15" package="FurryBear">
+  <file path="src/FurryBear/FurryBear.php" hash="2235d30cf3645d91fa00d8b7821aa28a" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -401,7 +401,7 @@ path, extension, and namespace.</description>
       <constant namespace="FurryBear" line="37" package="FurryBear">
         <name>VERSION</name>
         <full_name>VERSION</full_name>
-        <value>'0.3.0'</value>
+        <value>'0.3.1'</value>
         <docblock line="34">
           <description>The library version.</description>
           <long-description></long-description>
@@ -1451,7 +1451,7 @@ array('Content-type: text/plain', 'Content-length: 100')
       </method>
     </interface>
   </file>
-  <file path="src/FurryBear/Iterator/SunlightFoundation/PageIterator.php" hash="61a803de3d6d094a10cd4449c4b42b46" package="FurryBear">
+  <file path="src/FurryBear/Iterator/SunlightCongress/PageIterator.php" hash="f874dea3c2541841705559cbe16b0699" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -1461,11 +1461,11 @@ array('Content-type: text/plain', 'Content-length: 100')
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Iterator\SunlightFoundation" line="28" package="FurryBear">
+    <class final="false" abstract="false" namespace="FurryBear\Iterator\SunlightCongress" line="28" package="FurryBear">
       <extends/>
       <implements>\Iterator</implements>
       <name>PageIterator</name>
-      <full_name>\FurryBear\Iterator\SunlightFoundation\PageIterator</full_name>
+      <full_name>\FurryBear\Iterator\SunlightCongress\PageIterator</full_name>
       <docblock line="19">
         <description>An iterator over the pages of the result.</description>
         <long-description></long-description>
@@ -1475,7 +1475,7 @@ array('Content-type: text/plain', 'Content-length: 100')
         <tag line="19" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="19" name="link" description="http://sunlightlabs.github.com/congress/" link="http://sunlightlabs.github.com/congress/"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="35" namespace="FurryBear\Iterator\SunlightFoundation" package="Default">
+      <property final="false" static="false" visibility="protected" line="35" namespace="FurryBear\Iterator\SunlightCongress" package="Default">
         <name>$resource</name>
         <default></default>
         <docblock line="30">
@@ -1486,7 +1486,7 @@ array('Content-type: text/plain', 'Content-length: 100')
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="42" namespace="FurryBear\Iterator\SunlightFoundation" package="Default">
+      <property final="false" static="false" visibility="protected" line="42" namespace="FurryBear\Iterator\SunlightCongress" package="Default">
         <name>$params</name>
         <default></default>
         <docblock line="37">
@@ -1497,7 +1497,7 @@ array('Content-type: text/plain', 'Content-length: 100')
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="49" namespace="FurryBear\Iterator\SunlightFoundation" package="Default">
+      <property final="false" static="false" visibility="protected" line="49" namespace="FurryBear\Iterator\SunlightCongress" package="Default">
         <name>$totalPages</name>
         <default>1</default>
         <docblock line="44">
@@ -1508,7 +1508,7 @@ array('Content-type: text/plain', 'Content-length: 100')
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightFoundation" line="56" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightCongress" line="56" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="51">
@@ -1524,7 +1524,7 @@ array('Content-type: text/plain', 'Content-length: 100')
           <type>\FurryBear\Resource\AbstractResource</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightFoundation" line="75" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightCongress" line="75" package="FurryBear">
         <name>current</name>
         <full_name>current</full_name>
         <docblock line="70">
@@ -1536,21 +1536,21 @@ array('Content-type: text/plain', 'Content-length: 100')
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightFoundation" line="95" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightCongress" line="95" package="FurryBear">
         <name>key</name>
         <full_name>key</full_name>
         <docblock line="89">
           <description>Returns the key of the current element.</description>
           <long-description></long-description>
-          <tag line="89" name="return" description="" type="\FurryBear\Iterator\SunlightFoundation\scalar">
-            <type by_reference="false">\FurryBear\Iterator\SunlightFoundation\scalar</type>
+          <tag line="89" name="return" description="" type="\FurryBear\Iterator\SunlightCongress\scalar">
+            <type by_reference="false">\FurryBear\Iterator\SunlightCongress\scalar</type>
           </tag>
           <tag line="89" name="throws" description="This method does not exist." type="\FurryBear\Exception\NotImplementedException">
             <type by_reference="false">\FurryBear\Exception\NotImplementedException</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightFoundation" line="105" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightCongress" line="105" package="FurryBear">
         <name>next</name>
         <full_name>next</full_name>
         <docblock line="100">
@@ -1561,7 +1561,7 @@ array('Content-type: text/plain', 'Content-length: 100')
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightFoundation" line="115" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightCongress" line="115" package="FurryBear">
         <name>rewind</name>
         <full_name>rewind</full_name>
         <docblock line="110">
@@ -1572,7 +1572,7 @@ array('Content-type: text/plain', 'Content-length: 100')
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightFoundation" line="125" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Iterator\SunlightCongress" line="125" package="FurryBear">
         <name>valid</name>
         <full_name>valid</full_name>
         <docblock line="120">
@@ -1992,7 +1992,7 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Provider/Source/SunlightFoundation.php" hash="61aa23f2c556426d5c31be47e061f6e4" package="FurryBear">
+  <file path="src/FurryBear/Provider/Source/SunlightCongress.php" hash="40b262d3e6dfc5bfd9527a3dc796c5aa" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -2004,8 +2004,8 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
     </docblock>
     <class final="false" abstract="false" namespace="FurryBear\Provider\Source" line="29" package="FurryBear">
       <extends>\FurryBear\Provider\AbstractProvider</extends>
-      <name>SunlightFoundation</name>
-      <full_name>\FurryBear\Provider\Source\SunlightFoundation</full_name>
+      <name>SunlightCongress</name>
+      <full_name>\FurryBear\Provider\Source\SunlightCongress</full_name>
       <docblock line="20">
         <description>A concrete provider based on Sunlight Foundation Congress API v3.</description>
         <long-description></long-description>
@@ -2027,7 +2027,7 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
       <constant namespace="FurryBear\Provider\Source" line="39" package="FurryBear">
         <name>RESOURCE_DIR</name>
         <full_name>RESOURCE_DIR</full_name>
-        <value>'SunlightFoundation'</value>
+        <value>'SunlightCongress'</value>
         <docblock line="36">
           <description>The resource directory.</description>
           <long-description></long-description>
@@ -2962,7 +2962,7 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/BaseResource.php" hash="c48e65d567a2653f752ac3f77ba5cf2d" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/BaseResource.php" hash="74f26bfe8b26d306758855d908ac3d9e" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -2972,12 +2972,12 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="30" package="FurryBear">
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="30" package="FurryBear">
       <extends>\FurryBear\Resource\AbstractResource</extends>
       <name>BaseResource</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\BaseResource</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\BaseResource</full_name>
       <docblock line="21">
-        <description>A base presentation of SunlightFoundation resource.</description>
+        <description>A base presentation of SunlightCongress resource.</description>
         <long-description></long-description>
         <tag line="21" name="category" description="Congress_API"/>
         <tag line="21" name="package" description="FurryBear"/>
@@ -2985,7 +2985,7 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
         <tag line="21" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="21" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="37" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="37" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="32">
@@ -3001,7 +3001,7 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
           <type>\FurryBear\FurryBear</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="FurryBear\Resource\SunlightFoundation" line="49" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="FurryBear\Resource\SunlightCongress" line="49" package="FurryBear">
         <name>buildQuery</name>
         <full_name>buildQuery</full_name>
         <docblock line="42">
@@ -3020,29 +3020,29 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="76" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="76" package="FurryBear">
         <name>getIterator</name>
         <full_name>getIterator</full_name>
         <docblock line="71">
           <description>Gets an iterator that can iterate over multiple result pages.</description>
           <long-description></long-description>
-          <tag line="71" name="return" description="" type="\FurryBear\Iterator\SunlightFoundation\PageIterator">
-            <type by_reference="false">\FurryBear\Iterator\SunlightFoundation\PageIterator</type>
+          <tag line="71" name="return" description="" type="\FurryBear\Iterator\SunlightCongress\PageIterator">
+            <type by_reference="false">\FurryBear\Iterator\SunlightCongress\PageIterator</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="86" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="86" package="FurryBear">
         <name>fields</name>
         <full_name>fields</full_name>
         <docblock line="81">
           <description>Specifies the fields to return</description>
           <long-description></long-description>
-          <tag line="81" name="return" description="" type="\FurryBear\Resource\SunlightFoundation\BaseResource">
-            <type by_reference="false">\FurryBear\Resource\SunlightFoundation\BaseResource</type>
+          <tag line="81" name="return" description="" type="\FurryBear\Resource\SunlightCongress\BaseResource">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\BaseResource</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="104" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="104" package="FurryBear">
         <name>filter</name>
         <full_name>filter</full_name>
         <docblock line="93">
@@ -3057,8 +3057,8 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
           <tag line="93" name="param" description="An optional operator" type="string" variable="$operator">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="93" name="return" description="" type="\FurryBear\Resource\SunlightFoundation\BaseResource">
-            <type by_reference="false">\FurryBear\Resource\SunlightFoundation\BaseResource</type>
+          <tag line="93" name="return" description="" type="\FurryBear\Resource\SunlightCongress\BaseResource">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\BaseResource</type>
           </tag>
           <tag line="93" name="throws" description="" type="\FurryBear\Exception\InvalidArgumentException">
             <type by_reference="false">\FurryBear\Exception\InvalidArgumentException</type>
@@ -3080,7 +3080,7 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="128" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="128" package="FurryBear">
         <name>order</name>
         <full_name>order</full_name>
         <docblock line="118">
@@ -3092,8 +3092,8 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
           <tag line="118" name="param" description="The order direction: asc or desc" type="string" variable="$direction">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="118" name="return" description="" type="\FurryBear\Resource\SunlightFoundation\BaseResource">
-            <type by_reference="false">\FurryBear\Resource\SunlightFoundation\BaseResource</type>
+          <tag line="118" name="return" description="" type="\FurryBear\Resource\SunlightCongress\BaseResource">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\BaseResource</type>
           </tag>
           <tag line="118" name="throws" description="" type="\FurryBear\Exception\InvalidArgumentException">
             <type by_reference="false">\FurryBear\Exception\InvalidArgumentException</type>
@@ -3110,7 +3110,7 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="155" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="155" package="FurryBear">
         <name>search</name>
         <full_name>search</full_name>
         <docblock line="148">
@@ -3119,8 +3119,8 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
           <tag line="148" name="param" description="The search query" type="string" variable="$query">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="148" name="return" description="" type="\FurryBear\Resource\SunlightFoundation\BaseResource">
-            <type by_reference="false">\FurryBear\Resource\SunlightFoundation\BaseResource</type>
+          <tag line="148" name="return" description="" type="\FurryBear\Resource\SunlightCongress\BaseResource">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\BaseResource</type>
           </tag>
         </docblock>
         <argument line="155">
@@ -3129,19 +3129,19 @@ is based on the name of the provider.&lt;/p&gt;</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="167" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="167" package="FurryBear">
         <name>explain</name>
         <full_name>explain</full_name>
         <docblock line="161">
           <description>Turn on how the API interpreted the query, and database-specific explain
 information</description>
           <long-description></long-description>
-          <tag line="161" name="return" description="" type="\FurryBear\Resource\SunlightFoundation\BaseResource">
-            <type by_reference="false">\FurryBear\Resource\SunlightFoundation\BaseResource</type>
+          <tag line="161" name="return" description="" type="\FurryBear\Resource\SunlightCongress\BaseResource">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\BaseResource</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="182" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="182" package="FurryBear">
         <name>highlight</name>
         <full_name>highlight</full_name>
         <docblock line="173">
@@ -3156,8 +3156,8 @@ information</description>
           <tag line="173" name="param" description="" type="integer" variable="$size">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="173" name="return" description="" type="\FurryBear\Resource\SunlightFoundation\BaseResource">
-            <type by_reference="false">\FurryBear\Resource\SunlightFoundation\BaseResource</type>
+          <tag line="173" name="return" description="" type="\FurryBear\Resource\SunlightCongress\BaseResource">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\BaseResource</type>
           </tag>
         </docblock>
         <argument line="182">
@@ -3176,7 +3176,7 @@ information</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="202" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="202" package="FurryBear">
         <name>page</name>
         <full_name>page</full_name>
         <docblock line="194">
@@ -3188,8 +3188,8 @@ information</description>
           <tag line="194" name="param" description="Results per page" type="int" variable="$size">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="194" name="return" description="" type="\FurryBear\Resource\SunlightFoundation\BaseResource">
-            <type by_reference="false">\FurryBear\Resource\SunlightFoundation\BaseResource</type>
+          <tag line="194" name="return" description="" type="\FurryBear\Resource\SunlightCongress\BaseResource">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\BaseResource</type>
           </tag>
         </docblock>
         <argument line="202">
@@ -3205,7 +3205,7 @@ information</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/Bills.php" hash="d26d044462cdcedd37f686fe653f5470" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/Bills.php" hash="3eff6bd477eb5dce6a79d32e0f03c5bf" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3215,10 +3215,10 @@ information</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>Bills</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\Bills</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\Bills</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress bills resource.</description>
         <long-description></long-description>
@@ -3228,7 +3228,7 @@ information</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>BILLS_METHOD</name>
         <full_name>BILLS_METHOD</full_name>
         <value>'bills'</value>
@@ -3238,7 +3238,7 @@ information</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="40" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="34">
@@ -3257,7 +3257,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/BillsSearch.php" hash="74f628e51215ac93c480c16fe6155801" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/BillsSearch.php" hash="c694175f0be74734f9b1723c812ffa85" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3267,10 +3267,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>BillsSearch</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\BillsSearch</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\BillsSearch</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress bills/search resource.</description>
         <long-description></long-description>
@@ -3280,7 +3280,7 @@ sets the resource method URL.</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>BILLS_SEARCH_METHOD</name>
         <full_name>BILLS_SEARCH_METHOD</full_name>
         <value>'bills/search'</value>
@@ -3290,7 +3290,7 @@ sets the resource method URL.</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="40" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="34">
@@ -3309,7 +3309,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/BulkData.php" hash="4135c69439deee699b31e1f6f9579460" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/BulkData.php" hash="ceffa3ec1abd5b5e8cb42b5c75b6f06b" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3319,10 +3319,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="28" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="28" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>BulkData</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\BulkData</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\BulkData</full_name>
       <docblock line="19">
         <description>This class gives access to Sunlight Congress bulk data.</description>
         <long-description></long-description>
@@ -3332,7 +3332,7 @@ sets the resource method URL.</description>
         <tag line="19" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="19" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="33" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="33" package="FurryBear">
         <name>LEGISLATORS_SPREADSHEET</name>
         <full_name>LEGISLATORS_SPREADSHEET</full_name>
         <value>'https://raw.github.com/sunlightlabs/apidata/master/legislators/legislators.csv'</value>
@@ -3341,7 +3341,7 @@ sets the resource method URL.</description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="38" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="38" package="FurryBear">
         <name>ZIP_TO_DISTRICT</name>
         <full_name>ZIP_TO_DISTRICT</full_name>
         <value>'http://assets.sunlightfoundation.com/data/districts.csv'</value>
@@ -3350,7 +3350,7 @@ sets the resource method URL.</description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="43" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="43" package="FurryBear">
         <name>LEGISLATORS_PHOTOS_SMALL</name>
         <full_name>LEGISLATORS_PHOTOS_SMALL</full_name>
         <value>'http://assets.sunlightfoundation.com/moc/40x50.zip'</value>
@@ -3359,7 +3359,7 @@ sets the resource method URL.</description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="48" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="48" package="FurryBear">
         <name>LEGISLATORS_PHOTOS_MEDIUM</name>
         <full_name>LEGISLATORS_PHOTOS_MEDIUM</full_name>
         <value>'http://assets.sunlightfoundation.com/moc/100x125.zip'</value>
@@ -3368,7 +3368,7 @@ sets the resource method URL.</description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="53" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="53" package="FurryBear">
         <name>LEGISLATORS_PHOTOS_LARGE</name>
         <full_name>LEGISLATORS_PHOTOS_LARGE</full_name>
         <value>'http://assets.sunlightfoundation.com/moc/200x250.zip'</value>
@@ -3377,7 +3377,7 @@ sets the resource method URL.</description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="protected" line="60" namespace="FurryBear\Resource\SunlightFoundation" package="Default">
+      <property final="false" static="false" visibility="protected" line="60" namespace="FurryBear\Resource\SunlightCongress" package="Default">
         <name>$downloadDirectory</name>
         <default></default>
         <docblock line="55">
@@ -3388,7 +3388,7 @@ sets the resource method URL.</description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="67" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="67" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="62">
@@ -3404,7 +3404,7 @@ sets the resource method URL.</description>
           <type>\FurryBear\FurryBear</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="FurryBear\Resource\SunlightFoundation" line="79" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="FurryBear\Resource\SunlightCongress" line="79" package="FurryBear">
         <name>buildQuery</name>
         <full_name>buildQuery</full_name>
         <docblock line="72">
@@ -3423,7 +3423,7 @@ sets the resource method URL.</description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="88" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="88" package="FurryBear">
         <name>getIterator</name>
         <full_name>getIterator</full_name>
         <docblock line="83">
@@ -3434,7 +3434,7 @@ sets the resource method URL.</description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="99" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="99" package="FurryBear">
         <name>setDirectory</name>
         <full_name>setDirectory</full_name>
         <docblock line="92">
@@ -3443,8 +3443,8 @@ sets the resource method URL.</description>
           <tag line="92" name="param" description="The download directory" type="string" variable="$downloadDirectory">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="92" name="return" description="" type="\FurryBear\Resource\SunlightFoundation\BulkData">
-            <type by_reference="false">\FurryBear\Resource\SunlightFoundation\BulkData</type>
+          <tag line="92" name="return" description="" type="\FurryBear\Resource\SunlightCongress\BulkData">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\BulkData</type>
           </tag>
         </docblock>
         <argument line="99">
@@ -3453,7 +3453,7 @@ sets the resource method URL.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="118" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="118" package="FurryBear">
         <name>download</name>
         <full_name>download</full_name>
         <docblock line="111">
@@ -3472,7 +3472,7 @@ sets the resource method URL.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="139" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="139" package="FurryBear">
         <name>downloadLegislatorSpreadsheet</name>
         <full_name>downloadLegislatorSpreadsheet</full_name>
         <docblock line="134">
@@ -3483,7 +3483,7 @@ sets the resource method URL.</description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="149" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="149" package="FurryBear">
         <name>downloadZipToDistrict</name>
         <full_name>downloadZipToDistrict</full_name>
         <docblock line="144">
@@ -3494,7 +3494,7 @@ sets the resource method URL.</description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="159" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="159" package="FurryBear">
         <name>downloadLegislatorsPhotosSmall</name>
         <full_name>downloadLegislatorsPhotosSmall</full_name>
         <docblock line="154">
@@ -3505,7 +3505,7 @@ sets the resource method URL.</description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="169" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="169" package="FurryBear">
         <name>downloadLegislatorsPhotosMedium</name>
         <full_name>downloadLegislatorsPhotosMedium</full_name>
         <docblock line="164">
@@ -3516,7 +3516,7 @@ sets the resource method URL.</description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="179" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="179" package="FurryBear">
         <name>downloadLegislatorsPhotosLarge</name>
         <full_name>downloadLegislatorsPhotosLarge</full_name>
         <docblock line="174">
@@ -3529,7 +3529,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/Committees.php" hash="a16904f7fdadb55155e7b91ee79fab3d" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/Committees.php" hash="fa558754d52a59cf4cd3be85e018f155" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3539,10 +3539,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>Committees</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\Committees</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\Committees</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress committees resource.</description>
         <long-description></long-description>
@@ -3552,7 +3552,7 @@ sets the resource method URL.</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>COMMITTEES_METHOD</name>
         <full_name>COMMITTEES_METHOD</full_name>
         <value>'committees'</value>
@@ -3562,7 +3562,7 @@ sets the resource method URL.</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="40" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="34">
@@ -3581,7 +3581,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/DistrictsLocate.php" hash="4eb1034b65123e269d454095053e42fc" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/DistrictsLocate.php" hash="8c8f3bd6088817b88957f3c04b73767c" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3591,10 +3591,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>DistrictsLocate</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\DistrictsLocate</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\DistrictsLocate</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress districts/locate resource.</description>
         <long-description></long-description>
@@ -3604,7 +3604,7 @@ sets the resource method URL.</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>DISTRICTS_LOCATE_METHOD</name>
         <full_name>DISTRICTS_LOCATE_METHOD</full_name>
         <value>'districts/locate'</value>
@@ -3614,7 +3614,7 @@ sets the resource method URL.</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="40" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="34">
@@ -3633,7 +3633,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/FloorUpdates.php" hash="5670105e8d24f524590695f3a48cb3e0" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/FloorUpdates.php" hash="ae1e17df0d2c2aab8efab90af69df868" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3643,10 +3643,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>FloorUpdates</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\FloorUpdates</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\FloorUpdates</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress floor_updates resource.</description>
         <long-description></long-description>
@@ -3656,7 +3656,7 @@ sets the resource method URL.</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>FLOOR_UPDATES_METHOD</name>
         <full_name>FLOOR_UPDATES_METHOD</full_name>
         <value>'floor_updates'</value>
@@ -3666,7 +3666,7 @@ sets the resource method URL.</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="40" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="34">
@@ -3685,7 +3685,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/Hearings.php" hash="216e069edf7b774aad4f12521db28574" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/Hearings.php" hash="3e0dc3805434b528772f44cb45ceee6f" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3695,10 +3695,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>Hearings</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\Hearings</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\Hearings</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress hearings resource.</description>
         <long-description></long-description>
@@ -3708,7 +3708,7 @@ sets the resource method URL.</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>HEARINGS_METHOD</name>
         <full_name>HEARINGS_METHOD</full_name>
         <value>'hearings'</value>
@@ -3718,7 +3718,7 @@ sets the resource method URL.</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="40" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="34">
@@ -3737,7 +3737,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/Legislators.php" hash="58cb50a94da984f9a4f670ef35703e87" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/Legislators.php" hash="d5ff358700623499370fa7124f1ccd35" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3747,10 +3747,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>Legislators</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\Legislators</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\Legislators</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress legislators resource.</description>
         <long-description></long-description>
@@ -3760,7 +3760,7 @@ sets the resource method URL.</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>LEGISLATORS_METHOD</name>
         <full_name>LEGISLATORS_METHOD</full_name>
         <value>'legislators'</value>
@@ -3770,7 +3770,7 @@ sets the resource method URL.</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="40" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="34">
@@ -3789,7 +3789,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/LegislatorsLocate.php" hash="e57199e0ba0f856cd106a60def56de65" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/LegislatorsLocate.php" hash="e7fd0a6678fe87597807374c3644d079" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3799,10 +3799,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>LegislatorsLocate</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\LegislatorsLocate</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\LegislatorsLocate</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress legislators/locate resource.</description>
         <long-description></long-description>
@@ -3812,7 +3812,7 @@ sets the resource method URL.</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>LEGISLATORS_LOCATE_METHOD</name>
         <full_name>LEGISLATORS_LOCATE_METHOD</full_name>
         <value>'legislators/locate'</value>
@@ -3822,7 +3822,7 @@ sets the resource method URL.</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="protected" line="39" namespace="FurryBear\Resource\SunlightFoundation" package="Default">
+      <property final="false" static="false" visibility="protected" line="39" namespace="FurryBear\Resource\SunlightCongress" package="Default">
         <name>$geocodeProvider</name>
         <default></default>
         <docblock line="34">
@@ -3833,7 +3833,7 @@ string.&lt;/p&gt;</long-description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="47" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="47" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="41">
@@ -3850,7 +3850,7 @@ sets the resource method URL.</description>
           <type>\FurryBear\FurryBear</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="60" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="60" package="FurryBear">
         <name>getByZip</name>
         <full_name>getByZip</full_name>
         <docblock line="53">
@@ -3869,7 +3869,7 @@ sets the resource method URL.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="73" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="73" package="FurryBear">
         <name>getByAddress</name>
         <full_name>getByAddress</full_name>
         <docblock line="66">
@@ -3888,7 +3888,7 @@ sets the resource method URL.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="89" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="89" package="FurryBear">
         <name>via</name>
         <full_name>via</full_name>
         <docblock line="82">
@@ -3897,8 +3897,8 @@ sets the resource method URL.</description>
           <tag line="82" name="param" description="The geocode provider" type="\FurryBear\Geocode\AbstractProvider" variable="$provider">
             <type by_reference="false">\FurryBear\Geocode\AbstractProvider</type>
           </tag>
-          <tag line="82" name="return" description="" type="\FurryBear\Resource\SunlightFoundation\LegislatorsLocate">
-            <type by_reference="false">\FurryBear\Resource\SunlightFoundation\LegislatorsLocate</type>
+          <tag line="82" name="return" description="" type="\FurryBear\Resource\SunlightCongress\LegislatorsLocate">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\LegislatorsLocate</type>
           </tag>
         </docblock>
         <argument line="89">
@@ -3909,7 +3909,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/UpcomingBills.php" hash="899d6efe078a7f94908fc8e605fb9aa8" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/UpcomingBills.php" hash="bc90fa362488e46685eee3197346736a" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3919,10 +3919,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>UpcomingBills</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\UpcomingBills</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\UpcomingBills</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress upcoming_bills resource.</description>
         <long-description></long-description>
@@ -3932,7 +3932,7 @@ sets the resource method URL.</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>UPCOMING_BILLS_METHOD</name>
         <full_name>UPCOMING_BILLS_METHOD</full_name>
         <value>'upcoming_bills'</value>
@@ -3942,7 +3942,7 @@ sets the resource method URL.</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="40" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="34">
@@ -3961,7 +3961,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightFoundation/Votes.php" hash="afeb79aba79398478d101155428fd29b" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/Votes.php" hash="c70cfbd53949cfb5e404e55f29652225" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -3971,10 +3971,10 @@ sets the resource method URL.</description>
       <tag line="3" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
       <tag line="3" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
     </docblock>
-    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightFoundation" line="26" package="FurryBear">
-      <extends>\FurryBear\Resource\SunlightFoundation\BaseResource</extends>
+    <class final="false" abstract="false" namespace="FurryBear\Resource\SunlightCongress" line="26" package="FurryBear">
+      <extends>\FurryBear\Resource\SunlightCongress\BaseResource</extends>
       <name>Votes</name>
-      <full_name>\FurryBear\Resource\SunlightFoundation\Votes</full_name>
+      <full_name>\FurryBear\Resource\SunlightCongress\Votes</full_name>
       <docblock line="17">
         <description>This class gives access to Sunlight Congress votes resource.</description>
         <long-description></long-description>
@@ -3984,7 +3984,7 @@ sets the resource method URL.</description>
         <tag line="17" name="license" description="http://opensource.org/licenses/MIT MIT License"/>
         <tag line="17" name="link" description="https://github.com/lobostome/FurryBear" link="https://github.com/lobostome/FurryBear"/>
       </docblock>
-      <constant namespace="FurryBear\Resource\SunlightFoundation" line="32" package="FurryBear">
+      <constant namespace="FurryBear\Resource\SunlightCongress" line="32" package="FurryBear">
         <name>VOTES_METHOD</name>
         <full_name>VOTES_METHOD</full_name>
         <value>'votes'</value>
@@ -3994,7 +3994,7 @@ sets the resource method URL.</description>
 string.&lt;/p&gt;</long-description>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightFoundation" line="40" package="FurryBear">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress" line="40" package="FurryBear">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="34">
@@ -4024,7 +4024,7 @@ sets the resource method URL.</description>
       <namespace name="Adapter" full_name="FurryBear\Http\Adapter"/>
     </namespace>
     <namespace name="Iterator" full_name="FurryBear\Iterator">
-      <namespace name="SunlightFoundation" full_name="FurryBear\Iterator\SunlightFoundation"/>
+      <namespace name="SunlightCongress" full_name="FurryBear\Iterator\SunlightCongress"/>
     </namespace>
     <namespace name="Output" full_name="FurryBear\Output">
       <namespace name="Strategy" full_name="FurryBear\Output\Strategy">
@@ -4036,7 +4036,7 @@ sets the resource method URL.</description>
     </namespace>
     <namespace name="Proxy" full_name="FurryBear\Proxy"/>
     <namespace name="Resource" full_name="FurryBear\Resource">
-      <namespace name="SunlightFoundation" full_name="FurryBear\Resource\SunlightFoundation"/>
+      <namespace name="SunlightCongress" full_name="FurryBear\Resource\SunlightCongress"/>
     </namespace>
   </namespace>
   <namespace name="global" full_name="global"/>

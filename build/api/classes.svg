@@ -26,11 +26,11 @@
 <text text-anchor="middle" x="777" y="-2042" font-family="Times,serif" font-size="11.00" fill="gray">Provider</text>
 </g>
 <g id="clust5" class="cluster"><title>cluster_FurryBear\Provider</title>
-<path fill="none" stroke="gray" d="M465,-1750C465,-1750 849,-1750 849,-1750 855,-1750 861,-1756 861,-1762 861,-1762 861,-1848 861,-1848 861,-1854 855,-1860 849,-1860 849,-1860 465,-1860 465,-1860 459,-1860 453,-1854 453,-1848 453,-1848 453,-1762 453,-1762 453,-1756 459,-1750 465,-1750"/>
-<text text-anchor="middle" x="657" y="-1845" font-family="Times,serif" font-size="11.00" fill="gray">Provider</text>
+<path fill="none" stroke="gray" d="M465,-1750C465,-1750 842,-1750 842,-1750 848,-1750 854,-1756 854,-1762 854,-1762 854,-1848 854,-1848 854,-1854 848,-1860 842,-1860 842,-1860 465,-1860 465,-1860 459,-1860 453,-1854 453,-1848 453,-1848 453,-1762 453,-1762 453,-1756 459,-1750 465,-1750"/>
+<text text-anchor="middle" x="653.5" y="-1845" font-family="Times,serif" font-size="11.00" fill="gray">Provider</text>
 </g>
 <g id="clust6" class="cluster"><title>cluster_FurryBear\Provider\Source</title>
-<path fill="none" stroke="gray" d="M713,-1758C713,-1758 841,-1758 841,-1758 847,-1758 853,-1764 853,-1770 853,-1770 853,-1819 853,-1819 853,-1825 847,-1831 841,-1831 841,-1831 713,-1831 713,-1831 707,-1831 701,-1825 701,-1819 701,-1819 701,-1770 701,-1770 701,-1764 707,-1758 713,-1758"/>
+<path fill="none" stroke="gray" d="M720,-1758C720,-1758 834,-1758 834,-1758 840,-1758 846,-1764 846,-1770 846,-1770 846,-1819 846,-1819 846,-1825 840,-1831 834,-1831 834,-1831 720,-1831 720,-1831 714,-1831 708,-1825 708,-1819 708,-1819 708,-1770 708,-1770 708,-1764 714,-1758 720,-1758"/>
 <text text-anchor="middle" x="777" y="-1816" font-family="Times,serif" font-size="11.00" fill="gray">Source</text>
 </g>
 <g id="clust7" class="cluster"><title>cluster_FurryBear\Http</title>
@@ -45,9 +45,9 @@
 <path fill="none" stroke="gray" d="M725,-150C725,-150 829,-150 829,-150 835,-150 841,-156 841,-162 841,-162 841,-248 841,-248 841,-254 835,-260 829,-260 829,-260 725,-260 725,-260 719,-260 713,-254 713,-248 713,-248 713,-162 713,-162 713,-156 719,-150 725,-150"/>
 <text text-anchor="middle" x="777" y="-245" font-family="Times,serif" font-size="11.00" fill="gray">Iterator</text>
 </g>
-<g id="clust11" class="cluster"><title>cluster_FurryBear\Iterator\SunlightFoundation</title>
+<g id="clust11" class="cluster"><title>cluster_FurryBear\Iterator\SunlightCongress</title>
 <path fill="none" stroke="gray" d="M733,-158C733,-158 821,-158 821,-158 827,-158 833,-164 833,-170 833,-170 833,-219 833,-219 833,-225 827,-231 821,-231 821,-231 733,-231 733,-231 727,-231 721,-225 721,-219 721,-219 721,-170 721,-170 721,-164 727,-158 733,-158"/>
-<text text-anchor="middle" x="777" y="-216" font-family="Times,serif" font-size="11.00" fill="gray">SunlightFoundation</text>
+<text text-anchor="middle" x="777" y="-216" font-family="Times,serif" font-size="11.00" fill="gray">SunlightCongress</text>
 </g>
 <g id="clust13" class="cluster"><title>cluster_FurryBear\Output</title>
 <path fill="none" stroke="gray" d="M491,-1161C491,-1161 829,-1161 829,-1161 835,-1161 841,-1167 841,-1173 841,-1173 841,-1504 841,-1504 841,-1510 835,-1516 829,-1516 829,-1516 491,-1516 491,-1516 485,-1516 479,-1510 479,-1504 479,-1504 479,-1173 479,-1173 479,-1167 485,-1161 491,-1161"/>
@@ -69,9 +69,9 @@
 <path fill="none" stroke="gray" d="M246,-268C246,-268 845,-268 845,-268 851,-268 857,-274 857,-280 857,-280 857,-952 857,-952 857,-958 851,-964 845,-964 845,-964 246,-964 246,-964 240,-964 234,-958 234,-952 234,-952 234,-280 234,-280 234,-274 240,-268 246,-268"/>
 <text text-anchor="middle" x="545.5" y="-949" font-family="Times,serif" font-size="11.00" fill="gray">Resource</text>
 </g>
-<g id="clust23" class="cluster"><title>cluster_FurryBear\Resource\SunlightFoundation</title>
+<g id="clust23" class="cluster"><title>cluster_FurryBear\Resource\SunlightCongress</title>
 <path fill="none" stroke="gray" d="M478,-322C478,-322 837,-322 837,-322 843,-322 849,-328 849,-334 849,-334 849,-923 849,-923 849,-929 843,-935 837,-935 837,-935 478,-935 478,-935 472,-935 466,-929 466,-923 466,-923 466,-334 466,-334 466,-328 472,-322 478,-322"/>
-<text text-anchor="middle" x="657.5" y="-920" font-family="Times,serif" font-size="11.00" fill="gray">SunlightFoundation</text>
+<text text-anchor="middle" x="657.5" y="-920" font-family="Times,serif" font-size="11.00" fill="gray">SunlightCongress</text>
 </g>
 <g id="clust24" class="cluster"><title>cluster_global</title>
 <path fill="none" stroke="gray" d="M727,-2636C727,-2636 827,-2636 827,-2636 833,-2636 839,-2642 839,-2648 839,-2648 839,-2697 839,-2697 839,-2703 833,-2709 827,-2709 827,-2709 727,-2709 727,-2709 721,-2709 715,-2703 715,-2697 715,-2697 715,-2648 715,-2648 715,-2642 721,-2636 727,-2636"/>
@@ -300,11 +300,11 @@
 <path fill="none" stroke="black" d="M726.015,-1912.67C688.019,-1920.78 635.271,-1932.04 593.065,-1941.05"/>
 <polygon fill="none" stroke="black" points="592.18,-1937.66 583.13,-1943.17 593.641,-1944.5 592.18,-1937.66"/>
 </g>
-<!-- \\FurryBear\\Provider\\Source\\SunlightFoundation -->
-<g id="node15" class="node"><title>\\FurryBear\\Provider\\Source\\SunlightFoundation</title>
-<g id="a_node15"><a xlink:href="src.FurryBear.Provider.Source.SunlightFoundation.html" xlink:title="SunlightFoundation" target="_parent">
-<polygon fill="none" stroke="black" points="844.319,-1802 709.681,-1802 709.681,-1766 844.319,-1766 844.319,-1802"/>
-<text text-anchor="middle" x="777" y="-1779.6" font-family="Courier,monospace" font-size="11.00">SunlightFoundation</text>
+<!-- \\FurryBear\\Provider\\Source\\SunlightCongress -->
+<g id="node15" class="node"><title>\\FurryBear\\Provider\\Source\\SunlightCongress</title>
+<g id="a_node15"><a xlink:href="src.FurryBear.Provider.Source.SunlightCongress.html" xlink:title="SunlightCongress" target="_parent">
+<polygon fill="none" stroke="black" points="837.618,-1802 716.382,-1802 716.382,-1766 837.618,-1766 837.618,-1802"/>
+<text text-anchor="middle" x="777" y="-1779.6" font-family="Courier,monospace" font-size="11.00">SunlightCongress</text>
 </a>
 </g>
 </g>
@@ -317,10 +317,10 @@
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Provider\\Source\\SunlightFoundation&#45;&gt;\\FurryBear\\Provider\\AbstractProvider -->
-<g id="edge13" class="edge"><title>\\FurryBear\\Provider\\Source\\SunlightFoundation&#45;&gt;\\FurryBear\\Provider\\AbstractProvider</title>
-<path fill="none" stroke="black" d="M709.527,-1784C673.796,-1784 629.748,-1784 593.429,-1784"/>
-<polygon fill="none" stroke="black" points="593.404,-1780.5 583.404,-1784 593.404,-1787.5 593.404,-1780.5"/>
+<!-- \\FurryBear\\Provider\\Source\\SunlightCongress&#45;&gt;\\FurryBear\\Provider\\AbstractProvider -->
+<g id="edge13" class="edge"><title>\\FurryBear\\Provider\\Source\\SunlightCongress&#45;&gt;\\FurryBear\\Provider\\AbstractProvider</title>
+<path fill="none" stroke="black" d="M716.363,-1784C679.484,-1784 631.965,-1784 593.264,-1784"/>
+<polygon fill="none" stroke="black" points="593.114,-1780.5 583.113,-1784 593.113,-1787.5 593.114,-1780.5"/>
 </g>
 <!-- \\FurryBear\\Http\\Adapter\\Buzz -->
 <g id="node17" class="node"><title>\\FurryBear\\Http\\Adapter\\Buzz</title>
@@ -369,9 +369,9 @@
 <path fill="none" stroke="black" stroke-dasharray="1,5" d="M748.925,-1563.78C715.115,-1571 655.707,-1583.68 606.295,-1594.22"/>
 <polygon fill="none" stroke="black" points="605.286,-1590.86 596.236,-1596.37 606.747,-1597.7 605.286,-1590.86"/>
 </g>
-<!-- \\FurryBear\\Iterator\\SunlightFoundation\\PageIterator -->
-<g id="node21" class="node"><title>\\FurryBear\\Iterator\\SunlightFoundation\\PageIterator</title>
-<g id="a_node21"><a xlink:href="src.FurryBear.Iterator.SunlightFoundation.PageIterator.html" xlink:title="PageIterator" target="_parent">
+<!-- \\FurryBear\\Iterator\\SunlightCongress\\PageIterator -->
+<g id="node21" class="node"><title>\\FurryBear\\Iterator\\SunlightCongress\\PageIterator</title>
+<g id="a_node21"><a xlink:href="src.FurryBear.Iterator.SunlightCongress.PageIterator.html" xlink:title="PageIterator" target="_parent">
 <polygon fill="none" stroke="black" points="824.713,-202 729.287,-202 729.287,-166 824.713,-166 824.713,-202"/>
 <text text-anchor="middle" x="777" y="-179.6" font-family="Courier,monospace" font-size="11.00">PageIterator</text>
 </a>
@@ -382,8 +382,8 @@
 <ellipse fill="none" stroke="black" cx="522" cy="-18" rx="44.6347" ry="18"/>
 <text text-anchor="middle" x="522" y="-12.4" font-family="Times,serif" font-size="14.00" fill="gray">\\Iterator</text>
 </g>
-<!-- \\FurryBear\\Iterator\\SunlightFoundation\\PageIterator&#45;&gt;\\Iterator -->
-<g id="edge38" class="edge"><title>\\FurryBear\\Iterator\\SunlightFoundation\\PageIterator&#45;&gt;\\Iterator</title>
+<!-- \\FurryBear\\Iterator\\SunlightCongress\\PageIterator&#45;&gt;\\Iterator -->
+<g id="edge38" class="edge"><title>\\FurryBear\\Iterator\\SunlightCongress\\PageIterator&#45;&gt;\\Iterator</title>
 <path fill="none" stroke="black" stroke-dasharray="1,5" d="M728.962,-180.73C712.291,-177.722 694.172,-172.165 680,-162 630.385,-126.414 656.109,-82.5969 608,-45 597.988,-37.176 585.661,-31.5936 573.531,-27.6198"/>
 <polygon fill="none" stroke="black" points="574.476,-24.2494 563.894,-24.7655 572.488,-30.9612 574.476,-24.2494"/>
 </g>
@@ -497,9 +497,9 @@
 <path fill="none" stroke="black" stroke-dasharray="1,5" d="M748.925,-1003.78C707.848,-1012.55 628.988,-1029.38 576.173,-1040.65"/>
 <polygon fill="none" stroke="black" points="575.353,-1037.25 566.304,-1042.76 576.814,-1044.09 575.353,-1037.25"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="node32" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
-<g id="a_node32"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.BaseResource.html" xlink:title="BaseResource" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="node32" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
+<g id="a_node32"><a xlink:href="src.FurryBear.Resource.SunlightCongress.BaseResource.html" xlink:title="BaseResource" target="_parent">
 <polygon fill="none" stroke="black" points="569.713,-636 474.287,-636 474.287,-600 569.713,-600 569.713,-636"/>
 <text text-anchor="middle" x="522" y="-613.6" font-family="Courier,monospace" font-size="11.00">BaseResource</text>
 </a>
@@ -514,151 +514,151 @@
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\BaseResource&#45;&gt;\\FurryBear\\Resource\\AbstractResource -->
-<g id="edge14" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\BaseResource&#45;&gt;\\FurryBear\\Resource\\AbstractResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\BaseResource&#45;&gt;\\FurryBear\\Resource\\AbstractResource -->
+<g id="edge14" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\BaseResource&#45;&gt;\\FurryBear\\Resource\\AbstractResource</title>
 <path fill="none" stroke="black" d="M474.181,-618C445.175,-618 407.362,-618 374.748,-618"/>
 <polygon fill="none" stroke="black" points="374.36,-614.5 364.36,-618 374.36,-621.5 374.36,-614.5"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Bills -->
-<g id="node33" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\Bills</title>
-<g id="a_node33"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.Bills.html" xlink:title="Bills" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Bills -->
+<g id="node33" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\Bills</title>
+<g id="a_node33"><a xlink:href="src.FurryBear.Resource.SunlightCongress.Bills.html" xlink:title="Bills" target="_parent">
 <polygon fill="none" stroke="black" points="804,-852 750,-852 750,-816 804,-816 804,-852"/>
 <text text-anchor="middle" x="777" y="-829.6" font-family="Courier,monospace" font-size="11.00">Bills</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Bills&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge15" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\Bills&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Bills&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge15" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\Bills&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M749.801,-830.954C729.444,-827.612 701.2,-820.766 680,-807 614.476,-764.454 562.349,-686.049 537.988,-644.87"/>
 <polygon fill="none" stroke="black" points="540.996,-643.081 532.943,-636.197 534.946,-646.601 540.996,-643.081"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\BillsSearch -->
-<g id="node34" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\BillsSearch</title>
-<g id="a_node34"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.BillsSearch.html" xlink:title="BillsSearch" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\BillsSearch -->
+<g id="node34" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\BillsSearch</title>
+<g id="a_node34"><a xlink:href="src.FurryBear.Resource.SunlightCongress.BillsSearch.html" xlink:title="BillsSearch" target="_parent">
 <polygon fill="none" stroke="black" points="821.113,-798 732.887,-798 732.887,-762 821.113,-762 821.113,-798"/>
 <text text-anchor="middle" x="777" y="-775.6" font-family="Courier,monospace" font-size="11.00">BillsSearch</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\BillsSearch&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge16" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\BillsSearch&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\BillsSearch&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge16" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\BillsSearch&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M732.886,-772.104C715.776,-767.907 696.326,-761.754 680,-753 626.198,-724.152 574.687,-674.169 546.104,-643.787"/>
 <polygon fill="none" stroke="black" points="548.375,-641.088 539.006,-636.141 543.244,-645.851 548.375,-641.088"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\BulkData -->
-<g id="node35" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\BulkData</title>
-<g id="a_node35"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.BulkData.html" xlink:title="BulkData" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\BulkData -->
+<g id="node35" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\BulkData</title>
+<g id="a_node35"><a xlink:href="src.FurryBear.Resource.SunlightCongress.BulkData.html" xlink:title="BulkData" target="_parent">
 <polygon fill="none" stroke="black" points="811.309,-744 742.691,-744 742.691,-708 811.309,-708 811.309,-744"/>
 <text text-anchor="middle" x="777" y="-721.6" font-family="Courier,monospace" font-size="11.00">BulkData</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\BulkData&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge17" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\BulkData&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\BulkData&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge17" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\BulkData&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M742.577,-718.369C723.87,-713.661 700.297,-706.995 680,-699 638.443,-682.631 593.362,-658.674 562.214,-641.059"/>
 <polygon fill="none" stroke="black" points="563.834,-637.954 553.414,-636.042 560.367,-644.035 563.834,-637.954"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Committees -->
-<g id="node36" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\Committees</title>
-<g id="a_node36"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.Committees.html" xlink:title="Committees" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Committees -->
+<g id="node36" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\Committees</title>
+<g id="a_node36"><a xlink:href="src.FurryBear.Resource.SunlightCongress.Committees.html" xlink:title="Committees" target="_parent">
 <polygon fill="none" stroke="black" points="818.011,-690 735.989,-690 735.989,-654 818.011,-654 818.011,-690"/>
 <text text-anchor="middle" x="777" y="-667.6" font-family="Courier,monospace" font-size="11.00">Committees</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Committees&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge18" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\Committees&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Committees&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge18" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\Committees&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M735.911,-663.444C693.765,-654.448 627.105,-640.22 579.606,-630.082"/>
 <polygon fill="none" stroke="black" points="580.288,-626.649 569.777,-627.984 578.826,-633.494 580.288,-626.649"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\DistrictsLocate -->
-<g id="node37" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\DistrictsLocate</title>
-<g id="a_node37"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.DistrictsLocate.html" xlink:title="DistrictsLocate" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\DistrictsLocate -->
+<g id="node37" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\DistrictsLocate</title>
+<g id="a_node37"><a xlink:href="src.FurryBear.Resource.SunlightCongress.DistrictsLocate.html" xlink:title="DistrictsLocate" target="_parent">
 <polygon fill="none" stroke="black" points="834.516,-636 719.484,-636 719.484,-600 834.516,-600 834.516,-636"/>
 <text text-anchor="middle" x="777" y="-613.6" font-family="Courier,monospace" font-size="11.00">DistrictsLocate</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\DistrictsLocate&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge19" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\DistrictsLocate&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\DistrictsLocate&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge19" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\DistrictsLocate&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M719.222,-618C677.721,-618 621.66,-618 580.087,-618"/>
 <polygon fill="none" stroke="black" points="579.848,-614.5 569.848,-618 579.848,-621.5 579.848,-614.5"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\FloorUpdates -->
-<g id="node38" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\FloorUpdates</title>
-<g id="a_node38"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.FloorUpdates.html" xlink:title="FloorUpdates" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\FloorUpdates -->
+<g id="node38" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\FloorUpdates</title>
+<g id="a_node38"><a xlink:href="src.FurryBear.Resource.SunlightCongress.FloorUpdates.html" xlink:title="FloorUpdates" target="_parent">
 <polygon fill="none" stroke="black" points="824.713,-582 729.287,-582 729.287,-546 824.713,-546 824.713,-582"/>
 <text text-anchor="middle" x="777" y="-559.6" font-family="Courier,monospace" font-size="11.00">FloorUpdates</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\FloorUpdates&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge20" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\FloorUpdates&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\FloorUpdates&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge20" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\FloorUpdates&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M729.301,-573.967C687.09,-582.977 624.842,-596.263 579.77,-605.883"/>
 <polygon fill="none" stroke="black" points="578.904,-602.489 569.855,-607.999 580.365,-609.335 578.904,-602.489"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Hearings -->
-<g id="node39" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\Hearings</title>
-<g id="a_node39"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.Hearings.html" xlink:title="Hearings" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Hearings -->
+<g id="node39" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\Hearings</title>
+<g id="a_node39"><a xlink:href="src.FurryBear.Resource.SunlightCongress.Hearings.html" xlink:title="Hearings" target="_parent">
 <polygon fill="none" stroke="black" points="811.309,-528 742.691,-528 742.691,-492 811.309,-492 811.309,-528"/>
 <text text-anchor="middle" x="777" y="-505.6" font-family="Courier,monospace" font-size="11.00">Hearings</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Hearings&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge21" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\Hearings&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Hearings&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge21" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\Hearings&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M742.577,-517.631C723.87,-522.339 700.297,-529.005 680,-537 638.443,-553.369 593.362,-577.326 562.214,-594.941"/>
 <polygon fill="none" stroke="black" points="560.367,-591.965 553.414,-599.958 563.834,-598.046 560.367,-591.965"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Legislators -->
-<g id="node40" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\Legislators</title>
-<g id="a_node40"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.Legislators.html" xlink:title="Legislators" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Legislators -->
+<g id="node40" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\Legislators</title>
+<g id="a_node40"><a xlink:href="src.FurryBear.Resource.SunlightCongress.Legislators.html" xlink:title="Legislators" target="_parent">
 <polygon fill="none" stroke="black" points="821.113,-474 732.887,-474 732.887,-438 821.113,-438 821.113,-474"/>
 <text text-anchor="middle" x="777" y="-451.6" font-family="Courier,monospace" font-size="11.00">Legislators</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Legislators&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge22" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\Legislators&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Legislators&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge22" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\Legislators&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M732.886,-463.896C715.776,-468.093 696.326,-474.246 680,-483 626.198,-511.848 574.687,-561.831 546.104,-592.213"/>
 <polygon fill="none" stroke="black" points="543.244,-590.149 539.006,-599.859 548.375,-594.912 543.244,-590.149"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\LegislatorsLocate -->
-<g id="node41" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\LegislatorsLocate</title>
-<g id="a_node41"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.LegislatorsLocate.html" xlink:title="LegislatorsLocate" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\LegislatorsLocate -->
+<g id="node41" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\LegislatorsLocate</title>
+<g id="a_node41"><a xlink:href="src.FurryBear.Resource.SunlightCongress.LegislatorsLocate.html" xlink:title="LegislatorsLocate" target="_parent">
 <polygon fill="none" stroke="black" points="841.218,-420 712.782,-420 712.782,-384 841.218,-384 841.218,-420"/>
 <text text-anchor="middle" x="777" y="-397.6" font-family="Courier,monospace" font-size="11.00">LegislatorsLocate</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\LegislatorsLocate&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge23" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\LegislatorsLocate&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\LegislatorsLocate&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge23" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\LegislatorsLocate&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M712.697,-413.924C701.276,-417.678 689.874,-422.589 680,-429 614.476,-471.546 562.349,-549.951 537.988,-591.13"/>
 <polygon fill="none" stroke="black" points="534.946,-589.399 532.943,-599.803 540.996,-592.919 534.946,-589.399"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\UpcomingBills -->
-<g id="node42" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\UpcomingBills</title>
-<g id="a_node42"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.UpcomingBills.html" xlink:title="UpcomingBills" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\UpcomingBills -->
+<g id="node42" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\UpcomingBills</title>
+<g id="a_node42"><a xlink:href="src.FurryBear.Resource.SunlightCongress.UpcomingBills.html" xlink:title="UpcomingBills" target="_parent">
 <polygon fill="none" stroke="black" points="827.814,-366 726.186,-366 726.186,-330 827.814,-330 827.814,-366"/>
 <text text-anchor="middle" x="777" y="-343.6" font-family="Courier,monospace" font-size="11.00">UpcomingBills</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\UpcomingBills&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge24" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\UpcomingBills&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\UpcomingBills&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge24" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\UpcomingBills&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M726.048,-354.893C710.218,-358.868 693.374,-365.132 680,-375 602.676,-432.052 553.239,-539.55 533.194,-590.228"/>
 <polygon fill="none" stroke="black" points="529.813,-589.269 529.47,-599.858 536.342,-591.793 529.813,-589.269"/>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Votes -->
-<g id="node43" class="node"><title>\\FurryBear\\Resource\\SunlightFoundation\\Votes</title>
-<g id="a_node43"><a xlink:href="src.FurryBear.Resource.SunlightFoundation.Votes.html" xlink:title="Votes" target="_parent">
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Votes -->
+<g id="node43" class="node"><title>\\FurryBear\\Resource\\SunlightCongress\\Votes</title>
+<g id="a_node43"><a xlink:href="src.FurryBear.Resource.SunlightCongress.Votes.html" xlink:title="Votes" target="_parent">
 <polygon fill="none" stroke="black" points="804,-906 750,-906 750,-870 804,-870 804,-906"/>
 <text text-anchor="middle" x="777" y="-883.6" font-family="Courier,monospace" font-size="11.00">Votes</text>
 </a>
 </g>
 </g>
-<!-- \\FurryBear\\Resource\\SunlightFoundation\\Votes&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource -->
-<g id="edge25" class="edge"><title>\\FurryBear\\Resource\\SunlightFoundation\\Votes&#45;&gt;\\FurryBear\\Resource\\SunlightFoundation\\BaseResource</title>
+<!-- \\FurryBear\\Resource\\SunlightCongress\\Votes&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource -->
+<g id="edge25" class="edge"><title>\\FurryBear\\Resource\\SunlightCongress\\Votes&#45;&gt;\\FurryBear\\Resource\\SunlightCongress\\BaseResource</title>
 <path fill="none" stroke="black" d="M749.747,-885.702C729.093,-882.77 700.479,-876.11 680,-861 602.676,-803.948 553.239,-696.45 533.194,-645.772"/>
 <polygon fill="none" stroke="black" points="536.342,-644.207 529.47,-636.142 529.813,-646.731 536.342,-644.207"/>
 </g>

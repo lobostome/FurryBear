@@ -46,7 +46,7 @@ class ResourceFactoryTest extends \PHPUnit_Framework_TestCase
                           ->getMock();
         $adapter = new \FurryBear\Http\Adapter\Curl($curlProxy);
         
-        $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $this->apiKey);
+        $provider = new \FurryBear\Provider\Source\SunlightCongress($adapter, $this->apiKey);
         
         $output = new \FurryBear\Output\Strategy\JsonToObject();
         
@@ -68,7 +68,7 @@ class ResourceFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreate()
     {
-        $expectedClass = '\\FurryBear\\Resource\\SunlightFoundation\\Bills';
+        $expectedClass = '\\FurryBear\\Resource\\SunlightCongress\\Bills';
         $actualObj = \FurryBear\Resource\ResourceFactory::create($this->furryBear, 'bills');
         
         $this->assertNotNull($actualObj);
