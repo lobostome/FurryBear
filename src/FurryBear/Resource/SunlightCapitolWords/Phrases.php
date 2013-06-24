@@ -15,7 +15,7 @@
 namespace FurryBear\Resource\SunlightCapitolWords;
 
 /**
- * This class gives access to Sunlight Capitol Words dates resource.
+ * This class gives access to Sunlight Capitol Words phrases resource.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,13 +23,13 @@ namespace FurryBear\Resource\SunlightCapitolWords;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-class Dates extends BaseResource
+class Phrases extends BaseResource
 {
     /**
      * The resource method URL. No slashes at the beginning and end of the 
      * string.
      */
-    const ENDPOINT_METHOD = 'dates.json';
+    const ENDPOINT_METHOD = 'phrases.json';
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 

@@ -11,7 +11,11 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
+
 namespace FurryBear\Resource;
+
+use FurryBear\Exception\InvalidArgumentException;
+
 /**
  * A factory that aids creating resource objects.
  * 
@@ -35,6 +39,8 @@ class ResourceFactory
      * @param string               $name      Resource name.
      * 
      * @return \FurryBear\Resource\AbstractResource
+     * 
+     * @throws FurryBear\Exception\InvalidArgumentException
      */
     public static function create($furryBear, $name)
     {
@@ -43,6 +49,10 @@ class ResourceFactory
         $className = join("", $classParts);
         
         $fqn = '\\FurryBear\\Resource\\' . $furryBear->getProvider()->getDirectory() . '\\' . $className;
+        
+        if (!class_exists($fqn)) {
+            throw new InvalidArgumentException($fqn . " resource does not exist");
+        }
 
         return new $fqn($furryBear);
     }
