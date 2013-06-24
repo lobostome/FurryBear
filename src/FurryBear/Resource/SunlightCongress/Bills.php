@@ -29,7 +29,7 @@ class Bills extends BaseResource
      * The resource method URL. No slashes at the beginning and end of the 
      * string.
      */
-    const BILLS_METHOD = 'bills';
+    const ENDPOINT_METHOD = 'bills';
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 
@@ -40,6 +40,6 @@ class Bills extends BaseResource
     public function __construct(\FurryBear\FurryBear $furryBear)
     {
         parent::__construct($furryBear);
-        $this->setResourceMethod(self::BILLS_METHOD);
+        $this->setResourceMethod(self::ENDPOINT_METHOD);
     }
 }

@@ -29,7 +29,7 @@ class FloorUpdates extends BaseResource
      * The resource method URL. No slashes at the beginning and end of the 
      * string.
      */
-    const FLOOR_UPDATES_METHOD = 'floor_updates';
+    const ENDPOINT_METHOD = 'floor_updates';
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 
@@ -40,6 +40,6 @@ class FloorUpdates extends BaseResource
     public function __construct(\FurryBear\FurryBear $furryBear)
     {
         parent::__construct($furryBear);
-        $this->setResourceMethod(self::FLOOR_UPDATES_METHOD);
+        $this->setResourceMethod(self::ENDPOINT_METHOD);
     }
 }
