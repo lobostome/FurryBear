@@ -17,7 +17,7 @@ $apiKey = (file_exists($apikeyFile))
  * FurryBear\Http\Adapter\Guzzle
  */
 $adapter    = new FurryBear\Http\Adapter\Curl();
-$provider   = new FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
+$provider   = new FurryBear\Provider\Source\SunlightCongress($adapter, $apiKey);
 $output     = new FurryBear\Output\Strategy\JsonToArray();
 
 $fb = new FurryBear\FurryBear();

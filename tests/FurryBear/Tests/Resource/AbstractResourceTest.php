@@ -51,7 +51,7 @@ class AbstractResourceTest extends \PHPUnit_Framework_TestCase
                           ->getMock();
         $adapter = new \FurryBear\Http\Adapter\Curl($curlProxy);
         
-        $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, $this->apiKey);
+        $provider = new \FurryBear\Provider\Source\SunlightCongress($adapter, $this->apiKey);
         
         $output = new \FurryBear\Output\Strategy\JsonToObject();
         

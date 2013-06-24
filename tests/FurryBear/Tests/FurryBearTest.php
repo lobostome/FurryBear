@@ -63,16 +63,16 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * Utility function that creates a SunlightFoundation provider.
+     * Utility function that creates a SunlightCongress provider.
      */
-    private function getSunlightFoundationProvider()
+    private function getSunlightCongressProvider()
     {
         $curlProxy = $this->getMockBuilder('\\FurryBear\\Proxy\\Curl')
                           ->disableOriginalConstructor()
                           ->getMock();
         $adapter = new \FurryBear\Http\Adapter\Curl($curlProxy);
         
-        $provider = new \FurryBear\Provider\Source\SunlightFoundation($adapter, 'xxxxx');
+        $provider = new \FurryBear\Provider\Source\SunlightCongress($adapter, 'xxxxx');
         
         return $provider;
     }
@@ -83,17 +83,17 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
     public function testRegisterProvider()
     {
         // Let's register a new provider
-        $provider = $this->getSunlightFoundationProvider();
+        $provider = $this->getSunlightCongressProvider();
         $this->furryBear->registerProvider($provider);
         
         $this->assertNotNull($provider);
-        $this->assertInstanceOf('\\FurryBear\\Provider\\Source\\SunlightFoundation', $provider);
+        $this->assertInstanceOf('\\FurryBear\\Provider\\Source\\SunlightCongress', $provider);
         $this->assertObjectHasAttribute('provider', $this->furryBear);
         $this->assertAttributeSame($provider, 'provider', $this->furryBear);
         
         // Let's call a resource and have it cached.
         $resourceName = 'bills';
-        $expectedClass = '\\FurryBear\\Resource\\SunlightFoundation\\Bills';
+        $expectedClass = '\\FurryBear\\Resource\\SunlightCongress\\Bills';
         
         $output = new \FurryBear\Output\Strategy\JsonToObject();
         $this->furryBear->registerOutput($output);
@@ -191,7 +191,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
      */
     public function testGet()
     {
-        $provider = $this->getSunlightFoundationProvider();
+        $provider = $this->getSunlightCongressProvider();
         
         $this->furryBear->registerProvider($provider);
         
@@ -200,7 +200,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         
         // Let's get a new resource
         $resourceName = 'bills';
-        $expectedClass = '\\FurryBear\\Resource\\SunlightFoundation\\Bills';
+        $expectedClass = '\\FurryBear\\Resource\\SunlightCongress\\Bills';
         
         $this->assertAttributeInternalType('array', 'data', $this->furryBear);
         $this->assertAttributeEmpty('data', $this->furryBear);
@@ -223,7 +223,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         // Does a resource name with underscore get translated to a resource correctly?
         // Do we have 2 cached resources now?
         $resourceName2 = 'legislators_locate';
-        $expectedClass2 = '\\FurryBear\\Resource\\SunlightFoundation\\LegislatorsLocate';
+        $expectedClass2 = '\\FurryBear\\Resource\\SunlightCongress\\LegislatorsLocate';
         
         $this->furryBear->{$resourceName2};
         
