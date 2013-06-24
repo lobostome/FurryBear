@@ -29,7 +29,7 @@ class DistrictsLocate extends BaseResource
      * The resource method URL. No slashes at the beginning and end of the 
      * string.
      */
-    const DISTRICTS_LOCATE_METHOD = 'districts/locate';
+    const ENDPOINT_METHOD = 'districts/locate';
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 
@@ -40,6 +40,6 @@ class DistrictsLocate extends BaseResource
     public function __construct(\FurryBear\FurryBear $furryBear)
     {
         parent::__construct($furryBear);
-        $this->setResourceMethod(self::DISTRICTS_LOCATE_METHOD);
+        $this->setResourceMethod(self::ENDPOINT_METHOD);
     }
 }

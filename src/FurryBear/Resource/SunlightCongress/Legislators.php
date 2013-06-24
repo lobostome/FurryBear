@@ -29,7 +29,7 @@ class Legislators extends BaseResource
      * The resource method URL. No slashes at the beginning and end of the 
      * string.
      */
-    const LEGISLATORS_METHOD = 'legislators';
+    const ENDPOINT_METHOD = 'legislators';
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 
@@ -40,6 +40,6 @@ class Legislators extends BaseResource
     public function __construct(\FurryBear\FurryBear $furryBear)
     {
         parent::__construct($furryBear);
-        $this->setResourceMethod(self::LEGISLATORS_METHOD);
+        $this->setResourceMethod(self::ENDPOINT_METHOD);
     }
 }

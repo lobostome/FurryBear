@@ -29,7 +29,7 @@ class Hearings extends BaseResource
      * The resource method URL. No slashes at the beginning and end of the 
      * string.
      */
-    const HEARINGS_METHOD = 'hearings';
+    const ENDPOINT_METHOD = 'hearings';
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 
@@ -40,6 +40,6 @@ class Hearings extends BaseResource
     public function __construct(\FurryBear\FurryBear $furryBear)
     {
         parent::__construct($furryBear);
-        $this->setResourceMethod(self::HEARINGS_METHOD);
+        $this->setResourceMethod(self::ENDPOINT_METHOD);
     }
 }

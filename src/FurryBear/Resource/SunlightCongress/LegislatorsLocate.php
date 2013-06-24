@@ -29,7 +29,7 @@ class LegislatorsLocate extends BaseResource
      * The resource method URL. No slashes at the beginning and end of the 
      * string.
      */
-    const LEGISLATORS_LOCATE_METHOD = 'legislators/locate';
+    const ENDPOINT_METHOD = 'legislators/locate';
     
     /**
      * The geocoding service provider
@@ -47,7 +47,7 @@ class LegislatorsLocate extends BaseResource
     public function __construct(\FurryBear\FurryBear $furryBear)
     {
         parent::__construct($furryBear);
-        $this->setResourceMethod(self::LEGISLATORS_LOCATE_METHOD);
+        $this->setResourceMethod(self::ENDPOINT_METHOD);
     }
     
     /**
