@@ -12,6 +12,7 @@ try {
     while($it->valid()) {
         var_dump($it->current());
         $it->next(); // How ugly that is..., but necessary
+        sleep(5); // be nice to the API
     }
 } catch (\FurryBear\Exception\NoProviderException $e) {
     echo $e->getMessage();
