@@ -8,7 +8,7 @@ Quick Start
 
 ```php
 $adapter = new FurryBear\Http\Adapter\Curl();
-$provider = new FurryBear\Provider\Source\SunlightFoundation($adapter, $apiKey);
+$provider = new FurryBear\Provider\Source\SunlightCongress($adapter, $apiKey);
 $output = new FurryBear\Output\Strategy\JsonToArray();
 
 $fb = new FurryBear\FurryBear();
