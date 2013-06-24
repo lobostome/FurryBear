@@ -65,4 +65,8 @@ class BaseResource extends AbstractResource
                . '?' .
                http_build_query(array_merge($apiKey, $params));
     }
+
+    public function getIterator() {
+        
+    }
 }
