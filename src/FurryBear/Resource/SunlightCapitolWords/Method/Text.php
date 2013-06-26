@@ -12,7 +12,9 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Resource\SunlightCapitolWords;
+namespace FurryBear\Resource\SunlightCapitolWords\Method;
+
+use FurryBear\Resource\SunlightCapitolWords\BaseResource;
 
 /**
  * This class gives access to Sunlight Capitol Words text resource.
