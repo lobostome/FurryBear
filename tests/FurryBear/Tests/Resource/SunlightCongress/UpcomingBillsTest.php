@@ -59,7 +59,7 @@ class UpcomingBillsTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->upcomingBills = new \FurryBear\Resource\SunlightCongress\UpcomingBills($this->furryBear);
+        $this->upcomingBills = new \FurryBear\Resource\SunlightCongress\Method\UpcomingBills($this->furryBear);
     }
     
     /**
@@ -79,6 +79,6 @@ class UpcomingBillsTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertAttributeNotEmpty('resourceMethod', $this->upcomingBills);
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->upcomingBills);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\UpcomingBills::UPCOMING_BILLS_METHOD, 'resourceMethod', $this->upcomingBills);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Method\UpcomingBills::ENDPOINT_METHOD, 'resourceMethod', $this->upcomingBills);
     }
 }

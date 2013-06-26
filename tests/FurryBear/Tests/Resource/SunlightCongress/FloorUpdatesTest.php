@@ -59,7 +59,7 @@ class FloorUpdatesTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->floorUpdates = new \FurryBear\Resource\SunlightCongress\FloorUpdates($this->furryBear);
+        $this->floorUpdates = new \FurryBear\Resource\SunlightCongress\Method\FloorUpdates($this->furryBear);
     }
     
     /**
@@ -79,6 +79,6 @@ class FloorUpdatesTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertAttributeNotEmpty('resourceMethod', $this->floorUpdates);
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->floorUpdates);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\FloorUpdates::FLOOR_UPDATES_METHOD, 'resourceMethod', $this->floorUpdates);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Method\FloorUpdates::ENDPOINT_METHOD, 'resourceMethod', $this->floorUpdates);
     }
 }
