@@ -12,7 +12,9 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Resource\SunlightCongress;
+namespace FurryBear\Resource\SunlightCongress\Method;
+
+use FurryBear\Resource\SunlightCongress\BaseResource;
 
 /**
  * This class gives access to Sunlight Congress legislators/locate resource.

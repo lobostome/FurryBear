@@ -59,7 +59,7 @@ class VotesTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->votes = new \FurryBear\Resource\SunlightCongress\Votes($this->furryBear);
+        $this->votes = new \FurryBear\Resource\SunlightCongress\Method\Votes($this->furryBear);
     }
     
     /**
@@ -79,6 +79,6 @@ class VotesTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertAttributeNotEmpty('resourceMethod', $this->votes);
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->votes);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Votes::VOTES_METHOD, 'resourceMethod', $this->votes);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Method\Votes::ENDPOINT_METHOD, 'resourceMethod', $this->votes);
     }
 }

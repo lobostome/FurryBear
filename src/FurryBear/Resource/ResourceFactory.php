@@ -36,7 +36,7 @@ class ResourceFactory
      * 3. Join back together the array elements into a string.
      * 
      * @param \FurryBear\FurryBear $furryBear A FurryBear reference.
-     * @param string               $name      Resource name.
+     * @param string               $name      Resource property name.
      * 
      * @return \FurryBear\Resource\AbstractResource
      * 
@@ -44,11 +44,10 @@ class ResourceFactory
      */
     public static function create($furryBear, $name)
     {
-        $classParts = explode("_", $name);
-        array_walk($classParts, function(&$item, $key) { $item = ucfirst($item); });
-        $className = join("", $classParts);
+        $policyFqn = '\FurryBear\Resource\\' . $furryBear->getProvider()->getDirectory() . '\FqnPolicy';
+        $policy = new $policyFqn();
         
-        $fqn = '\\FurryBear\\Resource\\' . $furryBear->getProvider()->getDirectory() . '\\' . $className;
+        $fqn = $policy->map($furryBear->getProvider()->getDirectory(), $name);
         
         if (!class_exists($fqn)) {
             throw new InvalidArgumentException($fqn . " resource does not exist");

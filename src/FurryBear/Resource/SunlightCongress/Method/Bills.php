@@ -12,10 +12,12 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Resource\SunlightCongress;
+namespace FurryBear\Resource\SunlightCongress\Method;
+
+use FurryBear\Resource\SunlightCongress\BaseResource;
 
 /**
- * This class gives access to Sunlight Congress legislators resource.
+ * This class gives access to Sunlight Congress bills resource.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,13 +25,13 @@ namespace FurryBear\Resource\SunlightCongress;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-class Legislators extends BaseResource
+class Bills extends BaseResource
 {
     /**
      * The resource method URL. No slashes at the beginning and end of the 
      * string.
      */
-    const ENDPOINT_METHOD = 'legislators';
+    const ENDPOINT_METHOD = 'bills';
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 

@@ -59,7 +59,7 @@ class DistrictsLocateTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->districtsLocate = new \FurryBear\Resource\SunlightCongress\DistrictsLocate($this->furryBear);
+        $this->districtsLocate = new \FurryBear\Resource\SunlightCongress\Method\DistrictsLocate($this->furryBear);
     }
     
     /**
@@ -79,6 +79,6 @@ class DistrictsLocateTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertAttributeNotEmpty('resourceMethod', $this->districtsLocate);
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->districtsLocate);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\DistrictsLocate::DISTRICTS_LOCATE_METHOD, 'resourceMethod', $this->districtsLocate);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Method\DistrictsLocate::ENDPOINT_METHOD, 'resourceMethod', $this->districtsLocate);
     }
 }
