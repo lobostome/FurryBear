@@ -12,10 +12,12 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Resource\SunlightCongress;
+namespace FurryBear\Resource\SunlightCongress\Method;
+
+use FurryBear\Resource\SunlightCongress\BaseResource;
 
 /**
- * This class gives access to Sunlight Congress committees resource.
+ * This class gives access to Sunlight Congress floor_updates resource.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,13 +25,13 @@ namespace FurryBear\Resource\SunlightCongress;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-class Committees extends BaseResource
+class FloorUpdates extends BaseResource
 {
     /**
      * The resource method URL. No slashes at the beginning and end of the 
      * string.
      */
-    const ENDPOINT_METHOD = 'committees';
+    const ENDPOINT_METHOD = 'floor_updates';
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 

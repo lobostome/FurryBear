@@ -12,9 +12,10 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Resource\SunlightCongress;
+namespace FurryBear\Resource\SunlightCongress\Method;
 
-use FurryBear\Exception\NotImplementedException;
+use FurryBear\Exception\NotImplementedException,
+    FurryBear\Resource\SunlightCongress\BaseResource;
 
 /**
  * This class gives access to Sunlight Congress bulk data.
