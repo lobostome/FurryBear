@@ -2,19 +2,15 @@
 
 require_once 'config/config_capitol_words.php';
 
-$params1 = array('phrase' => 'free market',
-                'sort' => 'count');
-
-$params2 = array('entity_type' => 'legislator',
-                 'entity_value' => 'L000551');
+$params1 = array('phrase' => 'united states',
+                 'start_date' => '2009-01-01',
+                 'end_date' => '2009-04-30',
+                 'granularity' => 'month');
 
 // A sample use
 try {
-    $fb->phrases->entity('legislator')->setParams($params1);
-    var_dump($fb->phrases->get());
-    
-    $fb->phrases->entity()->setParams($params2);
-    var_dump($fb->phrases->get());
+    $fb->dates->setParams($params1);
+    var_dump($fb->dates->get());
 } catch (\Exception $e) {
     echo $e->getMessage();
 }

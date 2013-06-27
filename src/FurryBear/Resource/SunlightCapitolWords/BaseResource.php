@@ -16,7 +16,8 @@ namespace FurryBear\Resource\SunlightCapitolWords;
 
 use FurryBear\Resource\AbstractResource,
     FurryBear\Exception\NotImplementedException,
-    FurryBear\Exception\InvalidArgumentException;;
+    FurryBear\Exception\InvalidArgumentException,
+    FurryBear\Validation\Engine as ValidationEngine;
 
 /**
  * A base presentation of SunlightCapitolWords resource.
@@ -30,6 +31,13 @@ use FurryBear\Resource\AbstractResource,
 class BaseResource extends AbstractResource
 {
     /**
+     * A reference to the validation engine.
+     * 
+     * @var \FurryBear\Validation\Engine
+     */
+    protected $validation;
+
+    /**
      * Construct a resource with a FurryBear instance.
      * 
      * @param \FurryBear\FurryBear $furryBear A FurryBear instance.
@@ -37,6 +45,7 @@ class BaseResource extends AbstractResource
     public function __construct(\FurryBear\FurryBear $furryBear)
     {
         parent::__construct($furryBear);
+        $this->validation = new ValidationEngine();
     }
 
     /**
@@ -47,18 +56,22 @@ class BaseResource extends AbstractResource
      * @return string
      */
     protected function buildQuery(array $params)
-    {        
-        if (count($this->getRequired()) != 0 && 
-            (count(array_intersect_key($params, array_flip($this->getRequired()))) != count($this->getRequired()))) {
-            throw new InvalidArgumentException("Invalid number of required parameters. Required parameters are: " . implode(", ", $this->getRequired()));
+    {
+        // Run the validation
+        $this->validation->populate(array("required" => $params));
+        
+        if (!$this->validation->isValid()) {
+            $messageGroup = $this->validation->getMessages();
+            throw new InvalidArgumentException($messageGroup->__toString());
         }
         
+        // Get the API key
         $apiKey = array();
         if (method_exists($this->furryBear->getProvider(), 'getApiKey')) {
             $apiKey['apikey'] = $this->furryBear->getProvider()->getApiKey();
         }
         
-        // convert booleans to string representation
+        // Convert booleans to string representation
         array_walk ($params, function(&$item, $key) {
                 if (is_bool($item)) {
                     $item = ($item) ? 'true' : 'false';
@@ -66,11 +79,34 @@ class BaseResource extends AbstractResource
             }
         );
         
+        // Construct the request URI
         return $this->furryBear->getProvider()->getServiceUrl() 
                . '/' .
                $this->getResourceMethod() 
                . '?' .
                http_build_query(array_merge($apiKey, $params));
+    }
+    
+    /**
+     * Sets the validation service.
+     * 
+     * @param FurryBear\Validation\Engine $validation
+     * 
+     * @return void
+     */
+    protected function setValidation($validation)
+    {
+        $this->validation = $validation;
+    }
+    
+    /**
+     * Get the validation service.
+     * 
+     * @return FurryBear\Validation\Engine
+     */
+    protected function getValidation()
+    {
+        return $this->validation;
     }
 
     /**

@@ -14,7 +14,8 @@
 
 namespace FurryBear\Resource\SunlightCapitolWords\Method;
 
-use FurryBear\Resource\SunlightCapitolWords\BaseResource;
+use FurryBear\Resource\SunlightCapitolWords\BaseResource,
+    FurryBear\Validation\Validator\RequireAll as RequireAllValidator;
 
 /**
  * This class gives access to Sunlight Capitol Words dates resource.
@@ -34,7 +35,7 @@ class Dates extends BaseResource
     const ENDPOINT_METHOD = 'dates.json';
     
     /**
-     * The required parameters for this resource
+     * The required parameters for this resource.
      * 
      * @var array
      */
@@ -51,5 +52,19 @@ class Dates extends BaseResource
         parent::__construct($furryBear);
         $this->setResourceMethod(self::ENDPOINT_METHOD);
         $this->setRequired($this->required);
+        $this->addValidators();
+    }
+    
+    /**
+     * Adds validators to the engine.
+     * 
+     * @return void
+     */
+    protected function addValidators()
+    {
+        $this->getValidation()->add('required', new RequireAllValidator(array(
+            'message' => "Invalid number of required parameters. Required parameters are: " . implode(", ", $this->getRequired()),
+            'domain' => $this->getRequired()
+        )));
     }
 }
