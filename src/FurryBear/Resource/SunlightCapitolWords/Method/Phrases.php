@@ -28,11 +28,26 @@ use FurryBear\Resource\SunlightCapitolWords\BaseResource;
 class Phrases extends BaseResource
 {
     /**
-     * The resource method URL. No slashes at the beginning and end of the 
-     * string.
+     * The endpoint name
+     * 
+     * @var string 
      */
-    const ENDPOINT_METHOD = 'phrases.json';
-
+    protected $baseMethod = 'phrases';
+    
+    /**
+     * The entity name
+     * 
+     * @var type 
+     */
+    protected $entity = '';
+    
+    /**
+     * The response format
+     * 
+     * @var type 
+     */
+    protected $format = '.json';
+    
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 
      * sets the resource method URL.
@@ -42,6 +57,21 @@ class Phrases extends BaseResource
     public function __construct(\FurryBear\FurryBear $furryBear)
     {
         parent::__construct($furryBear);
-        $this->setResourceMethod(self::ENDPOINT_METHOD);
+        $this->setResourceMethod($this->baseMethod . $this->format);
+    }
+    
+    /**
+     * Set the entity.
+     * 
+     * @param string $name The entity name
+     * 
+     * @return \FurryBear\Resource\SunlightCapitolWords\Method\Phrases
+     */
+    public function entity($name = '')
+    {
+        $entity = ($name) ? '/' . $name : '';
+        $this->setResourceMethod($this->baseMethod . $entity . $this->format);
+        
+        return $this;
     }
 }
