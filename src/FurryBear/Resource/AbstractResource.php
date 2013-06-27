@@ -11,7 +11,9 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
+
 namespace FurryBear\Resource;
+
 /**
  * An abstract presentation of a resource.
  * 
@@ -44,6 +46,13 @@ abstract class AbstractResource implements \IteratorAggregate
      */
     protected $params = array();
     
+    /**
+     * Required parameters.
+     * 
+     * @var array
+     */
+    protected $required = array();
+
     /**
      * Construct a resource with a FurryBear instance.
      * 
@@ -117,6 +126,28 @@ abstract class AbstractResource implements \IteratorAggregate
     {
         $this->params = array();
         return $this;
+    }
+    
+    /**
+     * Set required parameters.
+     * 
+     * @param array $params
+     * 
+     * @return void
+     */
+    protected function setRequired(array $params)
+    {
+        $this->required = $params;
+    }
+    
+    /**
+     * Get required parameters.
+     * 
+     * @return array
+     */
+    protected function getRequired()
+    {
+        return $this->required;
     }
     
     /**

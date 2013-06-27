@@ -32,10 +32,17 @@ class Dates extends BaseResource
      * string.
      */
     const ENDPOINT_METHOD = 'dates.json';
+    
+    /**
+     * The required parameters for this resource
+     * 
+     * @var array
+     */
+    protected $required = array('phrase');
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 
-     * sets the resource method URL.
+     * sets the resource method URL. Defines a set of required parameters.
      * 
      * @param \FurryBear\FurryBear $furryBear A reference to the FurryBear onject.
      */
@@ -43,5 +50,6 @@ class Dates extends BaseResource
     {
         parent::__construct($furryBear);
         $this->setResourceMethod(self::ENDPOINT_METHOD);
+        $this->setRequired($this->required);
     }
 }

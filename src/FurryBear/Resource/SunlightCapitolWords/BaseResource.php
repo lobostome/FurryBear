@@ -15,7 +15,8 @@
 namespace FurryBear\Resource\SunlightCapitolWords;
 
 use FurryBear\Resource\AbstractResource,
-    FurryBear\Exception\NotImplementedException;
+    FurryBear\Exception\NotImplementedException,
+    FurryBear\Exception\InvalidArgumentException;;
 
 /**
  * A base presentation of SunlightCapitolWords resource.
@@ -46,7 +47,12 @@ class BaseResource extends AbstractResource
      * @return string
      */
     protected function buildQuery(array $params)
-    {
+    {        
+        if (count($this->getRequired()) != 0 && 
+            (count(array_intersect_key($params, array_flip($this->getRequired()))) != count($this->getRequired()))) {
+            throw new InvalidArgumentException("Invalid number of required parameters. Required parameters are: " . implode(", ", $this->getRequired()));
+        }
+        
         $apiKey = array();
         if (method_exists($this->furryBear->getProvider(), 'getApiKey')) {
             $apiKey['apikey'] = $this->furryBear->getProvider()->getApiKey();
