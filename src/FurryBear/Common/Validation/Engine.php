@@ -12,11 +12,11 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Validation;
+namespace FurryBear\Common\Validation;
 
-use FurryBear\Message\Group as MessageGroup,
-    FurryBear\Message\Message as ValidationMessage,
-    FurryBear\Exception\InvalidArgumentException;
+use FurryBear\Common\Message\Group as MessageGroup,
+    FurryBear\Common\Message\Message as ValidationMessage,
+    FurryBear\Common\Exception\InvalidArgumentException;
 
 /**
  * Allows to validate data using validators
@@ -102,8 +102,8 @@ class Engine
     /**
      * Adds a validator to the container.
      * 
-     * @param string                          $attribute
-     * @param \FurryBear\Validation\Validator $validator
+     * @param string                                 $attribute
+     * @param \FurryBear\Common\Validation\Validator $validator
      */
     public function add($attribute, Validator $validator)
     {

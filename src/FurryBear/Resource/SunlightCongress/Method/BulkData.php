@@ -14,7 +14,7 @@
 
 namespace FurryBear\Resource\SunlightCongress\Method;
 
-use FurryBear\Exception\NotImplementedException,
+use FurryBear\Common\Exception\NotImplementedException,
     FurryBear\Resource\SunlightCongress\BaseResource;
 
 /**

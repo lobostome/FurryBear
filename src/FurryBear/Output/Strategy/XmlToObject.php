@@ -14,7 +14,7 @@
 
 namespace FurryBear\Output\Strategy;
 
-use FurryBear\Exception\InvalidXmlException,
+use FurryBear\Common\Exception\InvalidXmlException,
     FurryBear\Output\Strategy,
     FurryBear\Output\Strategy\Error\Xml as XmlError;
 
@@ -37,7 +37,7 @@ class XmlToObject implements Strategy
      * @param string $data The xml string returned from the service.
      * 
      * @return \SimpleXMLElement
-     * @throws \FurryBear\Exception\InvalidJsonException
+     * @throws \FurryBear\Common\Exception\InvalidJsonException
      */
     public function convert($data)
     {

@@ -11,10 +11,10 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-namespace FurryBear\Exception;
+namespace FurryBear\Common\Exception;
 
 /**
- * A custom exception thrown when an invalid xml string is encountered.
+ * A custom exception thrown when an invalid json string is encountered.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,7 +23,7 @@ namespace FurryBear\Exception;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-class InvalidXmlException extends \RuntimeException 
+class InvalidJsonException extends \RuntimeException 
                     implements ExceptionInterface
 {
     

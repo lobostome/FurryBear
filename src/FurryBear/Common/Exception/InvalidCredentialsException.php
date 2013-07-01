@@ -11,10 +11,10 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-namespace FurryBear\Exception;
+namespace FurryBear\Common\Exception;
 
 /**
- * The interface for custom exceptions.
+ * A custom exception thrown when no valid credential is provided.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,7 +23,8 @@ namespace FurryBear\Exception;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-interface ExceptionInterface
+class InvalidCredentialsException extends \RuntimeException
+                                  implements ExceptionInterface
 {
     
 }

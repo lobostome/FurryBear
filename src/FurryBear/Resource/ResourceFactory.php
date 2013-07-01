@@ -14,7 +14,7 @@
 
 namespace FurryBear\Resource;
 
-use FurryBear\Exception\InvalidArgumentException;
+use FurryBear\Common\Exception\InvalidArgumentException;
 
 /**
  * A factory that aids creating resource objects.
@@ -40,7 +40,7 @@ class ResourceFactory
      * 
      * @return \FurryBear\Resource\AbstractResource
      * 
-     * @throws FurryBear\Exception\InvalidArgumentException
+     * @throws FurryBear\Common\Exception\InvalidArgumentException
      */
     public static function create($furryBear, $name)
     {

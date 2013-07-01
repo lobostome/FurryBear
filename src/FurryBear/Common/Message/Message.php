@@ -12,7 +12,7 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Message;
+namespace FurryBear\Common\Message;
 
 /**
  * Encapsulates verbose messages.

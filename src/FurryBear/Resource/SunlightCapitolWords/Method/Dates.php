@@ -15,7 +15,7 @@
 namespace FurryBear\Resource\SunlightCapitolWords\Method;
 
 use FurryBear\Resource\SunlightCapitolWords\BaseResource,
-    FurryBear\Validation\Validator\RequireAll as RequireAllValidator;
+    FurryBear\Common\Validation\Validator\RequireAll as RequireAllValidator;
 
 /**
  * This class gives access to Sunlight Capitol Words dates resource.

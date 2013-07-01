@@ -90,11 +90,11 @@ class PageIterator implements \Iterator
      * Returns the key of the current element.
      * 
      * @return scalar
-     * @throws \FurryBear\Exception\NotImplementedException This method does not exist.
+     * @throws \FurryBear\Common\Exception\NotImplementedException This method does not exist.
      */
     public function key()
     {
-        throw new \FurryBear\Exception\NotImplementedException('Method ' . __METHOD__ . ' is not implemented');
+        throw new \FurryBear\Common\Exception\NotImplementedException('Method ' . __METHOD__ . ' is not implemented');
     }
 
     /**

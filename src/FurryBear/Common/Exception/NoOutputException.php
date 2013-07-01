@@ -11,10 +11,10 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-namespace FurryBear\Exception;
+namespace FurryBear\Common\Exception;
 
 /**
- * A custom exception thrown when provider is not specified.
+ * A custom exception thrown when output is not specified.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,7 +23,7 @@ namespace FurryBear\Exception;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-class NoProviderException extends \RuntimeException 
+class NoOutputException extends \RuntimeException 
                     implements ExceptionInterface
 {
     

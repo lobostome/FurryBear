@@ -12,11 +12,11 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Validation\Validator;
+namespace FurryBear\Common\Validation\Validator;
 
-use FurryBear\Validation\Validator,
-    FurryBear\Validation\ValidatorInterface,
-    FurryBear\Exception\InvalidArgumentException;
+use FurryBear\Common\Validation\Validator,
+    FurryBear\Common\Validation\ValidatorInterface,
+    FurryBear\Common\Exception\InvalidArgumentException;
 
 /**
  * A validator that verifies a full match against all domain options.

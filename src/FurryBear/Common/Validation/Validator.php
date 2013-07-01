@@ -12,7 +12,7 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Validation;
+namespace FurryBear\Common\Validation;
 
 /**
  * A base class for validators

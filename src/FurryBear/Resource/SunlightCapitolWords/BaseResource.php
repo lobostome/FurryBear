@@ -15,9 +15,9 @@
 namespace FurryBear\Resource\SunlightCapitolWords;
 
 use FurryBear\Resource\AbstractResource,
-    FurryBear\Exception\NotImplementedException,
-    FurryBear\Exception\InvalidArgumentException,
-    FurryBear\Validation\Engine as ValidationEngine;
+    FurryBear\Common\Exception\NotImplementedException,
+    FurryBear\Common\Exception\InvalidArgumentException,
+    FurryBear\Common\Validation\Engine as ValidationEngine;
 
 /**
  * A base presentation of SunlightCapitolWords resource.
@@ -33,7 +33,7 @@ class BaseResource extends AbstractResource
     /**
      * A reference to the validation engine.
      * 
-     * @var \FurryBear\Validation\Engine
+     * @var \FurryBear\Common\Validation\Engine
      */
     protected $validation;
 
@@ -54,6 +54,7 @@ class BaseResource extends AbstractResource
      * @param array $params The search criteria.
      * 
      * @return string
+     * @throws InvalidArgumentException
      */
     protected function buildQuery(array $params)
     {
@@ -90,7 +91,7 @@ class BaseResource extends AbstractResource
     /**
      * Sets the validation service.
      * 
-     * @param FurryBear\Validation\Engine $validation
+     * @param FurryBear\Common\Validation\Engine $validation
      * 
      * @return void
      */
@@ -102,7 +103,7 @@ class BaseResource extends AbstractResource
     /**
      * Get the validation service.
      * 
-     * @return FurryBear\Validation\Engine
+     * @return FurryBear\Common\Validation\Engine
      */
     protected function getValidation()
     {
@@ -112,7 +113,7 @@ class BaseResource extends AbstractResource
     /**
      * Gets an iterator that can iterate over multiple result pages.
      * 
-     * @throws \FurryBear\Exception\NotImplementedException
+     * @throws NotImplementedException
      */
     public function getIterator()
     {

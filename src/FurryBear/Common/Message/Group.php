@@ -12,7 +12,7 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Message;
+namespace FurryBear\Common\Message;
 
 /**
  * Represents a group of validation messages

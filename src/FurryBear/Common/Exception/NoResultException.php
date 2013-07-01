@@ -11,10 +11,10 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-namespace FurryBear\Exception;
+namespace FurryBear\Common\Exception;
 
 /**
- * A custom exception thrown when an invalid argument is provided.
+ * A custom exception thrown when result is a failure.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,8 +23,8 @@ namespace FurryBear\Exception;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-class InvalidArgumentException extends \RuntimeException
-                                  implements ExceptionInterface
+class NoResultException extends \RuntimeException 
+                    implements ExceptionInterface
 {
     
 }

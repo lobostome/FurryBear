@@ -11,11 +11,10 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-
-namespace FurryBear\Validation;
+namespace FurryBear\Common\Exception;
 
 /**
- * A contract for validators
+ * A custom exception thrown when an invalid argument is provided.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -24,12 +23,8 @@ namespace FurryBear\Validation;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-interface ValidatorInterface
+class InvalidArgumentException extends \RuntimeException
+                                  implements ExceptionInterface
 {
-    /**
-     * Execute a validator.
-     * 
-     * @return boolean
-     */
-    public function validate();
+    
 }

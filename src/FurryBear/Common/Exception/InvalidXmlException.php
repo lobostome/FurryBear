@@ -11,10 +11,10 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
-namespace FurryBear\Exception;
+namespace FurryBear\Common\Exception;
 
 /**
- * A custom exception thrown when result is a failure.
+ * A custom exception thrown when an invalid xml string is encountered.
  * 
  * @category Congress_API
  * @package  FurryBear
@@ -23,7 +23,7 @@ namespace FurryBear\Exception;
  * @link     https://github.com/lobostome/FurryBear
  */
 
-class NoResultException extends \RuntimeException 
+class InvalidXmlException extends \RuntimeException 
                     implements ExceptionInterface
 {
     
