@@ -36,6 +36,13 @@ class BaseResource extends AbstractResource
      * @var \FurryBear\Common\Validation\Engine
      */
     protected $validation;
+    
+    /**
+     * Required query parameters.
+     * 
+     * @var array
+     */
+    protected $required;
 
     /**
      * Construct a resource with a FurryBear instance.
@@ -108,6 +115,28 @@ class BaseResource extends AbstractResource
     protected function getValidation()
     {
         return $this->validation;
+    }
+    
+    /**
+     * Sets required query parameters.
+     * 
+     * @param array $params
+     * 
+     * @return void
+     */
+    protected function setRequired($params)
+    {
+        $this->required = $params;
+    }
+    
+    /**
+     * Gets required query parameters.
+     * 
+     * @return array
+     */
+    protected function getRequired()
+    {
+        return $this->required;
     }
 
     /**

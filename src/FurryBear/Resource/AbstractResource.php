@@ -45,13 +45,6 @@ abstract class AbstractResource implements \IteratorAggregate
      * @var array
      */
     protected $params = array();
-    
-    /**
-     * Required parameters.
-     * 
-     * @var array
-     */
-    protected $required = array();
 
     /**
      * Construct a resource with a FurryBear instance.
@@ -126,28 +119,6 @@ abstract class AbstractResource implements \IteratorAggregate
     {
         $this->params = array();
         return $this;
-    }
-    
-    /**
-     * Set required parameters.
-     * 
-     * @param array $params
-     * 
-     * @return void
-     */
-    protected function setRequired(array $params)
-    {
-        $this->required = $params;
-    }
-    
-    /**
-     * Get required parameters.
-     * 
-     * @return array
-     */
-    protected function getRequired()
-    {
-        return $this->required;
     }
     
     /**

@@ -104,10 +104,36 @@ class Engine
      * 
      * @param string                                 $attribute
      * @param \FurryBear\Common\Validation\Validator $validator
+     * 
+     * @return void
      */
     public function add($attribute, Validator $validator)
     {
         $this->validators[$attribute][] = $validator;
+    }
+    
+    /**
+     * Remove a validator/validators
+     * 
+     * @param string $attribute
+     * @param string $validator
+     */
+    public function remove($attribute, $validator = null)
+    {
+        if (isset($this->validators[$attribute])) {
+            
+            if (is_null($validator)) {
+                unset($this->validators[$attribute]);
+                return;
+            }
+            
+            foreach ($this->validators[$attribute] as $k => $v) {
+                if (get_class($v) == $validator) {
+                    unset($this->validators[$attribute][$k]);
+                    break;
+                }
+            }
+        }
     }
     
     /**

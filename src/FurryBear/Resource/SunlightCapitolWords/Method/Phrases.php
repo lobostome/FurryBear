@@ -14,7 +14,8 @@
 
 namespace FurryBear\Resource\SunlightCapitolWords\Method;
 
-use FurryBear\Resource\SunlightCapitolWords\BaseResource;
+use FurryBear\Resource\SunlightCapitolWords\BaseResource,
+    FurryBear\Common\Validation\Validator\RequireAll as RequireAllValidator;
 
 /**
  * This class gives access to Sunlight Capitol Words phrases resource.
@@ -49,6 +50,20 @@ class Phrases extends BaseResource
     protected $format = '.json';
     
     /**
+     * The required parameters for this resource.
+     * 
+     * @var array
+     */
+    protected $requiredQueryParams = array('entity_type', 'entity_value');
+    
+    /**
+     * The required parameters for entities.
+     * 
+     * @var array
+     */
+    protected $requiredEntityQueryParams = array('phrase');
+    
+    /**
      * Constructs the resource, sets a reference to the FurryBear object, and 
      * sets the resource method URL.
      * 
@@ -58,6 +73,8 @@ class Phrases extends BaseResource
     {
         parent::__construct($furryBear);
         $this->setResourceMethod($this->baseMethod . $this->format);
+        $this->setRequired($this->requiredQueryParams);
+        $this->addValidators();
     }
     
     /**
@@ -72,6 +89,32 @@ class Phrases extends BaseResource
         $entity = ($name) ? '/' . $name : '';
         $this->setResourceMethod($this->baseMethod . $entity . $this->format);
         
+        // remove existing validators
+        $this->getValidation()->remove('required');
+        
+        // set the new required query parameters
+        if (!empty($entity)) {
+            $this->setRequired($this->requiredEntityQueryParams);
+        } else {
+            $this->setRequired($this->requiredQueryParams);
+        }
+        
+        // add new validators
+        $this->addValidators();
+        
         return $this;
+    }
+    
+    /**
+     * Adds validators to the engine.
+     * 
+     * @return void
+     */
+    protected function addValidators()
+    {
+        $this->getValidation()->add('required', new RequireAllValidator(array(
+            'message' => "Invalid number of required parameters. Required parameters are: " . implode(", ", $this->getRequired()),
+            'domain' => $this->getRequired()
+        )));
     }
 }

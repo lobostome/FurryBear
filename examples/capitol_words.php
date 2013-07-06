@@ -2,15 +2,15 @@
 
 require_once 'config/config_capitol_words.php';
 
-$params1 = array('phrase' => 'united states',
-                 'start_date' => '2009-01-01',
-                 'end_date' => '2009-04-30',
-                 'granularity' => 'month');
+$params1 = array('phrase' => 'legislator');
 
 // A sample use
 try {
-    $fb->dates->setParams($params1);
-    var_dump($fb->dates->get());
+    $fb->phrases->entity('state')->setParams($params1);
+    var_dump($fb->phrases->get());
+    
+    $fb->phrases->entity()->setParams($params1);
+    var_dump($fb->phrases->get());
 } catch (\Exception $e) {
     echo $e->getMessage();
 }

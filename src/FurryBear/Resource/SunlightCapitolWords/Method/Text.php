@@ -14,7 +14,8 @@
 
 namespace FurryBear\Resource\SunlightCapitolWords\Method;
 
-use FurryBear\Resource\SunlightCapitolWords\BaseResource;
+use FurryBear\Resource\SunlightCapitolWords\BaseResource,
+    FurryBear\Common\Validation\Validator\RequireAtLeast as RequireAtLeastValidator;
 
 /**
  * This class gives access to Sunlight Capitol Words text resource.
@@ -32,6 +33,13 @@ class Text extends BaseResource
      * string.
      */
     const ENDPOINT_METHOD = 'text.json';
+    
+    /**
+     * The required query parameters for this resource.
+     * 
+     * @var array
+     */
+    protected $requiredQueryParams = array('phrase', 'title');
 
     /**
      * Constructs the resource, sets a reference to the FurryBear object, and 
@@ -43,5 +51,21 @@ class Text extends BaseResource
     {
         parent::__construct($furryBear);
         $this->setResourceMethod(self::ENDPOINT_METHOD);
+        $this->setRequired($this->requiredQueryParams);
+        $this->addValidators();
+    }
+    
+    /**
+     * Adds validators to the engine.
+     * 
+     * @return void
+     */
+    protected function addValidators()
+    {
+        $this->getValidation()->add('required', new RequireAtLeastValidator(array(
+            'message' => "Invalid number of required parameters. At least one of these is required: " . implode(", ", $this->getRequired()),
+            'domain' => $this->getRequired(),
+            'number' => 1
+        )));
     }
 }
