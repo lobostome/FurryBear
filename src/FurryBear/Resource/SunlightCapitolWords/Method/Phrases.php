@@ -15,7 +15,8 @@
 namespace FurryBear\Resource\SunlightCapitolWords\Method;
 
 use FurryBear\Resource\SunlightCapitolWords\BaseResource,
-    FurryBear\Common\Validation\Validator\RequireAll as RequireAllValidator;
+    FurryBear\Common\Validation\Validator\RequireAll as RequireAllValidator,
+    FurryBear\Iterator\SunlightCapitolWords\PhrasePageIterator;
 
 /**
  * This class gives access to Sunlight Capitol Words phrases resource.
@@ -116,5 +117,15 @@ class Phrases extends BaseResource
             'message' => "Invalid number of required parameters. Required parameters are: " . implode(", ", $this->getRequired()),
             'domain' => $this->getRequired()
         )));
+    }
+    
+    /**
+     * Gets an iterator that can iterate over multiple result pages.
+     * 
+     * @return \FurryBear\Iterator\SunlightCapitolWords\PhrasePageIterator
+     */
+    public function getIterator()
+    {
+        return new PhrasePageIterator($this);
     }
 }

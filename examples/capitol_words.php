@@ -2,15 +2,17 @@
 
 require_once 'config/config_capitol_words.php';
 
-$params1 = array('phrase' => 'second chance act');
+$params1 = array('entity_type' => 'legislator',
+                 'entity_value' => 'L000551'); // max 8 pages
 
 // A sample use
 try {
-    $fb->text->setParams($params1);
-    //var_dump($fb->text->get());
+    $fb->phrases->setParams($params1);
+    // var_dump($fb->phrases->get());
     
-    foreach ($fb->text as $page) {
-        var_dump($page);
+    foreach ($fb->phrases as $page) {
+        if (!is_null($page))
+            var_dump($page);
         sleep(2); // be nice to the API
     }
 } catch (\Exception $e) {
