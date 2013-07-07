@@ -25,7 +25,7 @@ use FurryBear\Resource\AbstractResource;
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     http://sunlightlabs.github.com/congress/
  */
-class PhrasePageIterator implements \Iterator
+class PhrasesEntityPageIterator implements \Iterator
 {
     /**
      * A reference to the resource.
@@ -40,13 +40,6 @@ class PhrasePageIterator implements \Iterator
      * @var array
      */
     protected $params;
-    
-    /**
-     * Number of results per page. Default is 100.
-     * 
-     * @var int 
-     */
-    protected $perPage = 100;
     
     /**
      * Are there any more items?
@@ -68,6 +61,10 @@ class PhrasePageIterator implements \Iterator
         if (!isset($this->params['page'])) {
             $this->params['page'] = 0;
         }
+        
+        if (!isset($this->params['per_page'])) {
+            $this->params['per_page'] = 50;
+        }
     }
     
     /**
@@ -79,7 +76,7 @@ class PhrasePageIterator implements \Iterator
     {
         $result = $this->resource->get($this->params);
         
-        if (count($result) == 0) {
+        if (count($result['results']) == 0) {
             $this->isEnd = TRUE;
             return null;
         }

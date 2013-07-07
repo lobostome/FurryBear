@@ -16,7 +16,8 @@ namespace FurryBear\Resource\SunlightCapitolWords\Method;
 
 use FurryBear\Resource\SunlightCapitolWords\BaseResource,
     FurryBear\Common\Validation\Validator\RequireAll as RequireAllValidator,
-    FurryBear\Iterator\SunlightCapitolWords\PhrasePageIterator;
+    FurryBear\Iterator\SunlightCapitolWords\PhrasesPageIterator,
+    FurryBear\Iterator\SunlightCapitolWords\PhrasesEntityPageIterator;
 
 /**
  * This class gives access to Sunlight Capitol Words phrases resource.
@@ -37,11 +38,11 @@ class Phrases extends BaseResource
     protected $baseMethod = 'phrases';
     
     /**
-     * The entity name
+     * Is this an entity?
      * 
-     * @var type 
+     * @var boolean 
      */
-    protected $entity = '';
+    protected $isEntity = FALSE;
     
     /**
      * The response format
@@ -86,21 +87,20 @@ class Phrases extends BaseResource
      * @return \FurryBear\Resource\SunlightCapitolWords\Method\Phrases
      */
     public function entity($name = '')
-    {
-        $entity = ($name) ? '/' . $name : '';
-        $this->setResourceMethod($this->baseMethod . $entity . $this->format);
-        
-        // remove existing validators
-        $this->getValidation()->remove('required');
-        
-        // set the new required query parameters
-        if (!empty($entity)) {
+    {        
+        // set resource method and required query parameters
+        if (!empty($name)) {
+            $this->setResourceMethod($this->baseMethod . '/' . $name . $this->format);
             $this->setRequired($this->requiredEntityQueryParams);
+            $this->isEntity = TRUE;
         } else {
+            $this->setResourceMethod($this->baseMethod . $this->format);
             $this->setRequired($this->requiredQueryParams);
+            $this->isEntity = FALSE;
         }
         
-        // add new validators
+        // redeclare validators
+        $this->getValidation()->remove('required');
         $this->addValidators();
         
         return $this;
@@ -122,10 +122,13 @@ class Phrases extends BaseResource
     /**
      * Gets an iterator that can iterate over multiple result pages.
      * 
-     * @return \FurryBear\Iterator\SunlightCapitolWords\PhrasePageIterator
+     * @return \Iterator
      */
     public function getIterator()
     {
-        return new PhrasePageIterator($this);
+        if ($this->isEntity)
+            return new PhrasesEntityPageIterator($this);
+        else
+            return new PhrasesPageIterator($this);
     }
 }
