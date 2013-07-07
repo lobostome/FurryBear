@@ -2,15 +2,17 @@
 
 require_once 'config/config_capitol_words.php';
 
-$params1 = array('phrase' => 'legislator');
+$params1 = array('phrase' => 'second chance act');
 
 // A sample use
 try {
-    $fb->phrases->entity('state')->setParams($params1);
-    var_dump($fb->phrases->get());
+    $fb->text->setParams($params1);
+    //var_dump($fb->text->get());
     
-    $fb->phrases->entity()->setParams($params1);
-    var_dump($fb->phrases->get());
+    foreach ($fb->text as $page) {
+        var_dump($page);
+        sleep(2); // be nice to the API
+    }
 } catch (\Exception $e) {
     echo $e->getMessage();
 }

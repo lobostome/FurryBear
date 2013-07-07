@@ -15,7 +15,8 @@
 namespace FurryBear\Resource\SunlightCapitolWords\Method;
 
 use FurryBear\Resource\SunlightCapitolWords\BaseResource,
-    FurryBear\Common\Validation\Validator\RequireAtLeast as RequireAtLeastValidator;
+    FurryBear\Common\Validation\Validator\RequireAtLeast as RequireAtLeastValidator,
+    FurryBear\Iterator\SunlightCapitolWords\TextPageIterator;
 
 /**
  * This class gives access to Sunlight Capitol Words text resource.
@@ -67,5 +68,15 @@ class Text extends BaseResource
             'domain' => $this->getRequired(),
             'number' => 1
         )));
+    }
+    
+    /**
+     * Gets an iterator that can iterate over multiple result pages.
+     * 
+     * @return \FurryBear\Iterator\SunlightCapitolWords\TextPageIterator
+     */
+    public function getIterator()
+    {
+        return new TextPageIterator($this);
     }
 }

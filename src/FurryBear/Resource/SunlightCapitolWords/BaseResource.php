@@ -17,7 +17,8 @@ namespace FurryBear\Resource\SunlightCapitolWords;
 use FurryBear\Resource\AbstractResource,
     FurryBear\Common\Exception\NotImplementedException,
     FurryBear\Common\Exception\InvalidArgumentException,
-    FurryBear\Common\Validation\Engine as ValidationEngine;
+    FurryBear\Common\Validation\Engine as ValidationEngine,
+    FurryBear\Iterator\SunlightCapitolWords\PageIterator;
 
 /**
  * A base presentation of SunlightCapitolWords resource.
