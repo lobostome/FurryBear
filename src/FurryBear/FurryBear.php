@@ -17,8 +17,8 @@ namespace FurryBear;
 use FurryBear\Provider\AbstractProvider,
     FurryBear\Output\Strategy,
     FurryBear\Resource\ResourceFactory,
-    FurryBear\Exception\NoProviderException,
-    FurryBear\Exception\NoOutputException;
+    FurryBear\Common\Exception\NoProviderException,
+    FurryBear\Common\Exception\NoOutputException;
 
 /**
  * The main class that glues it all together.

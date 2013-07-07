@@ -14,7 +14,7 @@
 
 namespace FurryBear\Output\Strategy;
 
-use FurryBear\Exception\InvalidJsonException,
+use FurryBear\Common\Exception\InvalidJsonException,
     FurryBear\Output\Strategy,
     FurryBear\Output\Strategy\Error\Json as JsonError;;
 

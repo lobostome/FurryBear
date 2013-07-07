@@ -16,7 +16,7 @@ namespace FurryBear\Resource\SunlightCongress;
 
 use FurryBear\Resource\AbstractResource,
     FurryBear\Iterator\SunlightCongress\PageIterator,
-    FurryBear\Exception\InvalidArgumentException;
+    FurryBear\Common\Exception\InvalidArgumentException;
 
 /**
  * A base presentation of SunlightCongress resource.

@@ -14,7 +14,7 @@
 
 namespace FurryBear\Output\Strategy;
 
-use FurryBear\Exception\InvalidJsonException,
+use FurryBear\Common\Exception\InvalidJsonException,
     FurryBear\Output\Strategy,
     FurryBear\Output\Strategy\Error\Json as JsonError;
 
@@ -35,7 +35,7 @@ class JsonToObject implements Strategy
      * @param string $data The json string returned from the service.
      * 
      * @return object
-     * @throws \FurryBear\Exception\InvalidJsonException
+     * @throws \FurryBear\Common\Exception\InvalidJsonException
      */
     public function convert($data)
     {

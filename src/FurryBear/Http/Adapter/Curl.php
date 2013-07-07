@@ -13,7 +13,7 @@
  */
 namespace FurryBear\Http\Adapter;
 
-use FurryBear\Exception\NoResultException,
+use FurryBear\Common\Exception\NoResultException,
     FurryBear\Proxy\Curl as CurlProxy,
     FurryBear\Http\HttpAdapterInterface;
 

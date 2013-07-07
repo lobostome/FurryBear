@@ -14,7 +14,7 @@
 
 namespace FurryBear\Proxy;
 
-use FurryBear\Exception\NotImplementedException;
+use FurryBear\Common\Exception\NotImplementedException;
 
 /**
  * A proxy that provides a surrogate for Guzzle http client.
@@ -66,7 +66,7 @@ class Guzzle implements HttpRequest
     /**
      * {@inheritdoc}
      * 
-     * @throws FurryBear\Exception\NotImplementedException since this method is not used
+     * @throws FurryBear\Common\Exception\NotImplementedException since this method is not used
      */
     public function close()
     {
@@ -87,7 +87,7 @@ class Guzzle implements HttpRequest
     /**
      * {@inheritdoc}
      * 
-     * @throws FurryBear\Exception\NotImplementedException since this method is not used
+     * @throws FurryBear\Common\Exception\NotImplementedException since this method is not used
      */
     public function getInfo()
     {
@@ -100,7 +100,7 @@ class Guzzle implements HttpRequest
      * @param int   $name  The option to set.
      * @param mixed $value The value to be set to option.
      * 
-     * @throws FurryBear\Exception\NotImplementedException since this method is not used
+     * @throws FurryBear\Common\Exception\NotImplementedException since this method is not used
      */
     public function setOption($name, $value)
     {

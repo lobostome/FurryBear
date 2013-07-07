@@ -59,7 +59,7 @@ class HearingsTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->hearings = new \FurryBear\Resource\SunlightCongress\Hearings($this->furryBear);
+        $this->hearings = new \FurryBear\Resource\SunlightCongress\Method\Hearings($this->furryBear);
     }
     
     /**
@@ -79,6 +79,6 @@ class HearingsTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertAttributeNotEmpty('resourceMethod', $this->hearings);
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->hearings);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Hearings::HEARINGS_METHOD, 'resourceMethod', $this->hearings);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Method\Hearings::ENDPOINT_METHOD, 'resourceMethod', $this->hearings);
     }
 }

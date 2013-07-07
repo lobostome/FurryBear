@@ -59,7 +59,7 @@ class BillsTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->bills = new \FurryBear\Resource\SunlightCongress\Bills($this->furryBear);
+        $this->bills = new \FurryBear\Resource\SunlightCongress\Method\Bills($this->furryBear);
     }
     
     /**
@@ -79,6 +79,6 @@ class BillsTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertAttributeNotEmpty('resourceMethod', $this->bills);
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->bills);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Bills::BILLS_METHOD, 'resourceMethod', $this->bills);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Method\Bills::ENDPOINT_METHOD, 'resourceMethod', $this->bills);
     }
 }

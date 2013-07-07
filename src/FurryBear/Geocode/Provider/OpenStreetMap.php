@@ -15,7 +15,7 @@
 namespace FurryBear\Geocode\Provider;
 
 use FurryBear\Geocode\AbstractProvider,
-    FurryBear\Exception\NoResultException;
+    FurryBear\Common\Exception\NoResultException;
 
 /**
  * OpenStreetMap geocode provider

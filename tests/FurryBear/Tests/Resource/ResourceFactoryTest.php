@@ -68,7 +68,7 @@ class ResourceFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreate()
     {
-        $expectedClass = '\\FurryBear\\Resource\\SunlightCongress\\Bills';
+        $expectedClass = '\\FurryBear\\Resource\\SunlightCongress\\Method\\Bills';
         $actualObj = \FurryBear\Resource\ResourceFactory::create($this->furryBear, 'bills');
         
         $this->assertNotNull($actualObj);

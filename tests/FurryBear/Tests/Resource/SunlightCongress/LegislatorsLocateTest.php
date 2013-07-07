@@ -59,7 +59,7 @@ class LegislatorsLocateTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->legislatorsLocate = new \FurryBear\Resource\SunlightCongress\LegislatorsLocate($this->furryBear);
+        $this->legislatorsLocate = new \FurryBear\Resource\SunlightCongress\Method\LegislatorsLocate($this->furryBear);
     }
     
     /**
@@ -79,7 +79,7 @@ class LegislatorsLocateTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertAttributeNotEmpty('resourceMethod', $this->legislatorsLocate);
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->legislatorsLocate);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\LegislatorsLocate::LEGISLATORS_LOCATE_METHOD, 'resourceMethod', $this->legislatorsLocate);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Method\LegislatorsLocate::ENDPOINT_METHOD, 'resourceMethod', $this->legislatorsLocate);
     }
     
     public function testGetByZip()

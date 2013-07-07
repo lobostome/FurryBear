@@ -93,7 +93,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         
         // Let's call a resource and have it cached.
         $resourceName = 'bills';
-        $expectedClass = '\\FurryBear\\Resource\\SunlightCongress\\Bills';
+        $expectedClass = '\\FurryBear\\Resource\\SunlightCongress\\Method\\Bills';
         
         $output = new \FurryBear\Output\Strategy\JsonToObject();
         $this->furryBear->registerOutput($output);
@@ -200,7 +200,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         
         // Let's get a new resource
         $resourceName = 'bills';
-        $expectedClass = '\\FurryBear\\Resource\\SunlightCongress\\Bills';
+        $expectedClass = '\\FurryBear\\Resource\\SunlightCongress\\Method\\Bills';
         
         $this->assertAttributeInternalType('array', 'data', $this->furryBear);
         $this->assertAttributeEmpty('data', $this->furryBear);
@@ -223,7 +223,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         // Does a resource name with underscore get translated to a resource correctly?
         // Do we have 2 cached resources now?
         $resourceName2 = 'legislators_locate';
-        $expectedClass2 = '\\FurryBear\\Resource\\SunlightCongress\\LegislatorsLocate';
+        $expectedClass2 = '\\FurryBear\\Resource\\SunlightCongress\\Method\\LegislatorsLocate';
         
         $this->furryBear->{$resourceName2};
         

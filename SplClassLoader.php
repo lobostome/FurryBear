@@ -85,7 +85,7 @@ class SplClassLoader {
         $f = ($this->_path !== null ? $this->_path . DIRECTORY_SEPARATOR : '') . $fileName;
         
         if (!file_exists($f)) {
-            throw new \FurryBear\Exception\FileDoesNotExistException('File does not exist ' . $f);
+            throw new \FurryBear\Common\Exception\FileDoesNotExistException('File does not exist ' . $f);
         }
         
         require $f;
