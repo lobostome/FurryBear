@@ -59,7 +59,7 @@ class LegislatorsTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->legislators = new \FurryBear\Resource\SunlightCongress\Legislators($this->furryBear);
+        $this->legislators = new \FurryBear\Resource\SunlightCongress\Method\Legislators($this->furryBear);
     }
     
     /**
@@ -79,6 +79,6 @@ class LegislatorsTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertAttributeNotEmpty('resourceMethod', $this->legislators);
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->legislators);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Legislators::LEGISLATORS_METHOD, 'resourceMethod', $this->legislators);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Method\Legislators::ENDPOINT_METHOD, 'resourceMethod', $this->legislators);
     }
 }

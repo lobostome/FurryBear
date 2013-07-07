@@ -15,8 +15,8 @@
 namespace FurryBear\Geocode\Provider;
 
 use FurryBear\Geocode\AbstractProvider,
-    FurryBear\Exception\InvalidCredentialsException,
-    FurryBear\Exception\NoResultException;
+    FurryBear\Common\Exception\InvalidCredentialsException,
+    FurryBear\Common\Exception\NoResultException;
 
 /**
  * Bing Maps geocode provider

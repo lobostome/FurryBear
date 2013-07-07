@@ -59,7 +59,7 @@ class CommitteesTest extends \PHPUnit_Framework_TestCase
         $this->furryBear->registerProvider($provider)
                         ->registerOutput($output);
         
-        $this->committees = new \FurryBear\Resource\SunlightCongress\Committees($this->furryBear);
+        $this->committees = new \FurryBear\Resource\SunlightCongress\Method\Committees($this->furryBear);
     }
     
     /**
@@ -79,6 +79,6 @@ class CommitteesTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertAttributeNotEmpty('resourceMethod', $this->committees);
         $this->assertAttributeInternalType('string', 'resourceMethod', $this->committees);
-        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Committees::COMMITTEES_METHOD, 'resourceMethod', $this->committees);
+        $this->assertAttributeEquals(\FurryBear\Resource\SunlightCongress\Method\Committees::ENDPOINT_METHOD, 'resourceMethod', $this->committees);
     }
 }

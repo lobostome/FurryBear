@@ -11,7 +11,9 @@
  * @license  http://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/lobostome/FurryBear
  */
+
 namespace FurryBear\Resource;
+
 /**
  * An abstract presentation of a resource.
  * 
@@ -43,7 +45,7 @@ abstract class AbstractResource implements \IteratorAggregate
      * @var array
      */
     protected $params = array();
-    
+
     /**
      * Construct a resource with a FurryBear instance.
      * 
