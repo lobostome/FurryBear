@@ -35,3 +35,8 @@ Documentation
 -------------
 
 For detailed description, visit the [Wiki](https://github.com/lobostome/FurryBear/wiki).
+
+Changelog
+---------
+**0.4.0**
+- Add Sunlight Capitol Words API
