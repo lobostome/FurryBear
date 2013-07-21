@@ -36,6 +36,19 @@ Documentation
 
 For detailed description, visit the [Wiki](https://github.com/lobostome/FurryBear/wiki).
 
+Roadmap
+-------
+**0.6.0**
+- Major overhaul of existing code base
+- Add event management
+- HTTP clients direct access
+- Process multiple requests in parallel
+- 100% unit testing
+- Dependency Injection Container
+
+**0.5.0**
+- Add Sunlight Open States API
+
 Changelog
 ---------
 **0.4.0**
