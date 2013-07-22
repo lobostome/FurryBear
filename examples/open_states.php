@@ -3,10 +3,9 @@
 require_once 'config/config_open_states.php';
 
 try {
-    // $fb->bills->filter('state', 'dc')->filter('q', 'taxi')->sort('first');
-    $fb->bills->filter(array('state' => 'dc', 'q' => 'taxi'))->sort('first');
+    $fb->bill_detail->criteria('ca', '20092010', 'AB 667');
     
-    var_dump($fb->bills->get());
+    var_dump($fb->bill_detail->get());
     
 } catch (\Exception $e) {
     echo $e->getMessage();
