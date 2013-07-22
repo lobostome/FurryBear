@@ -12,7 +12,7 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Resource\SunlightCapitolWords;
+namespace FurryBear\Resource\SunlightOpenStates;
 
 use FurryBear\Resource\PolicyInterface;
 

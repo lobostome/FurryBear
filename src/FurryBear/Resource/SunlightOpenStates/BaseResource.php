@@ -12,7 +12,7 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Resource\SunlightCongress;
+namespace FurryBear\Resource\SunlightOpenStates;
 
 use FurryBear\Resource\AbstractResource,
     FurryBear\Common\Exception\NotImplementedException;
@@ -60,7 +60,7 @@ class BaseResource extends AbstractResource
             }
         );
         
-        return sprintf("%s/%s?%s", $this->furryBear->getProvider()->getServiceUrl(), 
+        return sprintf("%s/%s/?%s", $this->furryBear->getProvider()->getServiceUrl(), 
                                    $this->getResourceMethod(),
                                    http_build_query(array_merge($apiKey, $params)));
     }
