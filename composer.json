@@ -2,7 +2,7 @@
     "name": "lobostome/furry-bear",
     "type": "library",
     "description": "A PHP wrapper for various open data",
-    "keywords": ["open data","Sunlight Congress API"],
+    "keywords": ["open data","Sunlight Congress API","Sunlight Capitol Words API","Sunlight Open States API"],
     "homepage": "https://github.com/lobostome/FurryBear",
     "license": "MIT",
     "authors": [
@@ -15,6 +15,10 @@
     ],
     "require": {
         "php": ">=5.3.0"
+    },
+    "suggest": {
+        "guzzle/guzzle": "Adds support for the Guzzle HTTP client",
+        "kriswallsmith/buzz": "Adds support for the Buzz HTTP client"
     },
     "autoload": {
         "psr-0": {
