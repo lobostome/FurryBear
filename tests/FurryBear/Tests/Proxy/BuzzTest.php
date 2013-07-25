@@ -86,11 +86,11 @@ class BuzzTest extends \PHPUnit_Framework_TestCase
      */
     public function testClose()
     {
-        $this->setExpectedException('\\FurryBear\\Exception\\NotImplementedException');
+        $this->setExpectedException('\\FurryBear\\Common\\Exception\\NotImplementedException');
         
         $this->proxy->expects($this->any())
                     ->method('close')
-                    ->will($this->throwException(new \FurryBear\Exception\NotImplementedException()));
+                    ->will($this->throwException(new \FurryBear\Common\Exception\NotImplementedException()));
         
         $this->proxy->close();
     }
@@ -100,11 +100,11 @@ class BuzzTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetInfo()
     {
-        $this->setExpectedException('\\FurryBear\\Exception\\NotImplementedException');
+        $this->setExpectedException('\\FurryBear\\Common\\Exception\\NotImplementedException');
         
         $this->proxy->expects($this->any())
                     ->method('getInfo')
-                    ->will($this->throwException(new \FurryBear\Exception\NotImplementedException()));
+                    ->will($this->throwException(new \FurryBear\Common\Exception\NotImplementedException()));
         
         $this->proxy->getInfo();
     }
@@ -114,11 +114,11 @@ class BuzzTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetOption()
     {
-        $this->setExpectedException('\\FurryBear\\Exception\\NotImplementedException');
+        $this->setExpectedException('\\FurryBear\\Common\\Exception\\NotImplementedException');
         
         $this->proxy->expects($this->any())
                     ->method('setOption')
-                    ->will($this->throwException(new \FurryBear\Exception\NotImplementedException()));
+                    ->will($this->throwException(new \FurryBear\Common\Exception\NotImplementedException()));
         
         $this->proxy->setOption('name', 'value');
     }

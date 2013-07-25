@@ -50,9 +50,9 @@ class JsonToArrayTest extends \PHPUnit_Framework_TestCase
         
         try {
             $output->convert($data);
-        } catch (\FurryBear\Exception\InvalidJsonException $e) {
-            $this->setExpectedException('\\FurryBear\\Exception\\InvalidJsonException', 'Invalid json');
-            throw new \FurryBear\Exception\InvalidJsonException('Invalid json');
+        } catch (\FurryBear\Common\Exception\InvalidJsonException $e) {
+            $this->setExpectedException('\\FurryBear\\Common\\Exception\\InvalidJsonException', 'Invalid json');
+            throw new \FurryBear\Common\Exception\InvalidJsonException('Invalid json');
         }
     }
 }

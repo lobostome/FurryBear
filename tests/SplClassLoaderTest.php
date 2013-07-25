@@ -69,7 +69,7 @@ class SplClassLoaderTest extends PHPUnit_Framework_TestCase {
      */
     public function testFileDoesNotExistException()
     {
-        $this->setExpectedException('\\FurryBear\\Exception\\FileDoesNotExistException');
+        $this->setExpectedException('\\FurryBear\\Common\\Exception\\FileDoesNotExistException');
         new \FurryBear\Something();
     }
     
