@@ -3,9 +3,8 @@
 require_once 'config/config_open_states.php';
 
 try {
-    $fb->bill_detail->criteria('ca', '20092010', 'AB 667');
     
-    var_dump($fb->bill_detail->get());
+    var_dump($fb->legislators->get(array('state' => 'dc', 'chamber' => 'upper')));
     
 } catch (\Exception $e) {
     echo $e->getMessage();

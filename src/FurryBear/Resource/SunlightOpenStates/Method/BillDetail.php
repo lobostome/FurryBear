@@ -68,7 +68,7 @@ class BillDetail extends BaseResource
         }
         
         if (count($arguments) == 1) {
-            $this->setResourceMethod(sprintf("%s/%s", self::ENDPOINT_METHOD, $arguments[0]));
+            $this->setResourceMethod(sprintf("%s/%s", self::ENDPOINT_METHOD, rawurlencode($arguments[0])));
         } else if (count($arguments) == 3) {
             $this->setResourceMethod(sprintf("%s/%s/%s/%s", self::ENDPOINT_METHOD, 
                                                             $arguments[0],
