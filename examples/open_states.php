@@ -4,7 +4,7 @@ require_once 'config/config_open_states.php';
 
 try {
     
-    var_dump($fb->legislators->get(array('state' => 'dc', 'chamber' => 'upper')));
+    var_dump($fb->legislator_detail->id('DCL000012')->get());
     
 } catch (\Exception $e) {
     echo $e->getMessage();
