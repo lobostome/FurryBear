@@ -33,6 +33,11 @@ class Message
      */
     protected $message;
     
+    /**
+     * Constructs a new message object.
+     * 
+     * @param string $message
+     */
     public function __construct($message)
     {
         $this->message = $message;

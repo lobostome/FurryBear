@@ -169,7 +169,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetNoProviderException()
     {
-        $this->setExpectedException('\\FurryBear\\Exception\\NoProviderException');
+        $this->setExpectedException('\\FurryBear\\Common\\Exception\\NoProviderException');
         $this->furryBear->bills;
     }
     
@@ -182,7 +182,7 @@ class FurryBearTest extends \PHPUnit_Framework_TestCase
         
         $this->furryBear->registerProvider($provider);
         
-        $this->setExpectedException('\\FurryBear\\Exception\\NoOutputException');
+        $this->setExpectedException('\\FurryBear\\Common\\Exception\\NoOutputException');
         $this->furryBear->bills;
     }
     

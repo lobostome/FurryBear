@@ -12,7 +12,7 @@
  * @link     https://github.com/lobostome/FurryBear
  */
 
-namespace FurryBear\Tests\Iterator\SunlightFoudnation;
+namespace FurryBear\Tests\Iterator\SunlightCongress;
 
 /**
  * A test for Sunlight Foundation PageIterator.
@@ -78,7 +78,7 @@ class PageIteratorTest extends \PHPUnit_Framework_TestCase
      */
     public function testKey()
     {
-        $this->setExpectedException('\\FurryBear\\Exception\\NotImplementedException');
+        $this->setExpectedException('\\FurryBear\\Common\\Exception\\NotImplementedException');
         $this->iterator->key();
     }
     

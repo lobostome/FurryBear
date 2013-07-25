@@ -63,9 +63,9 @@ class CurlTest extends \PHPUnit_Framework_TestCase
         
         try {
             $curlAdapter->getContent('http://example.com');
-        } catch (\FurryBear\Exception\NoResultException $e) {
-            $this->setExpectedException('\\FurryBear\\Exception\\NoResultException');
-            throw new \FurryBear\Exception\NoResultException();
+        } catch (\FurryBear\Common\Exception\NoResultException $e) {
+            $this->setExpectedException('\\FurryBear\\Common\\Exception\\NoResultException');
+            throw new \FurryBear\Common\Exception\NoResultException();
         }
     }
     

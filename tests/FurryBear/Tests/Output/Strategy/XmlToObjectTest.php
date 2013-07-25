@@ -50,9 +50,9 @@ class XmlToObjectTest extends \PHPUnit_Framework_TestCase
         
         try {
             $output->convert($data);
-        } catch (\FurryBear\Exception\InvalidXmlException $e) {
-            $this->setExpectedException('\\FurryBear\\Exception\\InvalidXmlException', 'Invalid xml');
-            throw new \FurryBear\Exception\InvalidXmlException('Invalid xml');
+        } catch (\FurryBear\Common\Exception\InvalidXmlException $e) {
+            $this->setExpectedException('\\FurryBear\\Common\\Exception\\InvalidXmlException', 'Invalid xml');
+            throw new \FurryBear\Common\Exception\InvalidXmlException('Invalid xml');
         }
     }
 }
