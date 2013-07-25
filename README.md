@@ -49,10 +49,10 @@ Roadmap
 **0.6.0**
 - Add Sunlight Political Party Time API
 
+Changelog
+---------
 **0.5.0**
 - Add Sunlight Open States API
 
-Changelog
----------
 **0.4.0**
 - Add Sunlight Capitol Words API

@@ -64,9 +64,11 @@
 <li class="nav-header">
 <i class="icon-custom icon-interface"></i> Interfaces</li>
 <li><a href="#ExceptionInterface" title="The interface for custom exceptions.">ExceptionInterface</a></li>
+<li><a href="#ValidatorInterface" title="A contract for validators">ValidatorInterface</a></li>
 <li><a href="#HttpAdapterInterface" title="The http connection interface for the adapter pattern.">HttpAdapterInterface</a></li>
 <li><a href="#Strategy" title="An interface for the output strategy pattern.">Strategy</a></li>
 <li><a href="#HttpRequest" title="An interface for a general http request.">HttpRequest</a></li>
+<li><a href="#PolicyInterface" title="A contract for class-to-endpoint mapping.">PolicyInterface</a></li>
 <li class="nav-header">
 <i class="icon-custom icon-class"></i> Classes</li>
 <li><a href="#SplClassLoader" title="SplClassLoader implements the autoloader interoperability standard PSR-0.">SplClassLoader</a></li>
@@ -79,6 +81,12 @@
 <li><a href="#NoProviderException" title="A custom exception thrown when provider is not specified.">NoProviderException</a></li>
 <li><a href="#NoResultException" title="A custom exception thrown when result is a failure.">NoResultException</a></li>
 <li><a href="#NotImplementedException" title="A custom exception thrown when functionality not implemented.">NotImplementedException</a></li>
+<li><a href="#Group" title="Represents a group of validation messages">Group</a></li>
+<li><a href="#Message" title="Encapsulates verbose messages.">Message</a></li>
+<li><a href="#Engine" title="Allows to validate data using validators">Engine</a></li>
+<li><a href="#RequireAll" title="A validator that verifies a full match against all domain options.">RequireAll</a></li>
+<li><a href="#RequireAtLeast" title="A validator that verifies a match against some domain options.">RequireAtLeast</a></li>
+<li><a href="#Validator" title="A base class for validators">Validator</a></li>
 <li><a href="#FurryBear" title="The main class that glues it all together.">FurryBear</a></li>
 <li><a href="#AbstractProvider" title="An abstract presentation of a geocode provider.">AbstractProvider</a></li>
 <li><a href="#BingMaps" title="Bing Maps geocode provider">BingMaps</a></li>
@@ -87,20 +95,34 @@
 <li><a href="#Buzz" title="A HTTP adapter based on Buzz http client.">Buzz</a></li>
 <li><a href="#Curl" title="A HTTP adapter based on curl.">Curl</a></li>
 <li><a href="#Guzzle" title="A HTTP adapter based on Guzzle http client.">Guzzle</a></li>
+<li><a href="#PhrasesEntityPageIterator" title="An iterator over the pages of the result.">PhrasesEntityPageIterator</a></li>
+<li><a href="#PhrasesPageIterator" title="An iterator over the pages of the result.">PhrasesPageIterator</a></li>
+<li><a href="#TextPageIterator" title="An iterator over the pages of the result.">TextPageIterator</a></li>
 <li><a href="#PageIterator" title="An iterator over the pages of the result.">PageIterator</a></li>
+<li><a href="#BillsPageIterator" title="An iterator over the pages of the result.">BillsPageIterator</a></li>
 <li><a href="#Json" title="Converts an xml error to a more readable format">Json</a></li>
 <li><a href="#Xml" title="Converts an xml error to a more readable format">Xml</a></li>
 <li><a href="#JsonToArray" title="Converts the json string returned from the service to an array.">JsonToArray</a></li>
 <li><a href="#JsonToObject" title="Converts the json string returned from the service to an object.">JsonToObject</a></li>
 <li><a href="#XmlToObject" title="Converts the xml string returned from the service to an object.">XmlToObject</a></li>
 <li><a href="#AbstractProvider" title="An abstract provider class that sets up a basic provider.">AbstractProvider</a></li>
+<li><a href="#SunlightCapitolWords" title="A concrete provider based on Sunlight Foundation Capitol Words API.">SunlightCapitolWords</a></li>
 <li><a href="#SunlightCongress" title="A concrete provider based on Sunlight Foundation Congress API v3.">SunlightCongress</a></li>
+<li><a href="#SunlightOpenStates" title="A concrete provider based on Sunlight Foundation Open States API.">SunlightOpenStates</a></li>
 <li><a href="#Buzz" title="A proxy that provides a surrogate for Buzz http client.">Buzz</a></li>
 <li><a href="#Curl" title="A proxy that provides a surrogate for curl.">Curl</a></li>
 <li><a href="#Guzzle" title="A proxy that provides a surrogate for Guzzle http client.">Guzzle</a></li>
 <li><a href="#AbstractResource" title="An abstract presentation of a resource.">AbstractResource</a></li>
 <li><a href="#ResourceFactory" title="A factory that aids creating resource objects.">ResourceFactory</a></li>
+<li><a href="#BaseResource" title="A base presentation of SunlightCapitolWords resource.">BaseResource</a></li>
+<li><a href="#FqnPolicy" title="A specific policy for mapping Sunlight Capitol Words resource names to fully
+qualified class names.">FqnPolicy</a></li>
+<li><a href="#Dates" title="This class gives access to Sunlight Capitol Words dates resource.">Dates</a></li>
+<li><a href="#Phrases" title="This class gives access to Sunlight Capitol Words phrases resource.">Phrases</a></li>
+<li><a href="#Text" title="This class gives access to Sunlight Capitol Words text resource.">Text</a></li>
 <li><a href="#BaseResource" title="A base presentation of SunlightCongress resource.">BaseResource</a></li>
+<li><a href="#FqnPolicy" title="A specific policy for mapping Sunlight Congress resource names to fully
+qualified class names.">FqnPolicy</a></li>
 <li><a href="#Bills" title="This class gives access to Sunlight Congress bills resource.">Bills</a></li>
 <li><a href="#BillsSearch" title="This class gives access to Sunlight Congress bills/search resource.">BillsSearch</a></li>
 <li><a href="#BulkData" title="This class gives access to Sunlight Congress bulk data.">BulkData</a></li>
@@ -112,6 +134,22 @@
 <li><a href="#LegislatorsLocate" title="This class gives access to Sunlight Congress legislators/locate resource.">LegislatorsLocate</a></li>
 <li><a href="#UpcomingBills" title="This class gives access to Sunlight Congress upcoming_bills resource.">UpcomingBills</a></li>
 <li><a href="#Votes" title="This class gives access to Sunlight Congress votes resource.">Votes</a></li>
+<li><a href="#BaseResource" title="A base presentation of Sunlight Open States resource.">BaseResource</a></li>
+<li><a href="#FqnPolicy" title="A specific policy for mapping Sunlight Open States resource names to fully
+qualified class names.">FqnPolicy</a></li>
+<li><a href="#BillDetail" title="This class gives access to Sunlight Open States bill detail resource.">BillDetail</a></li>
+<li><a href="#Bills" title="This class gives access to Sunlight Open States bills resource.">Bills</a></li>
+<li><a href="#CommitteeDetail" title="This class gives access to Sunlight Open States committees detail resource.">CommitteeDetail</a></li>
+<li><a href="#Committees" title="This class gives access to Sunlight Open States committees resource.">Committees</a></li>
+<li><a href="#DistrictBoundary" title="This class gives access to Sunlight Open States districts boundary resource.">DistrictBoundary</a></li>
+<li><a href="#Districts" title="This class gives access to Sunlight Open States districts resource.">Districts</a></li>
+<li><a href="#EventDetail" title="This class gives access to Sunlight Open States events detail resource.">EventDetail</a></li>
+<li><a href="#Events" title="This class gives access to Sunlight Open States events resource.">Events</a></li>
+<li><a href="#GeoLookup" title="This class gives access to Sunlight Open States geo lookup resource.">GeoLookup</a></li>
+<li><a href="#LegislatorDetail" title="This class gives access to Sunlight Open States legislators detail resource.">LegislatorDetail</a></li>
+<li><a href="#Legislators" title="This class gives access to Sunlight Open States legislators resource.">Legislators</a></li>
+<li><a href="#Metadata" title="This class gives access to Sunlight Open States metadata resource.">Metadata</a></li>
+<li><a href="#MetadataState" title="This class gives access to Sunlight Open States metadata state resource.">MetadataState</a></li>
 </ul>
 </div>
 <div class="span8 package-contents">
@@ -122,11 +160,18 @@
 <h3>
 <i class="icon-custom icon-class"></i> Classes and interfaces</h3>
 <div id="ExceptionInterface" class="element ajax clickable interface">
-<h1>ExceptionInterface<a href="../classes/FurryBear.Exception.ExceptionInterface.html">¶</a>
+<h1>ExceptionInterface<a href="../classes/FurryBear.Common.Exception.ExceptionInterface.html">¶</a>
 </h1>
 <p class="short_description">The interface for custom exceptions.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.ExceptionInterface.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.ExceptionInterface.html" class="more">« More »</a>
+</div>
+<div id="ValidatorInterface" class="element ajax clickable interface">
+<h1>ValidatorInterface<a href="../classes/FurryBear.Common.Validation.ValidatorInterface.html">¶</a>
+</h1>
+<p class="short_description">A contract for validators</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Common.Validation.ValidatorInterface.html" class="more">« More »</a>
 </div>
 <div id="HttpAdapterInterface" class="element ajax clickable interface">
 <h1>HttpAdapterInterface<a href="../classes/FurryBear.Http.HttpAdapterInterface.html">¶</a>
@@ -149,68 +194,117 @@
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Proxy.HttpRequest.html" class="more">« More »</a>
 </div>
+<div id="PolicyInterface" class="element ajax clickable interface">
+<h1>PolicyInterface<a href="../classes/FurryBear.Resource.PolicyInterface.html">¶</a>
+</h1>
+<p class="short_description">A contract for class-to-endpoint mapping.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.PolicyInterface.html" class="more">« More »</a>
+</div>
 <div id="FileDoesNotExistException" class="element ajax clickable class">
-<h1>FileDoesNotExistException<a href="../classes/FurryBear.Exception.FileDoesNotExistException.html">¶</a>
+<h1>FileDoesNotExistException<a href="../classes/FurryBear.Common.Exception.FileDoesNotExistException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when a file does not exist.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.FileDoesNotExistException.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.FileDoesNotExistException.html" class="more">« More »</a>
 </div>
 <div id="InvalidArgumentException" class="element ajax clickable class">
-<h1>InvalidArgumentException<a href="../classes/FurryBear.Exception.InvalidArgumentException.html">¶</a>
+<h1>InvalidArgumentException<a href="../classes/FurryBear.Common.Exception.InvalidArgumentException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when an invalid argument is provided.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.InvalidArgumentException.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.InvalidArgumentException.html" class="more">« More »</a>
 </div>
 <div id="InvalidCredentialsException" class="element ajax clickable class">
-<h1>InvalidCredentialsException<a href="../classes/FurryBear.Exception.InvalidCredentialsException.html">¶</a>
+<h1>InvalidCredentialsException<a href="../classes/FurryBear.Common.Exception.InvalidCredentialsException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when no valid credential is provided.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.InvalidCredentialsException.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.InvalidCredentialsException.html" class="more">« More »</a>
 </div>
 <div id="InvalidJsonException" class="element ajax clickable class">
-<h1>InvalidJsonException<a href="../classes/FurryBear.Exception.InvalidJsonException.html">¶</a>
+<h1>InvalidJsonException<a href="../classes/FurryBear.Common.Exception.InvalidJsonException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when an invalid json string is encountered.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.InvalidJsonException.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.InvalidJsonException.html" class="more">« More »</a>
 </div>
 <div id="InvalidXmlException" class="element ajax clickable class">
-<h1>InvalidXmlException<a href="../classes/FurryBear.Exception.InvalidXmlException.html">¶</a>
+<h1>InvalidXmlException<a href="../classes/FurryBear.Common.Exception.InvalidXmlException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when an invalid xml string is encountered.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.InvalidXmlException.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.InvalidXmlException.html" class="more">« More »</a>
 </div>
 <div id="NoOutputException" class="element ajax clickable class">
-<h1>NoOutputException<a href="../classes/FurryBear.Exception.NoOutputException.html">¶</a>
+<h1>NoOutputException<a href="../classes/FurryBear.Common.Exception.NoOutputException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when output is not specified.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.NoOutputException.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.NoOutputException.html" class="more">« More »</a>
 </div>
 <div id="NoProviderException" class="element ajax clickable class">
-<h1>NoProviderException<a href="../classes/FurryBear.Exception.NoProviderException.html">¶</a>
+<h1>NoProviderException<a href="../classes/FurryBear.Common.Exception.NoProviderException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when provider is not specified.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.NoProviderException.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.NoProviderException.html" class="more">« More »</a>
 </div>
 <div id="NoResultException" class="element ajax clickable class">
-<h1>NoResultException<a href="../classes/FurryBear.Exception.NoResultException.html">¶</a>
+<h1>NoResultException<a href="../classes/FurryBear.Common.Exception.NoResultException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when result is a failure.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.NoResultException.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.NoResultException.html" class="more">« More »</a>
 </div>
 <div id="NotImplementedException" class="element ajax clickable class">
-<h1>NotImplementedException<a href="../classes/FurryBear.Exception.NotImplementedException.html">¶</a>
+<h1>NotImplementedException<a href="../classes/FurryBear.Common.Exception.NotImplementedException.html">¶</a>
 </h1>
 <p class="short_description">A custom exception thrown when functionality not implemented.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Exception.NotImplementedException.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Common.Exception.NotImplementedException.html" class="more">« More »</a>
+</div>
+<div id="Group" class="element ajax clickable class">
+<h1>Group<a href="../classes/FurryBear.Common.Message.Group.html">¶</a>
+</h1>
+<p class="short_description">Represents a group of validation messages</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Common.Message.Group.html" class="more">« More »</a>
+</div>
+<div id="Message" class="element ajax clickable class">
+<h1>Message<a href="../classes/FurryBear.Common.Message.Message.html">¶</a>
+</h1>
+<p class="short_description">Encapsulates verbose messages.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Common.Message.Message.html" class="more">« More »</a>
+</div>
+<div id="Engine" class="element ajax clickable class">
+<h1>Engine<a href="../classes/FurryBear.Common.Validation.Engine.html">¶</a>
+</h1>
+<p class="short_description">Allows to validate data using validators</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Common.Validation.Engine.html" class="more">« More »</a>
+</div>
+<div id="Validator" class="element ajax clickable class">
+<h1>Validator<a href="../classes/FurryBear.Common.Validation.Validator.html">¶</a>
+</h1>
+<p class="short_description">A base class for validators</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Common.Validation.Validator.html" class="more">« More »</a>
+</div>
+<div id="RequireAll" class="element ajax clickable class">
+<h1>RequireAll<a href="../classes/FurryBear.Common.Validation.Validator.RequireAll.html">¶</a>
+</h1>
+<p class="short_description">A validator that verifies a full match against all domain options.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Common.Validation.Validator.RequireAll.html" class="more">« More »</a>
+</div>
+<div id="RequireAtLeast" class="element ajax clickable class">
+<h1>RequireAtLeast<a href="../classes/FurryBear.Common.Validation.Validator.RequireAtLeast.html">¶</a>
+</h1>
+<p class="short_description">A validator that verifies a match against some domain options.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Common.Validation.Validator.RequireAtLeast.html" class="more">« More »</a>
 </div>
 <div id="FurryBear" class="element ajax clickable class">
 <h1>FurryBear<a href="../classes/FurryBear.FurryBear.html">¶</a>
@@ -268,12 +362,40 @@
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Http.Adapter.Guzzle.html" class="more">« More »</a>
 </div>
+<div id="PhrasesEntityPageIterator" class="element ajax clickable class">
+<h1>PhrasesEntityPageIterator<a href="../classes/FurryBear.Iterator.SunlightCapitolWords.PhrasesEntityPageIterator.html">¶</a>
+</h1>
+<p class="short_description">An iterator over the pages of the result.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Iterator.SunlightCapitolWords.PhrasesEntityPageIterator.html" class="more">« More »</a>
+</div>
+<div id="PhrasesPageIterator" class="element ajax clickable class">
+<h1>PhrasesPageIterator<a href="../classes/FurryBear.Iterator.SunlightCapitolWords.PhrasesPageIterator.html">¶</a>
+</h1>
+<p class="short_description">An iterator over the pages of the result.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Iterator.SunlightCapitolWords.PhrasesPageIterator.html" class="more">« More »</a>
+</div>
+<div id="TextPageIterator" class="element ajax clickable class">
+<h1>TextPageIterator<a href="../classes/FurryBear.Iterator.SunlightCapitolWords.TextPageIterator.html">¶</a>
+</h1>
+<p class="short_description">An iterator over the pages of the result.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Iterator.SunlightCapitolWords.TextPageIterator.html" class="more">« More »</a>
+</div>
 <div id="PageIterator" class="element ajax clickable class">
 <h1>PageIterator<a href="../classes/FurryBear.Iterator.SunlightCongress.PageIterator.html">¶</a>
 </h1>
 <p class="short_description">An iterator over the pages of the result.</p>
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Iterator.SunlightCongress.PageIterator.html" class="more">« More »</a>
+</div>
+<div id="BillsPageIterator" class="element ajax clickable class">
+<h1>BillsPageIterator<a href="../classes/FurryBear.Iterator.SunlightOpenStates.BillsPageIterator.html">¶</a>
+</h1>
+<p class="short_description">An iterator over the pages of the result.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Iterator.SunlightOpenStates.BillsPageIterator.html" class="more">« More »</a>
 </div>
 <div id="Json" class="element ajax clickable class">
 <h1>Json<a href="../classes/FurryBear.Output.Strategy.Error.Json.html">¶</a>
@@ -317,12 +439,26 @@
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Provider.AbstractProvider.html" class="more">« More »</a>
 </div>
+<div id="SunlightCapitolWords" class="element ajax clickable class">
+<h1>SunlightCapitolWords<a href="../classes/FurryBear.Provider.Source.SunlightCapitolWords.html">¶</a>
+</h1>
+<p class="short_description">A concrete provider based on Sunlight Foundation Capitol Words API.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Provider.Source.SunlightCapitolWords.html" class="more">« More »</a>
+</div>
 <div id="SunlightCongress" class="element ajax clickable class">
 <h1>SunlightCongress<a href="../classes/FurryBear.Provider.Source.SunlightCongress.html">¶</a>
 </h1>
 <p class="short_description">A concrete provider based on Sunlight Foundation Congress API v3.</p>
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Provider.Source.SunlightCongress.html" class="more">« More »</a>
+</div>
+<div id="SunlightOpenStates" class="element ajax clickable class">
+<h1>SunlightOpenStates<a href="../classes/FurryBear.Provider.Source.SunlightOpenStates.html">¶</a>
+</h1>
+<p class="short_description">A concrete provider based on Sunlight Foundation Open States API.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Provider.Source.SunlightOpenStates.html" class="more">« More »</a>
 </div>
 <div id="Buzz" class="element ajax clickable class">
 <h1>Buzz<a href="../classes/FurryBear.Proxy.Buzz.html">¶</a>
@@ -360,88 +496,238 @@
 <a href="../classes/FurryBear.Resource.ResourceFactory.html" class="more">« More »</a>
 </div>
 <div id="BaseResource" class="element ajax clickable class">
+<h1>BaseResource<a href="../classes/FurryBear.Resource.SunlightCapitolWords.BaseResource.html">¶</a>
+</h1>
+<p class="short_description">A base presentation of SunlightCapitolWords resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightCapitolWords.BaseResource.html" class="more">« More »</a>
+</div>
+<div id="FqnPolicy" class="element ajax clickable class">
+<h1>FqnPolicy<a href="../classes/FurryBear.Resource.SunlightCapitolWords.FqnPolicy.html">¶</a>
+</h1>
+<p class="short_description">A specific policy for mapping Sunlight Capitol Words resource names to fully
+qualified class names.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightCapitolWords.FqnPolicy.html" class="more">« More »</a>
+</div>
+<div id="Dates" class="element ajax clickable class">
+<h1>Dates<a href="../classes/FurryBear.Resource.SunlightCapitolWords.Method.Dates.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Capitol Words dates resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightCapitolWords.Method.Dates.html" class="more">« More »</a>
+</div>
+<div id="Phrases" class="element ajax clickable class">
+<h1>Phrases<a href="../classes/FurryBear.Resource.SunlightCapitolWords.Method.Phrases.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Capitol Words phrases resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightCapitolWords.Method.Phrases.html" class="more">« More »</a>
+</div>
+<div id="Text" class="element ajax clickable class">
+<h1>Text<a href="../classes/FurryBear.Resource.SunlightCapitolWords.Method.Text.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Capitol Words text resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightCapitolWords.Method.Text.html" class="more">« More »</a>
+</div>
+<div id="BaseResource" class="element ajax clickable class">
 <h1>BaseResource<a href="../classes/FurryBear.Resource.SunlightCongress.BaseResource.html">¶</a>
 </h1>
 <p class="short_description">A base presentation of SunlightCongress resource.</p>
 <div class="details collapse"></div>
 <a href="../classes/FurryBear.Resource.SunlightCongress.BaseResource.html" class="more">« More »</a>
 </div>
+<div id="FqnPolicy" class="element ajax clickable class">
+<h1>FqnPolicy<a href="../classes/FurryBear.Resource.SunlightCongress.FqnPolicy.html">¶</a>
+</h1>
+<p class="short_description">A specific policy for mapping Sunlight Congress resource names to fully
+qualified class names.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightCongress.FqnPolicy.html" class="more">« More »</a>
+</div>
 <div id="Bills" class="element ajax clickable class">
-<h1>Bills<a href="../classes/FurryBear.Resource.SunlightCongress.Bills.html">¶</a>
+<h1>Bills<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Bills.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress bills resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.Bills.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Bills.html" class="more">« More »</a>
 </div>
 <div id="BillsSearch" class="element ajax clickable class">
-<h1>BillsSearch<a href="../classes/FurryBear.Resource.SunlightCongress.BillsSearch.html">¶</a>
+<h1>BillsSearch<a href="../classes/FurryBear.Resource.SunlightCongress.Method.BillsSearch.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress bills/search resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.BillsSearch.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.BillsSearch.html" class="more">« More »</a>
 </div>
 <div id="BulkData" class="element ajax clickable class">
-<h1>BulkData<a href="../classes/FurryBear.Resource.SunlightCongress.BulkData.html">¶</a>
+<h1>BulkData<a href="../classes/FurryBear.Resource.SunlightCongress.Method.BulkData.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress bulk data.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.BulkData.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.BulkData.html" class="more">« More »</a>
 </div>
 <div id="Committees" class="element ajax clickable class">
-<h1>Committees<a href="../classes/FurryBear.Resource.SunlightCongress.Committees.html">¶</a>
+<h1>Committees<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Committees.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress committees resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.Committees.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Committees.html" class="more">« More »</a>
 </div>
 <div id="DistrictsLocate" class="element ajax clickable class">
-<h1>DistrictsLocate<a href="../classes/FurryBear.Resource.SunlightCongress.DistrictsLocate.html">¶</a>
+<h1>DistrictsLocate<a href="../classes/FurryBear.Resource.SunlightCongress.Method.DistrictsLocate.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress districts/locate resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.DistrictsLocate.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.DistrictsLocate.html" class="more">« More »</a>
 </div>
 <div id="FloorUpdates" class="element ajax clickable class">
-<h1>FloorUpdates<a href="../classes/FurryBear.Resource.SunlightCongress.FloorUpdates.html">¶</a>
+<h1>FloorUpdates<a href="../classes/FurryBear.Resource.SunlightCongress.Method.FloorUpdates.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress floor_updates resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.FloorUpdates.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.FloorUpdates.html" class="more">« More »</a>
 </div>
 <div id="Hearings" class="element ajax clickable class">
-<h1>Hearings<a href="../classes/FurryBear.Resource.SunlightCongress.Hearings.html">¶</a>
+<h1>Hearings<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Hearings.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress hearings resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.Hearings.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Hearings.html" class="more">« More »</a>
 </div>
 <div id="Legislators" class="element ajax clickable class">
-<h1>Legislators<a href="../classes/FurryBear.Resource.SunlightCongress.Legislators.html">¶</a>
+<h1>Legislators<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Legislators.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress legislators resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.Legislators.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Legislators.html" class="more">« More »</a>
 </div>
 <div id="LegislatorsLocate" class="element ajax clickable class">
-<h1>LegislatorsLocate<a href="../classes/FurryBear.Resource.SunlightCongress.LegislatorsLocate.html">¶</a>
+<h1>LegislatorsLocate<a href="../classes/FurryBear.Resource.SunlightCongress.Method.LegislatorsLocate.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress legislators/locate resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.LegislatorsLocate.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.LegislatorsLocate.html" class="more">« More »</a>
 </div>
 <div id="UpcomingBills" class="element ajax clickable class">
-<h1>UpcomingBills<a href="../classes/FurryBear.Resource.SunlightCongress.UpcomingBills.html">¶</a>
+<h1>UpcomingBills<a href="../classes/FurryBear.Resource.SunlightCongress.Method.UpcomingBills.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress upcoming_bills resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.UpcomingBills.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.UpcomingBills.html" class="more">« More »</a>
 </div>
 <div id="Votes" class="element ajax clickable class">
-<h1>Votes<a href="../classes/FurryBear.Resource.SunlightCongress.Votes.html">¶</a>
+<h1>Votes<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Votes.html">¶</a>
 </h1>
 <p class="short_description">This class gives access to Sunlight Congress votes resource.</p>
 <div class="details collapse"></div>
-<a href="../classes/FurryBear.Resource.SunlightCongress.Votes.html" class="more">« More »</a>
+<a href="../classes/FurryBear.Resource.SunlightCongress.Method.Votes.html" class="more">« More »</a>
+</div>
+<div id="BaseResource" class="element ajax clickable class">
+<h1>BaseResource<a href="../classes/FurryBear.Resource.SunlightOpenStates.BaseResource.html">¶</a>
+</h1>
+<p class="short_description">A base presentation of Sunlight Open States resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.BaseResource.html" class="more">« More »</a>
+</div>
+<div id="FqnPolicy" class="element ajax clickable class">
+<h1>FqnPolicy<a href="../classes/FurryBear.Resource.SunlightOpenStates.FqnPolicy.html">¶</a>
+</h1>
+<p class="short_description">A specific policy for mapping Sunlight Open States resource names to fully
+qualified class names.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.FqnPolicy.html" class="more">« More »</a>
+</div>
+<div id="BillDetail" class="element ajax clickable class">
+<h1>BillDetail<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.BillDetail.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States bill detail resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.BillDetail.html" class="more">« More »</a>
+</div>
+<div id="Bills" class="element ajax clickable class">
+<h1>Bills<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Bills.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States bills resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Bills.html" class="more">« More »</a>
+</div>
+<div id="CommitteeDetail" class="element ajax clickable class">
+<h1>CommitteeDetail<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.CommitteeDetail.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States committees detail resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.CommitteeDetail.html" class="more">« More »</a>
+</div>
+<div id="Committees" class="element ajax clickable class">
+<h1>Committees<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Committees.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States committees resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Committees.html" class="more">« More »</a>
+</div>
+<div id="DistrictBoundary" class="element ajax clickable class">
+<h1>DistrictBoundary<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.DistrictBoundary.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States districts boundary resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.DistrictBoundary.html" class="more">« More »</a>
+</div>
+<div id="Districts" class="element ajax clickable class">
+<h1>Districts<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Districts.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States districts resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Districts.html" class="more">« More »</a>
+</div>
+<div id="EventDetail" class="element ajax clickable class">
+<h1>EventDetail<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.EventDetail.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States events detail resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.EventDetail.html" class="more">« More »</a>
+</div>
+<div id="Events" class="element ajax clickable class">
+<h1>Events<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Events.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States events resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Events.html" class="more">« More »</a>
+</div>
+<div id="GeoLookup" class="element ajax clickable class">
+<h1>GeoLookup<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.GeoLookup.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States geo lookup resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.GeoLookup.html" class="more">« More »</a>
+</div>
+<div id="LegislatorDetail" class="element ajax clickable class">
+<h1>LegislatorDetail<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.LegislatorDetail.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States legislators detail resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.LegislatorDetail.html" class="more">« More »</a>
+</div>
+<div id="Legislators" class="element ajax clickable class">
+<h1>Legislators<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Legislators.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States legislators resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Legislators.html" class="more">« More »</a>
+</div>
+<div id="Metadata" class="element ajax clickable class">
+<h1>Metadata<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Metadata.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States metadata resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.Metadata.html" class="more">« More »</a>
+</div>
+<div id="MetadataState" class="element ajax clickable class">
+<h1>MetadataState<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.MetadataState.html">¶</a>
+</h1>
+<p class="short_description">This class gives access to Sunlight Open States metadata state resource.</p>
+<div class="details collapse"></div>
+<a href="../classes/FurryBear.Resource.SunlightOpenStates.Method.MetadataState.html" class="more">« More »</a>
 </div>
 <div id="SplClassLoader" class="element ajax clickable class">
 <h1>SplClassLoader<a href="../classes/SplClassLoader.html">¶</a>
@@ -456,7 +742,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-06-23T23:36:54-05:00.<br></footer></div>
+            generated on 2013-07-25T16:45:16-05:00.<br></footer></div>
 </div>
 </body>
 </html>
