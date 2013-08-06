@@ -18,18 +18,19 @@ $params1 = array('query'           => '"health care" medicine',
 /**
  * Filtering
  */
+/*
 $params2 = array('last_name'    => 'Smith',
                  'fields'       => 'first_name,last_name,state,title',
                  'order'        => 'state__asc,first_name__asc');
-
+*/
 // A sample use
 try {
     // Use setParams() method
-    $fb->bills_search->setParams($params1);
-    var_dump($fb->bills_search->get());
+    // $fb->bills_search->setParams($params1);
+    // var_dump($fb->bills_search->get());
     
     // Or directly pass params to get() method
-    var_dump($fb->legislators->get($params2));
+    var_dump($fb->legislators->getTermEnd('2015-01-03'));
 } catch (\Exception $e) {
     echo $e->getMessage();
 }
