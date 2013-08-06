@@ -44,4 +44,38 @@ class Legislators extends BaseResource
         parent::__construct($furryBear);
         $this->setResourceMethod(self::ENDPOINT_METHOD);
     }
+    
+    /**
+     * Gets legislators whose term starts on $date.
+     * 
+     * @param mixed $date
+     * 
+     * @return array
+     */
+    public function getTermStart($date = null)
+    {
+        if (is_null($date)) {
+            $date = date('Y-m-d');
+        }
+        
+        $params = array('term_start' => $date);
+        return $this->get($params);
+    }
+    
+    /**
+     * Gets legislators whose term ends on $date.
+     * 
+     * @param mixed $date
+     * 
+     * @return array
+     */
+    public function getTermEnd($date = null)
+    {
+        if (is_null($date)) {
+            $date = date('Y-m-d');
+        }
+        
+        $params = array('term_end' => $date);
+        return $this->get($params);
+    }
 }
