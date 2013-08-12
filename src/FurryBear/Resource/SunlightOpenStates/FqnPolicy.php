@@ -30,6 +30,18 @@ use FurryBear\Resource\PolicyInterface;
 class FqnPolicy implements PolicyInterface
 {
     /**
+     * A map of aliased resources.
+     * 
+     * @var array 
+     */
+    protected $alias = array(
+        'BillsDetail'       => 'BillDetail',
+        'LegislatorsDetail' => 'LegislatorDetail',
+        'CommitteesDetail'  => 'CommitteeDetail',
+        'EventsDetail'      => 'EventDetail'
+    );
+    
+    /**
      * {@inheritdoc}
      * 
      * @param string $providerDirectory The provider resource directory
@@ -42,6 +54,10 @@ class FqnPolicy implements PolicyInterface
         $classParts = explode("_", $resourceProperty);
         array_walk($classParts, function(&$item, $key) { $item = ucfirst($item); });
         $className = join("", $classParts);
+        
+        if (array_key_exists($className, $this->alias)) {
+            $className = $this->alias[$className];
+        }
         
         return '\\FurryBear\\Resource\\' . $providerDirectory . '\Method\\' . $className;
     }
