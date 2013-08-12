@@ -51,6 +51,9 @@ Roadmap
 
 Changelog
 ---------
+**0.5.2**
+- Add Congress API districts locate helpers
+
 **0.5.1**
 - Alias Open States API resources
 - Add Geocode Chain Provider
