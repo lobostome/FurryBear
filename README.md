@@ -51,6 +51,10 @@ Roadmap
 
 Changelog
 ---------
+**0.5.1**
+- Alias Open States API resources
+- Add Geocode Chain Provider
+
 **0.5.0**
 - Add Sunlight Open States API
 
