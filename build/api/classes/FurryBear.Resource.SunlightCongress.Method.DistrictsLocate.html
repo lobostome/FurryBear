@@ -69,6 +69,8 @@ information</span><pre>explain()</pre></a></li>
 <li class="method public inherited"><a href="#method_fields" title="fields :: Specifies the fields to return"><span class="description">Specifies the fields to return</span><pre>fields()</pre></a></li>
 <li class="method public inherited"><a href="#method_filter" title="filter :: Filter on fields with a key/value pair"><span class="description">Filter on fields with a key/value pair</span><pre>filter()</pre></a></li>
 <li class="method public inherited"><a href="#method_get" title="get :: Retrieves a result based on some criteria."><span class="description">Retrieves a result based on some criteria.</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_getByAddress" title="getByAddress :: Retrieves districts based on an address"><span class="description">Retrieves districts based on an address</span><pre>getByAddress()</pre></a></li>
+<li class="method public "><a href="#method_getByZip" title="getByZip :: Retrieves districts based on a zip"><span class="description">Retrieves districts based on a zip</span><pre>getByZip()</pre></a></li>
 <li class="method public inherited"><a href="#method_getIterator" title="getIterator :: Gets an iterator that can iterate over multiple result pages."><span class="description">Gets an iterator that can iterate over multiple result pages.</span><pre>getIterator()</pre></a></li>
 <li class="method public inherited"><a href="#method_getParams" title="getParams :: Gets the request parameters."><span class="description">Gets the request parameters.</span><pre>getParams()</pre></a></li>
 <li class="method public inherited"><a href="#method_highlight" title="highlight :: Turn on highlighted excerpts for search"><span class="description">Turn on highlighted excerpts for search</span><pre>highlight()</pre></a></li>
@@ -76,6 +78,7 @@ information</span><pre>explain()</pre></a></li>
 <li class="method public inherited"><a href="#method_page" title="page :: Control result pagination"><span class="description">Control result pagination</span><pre>page()</pre></a></li>
 <li class="method public inherited"><a href="#method_search" title="search :: Set search query parameter"><span class="description">Set search query parameter</span><pre>search()</pre></a></li>
 <li class="method public inherited"><a href="#method_setParams" title="setParams :: Set the request parameters."><span class="description">Set the request parameters.</span><pre>setParams()</pre></a></li>
+<li class="method public "><a href="#method_via" title="via :: Set the geocode provider and its adapter and output strategy."><span class="description">Set the geocode provider and its adapter and output strategy.</span><pre>via()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
@@ -264,6 +267,35 @@ information</h2>
 <div class="subelement response"><code>mixed</code></div>
 </div></div>
 </div>
+<a id="method_getByAddress"></a><div class="element clickable method public method_getByAddress" data-toggle="collapse" data-target=".method_getByAddress .collapse">
+<h2>Retrieves districts based on an address</h2>
+<pre>getByAddress(string $address) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$address</h4>
+<code>string</code><p>The target address</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_getByZip"></a><div class="element clickable method public method_getByZip" data-toggle="collapse" data-target=".method_getByZip .collapse">
+<h2>Retrieves districts based on a zip</h2>
+<pre>getByZip(string $zip) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$zip</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
 <a id="method_getIterator"></a><div class="element clickable method public method_getIterator" data-toggle="collapse" data-target=".method_getIterator .collapse">
 <h2>Gets an iterator that can iterate over multiple result pages.</h2>
 <pre>getIterator() : <a href="../classes/FurryBear.Iterator.SunlightCongress.PageIterator.html">\FurryBear\Iterator\SunlightCongress\PageIterator</a></pre>
@@ -414,6 +446,20 @@ information</h2>
 <div class="subelement response"><code><a href="../classes/FurryBear.Resource.AbstractResource.html">\FurryBear\Resource\AbstractResource</a></code></div>
 </div></div>
 </div>
+<a id="method_via"></a><div class="element clickable method public method_via" data-toggle="collapse" data-target=".method_via .collapse">
+<h2>Set the geocode provider and its adapter and output strategy.</h2>
+<pre>via(\FurryBear\Geocode\AbstractProvider $provider) : \FurryBear\Resource\SunlightCongress\LegislatorsLocate</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$provider</h4>
+<code><a href="../classes/FurryBear.Geocode.AbstractProvider.html">\FurryBear\Geocode\AbstractProvider</a></code><p>The geocode provider</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\FurryBear\Resource\SunlightCongress\LegislatorsLocate</code></div>
+</div></div>
+</div>
 <a id="method_buildQuery"></a><div class="element clickable method protected method_buildQuery" data-toggle="collapse" data-target=".method_buildQuery .collapse">
 <h2>Builds the entire query URL, including the request criteria.</h2>
 <pre>buildQuery(array $params) : string</pre>
@@ -546,7 +592,7 @@ string.</p></div></div></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-08-12T10:11:24-05:00.<br></footer></div>
+            generated on 2013-08-12T12:06:04-05:00.<br></footer></div>
 </div>
 </body>
 </html>

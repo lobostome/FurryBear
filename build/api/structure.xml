@@ -1189,7 +1189,7 @@ path, extension, and namespace.</description>
       </method>
     </interface>
   </file>
-  <file path="src/FurryBear/FurryBear.php" hash="15a3312d3e29155ad224dc02de0f5bfd" package="FurryBear">
+  <file path="src/FurryBear/FurryBear.php" hash="3f202689204ceda90e5abe5b0ceef4c0" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -1215,7 +1215,7 @@ path, extension, and namespace.</description>
       <constant namespace="FurryBear" line="37" package="FurryBear">
         <name>VERSION</name>
         <full_name>VERSION</full_name>
-        <value>'0.5.1'</value>
+        <value>'0.5.2'</value>
         <docblock line="34">
           <description>The library version.</description>
           <long-description></long-description>
@@ -1618,7 +1618,7 @@ made over HTTPS</description>
       <docblock line="20">
         <description>A special provider that iterates over a list of providers until a valid
 result is returned.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="20" name="category" description="Congress_API"/>
         <tag line="20" name="package" description="FurryBear"/>
         <tag line="20" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
@@ -1630,7 +1630,7 @@ result is returned.</description>
         <default>array()</default>
         <docblock line="33">
           <description>An array of providers to iterate over.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="33" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -1641,7 +1641,7 @@ result is returned.</description>
         <full_name>__construct</full_name>
         <docblock line="40">
           <description>Sets the providers.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="40" name="param" description="An array of providers." type="array" variable="$providers">
             <type by_reference="false">array</type>
           </tag>
@@ -1657,7 +1657,7 @@ result is returned.</description>
         <full_name>geocode</full_name>
         <docblock line="50">
           <description>{@inheritdoc}</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="param" description="The target address" type="string" variable="$address">
             <type by_reference="false">string</type>
           </tag>
@@ -1670,7 +1670,7 @@ result is returned.</description>
         </docblock>
         <argument line="59">
           <name>$address</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5893,7 +5893,7 @@ sets the resource method URL.</description>
       </method>
     </class>
   </file>
-  <file path="src/FurryBear/Resource/SunlightCongress/Method/DistrictsLocate.php" hash="4f85b1f35394eebb453df6d1684989e3" package="FurryBear">
+  <file path="src/FurryBear/Resource/SunlightCongress/Method/DistrictsLocate.php" hash="a82c3138802a471c73e9befb64a2a526" package="FurryBear">
     <docblock line="3">
       <description>FurryBear</description>
       <long-description>&lt;p&gt;PHP Version 5.3&lt;/p&gt;</long-description>
@@ -5909,7 +5909,7 @@ sets the resource method URL.</description>
       <full_name>\FurryBear\Resource\SunlightCongress\Method\DistrictsLocate</full_name>
       <docblock line="19">
         <description>This class gives access to Sunlight Congress districts/locate resource.</description>
-        <long-description/>
+        <long-description></long-description>
         <tag line="19" name="category" description="Congress_API"/>
         <tag line="19" name="package" description="FurryBear"/>
         <tag line="19" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
@@ -5932,15 +5932,72 @@ string.&lt;/p&gt;</long-description>
         <docblock line="36">
           <description>Constructs the resource, sets a reference to the FurryBear object, and
 sets the resource method URL.</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="36" name="param" description="A reference to the FurryBear onject." type="\FurryBear\FurryBear" variable="$furryBear">
             <type by_reference="false">\FurryBear\FurryBear</type>
           </tag>
         </docblock>
         <argument line="42">
           <name>$furryBear</name>
-          <default/>
+          <default></default>
           <type>\FurryBear\FurryBear</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress\Method" line="55" package="FurryBear">
+        <name>getByZip</name>
+        <full_name>getByZip</full_name>
+        <docblock line="48">
+          <description>Retrieves districts based on a zip</description>
+          <long-description></long-description>
+          <tag line="48" name="param" description="" type="string" variable="$zip">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="48" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="55">
+          <name>$zip</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress\Method" line="68" package="FurryBear">
+        <name>getByAddress</name>
+        <full_name>getByAddress</full_name>
+        <docblock line="61">
+          <description>Retrieves districts based on an address</description>
+          <long-description></long-description>
+          <tag line="61" name="param" description="The target address" type="string" variable="$address">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="61" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="68">
+          <name>$address</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="FurryBear\Resource\SunlightCongress\Method" line="84" package="FurryBear">
+        <name>via</name>
+        <full_name>via</full_name>
+        <docblock line="77">
+          <description>Set the geocode provider and its adapter and output strategy.</description>
+          <long-description></long-description>
+          <tag line="77" name="param" description="The geocode provider" type="\FurryBear\Geocode\AbstractProvider" variable="$provider">
+            <type by_reference="false">\FurryBear\Geocode\AbstractProvider</type>
+          </tag>
+          <tag line="77" name="return" description="" type="\FurryBear\Resource\SunlightCongress\LegislatorsLocate">
+            <type by_reference="false">\FurryBear\Resource\SunlightCongress\LegislatorsLocate</type>
+          </tag>
+        </docblock>
+        <argument line="84">
+          <name>$provider</name>
+          <default></default>
+          <type>\FurryBear\Geocode\AbstractProvider</type>
         </argument>
       </method>
     </class>
@@ -6065,7 +6122,7 @@ sets the resource method URL.</description>
       <full_name>\FurryBear\Resource\SunlightCongress\Method\Legislators</full_name>
       <docblock line="19">
         <description>This class gives access to Sunlight Congress legislators resource.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="19" name="category" description="Congress_API"/>
         <tag line="19" name="package" description="FurryBear"/>
         <tag line="19" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
@@ -6088,14 +6145,14 @@ string.&lt;/p&gt;</long-description>
         <docblock line="36">
           <description>Constructs the resource, sets a reference to the FurryBear object, and
 sets the resource method URL.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="36" name="param" description="A reference to the FurryBear onject." type="\FurryBear\FurryBear" variable="$furryBear">
             <type by_reference="false">\FurryBear\FurryBear</type>
           </tag>
         </docblock>
         <argument line="42">
           <name>$furryBear</name>
-          <default></default>
+          <default/>
           <type>\FurryBear\FurryBear</type>
         </argument>
       </method>
@@ -6104,7 +6161,7 @@ sets the resource method URL.</description>
         <full_name>getTermStart</full_name>
         <docblock line="48">
           <description>Gets legislators whose term starts on $date.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="48" name="param" description="" type="mixed" variable="$date">
             <type by_reference="false">mixed</type>
           </tag>
@@ -6123,7 +6180,7 @@ sets the resource method URL.</description>
         <full_name>getTermEnd</full_name>
         <docblock line="65">
           <description>Gets legislators whose term ends on $date.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="65" name="param" description="" type="mixed" variable="$date">
             <type by_reference="false">mixed</type>
           </tag>
@@ -6463,7 +6520,7 @@ sets the resource method URL.</description>
       <docblock line="19">
         <description>A specific policy for mapping Sunlight Open States resource names to fully
 qualified class names.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="19" name="category" description="Congress_API"/>
         <tag line="19" name="package" description="FurryBear"/>
         <tag line="19" name="author" description="lobostome &lt;lobostome@local.dev&gt;"/>
@@ -6475,7 +6532,7 @@ qualified class names.</description>
         <default>array('BillsDetail' =&gt; 'BillDetail', 'LegislatorsDetail' =&gt; 'LegislatorDetail', 'CommitteesDetail' =&gt; 'CommitteeDetail', 'EventsDetail' =&gt; 'EventDetail')</default>
         <docblock line="32">
           <description>A map of aliased resources.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -6486,7 +6543,7 @@ qualified class names.</description>
         <full_name>map</full_name>
         <docblock line="44">
           <description>{@inheritdoc}</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="44" name="param" description="The provider resource directory" type="string" variable="$providerDirectory">
             <type by_reference="false">string</type>
           </tag>
@@ -6499,12 +6556,12 @@ qualified class names.</description>
         </docblock>
         <argument line="52">
           <name>$providerDirectory</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="52">
           <name>$resourceProperty</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
