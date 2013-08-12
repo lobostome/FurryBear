@@ -71,6 +71,8 @@ information</span><pre>explain()</pre></a></li>
 <li class="method public inherited"><a href="#method_get" title="get :: Retrieves a result based on some criteria."><span class="description">Retrieves a result based on some criteria.</span><pre>get()</pre></a></li>
 <li class="method public inherited"><a href="#method_getIterator" title="getIterator :: Gets an iterator that can iterate over multiple result pages."><span class="description">Gets an iterator that can iterate over multiple result pages.</span><pre>getIterator()</pre></a></li>
 <li class="method public inherited"><a href="#method_getParams" title="getParams :: Gets the request parameters."><span class="description">Gets the request parameters.</span><pre>getParams()</pre></a></li>
+<li class="method public "><a href="#method_getTermEnd" title="getTermEnd :: Gets legislators whose term ends on $date."><span class="description">Gets legislators whose term ends on $date.</span><pre>getTermEnd()</pre></a></li>
+<li class="method public "><a href="#method_getTermStart" title="getTermStart :: Gets legislators whose term starts on $date."><span class="description">Gets legislators whose term starts on $date.</span><pre>getTermStart()</pre></a></li>
 <li class="method public inherited"><a href="#method_highlight" title="highlight :: Turn on highlighted excerpts for search"><span class="description">Turn on highlighted excerpts for search</span><pre>highlight()</pre></a></li>
 <li class="method public inherited"><a href="#method_order" title="order :: Specify the order of the result"><span class="description">Specify the order of the result</span><pre>order()</pre></a></li>
 <li class="method public inherited"><a href="#method_page" title="page :: Control result pagination"><span class="description">Control result pagination</span><pre>page()</pre></a></li>
@@ -294,6 +296,36 @@ information</h2>
 <td>\FurryBear\Resource\SunlightCongress\BaseResource::getParams()</td>
 </tr>
 </table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getTermEnd"></a><div class="element clickable method public method_getTermEnd" data-toggle="collapse" data-target=".method_getTermEnd .collapse">
+<h2>Gets legislators whose term ends on $date.</h2>
+<pre>getTermEnd(mixed $date) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>mixed</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getTermStart"></a><div class="element clickable method public method_getTermStart" data-toggle="collapse" data-target=".method_getTermStart .collapse">
+<h2>Gets legislators whose term starts on $date.</h2>
+<pre>getTermStart(mixed $date) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>mixed</code>
+</div>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
 </div></div>
@@ -546,7 +578,7 @@ string.</p></div></div></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-07-25T16:45:17-05:00.<br></footer></div>
+            generated on 2013-08-12T10:11:25-05:00.<br></footer></div>
 </div>
 </body>
 </html>
