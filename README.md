@@ -34,7 +34,7 @@ For detailed documentation and examples, visit the [Wiki](https://github.com/lob
 
 Roadmap
 -------
-**0.7.0**
+**0.8.0**
 - Major overhaul of existing code base
 - Add event management
 - HTTP clients direct access
@@ -42,11 +42,14 @@ Roadmap
 - 100% unit testing
 - Dependency Injection Container
 
-**0.6.0**
-- Add Sunlight Political Party Time API
+**0.7.0**
+- Add Sunlight Influence Explorer API
 
 Changelog
 ---------
+**0.6.0**
+- Add Sunlight Political Party Time API
+
 **0.5.2**
 - Add Congress API districts locate helpers
 
