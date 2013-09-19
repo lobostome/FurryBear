@@ -15,7 +15,7 @@
 namespace FurryBear\Resource\SunlightPoliticalPartyTime;
 
 use FurryBear\Resource\AbstractResource,
-    FurryBear\Common\Exception\NotImplementedException;
+    FurryBear\Iterator\SunlightPoliticalPartyTime\PageIterator;
 
 /**
  * A base presentation of Sunlight Political Party Time resource.
@@ -62,33 +62,42 @@ class BaseResource extends AbstractResource
         
         return sprintf("%s/%s/?%s", $this->furryBear->getProvider()->getServiceUrl(), 
                                    $this->getResourceMethod(),
-                                   http_build_query(array_merge($apiKey, $this->extractFormat(), $params)));
+                                   http_build_query(array_merge($apiKey, $this->buildFormat(), $params)));
     }
     
     /**
-     * Extracts the format from the output.
+     * Creates parameter for format type.
      * 
      * @return array
      */
-    protected function extractFormat()
+    protected function buildFormat()
     {
-        $format = array('format' => 'json');
+        return array('format' => $this->extractFormat());
+    }
+    
+    /**
+     * Extracts the format type from the output.
+     * 
+     * @return string
+     */
+    public function extractFormat()
+    {
+        $format = 'json';
         $class = strtolower(get_class($this->furryBear->getOutput()));
-        
         if (strpos($class, 'json') === FALSE) {
-            $format = array('format' => 'xml');
+            $format = 'xml';
         }
         
         return $format;
     }
 
     /**
-     * Gets an iterator that can iterate over multiple result pages.
+     * Gets an iterator that can iterate over multiple result pages
      * 
-     * @throws NotImplementedException
+     * @return \FurryBear\Iterator\SunlightPoliticalPartyTime\PageIterator
      */
     public function getIterator()
     {
-        throw new NotImplementedException("This resource does not support iteration");
+        return new PageIterator($this);
     }
 }

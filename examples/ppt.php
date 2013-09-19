@@ -4,7 +4,12 @@ require_once 'config/config_ppt.php';
 
 try {
     
-    var_dump($fb->host_detail->id(1)->get());
+    $fb->events->setParams(array('beneficiaries__state' => 'NM', 'limit' => 45));
+    
+    foreach ($fb->events as $page) {
+        var_dump($page);
+        sleep(2);
+    }
     
 } catch (\Exception $e) {
     echo $e->getMessage();
