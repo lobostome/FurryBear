@@ -1,7 +1,7 @@
 FurryBear
 ---------
 
-A wrapper for Sunlight Congress API v3
+A PHP wrapper for the Sunlight Foundation APIs
 
 Quick Start
 -----------
