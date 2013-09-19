@@ -4,7 +4,7 @@ require_once 'config/config_ppt.php';
 
 try {
     
-    var_dump($fb->lawmaker_detail->id(12)->get());
+    var_dump($fb->hosts->get());
     
 } catch (\Exception $e) {
     echo $e->getMessage();
