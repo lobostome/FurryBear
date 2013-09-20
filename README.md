@@ -5,9 +5,7 @@ A PHP wrapper for the Sunlight Foundation APIs
 
 Quick Start
 -----------
-You can start quickly with minimal setup by using the DI container and Composer.
-It has set as default a cURL connection to the Sunlight Congress API that 
-outputs the result as an array.
+Specify the http adapter, the API provider, and the output format.
 
 ```php
 $adapter = new FurryBear\Http\Adapter\Curl();
