@@ -5,26 +5,20 @@ A PHP wrapper for the Sunlight Foundation APIs
 
 Quick Start
 -----------
+You can start quickly with minimal setup by using the DI container and Composer.
+It has set as default a cURL connection to the Sunlight Congress API that 
+outputs the result as an array.
 
 ```php
-$adapter = new FurryBear\Http\Adapter\Curl();
-$provider = new FurryBear\Provider\Source\SunlightCongress($adapter, $apiKey);
-$output = new FurryBear\Output\Strategy\JsonToArray();
+require 'vendor/autoload.php';
 
-$fb = new FurryBear\FurryBear();
-$fb->registerProvider($provider)->registerOutput($output);
+use FurryBear\FurryBearContainer;
 
-try {
-    var_dump(
-            $fb->bills_search->fields('official_title', 'chamber', 'introduced_on', 'search')
-                             ->search('"health care" medicine')
-                             ->filter('history.enacted', true)
-                             ->order('introduced_on')
-                             ->get()
-    );
-} catch (\Exception $e) {
-    echo $e->getMessage();
-}
+$container = new FurryBearContainer();
+$container['apikey'] = 'Your Sunlight Foundation API Key';
+$searchCriteria = array('query' => '"health care" medicine');
+
+var_dump($container['furrybear']->bills_search->get($searchCriteria));
 ```
 
 Documentation
