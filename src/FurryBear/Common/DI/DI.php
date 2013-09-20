@@ -124,4 +124,9 @@ class DI implements \ArrayAccess
             return $obj;
         };
     }
+    
+    public function getServices()
+    {
+        return array_keys($this->container);
+    }
 }
