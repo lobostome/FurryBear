@@ -10,15 +10,20 @@ It has set as default a cURL connection to the Sunlight Congress API that
 outputs the result as an array.
 
 ```php
-require 'vendor/autoload.php';
+$adapter = new FurryBear\Http\Adapter\Curl();
+$provider = new FurryBear\Provider\Source\SunlightCongress($adapter, $apiKey);
+$output = new FurryBear\Output\Strategy\JsonToArray();
 
-use FurryBear\FurryBearContainer;
+$fb = new FurryBear\FurryBear();
+$fb->registerProvider($provider)->registerOutput($output);
 
-$container = new FurryBearContainer();
-$container['apikey'] = 'Your Sunlight Foundation API Key';
-$searchCriteria = array('query' => '"health care" medicine');
-
-var_dump($container['furrybear']->bills_search->get($searchCriteria));
+var_dump(
+    $fb->bills_search->fields('official_title', 'chamber', 'introduced_on', 'search')
+                     ->search('"health care" medicine')
+                     ->filter('history.enacted', true)
+                     ->order('introduced_on')
+                     ->get()
+);
 ```
 
 Documentation
