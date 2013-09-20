@@ -125,6 +125,11 @@ class DI implements \ArrayAccess
         };
     }
     
+    /**
+     * Gets all registered elements.
+     * 
+     * @return array
+     */
     public function getServices()
     {
         return array_keys($this->container);
