@@ -84,6 +84,12 @@ class Curl implements HttpAdapterInterface
         if (!empty($this->headers)) {
             $this->proxy->setOption(CURLOPT_HTTPHEADER, $this->headers);
         }
+        
+        if (parse_url($url, PHP_URL_SCHEME) === 'https') {
+            $this->proxy->setOption(CURLOPT_SSL_VERIFYHOST, 2);
+            $this->proxy->setOption(CURLOPT_SSL_VERIFYPEER, 1);
+            $this->proxy->setOption(CURLOPT_CAINFO, __DIR__ . '/cacert.pem');
+        }
 
         $content = $this->proxy->execute();
         

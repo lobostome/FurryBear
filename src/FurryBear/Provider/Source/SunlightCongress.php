@@ -31,7 +31,7 @@ class SunlightCongress extends AbstractProvider
     /**
      * The domain of the API.
      */
-    const SERVICE_URL = 'http://congress.api.sunlightfoundation.com';
+    const SERVICE_URL = 'https://congress.api.sunlightfoundation.com';
     
     /**
      * The resource directory.

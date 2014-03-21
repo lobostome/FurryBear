@@ -4,8 +4,8 @@ examples/config/keys
 examples/composer.*
 examples/vendor
 examples/download
-# build/api
+build/api
 build/code-browser
-# build/coverage
+build/coverage
 build/logs
 build/pdepend

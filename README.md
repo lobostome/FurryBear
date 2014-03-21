@@ -43,6 +43,9 @@ Roadmap
 
 Changelog
 ---------
+**0.7.1**
+- Switch to the Congress API's HTTPS endpoint
+
 **0.7.0**
 - Add Dependency Injection Container
 
