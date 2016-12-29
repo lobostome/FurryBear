@@ -31,7 +31,7 @@ class SunlightOpenStates extends AbstractProvider
     /**
      * The domain of the API.
      */
-    const SERVICE_URL = 'http://openstates.org/api/v1';
+    const SERVICE_URL = 'https://openstates.org/api/v1';
     
     /**
      * The resource directory.
